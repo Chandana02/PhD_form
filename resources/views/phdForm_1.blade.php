@@ -4,7 +4,6 @@
 
 @section('headerIncludes')
     <script src="{{URL::asset('assets/js/common.js')}}"></script>
-    <script src="{{URL::asset('assets/js/savephd.js')}}"></script>
 @endsection
 
 @section('departmentsList')
