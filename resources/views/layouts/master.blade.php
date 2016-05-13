@@ -33,13 +33,13 @@
 			
 			<a href="#" details-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
 			<ul class="hide-on-med-and-down">
-				<li><a href="/home">Home</a></li>
-				<li><a href="/home">Ph.D/M.S. Admissions</a></li>
+				<li><a href="/">Home</a></li>
+				<li><a href="/">Ph.D/M.S. Admissions</a></li>
 				<li><a href="/contact">Contact</a></li>
 			</ul>
 			<ul class="side-nav" id="mobile-demo">
-				<li><a href="/home">Home</a></li>
-				<li><a href="/home">Ph.D/M.S. Admissions</a></li>
+				<li><a href="/">Home</a></li>
+				<li><a href="/">Ph.D/M.S. Admissions</a></li>
 				<li><a href="/contact">Contact</a></li>
 			</ul>
 		</div>

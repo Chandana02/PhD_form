@@ -44,7 +44,8 @@
   <div class="space-medium"></div>
   <div class="container main">
     <div class="row">
-      <p class="imp" style="color:red"><b><marquee>Stage 1 of Application Process will start from Monday - 16th May, 2016 at 10:00 AM IST. We recommend you to carefully read the application brochure and instructions.</b></marquee></p>
+      <marquee style="color: red"><b>Stage 1 of Application Process will start from Monday - 16th May, 2016 at 10:00 AM IST. We recommend you to carefully read the application brochure and instructions.</b></marquee>
+      
       <div class="space-medium"></div>
       <div class="content">
         <h5 class="center"><b><u>INSTRUCTIONS</u></b></h5>
