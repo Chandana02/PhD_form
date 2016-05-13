@@ -9,10 +9,10 @@
             <h5>Contact Information</h5>
             <p>
                 Office of Dean Academic<br>
-                National Institute of Technology,<br>
+                National Institute of Technology<br>
                 Tiruchirappalli - 620015<br>
-                Contact email: phd@nitt.edu<br>
-                Phone: +91-431-2503636, 2503011, 2503417<br>
+                Contact email: phdsection@nitt.edu<br>
+                Phone: +91-431-2503011 2503417, 2503309, 2503636<br>
             </p>
         </div>
     </div>
