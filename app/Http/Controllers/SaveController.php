@@ -78,11 +78,19 @@ class SaveController extends Controller
         SavePhd::where('applNo', $rowNo)
                     ->update(['registrationNumber' => $reg_number]);
 
-        $email = $request->get('email');
-        Mail::send('emails.regnophd', ['applNo'=> $reg_number], function ($m) use($email) {
-            $m->from('phdsection@nitt.edu', 'NITT Admissions');
-            $m->to($email, 'Applicant' )->subject('Greetings from NITT!');
-        });
+        $email = $request->input('email');
+        Mail::send(
+            'emails.regnophd', 
+            [
+                'applNo'=> $reg_number,
+                'dashedApplNo' => str_replace('/', '-', $reg_number),
+                'dob' => $candidate->dob
+            ],
+            function ($m) use($email) {
+                $m->from('phdsection@nitt.edu', 'NITT Admissions');
+                $m->to($email, 'Applicant' )->subject('Greetings from NITT!');
+            }
+        );
 
         return json_encode($reg_number);
 
@@ -148,16 +156,24 @@ class SaveController extends Controller
                 $reg_number = $reg_number.$request->input('department'.$i).'/';
             }
         }
-        $applNo = self::randomno('PHD', $reg_number);
+        $applNo = self::randomno('MS', $reg_number);
         $reg_number = $reg_number.$rowNo.'/'.$applNo;
         SaveMs::where('applNo', $rowNo)
                     ->update(['registrationNumber' => $reg_number]);
 
         $email = $request->input('email');
-        Mail::send('emails.regnoms', ['applNo'=> $reg_number], function ($m) use($email) {
-            $m->from('phdsection@nitt.edu', 'NITT Admissions');
-            $m->to($email, 'Applicant' )->subject('Greetings from NITT!');
-        });
+        Mail::send(
+            'emails.regnoms', 
+            [
+                'applNo'=> $reg_number,
+                'dashedApplNo' => str_replace('/', '-', $reg_number),
+                'dob' => $candidate->dob
+            ],
+            function ($m) use($email) {
+                $m->from('phdsection@nitt.edu', 'NITT Admissions');
+                $m->to($email, 'Applicant' )->subject('Greetings from NITT!');
+            }
+        );
 
         return json_encode($reg_number);
     }
