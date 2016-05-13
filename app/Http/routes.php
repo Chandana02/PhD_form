@@ -103,3 +103,7 @@ Route::get('damage', function()
     {
         return view('admin.dmgctrl');
     });
+Route::get('landing', function()
+    {
+        return view('landing');
+    });
