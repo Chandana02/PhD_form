@@ -82,7 +82,7 @@
   
       </div>
       <div class="col l2">
-        <img src="{{ URL::asset('uploads/PHD/'.$applNo.'/photo.' . $imgtype) }}" width="100" height="150">
+        <img src="{{ URL::asset('uploads/PHD/'.$applNo.'/photo.' . $imgtype) }}" width="150" height="150">
 
       </div>
       </div>
@@ -227,7 +227,7 @@
             <td>{!! $others['validity'] !!}</td>
           </tr>
           <tr>
-            <td>Discipline</td>
+            <td><b>Discipline:</b></td>
             <td>{!! $others['discipline'] !!}</td>
           </tr>
         </tbody>
