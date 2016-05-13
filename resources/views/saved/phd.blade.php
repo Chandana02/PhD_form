@@ -113,7 +113,7 @@
 			      		
 		          		<div class="uploadImg btn teal darken-1 btn waves-effect waves-light">
 		          			<span class="light">File</span>
-		          			<input type="file" name="image_path" id="imaged", onchange="readURL(this);" required>		
+		          			<input type="file" name="image_path" id="imaged", onchange="readURL(this);">		
 		          		</div>
 		          		<div class="file-path-wrapper">
 	        				<input class="file-path validate" type="text">
@@ -147,7 +147,8 @@
 			      			<option value="MME">Metalurgy and Material Engineering</option>
 			      			<option value="PR">Production Engineering</option>
 			     		</select> -->
-			     		<input type="text" readonly="true" id="department1" name="department1" value="{!! $details->dept1 !!}" />
+			     		<input type="hidden" readonly="true" id="department1" name="department1" value="{!! $details->dept1 !!}" />
+			     		<input type="text" readonly="true" id="department1_disp" name="department1_disp" value="{!! $details->dept1 !!}" />
 			        </div>
 			        <div class="input-field col l6 s6 dep2Check">
 			        	<!-- <select name="department2" id="department2">
@@ -168,8 +169,8 @@
 			      			<option value="MME">Metalurgy and Material Engineering</option>
 			      			<option value="PR">Production Engineering</option>		      
 			      		</select> -->
-			   		<input type="text" readonly="true" id="department2" name="department2" value="{!! $details->dept2 !!}" />
-			      	
+			   		<input type="hidden" readonly="true" id="department2" name="department2" value="{!! $details->dept2 !!}" />
+			      	<input type="text" readonly="true" id="department2_disp" name="department2_disp" value="{!! $details->dept2 !!}" />
 			        </div>
 			        </div>
 			        <div class="dept row">			        
@@ -192,7 +193,8 @@
 			      			<option value="MME">Metalurgy and Material Engineering</option>
 			      			<option value="PR">Production Engineering</option>		      
 			      		</select>	 -->
-			      		<input type="text" readonly="true" id="department3" name="department3" value="{!! $details->dept3 !!}" />		     
+			      		<input type="hidden" readonly="true" id="department3" name="department3" value="{!! $details->dept3 !!}" />		     
+			      		<input type="text" readonly="true" id="department3_disp" name="department3_disp" value="{!! $details->dept3 !!}" />
 			        </div>
 			       <!--  <div class="input-field col s6 l6">
 			        	<input type="text" value="dept" hidden="true" />
@@ -540,7 +542,7 @@
 				      	<div class="file-field input-field">
 			          		<div class="btn teal darken-1 btn waves-effect waves-light">
 			          			<span class="light">File</span>
-			          			<input type="file" id="signImg" name="sign" onchange="signURL(this);" required />
+			          			<input type="file" id="signImg" name="sign" onchange="signURL(this);"/>
 			          		</div>
 			          		<div class="file-path-wrapper">
 		        				<input class="file-path validate" type="text">
@@ -764,7 +766,7 @@
 			}
 
 			t='{!! $details->applicationCategory !!}';
-			if(t=='On Campus'){
+			if(t=='onCampus'){
 				$('.applCheck .select-wrapper input').val(t);
 				$('.applCheck .select-wrapper ul>li:eq(2)').click();
 			}
@@ -772,11 +774,11 @@
 				$('.applCheck .select-wrapper input').val(t);
 				$('.applCheck .select-wrapper ul>li:eq(3)').click();
 			}
-			else if(t == 'Stipendiary'){
+			else if(t == 'stipendiary'){
 				$('.applCheck .select-wrapper input').val(t);
 				$('.applCheck .select-wrapper ul>li:eq(4)').click();
 			}
-			else if(t == 'Non-Stipendiary'){
+			else if(t == 'nonStipendiary'){
 				$('.applCheck .select-wrapper input').val(t);
 				$('.applCheck .select-wrapper ul>li:eq(6)').click();
 			}
@@ -784,7 +786,7 @@
 				$('.applCheck .select-wrapper input').val(t);
 				$('.applCheck .select-wrapper ul>li:eq(7)').click();
 			}
-			else if(t == 'Other Fellowships'){
+			else if(t == 'Other'){
 				$('.applCheck .select-wrapper input').val(t);
 				$('.applCheck .select-wrapper ul>li:eq(8)').click();
 			}
@@ -866,12 +868,9 @@
 			else if(t == "ST")
 				$(".categCheck ul>li:eq(4)").click();
 
-			$('#department1').val(department('{!! $details->dept1 !!}'));
-			$('#department2').val(department('{!! $details->dept2 !!}'));
-			$('#department3').val(department('{!! $details->dept3 !!}'));
-
-
-
+			$('#department1_disp').val(department('{!! $details->dept1 !!}'));
+			$('#department2_disp').val(department('{!! $details->dept2 !!}'));
+			$('#department3_disp').val(department('{!! $details->dept3 !!}'));
 
 			function department(t)
 			{
