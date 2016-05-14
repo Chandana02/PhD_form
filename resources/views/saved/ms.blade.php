@@ -90,7 +90,7 @@
 			      		
 		          		<div class="uploadImg btn teal darken-1 btn waves-effect waves-light">
 		          			<span class="light">File</span>
-		          			<input type="file" name="image_path" id="imaged", onchange="readURL(this);" required>		
+		          			<input type="file" name="image_path" id="imaged", onchange="readURL(this);">
 		          		</div>
 		          		<div class="file-path-wrapper">
 	        				<input class="file-path validate" type="text">
@@ -512,7 +512,7 @@
 			      	<div class="file-field input-field">
 		          		<div class="btn teal darken-1 btn waves-effect waves-light">
 		          			<span class="light">File</span>
-		          			<input type="file" id="signImg" name="sign" onchange="signURL(this);" required />		
+		          			<input type="file" id="signImg" name="sign" onchange="signURL(this);"/>
 		          		</div>
 		          		<div class="file-path-wrapper">
 	        				<input class="file-path validate" type="text">
