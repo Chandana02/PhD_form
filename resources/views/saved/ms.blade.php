@@ -14,7 +14,6 @@
 	<script src="{{URL::asset('assets/js/materialize.min.js')}}"></script>
 	
 	<script src="{{URL::asset('assets/js/preview.js')}}"></script>
-	<script src="{{URL::asset('assets/js/savems.js')}}"></script>
 	<script src="{{URL::asset('assets/js/common.js')}}"></script>
 	<script src="{{URL::asset('assets/js/code_ms.js')}}"></script>
 	
