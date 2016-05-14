@@ -589,6 +589,12 @@
             
 
 	<script type="text/javascript">
+	$(document).ready(function() {
+		$('#save2').click(function(e) {
+        	$("form").attr("action", "/save2ms").submit();
+        	return;
+    	});
+    });
 	function readURL(input) 
 			{
 			    document.getElementById("bannerImg").style.display = "block";
