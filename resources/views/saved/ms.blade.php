@@ -304,10 +304,6 @@
 				    </select>
 		      	</div>
 		      </div> 
-		      <p>
-		      	<input type="checkbox" id="ra1" name="ra1" />
-			      <label for="ra1">Click here if final semester results are not announced.</label>
-		      </p>
 		      </div>
 		      </div>
 
