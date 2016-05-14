@@ -121,7 +121,8 @@
                 <option value="MME">Metalurgy and Material Sciences</option>
                 <option value="PH">Physics</option>
 		      		</select> -->
-		      		<input type="text" readonly="true" id="department1" name="department1" value="{!! $details->dept1 !!}" />
+		      		<input type="hidden" readonly="true" id="department1" name="department1" value="{!! $details->dept1 !!}" />
+		     		<input type="text" readonly="true" id="department1_disp" name="department1_disp" value="{!! $details->dept1 !!}" />
 		      		
 		        </div>
 		        <div class="input-field col l6 s6 dep2Check">
@@ -142,7 +143,8 @@
                 <option value="MME">Metalurgy and Material Sciences</option>
                 <option value="PH">Physics</option>
 		      		</select> -->
-		      		<input type="text" readonly="true" id="department2" name="department2" value="{!! $details->dept2 !!}" />
+		      		<input type="hidden" readonly="true" id="department2" name="department2" value="{!! $details->dept2 !!}" />
+			      	<input type="text" readonly="true" id="department2_disp" name="department2_disp" value="{!! $details->dept2 !!}" />
 		      		
 		        </div>
 		        <div class="input-field col l6 s6 dep3Check">
@@ -163,7 +165,8 @@
                 <option value="MME">Metalurgy and Material Sciences</option>
                 <option value="PH">Physics</option>
 		      		</select> -->
-		      		<input type="text" readonly="true" id="department3" name="department3" value="{!! $details->dept3 !!}" />
+		      		<input type="hidden" readonly="true" id="department3" name="department3" value="{!! $details->dept3 !!}" />
+			      	<input type="text" readonly="true" id="department3_disp" name="department3_disp" value="{!! $details->dept3 !!}" />
 		      		
 		        </div>
 		        
@@ -783,9 +786,9 @@
 				$('.ugclassCheck .select-wrapper ul>li:eq(4)').click();
 			}
 			$('.categCheck .select-wrapper ul>li:eq(1)').click();
-			$('#department1').val(department('{!! $details->dept1 !!}'));
-			$('#department2').val(department('{!! $details->dept2 !!}'));
-			$('#department3').val(department('{!! $details->dept3 !!}'));
+			$('#department1_disp').val(department('{!! $details->dept1 !!}'));
+			$('#department2_disp').val(department('{!! $details->dept2 !!}'));
+			$('#department3_disp').val(department('{!! $details->dept3 !!}'));
 
 			function department(t)
 			{
