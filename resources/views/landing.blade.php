@@ -44,15 +44,14 @@
   <div class="space-medium"></div>
   <div class="container main">
     <div class="row">
-      <marquee style="color: red"><b>Stage 1 of Application Process will start from Monday - 16th May, 2016 at 10:00 AM IST. We recommend you to carefully read the application brochure and instructions.</b></marquee>
-      
+     <marquee> <p class="imp" style="color:red"><b>Stage 1 of application process will start from Monday - 16th May, 2016 at 10:00 AM IST. We recommend you to carefully read the information brochure and instructions.</b></p></marquee>
       <div class="space-medium"></div>
       <div class="content">
         <h5 class="center"><b><u>INSTRUCTIONS</u></b></h5>
         <ul class="pad">
           <li>1) Please read carefully the application <a href="http://www.nitt.edu/home/admissions/phd/MS-PhD-July2016.pdf">brochure</a> before applying.</li>
           <li>2) Reach out to help desk numbers provided in the <a href="contact">Contact</a> in case of a query.</li>
-          <li>3) Help desk would be live from 17th May, 2016 (10:30 AM -4:30 PM) </li>
+          <li>3) Help desk would be live from 17th May, 2016 (10:30 AM -4:30 PM) at NIT Trichy. </li>
         </ul>
         <h5 class="center"><b><u>APPLICATION PROCESS</u></b></h5>
         <ul class="pad">
