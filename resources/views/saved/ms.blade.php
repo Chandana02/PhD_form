@@ -543,7 +543,7 @@
   		 <div class="center">
       <a id="preview2" href="../../../mspreview" target="_blank" class="teal darken-1 waves-effect waves-light btn modal-trigger">Preview Form</a>
       
-   {!! Form::submit('Submit', array('class'=>'valid1 teal darken-1 send-btn btn waves-effect waves-light' )) !!}
+   <button class="valid1 teal darken-1 send-btn btn waves-effect waves-light" type="submit">Submit</button>
    <a id="save2" class="teal darken-1 send-btn btn waves-effect waves-light center">Save Form</a>
    </div>
 	 	
