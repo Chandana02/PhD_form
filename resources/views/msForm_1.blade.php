@@ -28,7 +28,7 @@
             <img src="{{URL::asset('assets/images/preloader.gif')}}">
         </div>
     </div>
-    
+
     <div class="heading">
 
     </div>
@@ -190,6 +190,9 @@
 <script type="text/javascript">
     $(document ).ready(function(){
         $('select').material_select();
+        // https://github.com/Dogfalo/materialize/issues/1861
+        $("select[required]").css({display: "inline", height: 0, padding: 0, width: 0});
+        
         var x = new Date().getFullYear();
         var y = x+1;
         console.log(x);

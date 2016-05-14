@@ -99,7 +99,7 @@
 			<div class="row">
 				<div class="input-field col l4">
 					<span class="light">*Date of Birth:</span>
-					<input required id="dob" type="date" class="validate" name="dob" max="2016-06-31" min="1990-06-31" >
+					<input required id="dob" type="date" class="validate datepicker" name="dob">
 				</div>
 
 				<div class="input-field col l2">
@@ -203,6 +203,8 @@
 <script type="text/javascript">
 	$(document ).ready(function(){
 		$('select').material_select();
+		// https://github.com/Dogfalo/materialize/issues/1861
+        $("select[required]").css({display: "inline", height: 0, padding: 0, width: 0});
 
 		var x = new Date().getFullYear();
 		var y = x+1;
