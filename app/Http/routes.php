@@ -10,8 +10,6 @@
 | and give it the controller to call when that URI is requested.
 |
 */
-Route::get('exportphd', 'ExportController@allPhdCandidatesExport');
-Route::get('exportms', 'ExportController@allMsCandidatesExport');
 Route::get('/', function() {
     return view('landing');
 //    return redirect('home');
