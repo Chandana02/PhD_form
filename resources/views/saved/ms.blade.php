@@ -497,7 +497,7 @@
 		      		<p>I do hereby declare that the information furnished in this application are true and correct to the best of my knowledge. If, any of the particulars furnished above is found to be incorrect at the time of admission, the admission may be cancelled.</p>
 		      		<p class="center agreement">
 		      			<span>
-		      		      <input type="checkbox" id="agree" class="check" required="true"/>
+		      		      <input type="checkbox" id="agree" name="agree" class="check" required="true"/>
 		      		      <label for="agree">Agree</label>
 		      		    </span>
 		      		   
@@ -649,6 +649,10 @@
 	$(document ).ready(function(){
 		$(".button-collapse").sideNav();
 		$('select').material_select();
+
+		// https://github.com/Dogfalo/materialize/issues/1861
+		$("select[required]").css({display: "inline", height: 0, padding: 0, width: 0});
+		$("#agree").css({visibility: 'visible', height: 1, position: 'relative', left: 0})
 
 		var a = '{!! $details->exam !!}';
 		var b = '{!! $details->validity !!}';
