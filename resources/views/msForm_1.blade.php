@@ -4,7 +4,6 @@
 
 @section('headerIncludes')
     <script src="{{URL::asset('assets/js/common.js')}}"></script>
-    <script src="{{URL::asset('assets/js/savems.js')}}"></script>
 @endsection
 
 @section('departmentsList')
@@ -24,6 +23,12 @@
 @endsection
 
 @section('body')
+    <div class="blur">
+        <div class="center preloader" hidden="true">
+            <img src="{{URL::asset('assets/images/preloader.gif')}}">
+        </div>
+    </div>
+    
     <div class="heading">
 
     </div>
