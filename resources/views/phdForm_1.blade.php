@@ -204,7 +204,7 @@
 	$(document ).ready(function(){
 		$('select').material_select();
 		// https://github.com/Dogfalo/materialize/issues/1861
-        $("select[required]").css({display: "inline", height: 0, padding: 0, width: 0});
+        $("select[required]").css({display: "inline", height: 0, padding: 0, width: 0, position: 'absolute'});
         // so that the select input that's made invisible above doesn't get focus on using tabstops,
         // creating inconsistencies potentially
         $('select').attr('tabindex', "-1");
