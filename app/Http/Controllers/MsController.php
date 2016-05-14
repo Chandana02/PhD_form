@@ -103,9 +103,9 @@ class MsController extends Controller
                 // 'date_of_sub' => $request->get('date_of_sub'),
                 'appl_categ' => $request->get('appl_categ'),//dont know how to add $name attribute here
                 'image_path' => $request->get('image_path'),
-                'department1' => $request->get('department1'),
-                'department2' => $request->get('department2'),
-                'department3' => $request->get('department3'),
+                'department1' => self::department($request->get('department1')),
+                'department2' => self::department($request->get('department2')),
+                'department3' => self::department($request->get('department3')),
                 'area_of_research' => $request->get('area_of_research'),
                 'email' => $request->get('email'),
                 'mobile' => $request->get('mobile'),
@@ -168,11 +168,11 @@ class MsController extends Controller
             }
             else
             {
-                $details['score'] = 'RA';
-                $details['rank'] = 'RA';
-                $details['validity'] = 'RA';
-                $details['discipline'] = 'RA';
-                $details['exam'] = 'RA';
+                $details['score'] = 'NA';
+                $details['rank'] = 'NA';
+                $details['validity'] = 'NA';
+                $details['discipline'] = 'NA';
+                $details['exam'] = 'NA';
             }
 
             $file = $request->file('image_path');   
@@ -256,14 +256,34 @@ class MsController extends Controller
                 }
             }
 
+            $reg_number = $request->input('regNo');
+            $reg_number_modified = str_replace("/", "-", $reg_number);
+
+            $details['reg_number'] = $reg_number;
+            $details['phdorms'] = 'ms';
+
+            $image_extension = $stored_image_extension;
+            $sign_extension = $stored_sign_extension;
+            if($file)
+            {
+                $file = $file->move(public_path().'/uploads/MS/'.$reg_number_modified, 'photo.' . $extension);
+                $image_extension = $extension;
+            }
+            if($sign)
+            {
+                $sign = $sign->move(public_path().'/uploads/MS/'.$reg_number_modified, 'sign.' . $signExt);
+                $sign_extension = $signExt;
+            }
+            $details['imagePath'] = $image_extension . "," . $sign_extension;
+
             $candidate = new Ms();
 
             $candidate->chalanNo = $request->input('chalanNo');
             $candidate->registrationNumber = $request->input('regNo');
             $candidate->applicationCategory = $request->get('appl_categ');
-            $candidate->dept1 = self::department($request->input('department1'));
-            $candidate->dept2 = self::department($request->input('department2'));
-            $candidate->dept3 = self::department($request->input('department3'));
+            $candidate->dept1 = $request->input('department1');
+            $candidate->dept2 = $request->input('department2');
+            $candidate->dept3 = $request->input('department3');
             $candidate->areaOfResearch = $request->get('area_of_research');
             $candidate->name = $request->get('name');
             $candidate->fatherName = $request->get('father_name');
@@ -278,21 +298,17 @@ class MsController extends Controller
             $candidate->email = $request->get('email');
             $candidate->mobile = $request->get('mobile');
             $candidate->lanline = $request->get('landline');
+            $candidate->imagePath = $details['imagePath'];
 
             $candidate->save();
 
             $applNo = $candidate->applNo;
-            $reg_number = $request->input('regNo');
-            $reg_number_modified = str_replace("/", "-", $reg_number);
 
-            if($request->get('ra1') == 'on')
-            {
-                $details['ug_gpa'] = 'RA';
-            }
             if($request->get('ra3') == 'on')
             {
-                $details['gpa8'] = 'RA';
-                $details['max8'] = 'RA';
+                $details['ug_gpa'] = 'NA';
+                $details['gpa8'] = 'NA';
+                $details['max8'] = 'NA';
             }
             else
             {
@@ -365,24 +381,6 @@ class MsController extends Controller
 
             $others->save();
 
-            $details['reg_number'] = $reg_number;
-            $details['phdorms'] = 'ms';
-
-            $image_extension = $stored_image_extension;
-            $sign_extension = $stored_sign_extension;
-            if($file)
-            {
-                $file = $file->move(public_path().'/uploads/MS/'.$reg_number_modified, 'photo.' . $extension);
-                $image_extension = $extension;
-            }
-            if($sign)
-            {
-                $sign = $sign->move(public_path().'/uploads/MS/'.$reg_number_modified, 'sign.' . $signExt);
-                $sign_extension = $signExt;
-            }
-            $details['imagePath'] = $image_extension . "," . $sign_extension;
-            Ms::where('registrationNumber', $request->input('regNo'))
-                                ->update($details);
             return View::make('success')->with('details', $details);
             }
             else{
@@ -394,56 +392,73 @@ class MsController extends Controller
 
     public function department($t)
     {
-        if($t == 'Computer Science and Engineering')
+        if($t == 'AR')
         {
-            return 'CS';
+            return 'Architecture';
         }
-        if($t == 'Chemical Engineering')
+        if($t == 'CS')
         {
-            return 'CL';
+            return 'Computer Science and Engineering';
         }
-        if($t == 'Civil Engineering')
+        if($t == 'CL')
         {
-            return 'CV';
+            return 'Chemical Engineering';
         }
-        if($t == 'CECASE')
+        if($t == 'CV')
         {
-            return 'CC';
+            return 'Civil Engineering';
         }
-        if($t == 'Department of Energy Engineering')
+        if($t == 'CY')
         {
-            return 'EN';
+            return 'Chemistry';
         }
-        if($t == 'Electrical and Electronics Engineering')
+        if($t == 'CA')
         {
-            return 'EE';
+            return 'Computer Applications';
         }
-        if($t == 'Electronics and Communication Engineering')
+        if($t == 'CC')
         {
-            return 'EC';
+            return 'CECASE';
         }
-        if($t == 'Mechanical Engineering')
+        if($t == 'EN')
         {
-            return 'ME';
+            return 'Department of Energy Engineering';
         }
-        if($t == 'Production Engineering')
+        if($t == 'EE')
         {
-            return 'PR';
+            return 'Electrical and Electronics Engineering';
         }
-        if($t == 'Metalurgy and Material Sciences')
+        if($t == 'EC')
         {
-            return 'MME';
+            return 'Electronics and Communication Engineering';
         }
-        if($t == 'Instrumentation and Control Engineering')
+        if($t == 'ME')
         {
-            return 'IC';
+            return 'Mechanical Engineering';
         }
-        if($t == 'Physics')
+        if($t == 'PR')
         {
-            return 'PH';
+            return 'Production Engineering';
         }
-        if($t == 'Humanities & Social Science'){
-            return 'HM';
+        if($t == 'MME')
+        {
+            return 'Metalurgy and Material Sciences';
+        }
+        if($t == 'MA')
+        {
+            return 'Mathematics';
+        }
+        if($t == 'IC')
+        {
+            return 'Instrumentation and Control Engineering';
+        }
+        if($t == 'PH')
+        {
+            return 'Physics';
+        }
+        if($t == 'HM')
+        {
+            return 'Humanities & Social Science';
         }
     }
 }
