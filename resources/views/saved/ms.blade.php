@@ -657,6 +657,10 @@
 		$("select[required]").css({display: "inline", height: 0, padding: 0, width: 0});
 		$("#agree").css({visibility: 'visible', height: 1, position: 'relative', left: 0})
 
+		// so that the select input that's made invisible above doesn't get focus on using tabstops,
+        // creating inconsistencies potentially
+		$('select').attr('tabindex', "-1");
+		
 		var a = '{!! $details->exam !!}';
 		var b = '{!! $details->validity !!}';
 		var c = '{!! $details->rank !!}';
