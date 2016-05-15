@@ -188,6 +188,17 @@ class SaveController extends Controller
 
         if($category == 'PHD')
 		{
+            $hasSubmitted = Phd::where('registrationNumber', $regNo)->first();
+            if($hasSubmitted != NULL) {
+                return view('success')->with('details', array(
+                    "reg_number" => $hasSubmitted->registrationNumber,
+                    "name" => $hasSubmitted->name,
+                    "department1" => self::department($hasSubmitted->dept1),
+                    "department2" => self::department($hasSubmitted->dept2),
+                    "department3" => self::department($hasSubmitted->dept3),
+                ));
+            }
+
 			$details = SavePhd::where('registrationNumber', $regNo)
                                     ->where('dob', $dob)
 									->first();
@@ -204,6 +215,17 @@ class SaveController extends Controller
 		}
 		else
 		{
+            $hasSubmitted = Ms::where('registrationNumber', $regNo)->first();
+            if($hasSubmitted != NULL) {
+                return view('success')->with('details', array(
+                    "reg_number" => $hasSubmitted->registrationNumber,
+                    "name" => $hasSubmitted->name,
+                    "department1" => self::department($hasSubmitted->dept1),
+                    "department2" => self::department($hasSubmitted->dept2),
+                    "department3" => self::department($hasSubmitted->dept3),
+                ));
+            }
+
 			$details = SaveMs::where('registrationNumber', $regNo)
                                     ->where('dob', $dob)
                                     ->first();
@@ -549,6 +571,78 @@ class SaveController extends Controller
                 return false;
             }
             return true;
+        }
+    }
+
+    public function department($t)
+    {
+        if($t == 'AR')
+        {
+            return 'Architecture';
+        }
+        if($t == 'CS')
+        {
+            return 'Computer Science and Engineering';
+        }
+        if($t == 'CL')
+        {
+            return 'Chemical Engineering';
+        }
+        if($t == 'CV')
+        {
+            return 'Civil Engineering';
+        }
+        if($t == 'CY')
+        {
+            return 'Chemistry';
+        }
+        if($t == 'CA')
+        {
+            return 'Computer Applications';
+        }
+        if($t == 'CC')
+        {
+            return 'CECASE';
+        }
+        if($t == 'EN')
+        {
+            return 'Department of Energy Engineering';
+        }
+        if($t == 'EE')
+        {
+            return 'Electrical and Electronics Engineering';
+        }
+        if($t == 'EC')
+        {
+            return 'Electronics and Communication Engineering';
+        }
+        if($t == 'ME')
+        {
+            return 'Mechanical Engineering';
+        }
+        if($t == 'PR')
+        {
+            return 'Production Engineering';
+        }
+        if($t == 'MME')
+        {
+            return 'Metalurgy and Material Sciences';
+        }
+        if($t == 'MA')
+        {
+            return 'Mathematics';
+        }
+        if($t == 'IC')
+        {
+            return 'Instrumentation and Control Engineering';
+        }
+        if($t == 'PH')
+        {
+            return 'Physics';
+        }
+        if($t == 'HM')
+        {
+            return 'Humanities & Social Science';
         }
     }
 }
