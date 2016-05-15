@@ -306,7 +306,7 @@ class MsController extends Controller
 
             if($request->get('ra3') == 'on')
             {
-                $details['ug_gpa'] = 'NA';
+                $details['ug_gpa'] = $details['ug_gpa'] . " excluding final semester";
                 $details['gpa8'] = 'NA';
                 $details['max8'] = 'NA';
             }

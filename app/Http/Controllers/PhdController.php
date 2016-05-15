@@ -146,7 +146,7 @@ class PhdController extends Controller
 
             if($request->input('ra2') == 'on')
             {
-                $details['pg_gpa'] = 'NA';
+                $details['pg_gpa'] = $details['pg_gpa'] . ' excluding final semester';
             }
             if($request->input('ann') == 'on')
             {
@@ -369,6 +369,9 @@ class PhdController extends Controller
             $others->publications1 = $request->input('details_of_pub1');
             $others->publications2 = $request->input('details_of_pub2');
             $others->publications3 = $request->input('details_of_pub3');
+            $others->publications4 = $request->input('details_of_pub4');
+            $others->publications5 = $request->input('details_of_pub5');
+            $others->publications6 = $request->input('details_of_pub6');
             $others->awards1 = $request->input('awards1');
             $others->awards2 = $request->input('awards2');
             $others->awards3 = $request->input('awards3');
