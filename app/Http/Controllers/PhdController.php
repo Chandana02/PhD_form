@@ -233,7 +233,8 @@ class PhdController extends Controller
                 $form2 = $request->file('form2');
                 if(!$form1 || !$form2)
                 {
-                
+                    $message = 'Both Form-1 and Form-2 are required.';
+                    return View::make('error')->with('message', $message);
                 }
                 else
                 {
@@ -241,7 +242,7 @@ class PhdController extends Controller
                     $extension2 = $request->file('form2')->getClientOriginalExtension();
                     if($extension1 != 'pdf' || $extension2 != 'pdf')
                     {
-                        $message = 'Invalid file format for the uploaded files';
+                        $message = 'PDFs expected for Form-1 and Form-2';
                         return View::make('error')->with('message', $message);
                     }
                 }
@@ -251,14 +252,15 @@ class PhdController extends Controller
                 $form3 = $request->file('form3');
                 if(!$form3)
                 {
-                    
+                    $message = 'Form-3 is required.';
+                    return View::make('error')->with('message', $message);
                 }
                 else
                 {
                     $extension3 = $request->file('form3')->getClientOriginalExtension();
                     if($extension3 != 'pdf')
                     {
-                        $message = 'Invalid file format for the uploaded files';
+                        $message = 'PDF expected for Form-3';
                         return View::make('error')->with('message', $message);
                     }
                 }
