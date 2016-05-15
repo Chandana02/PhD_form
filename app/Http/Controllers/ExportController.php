@@ -74,86 +74,83 @@ class ExportController extends Controller
 		})->export('xls');
     }
 
-    public function singlePhdCandidateExport($reg_number)
+    public function singlePhdCandidateExport($regNo)
     {
-        $regNo = '';
-        $departments = explode('-', $reg_number);
-        for($i = 0; $i < sizeof($departments) - 1; $i++)
-        {
-            $regNo = $regNo.$departments[$i].'/';
-        }
-        $regNo = $regNo.$departments[sizeof($departments) - 1];
-        $reg_appl_no = str_replace('/', '-', $regNo);
+        $regNo = str_replace("-", "/", $regNo);
+        $departments = explode('/', $regNo);
+        $regApplNo = $departments[sizeof($departments) - 1];
 
         $phdCandidatesPersonal = Phd::where('registrationNumber', $regNo)
-                                ->first();
-            $applNo = $phdCandidatesPersonal->applNo;
+                                ->get();
+        $applNo = $phdCandidatesPersonal[0]->applNo;
 
-       
         $phdCandidatesUg = PhdUg::where('applNo', $applNo)
-                                ->first();
+                                ->get();
         $phdCandidatesPg = PhdPg::where('applNo', $applNo)
-                                ->first();
+                                ->get();
         $phdCandidatesPro = PhdPro::where('applNo', $applNo)
-                                ->first();
+                                ->get();
         $phdCandidatesOther = PhdOther::where('applNo', $applNo)
-                                ->first();
+                                ->get();
 
         $phdCandidates = array();
 
-            $personArray = $phdCandidatesPersonal->toArray();
+        for($i = 0; $i < sizeof($phdCandidatesPersonal); $i++)
+        {
+            $personArray = $phdCandidatesPersonal[$i]->toArray();
+            $ugArray = $phdCandidatesUg[$i]->toArray();
+            $pgArray = $phdCandidatesPg[$i]->toArray();
+            $proArray = $phdCandidatesPro[$i]->toArray();
+            $otherArray = $phdCandidatesOther[$i]->toArray();
+            $phdCandidates[$i] = array_merge($personArray, $ugArray);
+            $phdCandidates[$i] = array_merge($phdCandidates[$i], $pgArray);
+            $phdCandidates[$i] = array_merge($phdCandidates[$i], $proArray);
+            $phdCandidates[$i] = array_merge($phdCandidates[$i], $otherArray);
+        }
             
-            $ugArray = $phdCandidatesUg->toArray();
-            $pgArray = $phdCandidatesPg->toArray();
-            $proArray = $phdCandidatesPro->toArray();
-            $otherArray = $phdCandidatesOther->toArray();
-            $phdCandidates = array_merge($personArray, $ugArray);
-            $phdCandidates = array_merge($phdCandidates, $pgArray);
-            $phdCandidates = array_merge($phdCandidates, $proArray);
-            $phdCandidates = array_merge($phdCandidates, $otherArray);
-            
-        
-        Excel::create('Phd Candidates', function($excel) use($phdCandidates) {
+        Excel::create($regApplNo, function($excel) use($phdCandidates) {
             $excel->sheet('Sheet 3', function($sheet) use($phdCandidates) {
                 $sheet->fromArray($phdCandidates);
             });
         })->export('xls');
     }   
 
-    public function singleMsCandidatesExport($reg_number) 
+    public function singleMsCandidatesExport($regNo) 
     {
-        $regNo = '';
-        $departments = explode('-', $reg_number);
-        for($i = 0; $i < sizeof($departments) - 1; $i++)
-        {
-            $regNo = $regNo.$departments[$i].'/';
-        }
-        $regNo = $regNo.$departments[sizeof($departments) - 1];
-        $reg_appl_no = str_replace('/', '-', $regNo);
+        $regNo = str_replace('-', '/', $regNo);
+        $departments = explode('/', $regNo);
+        $regApplNo = $departments[sizeof($departments) - 1];
 
         $msCandidatesPersonal = Ms::where('registrationNumber', $regNo)
-                                ->first();
-         $applNo = $msCandidatesPersonal->applNo;                                
+                                ->get();
+        $applNo = $msCandidatesPersonal[0]->applNo;  
+
         $msCandidatesUg = MsUg::where('applNo', $applNo)
-                                ->first();
+                                ->get();
         $msCandidatesScores = MsScores::where('applNo', $applNo)
-                                ->first();
+                                ->get();
         $msCandidatesPro = MsPro::where('applNo', $applNo)
-                                ->first();
+                                ->get();
         $msCandidatesOther = MsOther::where('applNo', $applNo)
-                                ->first();
+                                ->get();
+
         $msCandidates = array();
-        $personArray = $msCandidatesPersonal->toArray();
-            $ugArray = $msCandidatesUg->toArray();
-            $scoresArray = $msCandidatesScores->toArray();
-            $proArray = $msCandidatesPro->toArray();
-            $otherArray = $msCandidatesOther->toArray();
-            $msCandidates = array_merge($personArray, $ugArray);
-            $msCandidates = array_merge($msCandidates, $scoresArray);
-            $msCandidates = array_merge($msCandidates, $proArray);
-            $msCandidates = array_merge($msCandidates, $otherArray);
-        Excel::create('Ms Candidates', function($excel) use($msCandidates) {
-            $excel->sheet('Sheet 2', function($sheet) use($msCandidates) {
+
+        for($i = 0; $i < sizeof($msCandidatesPersonal); $i++)
+        {
+            $personArray = $msCandidatesPersonal[$i]->toArray();
+            $ugArray = $msCandidatesUg[$i]->toArray();
+            $scoresArray = $msCandidatesScores[$i]->toArray();
+            $proArray = $msCandidatesPro[$i]->toArray();
+            $otherArray = $msCandidatesOther[$i]->toArray();
+            $msCandidates[$i] = array_merge($personArray, $ugArray);
+            $msCandidates[$i] = array_merge($msCandidates[$i], $scoresArray);
+            $msCandidates[$i] = array_merge($msCandidates[$i], $proArray);
+            $msCandidates[$i] = array_merge($msCandidates[$i], $otherArray);
+        }
+
+        Excel::create($regApplNo, function($excel) use($msCandidates) {
+            $excel->sheet('Sheet 4', function($sheet) use($msCandidates) {
                 $sheet->fromArray($msCandidates);
             });
         })->export('xls');
