@@ -6,9 +6,9 @@ $(document).ready(function(){
 		data.email = $('#email').val();
 		data.chalan_no = $('#chalanNo').val();
 		data.appl_categ = $('.applicationCateg option:selected').text();
-		data.department1 = $('#department1').val();
-		data.department2 = $('#department2').val();
-		data.department3 = $('#department3').val();
+		data.department1 = $('#department1_disp').val();
+		data.department2 = $('#department2_disp').val();
+		data.department3 = $('#department3_disp').val();
 		data.email = $('#email').val();
 		data.area_of_research = $('#area_of_research').val();
 		data.father_name = $('#father_name').val();
@@ -86,9 +86,9 @@ $(document).ready(function(){
 		data.chalan_no = $('#chalanNo').val();
 		data.appl_categ = $('.applicationCateg option:selected').text();
 		// console.log(data.appl_categ);
-		data.department1 = $('#department1').val();
-		data.department2 = $('#department2').val();
-		data.department3 = $('#department3').val();
+		data.department1 = $('#department1_disp').val();
+		data.department2 = $('#department2_disp').val();
+		data.department3 = $('#department3_disp').val();
 		data.email = $('#email').val();
 		data.area_of_research = $('#area_of_research').val();
 		data.father_name = $('#father_name').val();
