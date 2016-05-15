@@ -382,6 +382,22 @@ input.validate{
   overflow: visible;
   background: #333 url('http://files.mimoymima.com/images/loading.gif') no-repeat center center;
 }
+fieldset {
+	margin: 30px 0px 50px 0 !important;
+	padding: 40px 20px 0 20px !important;
+	border-radius: 10px;
+}
+fieldset legend {
+	text-align: center;
+	border-radius: 10px;
+	border: 1px solid;
+	padding: 20px !important;
+}
+fieldset .input-field {
+	padding: 30px !important;
+	box-sizing: border-box;
+	width: 100%;
+}
 @media screen and (max-width: 480px) {
 	.card-content span {
 		font-size: 10px;	
