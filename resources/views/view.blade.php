@@ -12,7 +12,7 @@
 				<label for="first_name">Registration Number</label>
 			</div>
 			<div class="center col s8 offset-s2">
-				{!! Form::submit('Submit', array('class'=>'teal darken-1 send-btn btn waves-effect waves-light' )) !!}
+				<button class="teal darken-1 send-btn btn waves-effect waves-light" type="submit">Submit</button>
 			</div>
 
 			

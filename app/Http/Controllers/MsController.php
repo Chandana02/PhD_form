@@ -133,15 +133,27 @@ class MsController extends Controller
                 'employer_details_1' => $request->get('employer_details_1'),
                 'employer_details_2' =>$request->get('employer_details_2'),
                 'employer_details_3' => $request->get('employer_details_3'),
+                'employer_details_4' => $request->get('employer_details_4'),
+                'employer_details_5' =>$request->get('employer_details_5'),
+                'employer_details_6' => $request->get('employer_details_6'),
                 'position1' => $request->get('emp_pos_1'),
                 'position2' => $request->get('emp_pos_2'),
                 'position3' => $request->get('emp_pos_3'),
+                'position4' => $request->get('emp_pos_4'),
+                'position5' => $request->get('emp_pos_5'),
+                'position6' => $request->get('emp_pos_6'),
                 'from1' => $request->get('emp_from_1'),
                 'from2' => $request->get('emp_from_2'),
                 'from3' => $request->get('emp_from_3'),
+                'from4' => $request->get('emp_from_4'),
+                'from5' => $request->get('emp_from_5'),
+                'from6' => $request->get('emp_from_6'),
                 'to1' => $request->get('emp_to_1'),
                 'to2' => $request->get('emp_to_2'),
                 'to3' => $request->get('emp_to_3'),
+                'to4' => $request->get('emp_to_4'),
+                'to5' => $request->get('emp_to_5'),
+                'to6' => $request->get('emp_to_6'),
                 'max1' => $request->get('max1'),
                 'max2' => $request->get('max2'),
                 'max3' => $request->get('max3'),
@@ -341,15 +353,27 @@ class MsController extends Controller
 			$pro->proexp1 = $request->get('employer_details_1');
             $pro->proexp2 = $request->get('employer_details_2');
             $pro->proexp3 = $request->get('employer_details_3');
+            $pro->proexp4 = $request->get('employer_details_4');
+            $pro->proexp5 = $request->get('employer_details_5');
+            $pro->proexp6 = $request->get('employer_details_6');
             $pro->position1 = $request->get('emp_pos_1');
             $pro->position2 = $request->get('emp_pos_2');
             $pro->position3 = $request->get('emp_pos_3');
+            $pro->position4 = $request->get('emp_pos_4');
+            $pro->position5 = $request->get('emp_pos_5');
+            $pro->position6 = $request->get('emp_pos_6');
             $pro->from1 = $request->get('emp_from_1');
             $pro->from2 = $request->get('emp_from_2');
             $pro->from3 = $request->get('emp_from_3');
+            $pro->from4 = $request->get('emp_from_4');
+            $pro->from5 = $request->get('emp_from_5');
+            $pro->from6 = $request->get('emp_from_6');
             $pro->to1 = $request->get('emp_to_1');
             $pro->to2 = $request->get('emp_to_2');
             $pro->to3 = $request->get('emp_to_3');
+            $pro->to4 = $request->get('emp_to_4');
+            $pro->to5 = $request->get('emp_to_5');
+            $pro->to6 = $request->get('emp_to_6');
 
             $pro->save();
 
