@@ -400,6 +400,18 @@
 			      		 <textarea id="details_of_pub3" placeholder="Enter Details here.." class="materialize-textarea" name="details_of_pub3" maxlength="200" value="{!! $details->publications3 !!}"></textarea>
 			      	</div>
 			      	<div class="col l4 s12">
+			      		<p for="textarea1">Publications:</p><br>
+			      		 <textarea id="details_of_pub4" placeholder="Enter Details here.." class="materialize-textarea" name="details_of_pub4" maxlength="200" value="{!! $details->publications4 !!}"></textarea>
+			      	</div>
+			      	<div class="col l4 s12">
+			      		<p for="textarea1">Publications:</p><br>
+			      		 <textarea id="details_of_pub5" placeholder="Enter Details here.." class="materialize-textarea" name="details_of_pub5" maxlength="200" value="{!! $details->publications5 !!}"></textarea>
+			      	</div>
+			      	<div class="col l4 s12">
+			      		<p for="textarea1">Publications:</p><br>
+			      		 <textarea id="details_of_pub6" placeholder="Enter Details here.." class="materialize-textarea" name="details_of_pub6" maxlength="200" value="{!! $details->publications6 !!}"></textarea>
+			      	</div>
+			      	<div class="col l4 s12">
 			      		<p for="textarea1">Awards/ Prizes/Sports/NCC etc</p><br>
 			      		 <textarea id="awards1" placeholder="Enter Details here.." class="materialize-textarea" name="awards1" maxlength="200" value="{!! $details->awards1 !!}"></textarea>
 			      	</div>
@@ -410,6 +422,18 @@
 			      	<div class="col l4 s12">
 			      		<p for="textarea1">Awards/ Prizes/Sports/NCC etc</p><br>
 			      		 <textarea id="awards3" placeholder="Enter Details here.." class="materialize-textarea" name="awards3" maxlength="200" value="{!! $details->awards3 !!}"></textarea>
+			      	</div>
+			      	<div class="col l4 s12">
+			      		<p for="textarea1">Awards/ Prizes/Sports/NCC etc</p><br>
+			      		 <textarea id="awards4" placeholder="Enter Details here.." class="materialize-textarea" name="awards4" maxlength="200" value="{!! $details->awards4 !!}"></textarea>
+			      	</div>
+			      	<div class="col l4 s12">
+			      		<p for="textarea1">Awards/ Prizes/Sports/NCC etc</p><br>
+			      		 <textarea id="awards5" placeholder="Enter Details here.." class="materialize-textarea" name="awards5" maxlength="200" value="{!! $details->awards5 !!}"></textarea>
+			      	</div>
+			      	<div class="col l4 s12">
+			      		<p for="textarea1">Awards/ Prizes/Sports/NCC etc</p><br>
+			      		 <textarea id="awards6" placeholder="Enter Details here.." class="materialize-textarea" name="awards6" maxlength="200" value="{!! $details->awards6 !!}"></textarea>
 			      	</div>
 			      </div>
 
@@ -465,6 +489,54 @@
 			      		 	<input id="emp_to_3" type="date" class="validate" name="emp_to_3" maxlength="100" value="{!! $details->to3 !!}">
 			      		 </div>
 			      	</div>
+		      	<div class="col s12 l12 emp_details">
+		      		<p for="textarea1">Name & Address of Employer 4</p><br>
+		      		 <textarea id="employer_details_4" placeholder="Enter Details here.." class="materialize-textarea" name="employer_details_4" value="{!! $details->proexp4 !!}"></textarea>
+
+		      		 <p>Position Held:</p>
+		      		 <input id="emp_pos_4" type="text" class="validate" name="emp_pos_4" maxlength="100" value="{!! $details->position4 !!}">
+
+		      		 <div class="col l6 s6">
+		      		 	<p>From:</p>
+		      		 	<input id="emp_from_4" type="date" class="validate" name="emp_from_4" maxlength="100" value="{!! $details->from4 !!}">
+		      		 </div>
+		      		 <div class="col l6 s6">
+		      		 	<p>To:</p>
+		      		 	<input id="emp_to_4" type="date" class="validate" name="emp_to_4" maxlength="100" value="{!! $details->to4 !!}">
+		      		 </div>
+		      	</div>
+		      	<div class="col s12 l12 emp_details">
+		      		<p for="textarea1">Name & Address of Employer 5</p><br>
+		      		 <textarea id="employer_details_5" placeholder="Enter Details here.." class="materialize-textarea" name="employer_details_5" value="{!! $details->proexp5 !!}"></textarea>
+
+		      		 <p>Position Held:</p>
+		      		 <input id="emp_pos_5" type="text" class="validate" name="emp_pos_5" maxlength="100" value="{!! $details->position5 !!}">
+
+		      		 <div class="col l6 s6">
+		      		 	<p>From:</p>
+		      		 	<input id="emp_from_5" type="date" class="validate" name="emp_from_5" maxlength="100" value="{!! $details->from5 !!}">
+		      		 </div>
+		      		 <div class="col l6 s6">
+		      		 	<p>To:</p>
+		      		 	<input id="emp_to_5" type="date" class="validate" name="emp_to_5" maxlength="100" value="{!! $details->to5 !!}">
+		      		 </div>
+		      	</div>
+		      	<div class="col s12 l12 emp_details">
+		      		<p for="textarea1">Name & Address of Employer 6</p><br>
+		      		 <textarea id="employer_details_6" placeholder="Enter Details here.." class="materialize-textarea" name="employer_details_6" value="{!! $details->proexp6 !!}"></textarea>
+
+		      		 <p>Position Held:</p>
+		      		 <input id="emp_pos_6" type="text" class="validate" name="emp_pos_6" maxlength="100" value="{!! $details->position6 !!}">
+
+		      		 <div class="col l6 s6">
+		      		 	<p>From:</p>
+		      		 	<input id="emp_from_6" type="date" class="validate" name="emp_from_6" maxlength="100" value="{!! $details->from6 !!}">
+		      		 </div>
+		      		 <div class="col l6 s6">
+		      		 	<p>To:</p>
+		      		 	<input id="emp_to_6" type="date" class="validate" name="emp_to_6" maxlength="100" value="{!! $details->to6 !!}">
+		      		 </div>
+		      	</div>
 			      </div>
 
 			      <div class="row">

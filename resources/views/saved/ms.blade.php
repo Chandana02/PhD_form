@@ -449,6 +449,54 @@
 		      		 	<input id="emp_to_3" type="date" class="validate" name="emp_to_3" maxlength="100" value="{!! $details->to3 !!}">
 		      		 </div>
 		      	</div>
+		      	<div class="col s12 l12 emp_details">
+		      		<p for="textarea1">Name & Address of Employer 4</p><br>
+		      		 <textarea id="employer_details_4" placeholder="Enter Details here.." class="materialize-textarea" name="employer_details_4" value="{!! $details->proexp4 !!}"></textarea>
+
+		      		 <p>Position Held:</p>
+		      		 <input id="emp_pos_4" type="text" class="validate" name="emp_pos_4" maxlength="100" value="{!! $details->position4 !!}">
+
+		      		 <div class="col l6 s6">
+		      		 	<p>From:</p>
+		      		 	<input id="emp_from_4" type="date" class="validate" name="emp_from_4" maxlength="100" value="{!! $details->from4 !!}">
+		      		 </div>
+		      		 <div class="col l6 s6">
+		      		 	<p>To:</p>
+		      		 	<input id="emp_to_4" type="date" class="validate" name="emp_to_4" maxlength="100" value="{!! $details->to4 !!}">
+		      		 </div>
+		      	</div>
+		      	<div class="col s12 l12 emp_details">
+		      		<p for="textarea1">Name & Address of Employer 5</p><br>
+		      		 <textarea id="employer_details_5" placeholder="Enter Details here.." class="materialize-textarea" name="employer_details_5" value="{!! $details->proexp5 !!}"></textarea>
+
+		      		 <p>Position Held:</p>
+		      		 <input id="emp_pos_5" type="text" class="validate" name="emp_pos_5" maxlength="100" value="{!! $details->position5 !!}">
+
+		      		 <div class="col l6 s6">
+		      		 	<p>From:</p>
+		      		 	<input id="emp_from_5" type="date" class="validate" name="emp_from_5" maxlength="100" value="{!! $details->from5 !!}">
+		      		 </div>
+		      		 <div class="col l6 s6">
+		      		 	<p>To:</p>
+		      		 	<input id="emp_to_5" type="date" class="validate" name="emp_to_5" maxlength="100" value="{!! $details->to5 !!}">
+		      		 </div>
+		      	</div>
+		      	<div class="col s12 l12 emp_details">
+		      		<p for="textarea1">Name & Address of Employer 6</p><br>
+		      		 <textarea id="employer_details_6" placeholder="Enter Details here.." class="materialize-textarea" name="employer_details_6" value="{!! $details->proexp6 !!}"></textarea>
+
+		      		 <p>Position Held:</p>
+		      		 <input id="emp_pos_6" type="text" class="validate" name="emp_pos_6" maxlength="100" value="{!! $details->position6 !!}">
+
+		      		 <div class="col l6 s6">
+		      		 	<p>From:</p>
+		      		 	<input id="emp_from_6" type="date" class="validate" name="emp_from_6" maxlength="100" value="{!! $details->from6 !!}">
+		      		 </div>
+		      		 <div class="col l6 s6">
+		      		 	<p>To:</p>
+		      		 	<input id="emp_to_6" type="date" class="validate" name="emp_to_6" maxlength="100" value="{!! $details->to6 !!}">
+		      		 </div>
+		      	</div>
 		      </div>
 
 		      <div class="row">
