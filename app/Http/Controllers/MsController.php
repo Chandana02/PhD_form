@@ -214,7 +214,7 @@ class MsController extends Controller
                 $signExt = $request->file('sign')->getClientOriginalExtension();
             if($signExt == 'jpg' || $signExt == 'png' || $signExt == 'jpeg')
             {
-                list($width, $height) = getimagesize($file);
+                list($width, $height) = getimagesize($sign);
                 if($width < 413 && $height < 531)
                 {
 
@@ -250,7 +250,7 @@ class MsController extends Controller
                     $extension3 = $request->file('form1')->getClientOriginalExtension();
                     if($extension3 != 'pdf')
                     {
-                        $message = 'Invalid file format for the uploaded file';
+                        $message = 'Upload a PDF file for the certificate.';
                         return View::make('error')->with('message', $message);
                     }
                 }
@@ -274,6 +274,11 @@ class MsController extends Controller
                 $sign = $sign->move(public_path().'/uploads/MS/'.$reg_number_modified, 'sign.' . $signExt);
                 $sign_extension = $signExt;
             }
+            if($cert)
+            {
+                $cert = $cert->move(public_path().'/uploads/MS/'.$reg_number_modified, 'cert.pdf');
+            }
+
             $details['imagePath'] = $image_extension . "," . $sign_extension;
 
             $candidate = new Ms();
@@ -306,7 +311,7 @@ class MsController extends Controller
 
             if($request->get('ra3') == 'on')
             {
-                $details['ug_gpa'] = 'NA';
+                $details['ug_gpa'] = $details['ug_gpa'] . " excluding final semester";
                 $details['gpa8'] = 'NA';
                 $details['max8'] = 'NA';
             }

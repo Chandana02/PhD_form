@@ -229,7 +229,7 @@ $(document).ready(function(){
 
 						var dob = $('#dob').val();
 
-						window.location = '/fetch/'+ categ + '/' + applNo + '/' + dob;
+						window.location = '/';
 	        		
 
 	        	}
@@ -254,7 +254,7 @@ $(document).ready(function(){
 		applNo = applNo + dept[dept.length - 1];
 
 		var dob = $('#dob').val();
-		window.location = '/fetch/'+ categ + '/' + applNo + '/' + dob;
+		window.location = '/';
 	});
 	//validating front-end in form 3
 	$('.valid1').click(function(){

@@ -146,7 +146,7 @@ class PhdController extends Controller
 
             if($request->input('ra2') == 'on')
             {
-                $details['pg_gpa'] = 'NA';
+                $details['pg_gpa'] = $details['pg_gpa'] . ' excluding final semester';
             }
             if($request->input('ann') == 'on')
             {
@@ -204,7 +204,7 @@ class PhdController extends Controller
                 $signExt = $request->file('sign')->getClientOriginalExtension();
             if($signExt == 'jpg' || $signExt == 'png' || $signExt == 'jpeg')
             {
-                list($width, $height) = getimagesize($file);
+                list($width, $height) = getimagesize($sign);
                 if($width < 413 && $height < 531)
                 {
 
@@ -233,7 +233,8 @@ class PhdController extends Controller
                 $form2 = $request->file('form2');
                 if(!$form1 || !$form2)
                 {
-                
+                    $message = 'Both Form-1 and Form-2 are required.';
+                    return View::make('error')->with('message', $message);
                 }
                 else
                 {
@@ -241,7 +242,7 @@ class PhdController extends Controller
                     $extension2 = $request->file('form2')->getClientOriginalExtension();
                     if($extension1 != 'pdf' || $extension2 != 'pdf')
                     {
-                        $message = 'Invalid file format for the uploaded files';
+                        $message = 'PDFs expected for Form-1 and Form-2';
                         return View::make('error')->with('message', $message);
                     }
                 }
@@ -251,14 +252,15 @@ class PhdController extends Controller
                 $form3 = $request->file('form3');
                 if(!$form3)
                 {
-                    
+                    $message = 'Form-3 is required.';
+                    return View::make('error')->with('message', $message);
                 }
                 else
                 {
                     $extension3 = $request->file('form3')->getClientOriginalExtension();
                     if($extension3 != 'pdf')
                     {
-                        $message = 'Invalid file format for the uploaded files';
+                        $message = 'PDF expected for Form-3';
                         return View::make('error')->with('message', $message);
                     }
                 }
@@ -369,6 +371,9 @@ class PhdController extends Controller
             $others->publications1 = $request->input('details_of_pub1');
             $others->publications2 = $request->input('details_of_pub2');
             $others->publications3 = $request->input('details_of_pub3');
+            $others->publications4 = $request->input('details_of_pub4');
+            $others->publications5 = $request->input('details_of_pub5');
+            $others->publications6 = $request->input('details_of_pub6');
             $others->awards1 = $request->input('awards1');
             $others->awards2 = $request->input('awards2');
             $others->awards3 = $request->input('awards3');
