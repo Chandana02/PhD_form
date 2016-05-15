@@ -204,7 +204,7 @@ class PhdController extends Controller
                 $signExt = $request->file('sign')->getClientOriginalExtension();
             if($signExt == 'jpg' || $signExt == 'png' || $signExt == 'jpeg')
             {
-                list($width, $height) = getimagesize($file);
+                list($width, $height) = getimagesize($sign);
                 if($width < 413 && $height < 531)
                 {
 

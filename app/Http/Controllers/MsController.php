@@ -214,7 +214,7 @@ class MsController extends Controller
                 $signExt = $request->file('sign')->getClientOriginalExtension();
             if($signExt == 'jpg' || $signExt == 'png' || $signExt == 'jpeg')
             {
-                list($width, $height) = getimagesize($file);
+                list($width, $height) = getimagesize($sign);
                 if($width < 413 && $height < 531)
                 {
 
@@ -278,7 +278,7 @@ class MsController extends Controller
             {
                 $cert = $cert->move(public_path().'/uploads/MS/'.$reg_number_modified, 'cert.pdf');
             }
-            
+
             $details['imagePath'] = $image_extension . "," . $sign_extension;
 
             $candidate = new Ms();
