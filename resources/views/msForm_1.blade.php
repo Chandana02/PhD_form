@@ -188,19 +188,60 @@
 
 @section('script')
 <script type="text/javascript">
-    $(document ).ready(function(){
-        $('select').material_select();
+    function safeMaterialSelect($el, update) {
+        //alert($el.find('option').length);
+        if(update)
+            $el.material_select('update');
+        else
+            $el.material_select();
+
         // https://github.com/Dogfalo/materialize/issues/1861
-        $("select[required]").css({display: "inline", height: 0, padding: 0, width: 0, position: "absolute"});
+        $el.css({display: "inline", height: 0, padding: 0, width: 0, position: 'absolute'});
         // so that the select input that's made invisible above doesn't get focus on using tabstops,
         // creating inconsistencies potentially
-        $('select').attr('tabindex', "-1");
+        $el.attr('tabindex', "-1");
+    }
+    $(document ).ready(function(){
+        $('select').each(function(i, el) {
+            safeMaterialSelect($(el));
+        });
 
         var x = new Date().getFullYear();
         var y = x+1;
         console.log(x);
         var p = '<h4 class="center">APPLICATION FOR ADMISSION TO M.S.<br> PROGRAMME ('+ x + '-' + y + ')</h4>';
         $('.heading').append(p);
+
+        var allDepartments = $("#department1 option").clone();
+        var currentlySelected = {
+            "department1": $("#department1").val(), 
+            "department2": $("#department2").val(),
+            "department3": $("#department3").val()
+        };
+
+        function changeSomeDepartment(e) {
+            var curElem = this;
+            var curVal = curElem.value;
+            var prevVal = currentlySelected[this.id];
+
+            var $otherTwo = $("#department1,#department2,#department3").not($(curElem));
+            $otherTwo.each(function(i, el) {
+                var originalValue = el.value;
+                var $el = $(el);
+
+                if(originalValue == curVal)
+                    $el.val('');
+
+                //alert($el.get());
+                $el.find("option[value='" + curVal + "']").prop('disabled', true);
+                $el.find("option[value='" + prevVal + "']").prop('disabled', false);
+                safeMaterialSelect( $el, true );
+            });
+
+            currentlySelected[this.id] = curVal;
+        }
+
+        $("#department1,#department2,#department3").change(changeSomeDepartment);
     });
 </script>
 @endsection
