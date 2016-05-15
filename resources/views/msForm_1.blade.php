@@ -154,16 +154,22 @@
             <legend class="vlarge" style="padding: 5px">Contact</legend>
             <div class="row">
                 <div class="input-field col l6"> 
-                    <span for="textarea1">*Address for Communication:</span><br>              
-                    <textarea required id="addr_for_commn" class="materialize-textarea" name="addr_for_commn" maxlength="200"></textarea>
-                    <span>*Mobile Number:</span>
-                    <input required type="number" min="7000000000" max="9999999999" class="validate" name="mobile" id="mobile"></input>
+                    <span for="textarea1">*Address for Communication:</span><br>
+                    <textarea required id="addr_for_commn" class="materialize-textarea" name="addr_for_commn" maxlength="200" value="hey"></textarea>
                 </div>
-                <div class="input-field col l6 ">
+                <div class="input-field col l6">
                     <span for="textarea1">*Permanent Address:</span><br>
                     <textarea required id="permanent_addr" class="materialize-textarea" name="permanent_addr" maxlength="200"></textarea>
+                </div>
+            </div>
+            <div class="row">
+                <div class="input-field col l6 ">
+                    <span>*Mobile Number:</span>
+                    <input required type="number" min="7000000000" max="9999999999" class="validate" name="mobile" id="mobile" />
+                </div>
+                <div class="input-field col l6">
                     <span>Land-Line Number:</span>
-                    <input id="landline" type="text" class="validate" name="landline" >
+                    <input id="landline" type="text" class="validate" name="landline" />
                 </div>
             </div>
         </fieldset>
