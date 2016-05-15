@@ -3,7 +3,7 @@
 @section('title', 'Ph.D Registration Form')
 
 @section('headerIncludes')
-    <script src="{{URL::asset('assets/js/common.js')}}"></script>
+<script src="{{URL::asset('assets/js/common.js')}}"></script>
 @endsection
 
 @section('departmentsList')
@@ -28,72 +28,76 @@
 @endsection
 
 @section('body')
-	<div class="blur">
-		<div class="center preloader" hidden="true">
-			<img src="{{URL::asset('assets/images/preloader.gif')}}">
-		</div>
+<div class="blur">
+	<div class="center preloader" hidden="true">
+		<img src="{{URL::asset('assets/images/preloader.gif')}}">
 	</div>
+</div>
 
 
-	<div class="heading">
+<div class="heading">
 
-	</div>
+</div>
 
-	<div class="container main">
-		<div class="row text-center">
-			<div class="space-medium"></div>
-			<div class="divider"></div>
-			<div class="divider"></div>
-		</div>
+<div class="container main">
+	<div class="row text-center">
 		<div class="space-medium"></div>
+		<div class="divider"></div>
+		<div class="divider"></div>
+	</div>
+	<div class="space-medium"></div>
 
-		<input type="text" hidden value="phd" class="checker" />		
+	<input type="text" hidden value="phd" class="checker" />		
 
-		<p class="vlarge">Applicant Details</p>
 
-		<div class="col s12">
+	<div class="col s12">
 
+		<fieldset>
+			<legend>Applicant Details</legend>
 			<div class="row dept">
 				<div class="input-field col l6 s6 ">
+					<span class="light">Department 1</span>
 					<select name="department1" required id="department1">
 						@yield('departmentsList')
 					</select>
-					<label>Department 1</label>
 				</div>
 
 				<div class="input-field col l6 s6 ">
+					<span class="light">Department 2</span>
 					<select name="department2" id="department2">
 						@yield('departmentsList')
 					</select>
-					<label>Department 2</label>
 				</div>
 
 				<div class="input-field col l6 s6 ">
+					<span class="light">Department 3</span>
 					<select name="department3" id="department3">
 						@yield('departmentsList')
 					</select>
-					<label>Department 3</label>
 				</div>
 
 
 				<div class="input-field col s6 l6">
+					<span class="light">*Email:</span>
 					<input id="email" name="email" type="email" class="validate" required>
-					<label for="last_name">*Email:</label>
 				</div>
 
 				<div class="input-field col l12 s12">
 					<span class="light">*Area of Research:</span>
 					<input required placeholder="Area of Research" id="area_of_research" type="text" class="validate" name="area_of_research" maxlength="50">
 				</div>
-			</div>      
+			</div>
+		</fieldset>
 
+		<fieldset>
+			<legend class="vlarge" style="padding: 5px">Personal Details</legend>
 			<div class="row">
 				<div class="input-field col l6 s6">
 					<span class="light">*Name:</span>
 					<input required placeholder="Name of Candidate" id="name" type="text" class="validate" name="name" maxlength="32">
 				</div>
 				<div class="input-field col l6  s6">
-					<span class="light">*Father's Name/Guardian's Name/Husband's Name:</span>
+					<span class="light">*Father's/Guardian's/Husband's Name:</span>
 					<input required placeholder="Father's/Guardian Name" id="father_name" type="text" class="validate" name="father_name" maxlength="32">
 				</div>
 			</div>
@@ -156,48 +160,56 @@
 					<span class="light">*Nationality:</span>
 					<input required placeholder="Nationality" id="nationality" type="text" class="validate" name="nationality" maxlength="32">
 				</div>
-			</div>           
+			</div>
+		</fieldset>
 
+		<fieldset>
+			<legend class="vlarge">Contact</legend>
 			<div class="row">
 				<div class="input-field col l6"> 
-					<span for="textarea1">*Address for Communication:</span><br>     		  
+					<span for="textarea1">*Address for Communication:</span><br>
 					<textarea required id="addr_for_commn" class="materialize-textarea" name="addr_for_commn" maxlength="200" value="hey"></textarea>
+				</div>
+				<div class="input-field col l6">
+					<span for="textarea1">*Permanent Address:</span><br>
+					<textarea required id="permanent_addr" class="materialize-textarea" name="permanent_addr" maxlength="200"></textarea>
+				</div>
+			</div>
+			<div class="row">
+				<div class="input-field col l6 ">
 					<span>*Mobile Number:</span>
 					<input required type="number" min="7000000000" max="9999999999" class="validate" name="mobile" id="mobile" />
 				</div>
-				<div class="input-field col l6 ">
-					<span for="textarea1">*Permanent Address:</span><br>
-					<textarea required id="permanent_addr" class="materialize-textarea" name="permanent_addr" maxlength="200"></textarea>
-
-
+				<div class="input-field col l6">
 					<span>Land-Line Number:</span>
 					<input id="landline" type="text" class="validate" name="landline" />
 				</div>
 			</div> 
+		</fieldset>
 
-		</div>
-		<p>(*) indicates that it's a required field.</p> 
-	</div>    
-
-	<div class="center">
-		<a class="valid teal darken-1 send-btn btn waves-effect waves-light">Submit</a>
 	</div>
+	<p>(*) indicates that it's a required field.</p> 
+</div>    
 
-	<div id="regNo" class="modal center">
-		<div class="modal-content">
-			<div class="regno"></div>
-		</div>
+<div class="center">
+	<a class="valid teal darken-1 send-btn btn waves-effect waves-light">Submit</a>
+</div>
+
+<div id="regNo" class="modal center">
+	<div class="modal-content">
+		<div class="regno"></div>
 	</div>
+</div>
 
 
-	<div class="modal center" id="error">
-		<div class="modal-content">
-			<div class="error"></div>
-		</div>
-		<div class="modal-footer">
-			<a class="btn modal-action modal-close waves-effect waves-green btn-flat">Close</a>
-		</div>
-	</div>	  
+<div class="modal center" id="error">
+	<div class="modal-content">
+		<div class="error"></div>
+	</div>
+	<div class="modal-footer">
+		<a class="btn modal-action modal-close waves-effect waves-green btn-flat">Close</a>
+	</div>
+</div>	  
 
 @endsection
 
@@ -211,53 +223,53 @@
 			$el.material_select();
 
 		// https://github.com/Dogfalo/materialize/issues/1861
-        $el.css({display: "inline", height: 0, padding: 0, width: 0, position: 'absolute'});
+		$el.css({display: "inline", height: 0, padding: 0, width: 0, position: 'absolute'});
         // so that the select input that's made invisible above doesn't get focus on using tabstops,
         // creating inconsistencies potentially
         $el.attr('tabindex', "-1");
-	}
-	$(document ).ready(function(){
-		$('select').each(function(i, el) {
-			safeMaterialSelect($(el));
-		});
-		
-		var x = new Date().getFullYear();
-		var y = x+1;
-		var p = '<h4 class="center">APPLICATION FOR ADMISSION TO Ph.D.<br> PROGRAMME ('+ x + '-' + y+ ')</h4>';
-		$('.heading').append(p);
+    }
+    $(document ).ready(function(){
+    	$('select').each(function(i, el) {
+    		safeMaterialSelect($(el));
+    	});
 
-		var allDepartments = $("#department1 option").clone();
-		var currentlySelected = {
-			"department1": $("#department1").val(), 
-			"department2": $("#department2").val(),
-			"department3": $("#department3").val()
-		};
+    	var x = new Date().getFullYear();
+    	var y = x+1;
+    	var p = '<h4 class="center">APPLICATION FOR ADMISSION TO Ph.D.<br> PROGRAMME ('+ x + '-' + y+ ')</h4>';
+    	$('.heading').append(p);
 
-		function changeSomeDepartment(e) {
-			var curElem = this;
-			var curVal = curElem.value;
-			var prevVal = currentlySelected[this.id];
+    	var allDepartments = $("#department1 option").clone();
+    	var currentlySelected = {
+    		"department1": $("#department1").val(), 
+    		"department2": $("#department2").val(),
+    		"department3": $("#department3").val()
+    	};
 
-			var $otherTwo = $("#department1,#department2,#department3").not($(curElem));
-			$otherTwo.each(function(i, el) {
-				if(curVal == "")
-                    return;
-				var originalValue = el.value;
-				var $el = $(el);
+    	function changeSomeDepartment(e) {
+    		var curElem = this;
+    		var curVal = curElem.value;
+    		var prevVal = currentlySelected[this.id];
 
-				if(originalValue == curVal)
-					$el.val('');
+    		var $otherTwo = $("#department1,#department2,#department3").not($(curElem));
+    		$otherTwo.each(function(i, el) {
+    			if(curVal == "")
+    				return;
+    			var originalValue = el.value;
+    			var $el = $(el);
 
-				$el.find("option[value='" + prevVal + "']").prop('disabled', false);
-				$el.find("option[value='" + curVal + "']").prop('disabled', true);
-				safeMaterialSelect( $el, true );
-			});
+    			if(originalValue == curVal)
+    				$el.val('');
 
-			currentlySelected[this.id] = curVal;
-		}
+    			$el.find("option[value='" + prevVal + "']").prop('disabled', false);
+    			$el.find("option[value='" + curVal + "']").prop('disabled', true);
+    			safeMaterialSelect( $el, true );
+    		});
 
-		$("#department1,#department2,#department3").change(changeSomeDepartment).trigger('change');
+    		currentlySelected[this.id] = curVal;
+    	}
 
-	});
+    	$("#department1,#department2,#department3").change(changeSomeDepartment).trigger('change');
+
+    });
 </script>
 @endsection
