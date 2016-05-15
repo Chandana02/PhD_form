@@ -131,7 +131,7 @@
           </tr>
           <tr>
             <td><b>Landline Number:</b></td>
-            <td>{!! $candidates['landline'] !!}</td>
+            <td>{!! $candidates['lanline'] !!}</td>
             
           </tr>
         </tbody>
@@ -426,7 +426,7 @@
           </tr>
           <tr>
             <td><b>Landline Number:</b></td>
-            <td>{!! $candidates['landline'] !!}</td>
+            <td>{!! $candidates['lanline'] !!}</td>
             
           </tr>
         </tbody>
