@@ -1,3 +1,13 @@
+@extends('layouts.master')
+
+@section('title', 'Ph.D Registration Form')
+
+@section('headerIncludes')
+	<script src="{{URL::asset('assets/js/common.js')}}"></script>
+	<script src="{{URL::asset('assets/js/preview.js')}}"></script>
+@endsection
+
+
 	<!DOCTYPE html>
 	<html>
 	<head>
