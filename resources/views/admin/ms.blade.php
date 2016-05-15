@@ -40,12 +40,12 @@
       <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
       <ul class="hide-on-med-and-down">
         <li><a href="../home">Home</a></li>
-        <li><a href="../phd">PhD. Applicants</a></li>
+        <li><a href="../phd">Ph.D Applicants</a></li>
         <li><a href="/logout">Logout</a></li>
       </ul>
       <ul class="side-nav" id="mobile-demo">
        <li><a href="../home">Home</a></li>
-        <li><a href="../phd">PhD. Applicants</a></li>
+        <li><a href="../phd">Ph.D Applicants</a></li>
         <li><a href="/logout">Logout</a></li>
       </ul>
     </div>
@@ -139,7 +139,7 @@
 </div>
    <div class="space-medium"></div>
 <div class="center">
-   <a class="waves-effect waves-light btn" href="../phd">View PhD. applicants</a>
+   <a class="waves-effect waves-light btn" href="../phd">View Ph.D applicants</a>
   </div>
 
 
