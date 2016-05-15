@@ -80,15 +80,16 @@ class SaveController extends Controller
 
         $email = $request->input('email');
         Mail::send(
-            'emails.regnophd', 
+            'emails.finalPHD', 
             [
+                'name' => $candidate->name,
                 'applNo'=> $reg_number,
                 'dashedApplNo' => str_replace('/', '-', $reg_number),
                 'dob' => $candidate->dob
             ],
             function ($m) use($email) {
                 $m->from('phdsection@nitt.edu', 'NITT Admissions');
-                $m->to($email, 'Applicant' )->subject('Greetings from NITT!');
+                $m->to($email, 'Applicant' )->subject('NIT-Trichy Ph.D. Admissions, July 2016');
             }
         );
 
@@ -163,15 +164,16 @@ class SaveController extends Controller
 
         $email = $request->input('email');
         Mail::send(
-            'emails.regnoms', 
+            'emails.finalMS', 
             [
+                'name' => $candidate->name,
                 'applNo'=> $reg_number,
                 'dashedApplNo' => str_replace('/', '-', $reg_number),
                 'dob' => $candidate->dob
             ],
             function ($m) use($email) {
                 $m->from('phdsection@nitt.edu', 'NITT Admissions');
-                $m->to($email, 'Applicant' )->subject('Greetings from NITT!');
+                $m->to($email, 'Applicant' )->subject('NIT-Trichy M.S. Admissions, July 2016');
             }
         );
 
