@@ -3,82 +3,87 @@
 @section('title', 'M.S. Registration Form')
 
 @section('headerIncludes')
-    <script src="{{URL::asset('assets/js/common.js')}}"></script>
+<script src="{{URL::asset('assets/js/common.js')}}"></script>
 @endsection
 
 @section('departmentsList')
-    <option value="" selected>Choose Department</option>
-    <option value="CS">Computer Science and Engineering</option>
-    <option value="CL">Chemical Engineering</option>
-    <option value="CV">Civil Engineering </option>
-    <option value="CC">CECASE</option>
-    <option value="EN">Energy Engineering</option>
-    <option value="EE">Electrical &amp; Electronics Engineering</option>
-    <option value="EC">Electronics &amp; Communication Engineering</option>
-    <option value="ME">Mechanical Engineering</option>
-    <option value="PR">Production Engineering</option>
-    <option value="IC">Instrumentation And Control Engineering</option>
-    <option value="MME">Metalurgy and Material Sciences</option>
-    <option value="PH">Physics</option>
+<option value="" selected>Choose Department</option>
+<option value="CS">Computer Science and Engineering</option>
+<option value="CL">Chemical Engineering</option>
+<option value="CV">Civil Engineering </option>
+<option value="CC">CECASE</option>
+<option value="EN">Energy Engineering</option>
+<option value="EE">Electrical &amp; Electronics Engineering</option>
+<option value="EC">Electronics &amp; Communication Engineering</option>
+<option value="ME">Mechanical Engineering</option>
+<option value="PR">Production Engineering</option>
+<option value="IC">Instrumentation And Control Engineering</option>
+<option value="MME">Metalurgy and Material Sciences</option>
+<option value="PH">Physics</option>
 @endsection
 
 @section('body')
-    <div class="blur">
-        <div class="center preloader" hidden="true">
-            <img src="{{URL::asset('assets/images/preloader.gif')}}">
-        </div>
+<div class="blur">
+    <div class="center preloader" hidden="true">
+        <img src="{{URL::asset('assets/images/preloader.gif')}}">
     </div>
+</div>
 
-    <div class="heading">
+<div class="heading">
 
+</div>
+
+<div class="container main">
+    <div class="row text-center">
+        <div class="space-medium"></div>
+        <div class="divider"></div><div class="divider"></div>
     </div>
-
-    <div class="container main">
-        <div class="row text-center">
-            <div class="space-medium"></div>
-            <div class="divider"></div><div class="divider"></div>
-        </div>
-        <div class="space-medium"></div>            
-        <input type="text" hidden value="ms" class="checker" />
-        <p class="vlarge">Applicant Details</p>
-        <div class="col s12">
+    <div class="space-medium"></div>            
+    <input type="text" hidden value="ms" class="checker" />
+    <div class="col s12">
+        <fieldset style="padding: 20px">
+            <legend class="vlarge" style="padding: 5px">Applicant Details</legend>
             <div class="row dept">
                 <div class="input-field col l6 s6 ">
+                    <span class="light">Department 1</span>
                     <select name="department1"  id="department1">
                         @yield('departmentsList')
                     </select>
-                    <label>Department 1</label>
                 </div>
                 <div class="input-field col l6 s6 ">
+                    <span class="light">Department 2</span>
                     <select name="department2" required id="department2">
                         @yield('departmentsList')
                     </select>
-                    <label>Department 2</label>
                 </div>
                 <div class="input-field col l6 s6 ">
+                    <span class="light">Department 3</span>
                     <select name="department3" required id="department3">
                         @yield('departmentsList')
                     </select>
-                    <label>Department 3</label>
                 </div>
                 <div class="input-field col s6 l6">
+                    <span class="light" for="last_name">*Email:</span>
                     <input id="email" name="email" type="email" class="validate" required>
-                    <label for="last_name">*Email:</label>
                 </div>
 
                 <div class="input-field col l12 s12">
                     <span class="light">*Area of Research:</span>
                     <input required placeholder="Area of Research" id="area_of_research" type="text" class="validate" name="area_of_research" maxlength="50">
                 </div>
-            </div>      
+            </div>
+        </fieldset>
+        <div class="divider"></div>
 
+        <fieldset>
+            <legend class="vlarge" style="padding: 5px">Personal Details</legend>
             <div class="row">
-                <div class="input-field col l6 s6">
+                <div class="input-field col l6">
                     <span class="light">*Name:</span>
                     <input required placeholder="Name of Candidate" id="name" type="text" class="validate" name="name" maxlength="32">
                 </div>
-                <div class="input-field col l6  s6">
-                    <span class="light">*Father's Name/Guardian's Name/Husband's Name:</span>
+                <div class="input-field col l6">
+                <span class="light">*Father's/Guardian's/Husband's Name:</span>
                     <input required placeholder="Father's/Guardian Name" id="father_name" type="text" class="validate" name="father_name" maxlength="32">
                 </div>
             </div>
@@ -141,8 +146,12 @@
                     <span class="light">*Nationality:</span>
                     <input required placeholder="Nationality" id="nationality" type="text" class="validate" name="nationality" maxlength="32">
                 </div>
-            </div>           
+            </div>
+        </fieldset>
+        <div class="divider"></div>
 
+        <fieldset>
+            <legend class="vlarge" style="padding: 5px">Contact</legend>
             <div class="row">
                 <div class="input-field col l6"> 
                     <span for="textarea1">*Address for Communication:</span><br>              
@@ -157,32 +166,33 @@
                     <input id="landline" type="text" class="validate" name="landline" >
                 </div>
             </div>
-        </div>
-        <p>(*) indicates that it's a required field.</p> 
+        </fieldset>
     </div>
+    <p>(*) indicates that it's a required field.</p> 
+</div>
 
-    <div class="center">
-        <a class="valid teal darken-1 send-btn btn waves-effect waves-light">Submit</a>
+<div class="center">
+    <a class="valid teal darken-1 send-btn btn waves-effect waves-light">Submit</a>
+</div>
+
+<div class="modal center" id="error">
+    <div class="modal-content">
+        <div class="error"></div>
     </div>
-
-    <div class="modal center" id="error">
-        <div class="modal-content">
-            <div class="error"></div>
-        </div>
-        <div class="modal-footer">
-            <a class="btn modal-action modal-close waves-effect waves-green btn-flat">Close</a>
-        </div>
+    <div class="modal-footer">
+        <a class="btn modal-action modal-close waves-effect waves-green btn-flat">Close</a>
     </div>
+</div>
 
-    <div id="regNo" class="modal center">   
-        <div class="modal-content">
-            <div class="regno"></div>
+<div id="regNo" class="modal center">   
+    <div class="modal-content">
+        <div class="regno"></div>
 
-        </div>
-        <div class="modal-footer">
-
-        </div>
     </div>
+    <div class="modal-footer">
+
+    </div>
+</div>
 
 @endsection
 
