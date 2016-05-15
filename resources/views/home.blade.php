@@ -5,7 +5,7 @@
 @section('body')
     <div class="container center main">
         <p class="large">
-            Welcome to NIT Trichy Ph.D and M.S. (by research) application portal!
+            Welcome to NIT Trichy Ph.D. and M.S. (by research) application portal!
         </p>
         
         <div class="space-small"></div>
@@ -16,7 +16,7 @@
         <div class="row">
             <div class="col l12 s12">
                 <a class="waves-effect waves-light btn" href="/phdinstructions">
-                    Click here for <span style="text-transform: initial">Ph.D</span> Application
+                    Click here for <span style="text-transform: initial">Ph.D.</span> Application
                 </a>
                 <a class="waves-effect waves-light btn" href="/msinstructions">
                     Click here for M.S. Application

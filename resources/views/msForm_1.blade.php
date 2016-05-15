@@ -12,7 +12,7 @@
     <option value="CL">Chemical Engineering</option>
     <option value="CV">Civil Engineering </option>
     <option value="CC">CECASE</option>
-    <option value="EN">Department of Energy Engineering</option>
+    <option value="EN">Energy Engineering</option>
     <option value="EE">Electrical &amp; Electronics Engineering</option>
     <option value="EC">Electronics &amp; Communication Engineering</option>
     <option value="ME">Mechanical Engineering</option>
@@ -129,7 +129,7 @@
 
             <div class="row">
                 <div class="input-field col l6">
-                    <span class="light">*Person with Disability(PWD):</span><br>
+                    <span class="light">*Person with Disability(PwD):</span><br>
                     <select required name="ph" id="ph">
                         <option value="" disabled selected>Choose your option</option>
                         <option value="Yes">Yes</option>
