@@ -7,7 +7,7 @@
 @endsection
 
 @section('departmentsList')
-<option value="" disabled selected>Choose Department</option>
+<option value="" selected>Choose Department</option>
 <option value="AR">Architecture</option>
 <option value="CS">Computer Science and Engineering</option>
 <option value="CL">Chemical Engineering</option>
@@ -238,6 +238,8 @@
 
 			var $otherTwo = $("#department1,#department2,#department3").not($(curElem));
 			$otherTwo.each(function(i, el) {
+				if(curVal == "")
+                    return;
 				var originalValue = el.value;
 				var $el = $(el);
 
