@@ -23,6 +23,8 @@
 <option value="MA">Mathematics</option>
 <option value="MME">Metalurgy and Material Engineering</option>
 <option value="PR">Production Engineering</option>
+<option value="IC">Instrumentation &amp; Control Engineering</option>
+<option value="PH">Physics</option>
 @endsection
 
 @section('body')
