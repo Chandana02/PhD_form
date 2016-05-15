@@ -244,16 +244,15 @@
 				if(originalValue == curVal)
 					$el.val('');
 
-				//alert($el.get());
-				$el.find("option[value='" + curVal + "']").prop('disabled', true);
 				$el.find("option[value='" + prevVal + "']").prop('disabled', false);
+				$el.find("option[value='" + curVal + "']").prop('disabled', true);
 				safeMaterialSelect( $el, true );
 			});
 
 			currentlySelected[this.id] = curVal;
 		}
 
-		$("#department1,#department2,#department3").change(changeSomeDepartment);
+		$("#department1,#department2,#department3").change(changeSomeDepartment).trigger('change');
 
 	});
 </script>
