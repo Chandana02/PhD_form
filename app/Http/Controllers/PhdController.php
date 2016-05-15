@@ -16,6 +16,8 @@ use App\PhdUg;
 use App\PhdPg;
 use App\PhdOther;
 use App\PhdPro;
+use App\SavePhd;
+use Session;
 
 class PhdController extends Controller
 {
@@ -85,11 +87,11 @@ class PhdController extends Controller
             $details = array(
                 'date' => $request->input('date'),
                 // 'date_of_sub' => $request->input('date_of_sub'),
-                'appl_categ' => $request->input('appl_categ'),//dont know how to add $name attribute here
+                'application_category' => $request->input('appl_categ'),//dont know how to add $name attribute here
                 'image_path' => $request->input('image_path'),
-                'department1' => $request->input('department1'),
-                'department2' => $request->input('department2'),
-                'department3' => $request->input('department3'),
+                'department1' => self::department($request->input('department1')),
+                'department2' => self::department($request->input('department2')),
+                'department3' => self::department($request->input('department3')),
                 'area_of_research' => $request->input('area_of_research'),
                 'email' => $request->input('email'),
                 'mobile' => $request->input('mobile'),
@@ -142,13 +144,9 @@ class PhdController extends Controller
                 'to3' => $request->input('emp_to_3')
             );
 
-            if($request->input('ra1') == 'on')
-            {
-                $details['ug_gpa'] = $details['ug_gpa'].'-RA';
-            }
             if($request->input('ra2') == 'on')
             {
-                $details['pg_gpa'] = $details['pg_gpa'].'-RA';
+                $details['pg_gpa'] = 'NA';
             }
             if($request->input('ann') == 'on')
             {
@@ -160,15 +158,23 @@ class PhdController extends Controller
             }
             else
             {
-                $details['score'] = 'RA';
-                $details['rank'] = 'RA';
-                $details['validity'] = 'RA';
-                $details['discipline'] = 'RA';
-                $details['exam'] = 'RA';
+                $details['score'] = 'NA';
+                $details['rank'] = 'NA';
+                $details['validity'] = 'NA';
+                $details['discipline'] = 'NA';
+                $details['exam'] = 'NA';
             }
 
             $file = $request->file('image_path');  
-            $extension = $request->file('image_path')->getClientOriginalExtension();
+            
+            $stored_image_path = SavePhd::where('registrationNumber', Session::get('regNo'))->select('imagePath')->first()['imagePath'];
+            $stored_image_arr = explode(',', $stored_image_path);
+            $stored_image_extension = $stored_image_arr[0];
+            $stored_sign_extension = count($stored_image_arr) == 2 ? $stored_image_arr[1] : '';
+
+            $extension = '';
+            if($file)
+                $extension = $request->file('image_path')->getClientOriginalExtension();
             if($extension == 'jpg' || $extension == 'png' || $extension == 'jpeg')
             {
                 list($width, $height) = getimagesize($file);
@@ -182,14 +188,20 @@ class PhdController extends Controller
                     return View::make('error')->with('message', $message);  
                 }
             }
-            else
+            else if($file)
             {
                 $message = 'Invalid file format for the uploaded image';
                 return View::make('error')->with('message', $message);
             }
+            else if($stored_image_extension == "") {
+                $message = "Passport size photo is required.";
+                return View::make('error')->with('message', $message);
+            }
 
-            $sign = $request->file('sign');  
-            $signExt = $request->file('sign')->getClientOriginalExtension();
+            $sign = $request->file('sign');
+            $signExt = '';
+            if($sign)
+                $signExt = $request->file('sign')->getClientOriginalExtension();
             if($signExt == 'jpg' || $signExt == 'png' || $signExt == 'jpeg')
             {
                 list($width, $height) = getimagesize($file);
@@ -203,9 +215,14 @@ class PhdController extends Controller
                     return View::make('error')->with('message', $message);
                 }
             }
-            else
+            else if($sign)
             {
                 $message = 'Invalid file format for the uploaded Signature';
+                return View::make('error')->with('message', $message);
+            }
+            else if($stored_sign_extension == "")
+            {
+                $message = "Signature is required.";
                 return View::make('error')->with('message', $message);
             }
 
@@ -250,15 +267,49 @@ class PhdController extends Controller
             {
                 $form1 = $form2 = $form3 = NULL;
             }
+
+            $reg_number = $request->input('regNo');
+            $reg_number_modified = str_replace("/", "-", $reg_number);
+
+            $details['reg_number'] = $reg_number;
+            $details['phdorms'] = 'phd';
+            if($request->input('appl_categ') == 'External' || $request->input('appl_categ') == 'onCampus'){
+                if($form1 && $form2)
+                {
+                    $form1 = $form1->move(public_path().'/uploads/PHD/'.$reg_number_modified, 'form1.' . $extension1);
+                    $form2 = $form2->move(public_path().'/uploads/PHD/'.$reg_number_modified, 'form2.' . $extension2);
+                }
+                else if($form3)
+                {
+                    $form3 = $form3->move(public_path().'/uploads/PHD/'.$reg_number_modified, 'form3.' . $extension3);
+                }
+            }
+            
+            $image_extension = $stored_image_extension;
+            $sign_extension = $stored_sign_extension;
+            if($file)
+            {
+                $file = $file->move(public_path().'/uploads/PHD/'.$reg_number_modified, 'photo.' . $extension);
+                $image_extension = $extension;
+            }
+            if($sign)
+            {
+                $sign = $sign->move(public_path().'/uploads/PHD/'.$reg_number_modified, 'sign.' . $signExt);
+                $sign_extension = $signExt;
+            }
+            $details['imagePath'] = $image_extension . "," . $sign_extension;
+            //Phd::where('registrationNumber', $request->input('regNo'))
+            //                    ->update($details);
+
             
             $candidate = new Phd();
 
             $candidate->chalanNo = $request->input('chalanNo');
             $candidate->registrationNumber = $request->input('regNo');
             $candidate->applicationCategory = $request->input('appl_categ');
-            $candidate->dept1 = self::department($request->input('department1'));
-            $candidate->dept2 = self::department($request->input('department2'));
-            $candidate->dept3 = self::department($request->input('department3'));
+            $candidate->dept1 = $request->input('department1');
+            $candidate->dept2 = $request->input('department2');
+            $candidate->dept3 = $request->input('department3');
             $candidate->areaOfResearch = $request->input('area_of_research');
             $candidate->name = $request->input('name');
             $candidate->fatherName = $request->input('father_name');
@@ -273,13 +324,11 @@ class PhdController extends Controller
             $candidate->email = $request->input('email');
             $candidate->mobile = $request->input('mobile');
             $candidate->lanline = $request->input('landline');
+            $candidate->imagePath = $details['imagePath'];
 
             $candidate->save();
 
             $applNo = $candidate->applNo;
-            $reg_number = $request->input('regNo');
-            $departments = explode('/', $reg_number);
-            $reg_appl_no = $departments[sizeof($departments) - 1];
 
             $ugDetails = new PhdUg();
 
@@ -344,34 +393,6 @@ class PhdController extends Controller
 
             $pro->save();
 
-            $details['reg_number'] = $reg_number;
-            $details['phdorms'] = 'phd';
-            if($request->input('appl_categ') == 'External' || $request->input('appl_categ') == 'onCampus'){
-            if($form1 && $form2)
-            {
-                $form1 = $form1->move(public_path().'/uploads/PHD/'.$reg_appl_no, $reg_appl_no.'form1'.'.'.$extension1);
-                $form2 = $form2->move(public_path().'/uploads/PHD/'.$reg_appl_no, $reg_appl_no.'form2'.'.'.$extension2);
-            }
-            else if($form3)
-            {
-                $form3 = $form3->move(public_path().'/uploads/PHD/'.$reg_appl_no, $reg_appl_no.'form3'.'.'.$extension3);
-            }
-        }
-            $image_path = '';
-            if($file)
-            {
-                $file = $file->move(public_path().'/uploads/PHD/'.$reg_appl_no, $reg_appl_no.'.'.$extension);
-                $image_path = $image_path.$extension.',';
-            }
-
-            if($sign)
-            {
-                $sign = $sign->move(public_path().'/uploads/PHD/'.$reg_appl_no, $reg_appl_no.'sign.'.$signExt);
-                $image_path = $image_path.$signExt;
-                Phd::where('registrationNumber', $request->input('regNo'))
-                                ->update(['imagePath' => $image_path]);
-            }
-
             return View::make('success')->with('details', $details);
             }
             else{
@@ -383,70 +404,73 @@ class PhdController extends Controller
 
     public function department($t)
     {
-        if($t == 'Architecture')
+        if($t == 'AR')
         {
-            return 'AR';
+            return 'Architecture';
         }
-        if($t == 'Computer Science and Engineering')
+        if($t == 'CS')
         {
-            return 'CS';
+            return 'Computer Science and Engineering';
         }
-        if($t == 'Chemical Engineering')
+        if($t == 'CL')
         {
-            return 'CL';
+            return 'Chemical Engineering';
         }
-        if($t == 'Civil Engineering')
+        if($t == 'CV')
         {
-            return 'CV';
+            return 'Civil Engineering';
         }
-        if($t == 'Chemistry')
+        if($t == 'CY')
         {
-            return 'CY';
+            return 'Chemistry';
         }
-        if($t == 'Computer Applications')
+        if($t == 'CA')
         {
-            return 'CA';
+            return 'Computer Applications';
         }
-        if($t == 'CECASE')
+        if($t == 'CC')
         {
-            return 'CC';
+            return 'CECASE';
         }
-        if($t == 'Department of Energy Engineering')
+        if($t == 'EN')
         {
-            return 'EN';
+            return 'Department of Energy Engineering';
         }
-        if($t == 'Electrical and Electronics Engineering')
+        if($t == 'EE')
         {
-            return 'EE';
+            return 'Electrical and Electronics Engineering';
         }
-        if($t == 'Electronics and Communication Engineering')
+        if($t == 'EC')
         {
-            return 'EC';
+            return 'Electronics and Communication Engineering';
         }
-        if($t == 'Mechanical Engineering')
+        if($t == 'ME')
         {
-            return 'ME';
+            return 'Mechanical Engineering';
         }
-        if($t == 'Production Engineering')
+        if($t == 'PR')
         {
-            return 'PR';
+            return 'Production Engineering';
         }
-        if($t == 'Metalurgy and Material Sciences')
+        if($t == 'MME')
         {
-            return 'MME';
+            return 'Metalurgy and Material Sciences';
         }
-        if($t == 'Mathematics')
+        if($t == 'MA')
         {
-            return 'MA';
+            return 'Mathematics';
         }
-        if($t == 'HM'){
-                    return 'Humanities & Social Science';
-                }
-                if($t == 'IC'){
-                    return 'Instrumentation & Control';
-                }
-                if($t == 'PH'){
-                    return 'Physics';
-                }
+        if($t == 'IC')
+        {
+            return 'Instrumentation and Control Engineering';
+        }
+        if($t == 'PH')
+        {
+            return 'Physics';
+        }
+        if($t == 'HM')
+        {
+            return 'Humanities & Social Science';
+        }
     }
 }

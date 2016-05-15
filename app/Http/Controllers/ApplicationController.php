@@ -41,7 +41,7 @@ class ApplicationController extends Controller
     	{
     		$dept = explode("/", $regNo);
     		$categ = $dept[0];
-            $reg_appl_no = $dept[sizeof($dept) - 1];
+            $reg_appl_no = str_replace('/', '-', $regNo);
 
     		if($categ == 'PHD')
 	        {

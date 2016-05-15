@@ -531,7 +531,7 @@
 			var x = new Date().getFullYear();
 			console.log(x);
 			var y = x+1;
-			var p = '<h4 class="center">APPLICATION FOR ADMISSION TO M.S. PROGRAMME ('+ x + '-' + y+ ')</h4>';
+			var p = '<h4 class="center">APPLICATION FOR ADMISSION TO M.S.<br> PROGRAMME ('+ x + '-' + y+ ')</h4>';
 			$('.heading').append(p);
 			$(".button-collapse").sideNav();
 			$('select').material_select();

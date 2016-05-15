@@ -10,8 +10,11 @@
 | and give it the controller to call when that URI is requested.
 |
 */
+Route::get('exportphd', 'ExportController@allPhdCandidatesExport');
+Route::get('exportms', 'ExportController@allMsCandidatesExport');
 Route::get('/', function() {
-    return redirect('home');
+    return view('landing');
+//    return redirect('home');
 });
 Route::post('savephd', 'SaveController@savephd');
 Route::post('savems', 'SaveController@savems');
@@ -41,6 +44,8 @@ Route::group(['middleware' => 'adminauth'], function () {
     Route::get('logout', 'AdminController@logout');
 });
 Route::get('print/{phdormsc}/{regNo}', 'AdminController@printer' );
+Route::get('exportphdSingle/{regNo}', 'ExportController@singlePhdCandidateExport' );
+Route::get('exportmsSingle/{regNo}', 'ExportController@singleMsCandidatesExport' );
 
 Route::post('phdvalidate', 'PhdController@validated');
 Route::post('msvalidate', 'MsController@validated');
@@ -58,9 +63,12 @@ Route::get('contact', function()
         return view('contact');
     });
 
-Route::get('adminlogin', function()
+Route::group(['middleware' => 'redirect_admin_if_authenticated'], function()
     {
-        return view('admin.login');
+        Route::get('adminlogin', function()
+            {
+                return view('admin.login');
+            });
     });
 
 Route::get('home', function()
@@ -103,7 +111,5 @@ Route::get('damage', function()
     {
         return view('admin.dmgctrl');
     });
-Route::get('landing', function()
-    {
-        return view('landing');
-    });
+
+    

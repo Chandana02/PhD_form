@@ -14,7 +14,6 @@
 	<script src="{{URL::asset('assets/js/materialize.min.js')}}"></script>
 	
 	<script src="{{URL::asset('assets/js/preview.js')}}"></script>
-	<script src="{{URL::asset('assets/js/savems.js')}}"></script>
 	<script src="{{URL::asset('assets/js/common.js')}}"></script>
 	<script src="{{URL::asset('assets/js/code_ms.js')}}"></script>
 	
@@ -90,7 +89,7 @@
 			      		
 		          		<div class="uploadImg btn teal darken-1 btn waves-effect waves-light">
 		          			<span class="light">File</span>
-		          			<input type="file" name="image_path" id="imaged", onchange="readURL(this);" required>		
+		          			<input type="file" name="image_path" id="imaged", onchange="readURL(this);">
 		          		</div>
 		          		<div class="file-path-wrapper">
 	        				<input class="file-path validate" type="text">
@@ -121,7 +120,8 @@
                 <option value="MME">Metalurgy and Material Sciences</option>
                 <option value="PH">Physics</option>
 		      		</select> -->
-		      		<input type="text" readonly="true" id="department1" name="department1" data-reg="{!! $details->dept1 !!}" />
+		      		<input type="hidden" readonly="true" id="department1" name="department1" value="{!! $details->dept1 !!}" />
+		     		<input type="text" readonly="true" id="department1_disp" name="department1_disp" value="{!! $details->dept1 !!}" />
 		      		
 		        </div>
 		        <div class="input-field col l6 s6 dep2Check">
@@ -142,7 +142,8 @@
                 <option value="MME">Metalurgy and Material Sciences</option>
                 <option value="PH">Physics</option>
 		      		</select> -->
-		      		<input type="text" readonly="true" id="department2" name="department2" data-reg="{!! $details->dept2 !!}" />
+		      		<input type="hidden" readonly="true" id="department2" name="department2" value="{!! $details->dept2 !!}" />
+			      	<input type="text" readonly="true" id="department2_disp" name="department2_disp" value="{!! $details->dept2 !!}" />
 		      		
 		        </div>
 		        <div class="input-field col l6 s6 dep3Check">
@@ -163,7 +164,8 @@
                 <option value="MME">Metalurgy and Material Sciences</option>
                 <option value="PH">Physics</option>
 		      		</select> -->
-		      		<input type="text" readonly="true" id="department3" name="department3" data-reg="{!! $details->dept3 !!}" />
+		      		<input type="hidden" readonly="true" id="department3" name="department3" value="{!! $details->dept3 !!}" />
+			      	<input type="text" readonly="true" id="department3_disp" name="department3_disp" value="{!! $details->dept3 !!}" />
 		      		
 		        </div>
 		        
@@ -301,10 +303,6 @@
 				    </select>
 		      	</div>
 		      </div> 
-		      <p>
-		      	<input type="checkbox" id="ra1" name="ra1" />
-			      <label for="ra1">Click here if final semester results are not announced.</label>
-		      </p>
 		      </div>
 		      </div>
 
@@ -357,7 +355,7 @@
 		      	            <input required id="max1" type="number" class="validate" min="0" max="100" name="max1" value="{!! $details['gpamax1'] !!}">
 		      	            </td>
 		      	            <td>
-		      	            	<input required id="gpa1" type="number" class="validate" min="0" max="100" name="gpa1" value="{!! $details['gpa1'] !!}">
+		      	            	<input required id="gpa1" type="number" class="validate" min="0" max="100" name="gpa1" value="{!! $details['gpa1'] !!}" step="0.01">
 		      	            </td>
 		      	          </tr>
 		      	          <tr>
@@ -367,7 +365,7 @@
 		      	            <input required id="max2" type="number" class="validate" name="max2" min="0" max="100" value="{!! $details['gpamax2'] !!}">
 		      	            </td>
 		      	            <td>
-		      	            	<input required id="gpa2" type="number" class="validate" name="gpa2" min="0" max="100" value="{!! $details['gpa2'] !!}">
+		      	            	<input required id="gpa2" type="number" class="validate" name="gpa2" min="0" max="100" value="{!! $details['gpa2'] !!}" step="0.01">
 		      	            </td>
 		      	          </tr>
 		      	          <tr>
@@ -377,7 +375,7 @@
 		      	            <input required id="max3" type="number" class="validate" name="max3" min="0" max="100" value="{!! $details['gpamax3'] !!}">
 		      	            </td>
 		      	            <td>
-		      	            	<input required id="gpa3" type="number" class="validate" name="gpa3" min="0" max="100" value="{!! $details['gpa3'] !!}">
+		      	            	<input required id="gpa3" type="number" class="validate" name="gpa3" min="0" max="100" value="{!! $details['gpa3'] !!}" step="0.01">
 		      	            </td>
 		      	          </tr>
 		      	          <tr>
@@ -387,7 +385,7 @@
 		      	            <input required id="max4" type="number" class="validate" name="max4" min="0" max="100" value="{!! $details['gpamax4'] !!}">
 		      	            </td>
 		      	            <td>
-		      	            	<input required id="gpa4" type="number" class="validate" name="gpa4" min="0" max="100" value="{!! $details['gpa4'] !!}">
+		      	            	<input required id="gpa4" type="number" class="validate" name="gpa4" min="0" max="100" value="{!! $details['gpa4'] !!}" step="0.01">
 		      	            </td>
 		      	          </tr>
 		      	          <tr>
@@ -397,7 +395,7 @@
 		      	            <input required id="max5" type="number" class="validate" name="max5" min="0" max="100" value="{!! $details['gpamax5'] !!}">
 		      	            </td>
 		      	            <td>
-		      	            	<input required id="gpa5" type="number" class="validate" name="gpa5" min="0" max="100" value="{!! $details['gpa5'] !!}">
+		      	            	<input required id="gpa5" type="number" class="validate" name="gpa5" min="0" max="100" value="{!! $details['gpa5'] !!}" step="0.01">
 		      	            </td>
 		      	          </tr>
 		      	          <tr>
@@ -407,7 +405,7 @@
 		      	            <input required id="max6" type="number" class="validate" name="max6" min="0" max="100" value="{!! $details['gpamax6'] !!}">
 		      	            </td>
 		      	            <td>
-		      	            	<input required id="gpa6" type="number" class="validate" name="gpa6" min="0" max="100" value="{!! $details['gpa6'] !!}">
+		      	            	<input required id="gpa6" type="number" class="validate" name="gpa6" min="0" max="100" value="{!! $details['gpa6'] !!}" step="0.01">
 		      	            </td>
 		      	          </tr>
 		      	          <tr>
@@ -417,7 +415,7 @@
 		      	            <input required id="max7" type="number" class="validate" name="max7" min="0" max="100" value="{!! $details['gpamax7'] !!}">
 		      	            </td>
 		      	            <td>
-		      	            	<input required id="gpa7" type="number" class="validate" name="gpa7" min="0" max="100" value="{!! $details['gpa7'] !!}">
+		      	            	<input required id="gpa7" type="number" class="validate" name="gpa7" min="0" max="100" value="{!! $details['gpa7'] !!}" step="0.01">
 		      	            </td>
 		      	          </tr>
 		      	          <tr>
@@ -427,7 +425,7 @@
 		      	            <input required id="max8" type="number" class="validate eight" name="max8" min="0" max="100" value="{!! $details['gpamax8'] !!}">
 		      	            </td>
 		      	            <td>
-		      	            	<input required id="gpa8" type="number" class="validate eight" name="gpa8" min="0" max="100" value="{!! $details['gpa8'] !!}">
+		      	            	<input required id="gpa8" type="number" class="validate eight" name="gpa8" min="0" max="100" value="{!! $details['gpa8'] !!}" step="0.01">
 		      	            </td>
 		      	          </tr>
 		      	          
@@ -497,7 +495,7 @@
 		      		<p>I do hereby declare that the information furnished in this application are true and correct to the best of my knowledge. If, any of the particulars furnished above is found to be incorrect at the time of admission, the admission may be cancelled.</p>
 		      		<p class="center agreement">
 		      			<span>
-		      		      <input type="checkbox" id="agree" class="check" required="true"/>
+		      		      <input type="checkbox" id="agree" name="agree" class="check" required="true"/>
 		      		      <label for="agree">Agree</label>
 		      		    </span>
 		      		   
@@ -512,7 +510,7 @@
 			      	<div class="file-field input-field">
 		          		<div class="btn teal darken-1 btn waves-effect waves-light">
 		          			<span class="light">File</span>
-		          			<input type="file" id="signImg" name="sign" onchange="signURL(this);" required />		
+		          			<input type="file" id="signImg" name="sign" onchange="signURL(this);"/>
 		          		</div>
 		          		<div class="file-path-wrapper">
 	        				<input class="file-path validate" type="text">
@@ -543,7 +541,7 @@
   		 <div class="center">
       <a id="preview2" href="../../../mspreview" target="_blank" class="teal darken-1 waves-effect waves-light btn modal-trigger">Preview Form</a>
       
-   {!! Form::submit('Submit', array('class'=>'valid1 teal darken-1 send-btn btn waves-effect waves-light' )) !!}
+   <button class="valid1 teal darken-1 send-btn btn waves-effect waves-light" type="submit">Submit</button>
    <a id="save2" class="teal darken-1 send-btn btn waves-effect waves-light center">Save Form</a>
    </div>
 	 	
@@ -586,6 +584,12 @@
             
 
 	<script type="text/javascript">
+	$(document).ready(function() {
+		$('#save2').click(function(e) {
+        	$("form").attr("action", "/save2ms").submit();
+        	return;
+    	});
+    });
 	function readURL(input) 
 			{
 			    document.getElementById("bannerImg").style.display = "block";
@@ -650,6 +654,14 @@
 		$(".button-collapse").sideNav();
 		$('select').material_select();
 
+		// https://github.com/Dogfalo/materialize/issues/1861
+		$("select[required]").css({display: "inline", height: 0, padding: 0, width: 0, position: "absolute"});
+		$("#agree").css({visibility: 'visible', height: 1, position: 'relative', left: 0})
+
+		// so that the select input that's made invisible above doesn't get focus on using tabstops,
+        // creating inconsistencies potentially
+		$('select').attr('tabindex', "-1");
+		
 		var a = '{!! $details->exam !!}';
 		var b = '{!! $details->validity !!}';
 		var c = '{!! $details->rank !!}';
@@ -676,7 +688,7 @@
 		var x = new Date().getFullYear();
 		var y = x+1;
 			console.log(x);
-			var p = '<h4 class="center">APPLICATION FOR ADMISSION TO M.S. PROGRAMME ('+ x + '-' + y + ')</h4>';
+			var p = '<h4 class="center">APPLICATION FOR ADMISSION TO M.S.<br> PROGRAMME ('+ x + '-' + y + ')</h4>';
 			$('.heading').append(p);
 
 		$("textarea#addr_for_commn").val('{!! $details->addrforcomm !!}');
@@ -779,9 +791,9 @@
 				$('.ugclassCheck .select-wrapper ul>li:eq(4)').click();
 			}
 			$('.categCheck .select-wrapper ul>li:eq(1)').click();
-			$('#department1').val(department('{!! $details->dept1 !!}'));
-			$('#department2').val(department('{!! $details->dept2 !!}'));
-			$('#department3').val(department('{!! $details->dept3 !!}'));
+			$('#department1_disp').val(department('{!! $details->dept1 !!}'));
+			$('#department2_disp').val(department('{!! $details->dept2 !!}'));
+			$('#department3_disp').val(department('{!! $details->dept3 !!}'));
 
 			function department(t)
 			{

@@ -14,7 +14,6 @@
 		<script src="{{URL::asset('assets/js/jquery-2.1.1.min.js')}}"></script>
 		<script src="{{URL::asset('assets/js/materialize.min.js')}}"></script>
 		<script src="{{URL::asset('assets/js/common.js')}}"></script>
-		<script src="{{URL::asset('assets/js/savephd.js')}}"></script>
 		<script src="{{URL::asset('assets/js/preview.js')}}"></script>
 		
 	</head>
@@ -71,7 +70,18 @@
 					<input type="text" id="chalanNo" name="chalanNo" placeholder="Enter Chalan Number" value="{!! $details->chalanNo !!}" required />
 				</div>
 				
-				<img src="" id="bannerImg"  />	
+				{{ 
+	      			// ugly hack to declare variables and not put it in html :P
+
+	      			($modifiedRegistrationNumber = str_replace('/', '-', $details->registrationNumber)) && 
+	      			($photoExtension = explode(',', $details->imagePath)[0]) && 
+	      			""
+	      		}}
+	      		@if ($photoExtension)
+		      		<img src="/uploads/PHD/{!! $modifiedRegistrationNumber . '/photo.' . $photoExtension !!}" id="bannerImg" />
+		      	@else
+		      		<img src="" id="bannerImg" />
+		      	@endif
 			</div>
 
 	  		<div class="row">  					   
@@ -79,7 +89,7 @@
 			        
 			      		
 					    <div class="input-field col l6 s12 applCheck">
-					        <select class="applicationCateg" name="appl_categ" required id="applicationCateg"> 
+					        <select class="applicationCateg validate" name="appl_categ" required id="applicationCateg"> 
 					        <option value="" disabled selected>Choose category</option>
 					          <optgroup label="Part Time">
 					            <option value="onCampus">On Campus</option>
@@ -103,7 +113,7 @@
 			      		
 		          		<div class="uploadImg btn teal darken-1 btn waves-effect waves-light">
 		          			<span class="light">File</span>
-		          			<input type="file" name="image_path" id="imaged", onchange="readURL(this);" required>		
+		          			<input type="file" name="image_path" id="imaged", onchange="readURL(this);">		
 		          		</div>
 		          		<div class="file-path-wrapper">
 	        				<input class="file-path validate" type="text">
@@ -137,7 +147,8 @@
 			      			<option value="MME">Metalurgy and Material Engineering</option>
 			      			<option value="PR">Production Engineering</option>
 			     		</select> -->
-			     		<input type="text" readonly="true" id="department1" name="department1" data-reg="{!! $details->dept1 !!}" />
+			     		<input type="hidden" readonly="true" id="department1" name="department1" value="{!! $details->dept1 !!}" />
+			     		<input type="text" readonly="true" id="department1_disp" name="department1_disp" value="{!! $details->dept1 !!}" />
 			        </div>
 			        <div class="input-field col l6 s6 dep2Check">
 			        	<!-- <select name="department2" id="department2">
@@ -158,8 +169,8 @@
 			      			<option value="MME">Metalurgy and Material Engineering</option>
 			      			<option value="PR">Production Engineering</option>		      
 			      		</select> -->
-			   		<input type="text" readonly="true" id="department2" name="department2" data-reg="{!! $details->dept2 !!}" />
-			      	
+			   		<input type="hidden" readonly="true" id="department2" name="department2" value="{!! $details->dept2 !!}" />
+			      	<input type="text" readonly="true" id="department2_disp" name="department2_disp" value="{!! $details->dept2 !!}" />
 			        </div>
 			        </div>
 			        <div class="dept row">			        
@@ -182,7 +193,8 @@
 			      			<option value="MME">Metalurgy and Material Engineering</option>
 			      			<option value="PR">Production Engineering</option>		      
 			      		</select>	 -->
-			      		<input type="text" readonly="true" id="department3" name="department3" data-reg="{!! $details->dept3 !!}" />		     
+			      		<input type="hidden" readonly="true" id="department3" name="department3" value="{!! $details->dept3 !!}" />		     
+			      		<input type="text" readonly="true" id="department3_disp" name="department3_disp" value="{!! $details->dept3 !!}" />
 			        </div>
 			       <!--  <div class="input-field col s6 l6">
 			        	<input type="text" value="dept" hidden="true" />
@@ -320,10 +332,6 @@
 					    </select>
 			      	</div>
 			      </div> 
-			      <p>
-			      	<input type="checkbox" id="ra1" name="ra1" />
-				      <label for="ra1">Click here if final semester results are not announced.</label>
-			      </p>
 			      </div>
 			      </div>
 
@@ -501,7 +509,7 @@
 			      		<p>I do hereby declare that the information furnished in this application are true and correct to the best of my knowledge. If, any of the particulars furnished above is found to be incorrect at the time of admission, the admission may be cancelled.</p>
 			      		<p class="center agreement">
 			      			<span>
-			      		      <input type="checkbox" id="agree" class="check" required="true"/>
+			      		      <input type="checkbox" name="agree" id="agree" class="check" required="true"/>
 			      		      <label for="agree">Agree</label>
 			      		    </span>
 			      		    
@@ -512,12 +520,25 @@
 			      <div class="row">
 			      	
 			      	<div class="upload col l6 s6 ">
-			      		<img src="" id="signImg" />
+			      		{{ 
+			      			// ugly hack to declare variables and not put it in html :P
+
+			      			($modifiedRegistrationNumber = str_replace('/', '-', $details->registrationNumber)) && 
+			      			($tmp = explode(',', $details->imagePath)) && 
+			      			($signExtension = count($tmp) == 2 ? $tmp[1] : '') &&
+			      			""
+			      		}}
+			      		@if ($signExtension)
+				      		<img src="/uploads/PHD/{!! $modifiedRegistrationNumber . '/sign.' . $signExtension !!}" id="signImg" />
+				      	@else
+				      		<img src="" id="signImg" />
+				      	@endif
+
 			    		<p>Upload Signature</p>
 				      	<div class="file-field input-field">
 			          		<div class="btn teal darken-1 btn waves-effect waves-light">
 			          			<span class="light">File</span>
-			          			<input type="file" id="signImg" name="sign" onchange="signURL(this);" required />
+			          			<input type="file" id="signImg" name="sign" onchange="signURL(this);"/>
 			          		</div>
 			          		<div class="file-path-wrapper">
 		        				<input class="file-path validate" type="text">
@@ -546,8 +567,8 @@
 	      <a id="preview1" href="../../../phdpreview" target="_blank" class="teal darken-1 waves-effect waves-light btn modal-trigger">Preview Form</a>
 
 	      
-	   {!! Form::submit('Submit', array('class'=>'valid1 teal darken-1 send-btn btn waves-effect waves-light' )) !!}
-	   <a id="save2" class="teal darken-1 send-btn btn waves-effect waves-light center">Save Form</a>
+	   <button class="valid1 teal darken-1 send-btn btn waves-effect waves-light" type="submit">Submit</button>
+	   <button id="save2" class="teal darken-1 send-btn btn waves-effect waves-light center">Save Form</button>
 	   </div>
 	   			
 		 	
@@ -594,7 +615,13 @@
 	            
 
 		<script type="text/javascript">
-		localStorage.clear();
+		$(document).ready(function() {
+			$('#save2').click(function(e) {
+	        	$("form").attr("action", "/save2phd").submit();
+	        	return;
+	    	});
+	    });
+
 		function readURL(input) 
 			{
 			    document.getElementById("bannerImg").style.display = "block";
@@ -660,6 +687,14 @@
 			$(".button-collapse").sideNav();
 			$('select').material_select();
 
+			// https://github.com/Dogfalo/materialize/issues/1861
+			$("select[required]").css({display: "inline", height: 0, padding: 0, width: 0, position: "absolute"});
+			$("#agree").css({visibility: 'visible', height: 1, position: 'relative', left: 0})
+
+			// so that the select input that's made invisible above doesn't get focus on using tabstops,
+	        // creating inconsistencies potentially
+			$('select').attr('tabindex', "-1");
+
 			var a = '{!! $details->exam !!}';
 			var b = '{!! $details->validity !!}';
 			var c = '{!! $details->rank !!}';
@@ -709,7 +744,7 @@
 			var x = new Date().getFullYear();
 			console.log(x);
 			var y = x+1;
-			var p = '<h4 class="center">APPLICATION FOR ADMISSION TO Ph.D. PROGRAMME ('+ x + '-' + y + ')</h4>';
+			var p = '<h4 class="center">APPLICATION FOR ADMISSION TO Ph.D.<br> PROGRAMME ('+ x + '-' + y + ')</h4>';
 			$('.heading').append(p);
 
 			$("textarea#addr_for_commn").val('{!! $details->addrforcomm !!}');
@@ -735,7 +770,7 @@
 			}
 
 			t='{!! $details->applicationCategory !!}';
-			if(t=='On Campus'){
+			if(t=='onCampus'){
 				$('.applCheck .select-wrapper input').val(t);
 				$('.applCheck .select-wrapper ul>li:eq(2)').click();
 			}
@@ -743,11 +778,11 @@
 				$('.applCheck .select-wrapper input').val(t);
 				$('.applCheck .select-wrapper ul>li:eq(3)').click();
 			}
-			else if(t == 'Stipendiary'){
+			else if(t == 'stipendiary'){
 				$('.applCheck .select-wrapper input').val(t);
 				$('.applCheck .select-wrapper ul>li:eq(4)').click();
 			}
-			else if(t == 'Non-Stipendiary'){
+			else if(t == 'nonStipendiary'){
 				$('.applCheck .select-wrapper input').val(t);
 				$('.applCheck .select-wrapper ul>li:eq(6)').click();
 			}
@@ -755,7 +790,7 @@
 				$('.applCheck .select-wrapper input').val(t);
 				$('.applCheck .select-wrapper ul>li:eq(7)').click();
 			}
-			else if(t == 'Other Fellowships'){
+			else if(t == 'Other'){
 				$('.applCheck .select-wrapper input').val(t);
 				$('.applCheck .select-wrapper ul>li:eq(8)').click();
 			}
@@ -812,7 +847,8 @@
 			}
 
 			t='{!! $details->PH !!}';
-			if(t=='no'){
+			'{!! json_encode($details) !!}';
+			if(t=='No'){
 				$('.pdCheck .select-wrapper input').val(t);
 				$('.pdCheck .select-wrapper ul>li:eq(2)').click();
 			}
@@ -824,15 +860,21 @@
 			if(t!=''){
 				$('.appCheck .select-wrapper input').val(t);	
 			}
-			
-			$('.categCheck .select-wrapper ul>li:eq(1)').click();
 
-			$('#department1').val(department('{!! $details->dept1 !!}'));
-			$('#department2').val(department('{!! $details->dept2 !!}'));
-			$('#department3').val(department('{!! $details->dept3 !!}'));
+			t = '{!! $details->category !!}';
+			$(".categCheck input").val(t);
+			if(t == "OBC")
+				$(".categCheck ul>li:eq(1)").click();
+			else if(t == "OC")
+				$(".categCheck ul>li:eq(2)").click();
+			else if(t == "SC")
+				$(".categCheck ul>li:eq(3)").click();
+			else if(t == "ST")
+				$(".categCheck ul>li:eq(4)").click();
 
-
-
+			$('#department1_disp').val(department('{!! $details->dept1 !!}'));
+			$('#department2_disp').val(department('{!! $details->dept2 !!}'));
+			$('#department3_disp').val(department('{!! $details->dept3 !!}'));
 
 			function department(t)
 			{

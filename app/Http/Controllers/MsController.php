@@ -16,6 +16,7 @@ use App\MsUg;
 use App\MsScores;
 use App\MsPro;
 use App\MsOther;
+use Session;
 
 class MsController extends Controller
 {
@@ -102,9 +103,9 @@ class MsController extends Controller
                 // 'date_of_sub' => $request->get('date_of_sub'),
                 'appl_categ' => $request->get('appl_categ'),//dont know how to add $name attribute here
                 'image_path' => $request->get('image_path'),
-                'department1' => $request->get('department1'),
-                'department2' => $request->get('department2'),
-                'department3' => $request->get('department3'),
+                'department1' => self::department($request->get('department1')),
+                'department2' => self::department($request->get('department2')),
+                'department3' => self::department($request->get('department3')),
                 'area_of_research' => $request->get('area_of_research'),
                 'email' => $request->get('email'),
                 'mobile' => $request->get('mobile'),
@@ -167,15 +168,23 @@ class MsController extends Controller
             }
             else
             {
-                $details['score'] = 'RA';
-                $details['rank'] = 'RA';
-                $details['validity'] = 'RA';
-                $details['discipline'] = 'RA';
-                $details['exam'] = 'RA';
+                $details['score'] = 'NA';
+                $details['rank'] = 'NA';
+                $details['validity'] = 'NA';
+                $details['discipline'] = 'NA';
+                $details['exam'] = 'NA';
             }
 
             $file = $request->file('image_path');   
-            $extension = $request->file('image_path')->getClientOriginalExtension();
+
+            $stored_image_path = Ms::where('registrationNumber', Session::get('regNo'))->select('imagePath')->first()['imagePath'];
+            $stored_image_arr = explode(',', $stored_image_path);
+            $stored_image_extension = $stored_image_arr[0];
+            $stored_sign_extension = count($stored_image_arr) == 2 ? $stored_image_arr[1] : '';
+
+            $extension = '';
+            if($file)
+                $extension = $request->file('image_path')->getClientOriginalExtension();
             if($extension == 'jpg' || $extension == 'png' || $extension == 'jpeg')
             {
                 list($width, $height) = getimagesize($file);
@@ -189,14 +198,20 @@ class MsController extends Controller
                     return View::make('error')->with('message', $message);  
                 }
             }
-            else
+            else if($file)
             {
-                $message = 'Invalid file format for the uploaded image or Dimensions are more than 413X531';
+                $message = 'Invalid file format for the uploaded image';
+                return View::make('error')->with('message', $message);
+            }
+            else if($stored_image_extension == "") {
+                $message = "Passport size photo is required.";
                 return View::make('error')->with('message', $message);
             }
 
-            $sign = $request->file('sign');  
-            $signExt = $request->file('sign')->getClientOriginalExtension();
+            $sign = $request->file('sign');
+            $signExt = '';
+            if($sign)
+                $signExt = $request->file('sign')->getClientOriginalExtension();
             if($signExt == 'jpg' || $signExt == 'png' || $signExt == 'jpeg')
             {
                 list($width, $height) = getimagesize($file);
@@ -210,9 +225,14 @@ class MsController extends Controller
                     return View::make('error')->with('message', $message);
                 }
             }
-            else
+            else if($sign)
             {
                 $message = 'Invalid file format for the uploaded Signature';
+                return View::make('error')->with('message', $message);
+            }
+            else if($stored_sign_extension == "")
+            {
+                $message = "Signature is required.";
                 return View::make('error')->with('message', $message);
             }
 
@@ -236,14 +256,34 @@ class MsController extends Controller
                 }
             }
 
+            $reg_number = $request->input('regNo');
+            $reg_number_modified = str_replace("/", "-", $reg_number);
+
+            $details['reg_number'] = $reg_number;
+            $details['phdorms'] = 'ms';
+
+            $image_extension = $stored_image_extension;
+            $sign_extension = $stored_sign_extension;
+            if($file)
+            {
+                $file = $file->move(public_path().'/uploads/MS/'.$reg_number_modified, 'photo.' . $extension);
+                $image_extension = $extension;
+            }
+            if($sign)
+            {
+                $sign = $sign->move(public_path().'/uploads/MS/'.$reg_number_modified, 'sign.' . $signExt);
+                $sign_extension = $signExt;
+            }
+            $details['imagePath'] = $image_extension . "," . $sign_extension;
+
             $candidate = new Ms();
 
             $candidate->chalanNo = $request->input('chalanNo');
             $candidate->registrationNumber = $request->input('regNo');
             $candidate->applicationCategory = $request->get('appl_categ');
-            $candidate->dept1 = self::department($request->input('department1'));
-            $candidate->dept2 = self::department($request->input('department2'));
-            $candidate->dept3 = self::department($request->input('department3'));
+            $candidate->dept1 = $request->input('department1');
+            $candidate->dept2 = $request->input('department2');
+            $candidate->dept3 = $request->input('department3');
             $candidate->areaOfResearch = $request->get('area_of_research');
             $candidate->name = $request->get('name');
             $candidate->fatherName = $request->get('father_name');
@@ -258,22 +298,17 @@ class MsController extends Controller
             $candidate->email = $request->get('email');
             $candidate->mobile = $request->get('mobile');
             $candidate->lanline = $request->get('landline');
+            $candidate->imagePath = $details['imagePath'];
 
             $candidate->save();
 
             $applNo = $candidate->applNo;
-            $reg_number = $request->input('regNo');
-            $departments = explode('/', $reg_number);
-            $reg_appl_no = $departments[sizeof($departments) - 1];
 
-            if($request->get('ra1') == 'on')
-            {
-                $details['ug_gpa'] = 'RA';
-            }
             if($request->get('ra3') == 'on')
             {
-                $details['gpa8'] = 'RA';
-                $details['max8'] = 'RA';
+                $details['ug_gpa'] = 'NA';
+                $details['gpa8'] = 'NA';
+                $details['max8'] = 'NA';
             }
             else
             {
@@ -346,87 +381,84 @@ class MsController extends Controller
 
             $others->save();
 
-            $details['reg_number'] = $reg_number;
-            $details['phdorms'] = 'ms';
-
-            $image_path = '';
-            if($file)
-            {
-                $file = $file->move(public_path().'/uploads/MS/'.$reg_appl_no , $reg_appl_no.'.'.$extension);
-                $image_path = $image_path.$extension.',';
-            }
-            if($cert)
-            {
-                $cert = $cert->move(public_path().'/uploads/MS/'.$reg_appl_no, $reg_appl_no.'cert'.'.'.$extension3);
-            }
-            if($sign)
-            {
-                $sign = $sign->move(public_path().'/uploads/MS/'.$reg_appl_no, $reg_appl_no.'sign.'.$signExt);
-                $image_path = $image_path.$signExt;
-                Ms::where('registrationNumber', $request->input('regNo'))
-                                ->update(['imagePath' => $image_path]);
-            }
             return View::make('success')->with('details', $details);
             }
             else{
-            	$message = "User already exists ";
-            	return View::make('error')->with('message' , $message);
+                $message = "User already exists ";
+                return View::make('error')->with('message' , $message);
             }
         }
     }
 
     public function department($t)
     {
-        if($t == 'Computer Science and Engineering')
+        if($t == 'AR')
         {
-            return 'CS';
+            return 'Architecture';
         }
-        if($t == 'Chemical Engineering')
+        if($t == 'CS')
         {
-            return 'CL';
+            return 'Computer Science and Engineering';
         }
-        if($t == 'Civil Engineering')
+        if($t == 'CL')
         {
-            return 'CV';
+            return 'Chemical Engineering';
         }
-        if($t == 'CECASE')
+        if($t == 'CV')
         {
-            return 'CC';
+            return 'Civil Engineering';
         }
-        if($t == 'Department of Energy Engineering')
+        if($t == 'CY')
         {
-            return 'EN';
+            return 'Chemistry';
         }
-        if($t == 'Electrical and Electronics Engineering')
+        if($t == 'CA')
         {
-            return 'EE';
+            return 'Computer Applications';
         }
-        if($t == 'Electronics and Communication Engineering')
+        if($t == 'CC')
         {
-            return 'EC';
+            return 'CECASE';
         }
-        if($t == 'Mechanical Engineering')
+        if($t == 'EN')
         {
-            return 'ME';
+            return 'Department of Energy Engineering';
         }
-        if($t == 'Production Engineering')
+        if($t == 'EE')
         {
-            return 'PR';
+            return 'Electrical and Electronics Engineering';
         }
-        if($t == 'Metalurgy and Material Sciences')
+        if($t == 'EC')
         {
-            return 'MME';
+            return 'Electronics and Communication Engineering';
         }
-        if($t == 'Instrumentation and Control Engineering')
+        if($t == 'ME')
         {
-            return 'IC';
+            return 'Mechanical Engineering';
         }
-        if($t == 'Physics')
+        if($t == 'PR')
         {
-            return 'PH';
+            return 'Production Engineering';
         }
-        if($t == 'Humanities & Social Science'){
-            return 'HM';
+        if($t == 'MME')
+        {
+            return 'Metalurgy and Material Sciences';
+        }
+        if($t == 'MA')
+        {
+            return 'Mathematics';
+        }
+        if($t == 'IC')
+        {
+            return 'Instrumentation and Control Engineering';
+        }
+        if($t == 'PH')
+        {
+            return 'Physics';
+        }
+        if($t == 'HM')
+        {
+            return 'Humanities & Social Science';
         }
     }
 }

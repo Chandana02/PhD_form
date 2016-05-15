@@ -117,6 +117,10 @@
         <div class="col l6">
         <a href="#!" data-reg={!! $data['candidates'][$i]->registrationNumber!!} class="admit btn modal-action modal-close waves-effect waves-green btn">Admit</a>
         </div>
+        <div class="col l12">
+        <div class="space-vsmall"></div>
+        <a href="#!" data-reg={!! $data['candidates'][$i]->registrationNumber!!} class="phdExcel btn modal-action modal-close waves-effect waves-green btn">Generate Excel</a>
+        </div>
         </div>
         <div class="space-large"></div>
         </div>

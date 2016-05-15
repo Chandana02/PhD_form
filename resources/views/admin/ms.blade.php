@@ -115,9 +115,12 @@
         <div class="col s12">
         <a href="#!" data-reg={!! $data['candidates'][$i]->registrationNumber!!} class="print btn  waves-effect waves-green btn" target="_blank">Print</a>
         <a href="#!" data-reg={!! $data['candidates'][$i]->registrationNumber!!} class="admit btn  waves-effect waves-green btn">Admit</a>
+        
         </div>
+        <div class="space-medium"></div>
+        <a href="#!" data-reg={!! $data['candidates'][$i]->registrationNumber!!} class="msExcel btn  waves-effect waves-green btn">Generate Excel</a>
         </div>
-          <div class="space-medium"></div>
+          <div class="space-small"></div>
           </div>
           </div>
         </div>

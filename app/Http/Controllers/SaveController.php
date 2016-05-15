@@ -13,6 +13,7 @@ use App\Phd;
 use Validator;
 use Session;
 use Log;
+use View;
 use Illuminate\Support\Facades\Mail;
 
 class SaveController extends Controller
@@ -77,11 +78,19 @@ class SaveController extends Controller
         SavePhd::where('applNo', $rowNo)
                     ->update(['registrationNumber' => $reg_number]);
 
-        $email = $request->get('email');
-        Mail::send('emails.regnophd', ['applNo'=> $reg_number], function ($m) use($email) {
-            $m->from('phdsection@nitt.edu', 'NITT Admissions');
-            $m->to($email, 'Applicant' )->subject('Greetings from NITT!');
-        });
+        $email = $request->input('email');
+        Mail::send(
+            'emails.regnophd', 
+            [
+                'applNo'=> $reg_number,
+                'dashedApplNo' => str_replace('/', '-', $reg_number),
+                'dob' => $candidate->dob
+            ],
+            function ($m) use($email) {
+                $m->from('phdsection@nitt.edu', 'NITT Admissions');
+                $m->to($email, 'Applicant' )->subject('Greetings from NITT!');
+            }
+        );
 
         return json_encode($reg_number);
 
@@ -147,16 +156,24 @@ class SaveController extends Controller
                 $reg_number = $reg_number.$request->input('department'.$i).'/';
             }
         }
-        $applNo = self::randomno('PHD', $reg_number);
+        $applNo = self::randomno('MS', $reg_number);
         $reg_number = $reg_number.$rowNo.'/'.$applNo;
         SaveMs::where('applNo', $rowNo)
                     ->update(['registrationNumber' => $reg_number]);
 
         $email = $request->input('email');
-        Mail::send('emails.regnoms', ['applNo'=> $reg_number], function ($m) use($email) {
-            $m->from('phdsection@nitt.edu', 'NITT Admissions');
-            $m->to($email, 'Applicant' )->subject('Greetings from NITT!');
-        });
+        Mail::send(
+            'emails.regnoms', 
+            [
+                'applNo'=> $reg_number,
+                'dashedApplNo' => str_replace('/', '-', $reg_number),
+                'dob' => $candidate->dob
+            ],
+            function ($m) use($email) {
+                $m->from('phdsection@nitt.edu', 'NITT Admissions');
+                $m->to($email, 'Applicant' )->subject('Greetings from NITT!');
+            }
+        );
 
         return json_encode($reg_number);
     }
@@ -167,15 +184,8 @@ class SaveController extends Controller
 
     public function fetch($category, $applNo, $dob)
     {
-        $regNo = '';
-        $dept = explode('-', $applNo);
+        $regNo = str_replace("-", "/", $applNo);
 
-        for($i = 0; $i < sizeof($dept) - 1; $i++)
-        {
-            $regNo = $regNo.$dept[$i].'/';
-        }
-        $regNo = $regNo.$dept[sizeof($dept) - 1];
-        Session::put('regNo', $regNo);
         if($category == 'PHD')
 		{
 			$details = SavePhd::where('registrationNumber', $regNo)
@@ -183,6 +193,7 @@ class SaveController extends Controller
 									->first();
             if($details != NULL)
             {
+                Session::put('regNo', $regNo);
                 return view('saved.phd')->with('details', $details);
             }
             else
@@ -198,7 +209,7 @@ class SaveController extends Controller
                                     ->first();
             if($details != NULL)
             {
-                
+                Session::put('regNo', $regNo);
                 return view('saved.ms')->with('details', $details);
             }
             else
@@ -211,6 +222,9 @@ class SaveController extends Controller
 
     public function save2phd(Request $request)
     {
+        $reg_number = Session::get('regNo');
+        $reg_number_modified = str_replace("/", "-", $reg_number);
+
         $details = array(
             'chalanNo' => $request->input('chalanNo'),
             'applicationCategory' => $request->input('appl_categ'),
@@ -272,15 +286,92 @@ class SaveController extends Controller
             'to3' => $request->input('emp_to_3')
         );
 
+        $file = $request->file('image_path');
+        $extension = '';
+        if($file)
+            $extension = $request->file('image_path')->getClientOriginalExtension();
+        if($extension == 'jpg' || $extension == 'png' || $extension == 'jpeg')
+        {
+            list($width, $height) = getimagesize($file);
+            if($width < 413 && $height < 531)
+            {
+
+            }
+            else
+            {
+                $message = 'Dimensions for the uploaded image are more than 413X531';
+                return View::make('error')->with('message', $message);  
+            }
+        }
+        else if($file)
+        {
+            $message = 'Invalid file format for the uploaded image or Dimensions are more than 413X531';
+            return View::make('error')->with('message', $message);
+        }
+
+        $sign = $request->file('sign'); 
+        $signExt = "";
+        if($sign) 
+            $signExt = $request->file('sign')->getClientOriginalExtension();
+        if($signExt == 'jpg' || $signExt == 'png' || $signExt == 'jpeg')
+        {
+            list($width, $height) = getimagesize($file);
+            if($width < 413 && $height < 531)
+            {
+
+            }
+            else
+            {
+                $message = 'Size of the uploaded signature is more than 4 kb';
+                return View::make('error')->with('message', $message);
+            }
+        }
+        else if($sign)
+        {
+            $message = 'Invalid file format for the uploaded Signature';
+            return View::make('error')->with('message', $message);
+        }
+
+        $image_extension = '';
+        $sign_extension = '';
+        $stored_image_path = SavePhd::where('registrationNumber', Session::get('regNo'))->select('imagePath')->first()['imagePath'];
+        $stored_image_arr = explode(',', $stored_image_path);
+        $stored_image_extension = $stored_image_arr[0];
+        $stored_sign_extension = count($stored_image_arr) == 2 ? $stored_image_arr[1] : '';
+        
+        if($file)
+        {
+            $file = $file->move(public_path().'/uploads/PHD/'.$reg_number_modified , 'photo.'.$extension);
+            $image_extension = $extension;
+        }
+        else
+        {
+            $image_extension = $stored_image_extension;
+        }
+        if($sign)
+        {
+            $sign = $sign->move(public_path().'/uploads/PHD/'. $reg_number_modified, 'sign.'.$signExt);
+            $sign_extension = $signExt;
+        }
+        else 
+        {
+            $sign_extension = $stored_sign_extension;
+        }
+        $image_path = $image_extension . "," . $sign_extension;
+        $details['imagePath'] = $image_path;
+        Log::info($request->input('score'));
         SavePhd::where('registrationNumber', Session::get('regNo'))
                     ->update($details);
 
-        return json_encode(0);
+        return self::fetch('PHD', $reg_number, $details["dob"]);
     }
 
     public function save2ms(Request $request)
     {
-         $details = array(
+        $reg_number = Session::get('regNo');
+        $reg_number_modified = str_replace("/", "-", $reg_number);
+
+        $details = array(
             'applicationCategory' => $request->get('appl_categ'),
             'chalanNo' => $request->input('chalanNo'),
             'dept1' => $request->get('department1'),
@@ -343,11 +434,86 @@ class SaveController extends Controller
             'gpa7' => $request->get('gpa7'),
             'gpa8' => $request->get('gpa8')
         );
-         Log::info($request->input('score'));
+
+        $file = $request->file('image_path');   
+        $extension = '';
+        if($file)
+            $extension = $request->file('image_path')->getClientOriginalExtension();
+
+        if($extension == 'jpg' || $extension == 'png' || $extension == 'jpeg')
+        {
+            list($width, $height) = getimagesize($file);
+            if($width < 413 && $height < 531)
+            {
+
+            }
+            else
+            {
+                $message = 'Dimensions for the uploaded image are more than 413X531';
+                return View::make('error')->with('message', $message);  
+            }
+        }
+        else if($file)
+        {
+            $message = 'Invalid file format for the uploaded image or Dimensions are more than 413X531';
+            return View::make('error')->with('message', $message);
+        }
+
+        $sign = $request->file('sign');  
+        $signExt = '';
+        if($sign)
+            $signExt = $request->file('sign')->getClientOriginalExtension();
+        if($signExt == 'jpg' || $signExt == 'png' || $signExt == 'jpeg')
+        {
+            list($width, $height) = getimagesize($file);
+            if($width < 413 && $height < 531)
+            {
+
+            }
+            else
+            {
+                $message = 'Size of the uploaded signature is more than 4 kb';
+                return View::make('error')->with('message', $message);
+            }
+        }
+        else if($sign)
+        {
+            $message = 'Invalid file format for the uploaded Signature';
+            return View::make('error')->with('message', $message);
+        }
+
+        $image_extension = '';
+        $sign_extension = '';
+        $stored_image_path = SaveMs::where('registrationNumber', Session::get('regNo'))->select('imagePath')->first()['imagePath'];
+        $stored_image_arr = explode(',', $stored_image_path);
+        $stored_image_extension = $stored_image_arr[0];
+        $stored_sign_extension = count($stored_image_arr) == 2 ? $stored_image_arr[1] : '';
+        
+        if($file)
+        {
+            $file = $file->move(public_path().'/uploads/MS/'.$reg_number_modified , 'photo.'.$extension);
+            $image_extension = $extension;
+        }
+        else
+        {
+            $image_extension = $stored_image_extension;
+        }
+        if($sign)
+        {
+            $sign = $sign->move(public_path().'/uploads/MS/'. $reg_number_modified, 'sign.'.$signExt);
+            $sign_extension = $signExt;
+        }
+        else 
+        {
+            $sign_extension = $stored_sign_extension;
+        }
+        $image_path = $image_extension . "," . $sign_extension;
+        $details['imagePath'] = $image_path;
+        Log::info($request->input('score'));
         SaveMs::where('registrationNumber', Session::get('regNo'))
                     ->update($details);
 
-        return json_encode(0);
+        return self::fetch('MS', $reg_number, $details["dob"]);
     }
 
     public function randomno($phdormsc, $reg_number)

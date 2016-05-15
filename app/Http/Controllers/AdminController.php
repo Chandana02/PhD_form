@@ -281,7 +281,7 @@ class AdminController extends Controller
             $regNo = $regNo.$departments[$i].'/';
         }
         $regNo = $regNo.$departments[sizeof($departments) - 1];
-        $reg_appl_no = $departments[sizeof($departments) - 1];
+        $reg_appl_no = str_replace('/', '-', $regNo);
         if($phdormsc == 'PHD')
         {
             $candidates = Phd::where('registrationNumber', $regNo)
@@ -420,6 +420,7 @@ class AdminController extends Controller
 
     public function department($t)
     {
+        return $t;
         if($t == 'AR')
         {
             return 'Architecture';

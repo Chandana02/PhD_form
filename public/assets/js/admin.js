@@ -37,12 +37,11 @@ function ajaxCall(x,y){
 	    });
 		var data = {};
 		data.applNo = x;
-		var baseurl = 'http://admission.nitt.edu';
 		var url = '/'+y;
 		$.ajax(
 	    {
 	        type: "POST",
-	        url: baseurl + url,
+	        url: url,
 	        data: data,
 	        dataType: "json",
 	        success: function(data){

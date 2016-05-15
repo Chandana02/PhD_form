@@ -22,6 +22,13 @@
 	max-width: 210px;
 	max-height: 310px;
 }
+
+.pad{
+  	padding: 30px;
+  	padding-left: 50px;
+  	margin-left: 40px;
+  }
+
 .imp{
 	color: rgb(200,100,100);
 

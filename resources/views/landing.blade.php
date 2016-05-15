@@ -1,10 +1,12 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<meta charset="utf-8">
+
+  <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Ph.d Registration Form</title>
+  <title>M.S. Ph.D. Admissions - 2016, NIT-Trichy</title>
+
   <link rel="stylesheet" href="{{URL::asset('assets/css/style.css')}}">
   <link rel="stylesheet" href="{{URL::asset('assets/css/materialize.min.css')}}">
   <!-- <link rel="shortcut icon" href="{{URL::asset('assets/logo.jpg')}}"> -->
@@ -14,28 +16,32 @@
   <script src="{{URL::asset('assets/js/materialize.min.js')}}"></script>
 </head>
 <body>
-	 
+
+   
    <header style="height: 25vh;
-	padding: 0px;
-	margin: 0px;
-	background-image: url('{{URL::asset('assets/images/header.png')}}');
-	background-repeat: no-repeat;
-	background-position: center;
-	background-color: #004d40;
-	background-size: contain;"></header>
+  padding: 0px;
+  margin: 0px;
+  background-image: url('{{URL::asset('assets/images/header.png')}}');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-color: #004d40;
+  background-size: contain;"></header>
+
   
   <nav>
     <div class="nav-wrapper ">
       
       <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
       <ul class="hide-on-med-and-down">
-        <li><a href="/home">Home</a></li>
-        <li><a href="/home">PhD./M.S. Admissions</a></li>
+
+        <li><a href="#">Home</a></li>
+        <li><a href="#">Ph.D./M.S. Admissions</a></li>
         <li><a href="/contact">Contact</a></li>
       </ul>
       <ul class="side-nav" id="mobile-demo">
-       <li><a href="/home">Home</a></li>
-        <li><a href="/home">PhD./M.S. Admissions</a></li>
+       <li><a href="#">Home</a></li>
+        <li><a href="#">Ph.D./M.S. Admissions</a></li>
+
         <li><a href="/contact">Contact</a></li>
       </ul>
     </div>
@@ -44,19 +50,22 @@
   <div class="space-medium"></div>
   <div class="container main">
     <div class="row">
-      <p class="imp"><b>Stage 1 of Application Process will start from Monday - 16th May, 2016 at 10:00 AM IST. We strongly recommend you to go through the application brochure and instructions mentioned below.</b></p>
+
+     <marquee> <p class="imp" style="color:red"><b>Stage 1 of application process will start from Monday - 16th May, 2016 at 10:00 AM IST. We recommend you to carefully read the information brochure and instructions.</b></p></marquee>
       <div class="space-medium"></div>
       <div class="content">
-        <h5 class="center"><b><u>INSTRUCTIONS:</u></b></h5>
+        <h5 class="center"><b><u>INSTRUCTIONS</u></b></h5>
         <ul class="pad">
-          <li>1)Please Read carefully the Application <a>Brochure</a> before applying.</li>
-          <li>2)Reach out to Help Desk Numbers mentioned in the <a href="contact">Contact</a> in case of a query.</li>
+          <li>1) Please read carefully the application <a href="http://www.nitt.edu/home/admissions/phd/MS-PhD-July2016.pdf">brochure</a> before applying.</li>
+          <li>2) Reach out to help desk numbers provided in the <a href="contact">Contact</a> in case of a query.</li>
+          <li>3) Help desk would be live from 17th May, 2016 (10:30 AM -4:30 PM) at NIT Trichy. </li>
         </ul>
-        <h5 class="center"><b><u>Application Process:</u></b></h5>
+        <h5 class="center"><b><u>APPLICATION PROCESS</u></b></h5>
         <ul class="pad">
-          <li><b>Stage 1</b>: Online application on <a>http://admission.nitt.edu/</a>  to be available from 16th May, 2016 - 10:00 AM IST</li>
-          <li><b>Stage 2</b>: This stage is online payment of application fee through <a>SBI Collect.</a> </li>
-          <li><b>Stage 3</b>: Proceed with the application form submitted in the first stage from your mail after online payment. Challan/Bank reference number would be used in this stage.</li>
+          <li><b>Stage 1</b>: Online application would be available from 16th May, 2016 - 10:00 AM IST on this site.</li>
+          <li><b>Stage 2</b>: Online payment of application fee through <a href="https://www.onlinesbi.com/prelogin/icollecthome.htm?corpID=88587">SB Collect.</a> </li>
+          <li><b>Stage 3</b>: Proceed with the instructions sent through mail in stage 1. Bank reference number would be required in this stage.</li>
+
         </ul>
       </div>
     </div>
@@ -85,7 +94,9 @@
           <div class="footer-copyright dark">
             <div class="container center">
             
-            <a class="grey-text text-lighten-4" href="#!">Made with &hearts; by Delta Force</a>
+
+            <a class="grey-text text-lighten-4" href="#!">Made with &hearts; by Delta Force, NIT Trichy</a>
+
             </div>
           </div>
         </footer>

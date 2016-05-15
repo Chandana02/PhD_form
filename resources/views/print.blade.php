@@ -82,7 +82,7 @@
   
       </div>
       <div class="col l2">
-        <img src="{{ URL::asset('uploads/PHD/'.$applNo.'/'.$applNo.'.'.$imgtype) }}" width="100" height="150">
+        <img src="{{ URL::asset('uploads/PHD/'.$applNo.'/photo.' . $imgtype) }}" width="150" height="150">
 
       </div>
       </div>
@@ -227,7 +227,7 @@
             <td>{!! $others['validity'] !!}</td>
           </tr>
           <tr>
-            <td>Discipline</td>
+            <td><b>Discipline:</b></td>
             <td>{!! $others['discipline'] !!}</td>
           </tr>
         </tbody>
@@ -320,7 +320,7 @@
       </table>
       <div class="space-medium"></div>
       <div class="row right">
-         <img src="{{ URL::asset('uploads/PHD/'.$applNo.'/'.$applNo.'sign.'.$signtype) }}" width="250" height="100">
+         <img src="{{ URL::asset('uploads/PHD/'.$applNo.'/sign.'.$signtype) }}" width="250" height="100">
          <p><u>Signature</u></p>
       </div>
   
@@ -375,7 +375,7 @@
       </table>
       </div>
       <div class="col l3">
-        <img src="{{ URL::asset('uploads/MS/'.$applNo.'/'.$applNo.'.'.$imgtype) }}" width="100" height="150">
+        <img src="{{ URL::asset('uploads/MS/'.$applNo.'/photo.' . $imgtype) }}" width="150" height="150">
       </div>
       </div>
 
@@ -605,7 +605,7 @@
 
       <div class="space-medium"></div>
       <div class="row right">
-         <img src="{{ URL::asset('uploads/MS/'.$applNo.'/'.$applNo.'sign.'.$signtype) }}" width="250" height="100">
+         <img src="{{ URL::asset('uploads/MS/'.$applNo.'/sign.'.$signtype) }}" width="250" height="100">
          <p><u>Signature</u></p>
       </div>
 </div>

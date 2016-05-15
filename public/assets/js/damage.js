@@ -14,13 +14,10 @@ $(document).ready(function(){
 	        }
 	    });
 		
-		
-		var baseurl = 'http://admission.nitt.edu';
-		var url = '/'+'dmgctrl';
 		$.ajax(
 	    {
 	        type: "POST",
-	        url: baseurl + url,
+	        url: '/dmgctrl',
 	        data: data,
 	        dataType: "json",
 	        success: function(data){
