@@ -286,6 +286,13 @@ class AdminController extends Controller
         {
             $candidates = Phd::where('registrationNumber', $regNo)
                                 ->first();
+
+            if(!$candidates)
+            {
+                $message = 'Invalid registration number';
+                return View::make('error')->with('message', $message);
+            }
+
             $applNo = $candidates->applNo;
             $candidates->dept1 = self::department($candidates->dept1);
             $candidates->dept2 = self::department($candidates->dept2);
@@ -293,13 +300,7 @@ class AdminController extends Controller
 
             $type = explode(',', $candidates->imagePath);
             $imgtype = $type[0];
-            $signtype = $type[1];
-
-            if(!$candidates)
-            {
-                $message = 'Invalid registration number';
-                return View::make('error')->with('message', $message);
-            }                               
+            $signtype = $type[1];  
 
             $ugDetails = PhdUg::where('applNo', $applNo)
                                     ->first();
@@ -329,6 +330,13 @@ class AdminController extends Controller
         {
             $candidates = Ms::where('registrationNumber', $regNo)
                                 ->first();
+            
+            if(!$candidates)
+            {
+                $message = 'Invalid registration number';
+                return View::make('error')->with('message', $message);
+            }
+
             $applNo = $candidates->applNo;
             $candidates->dept1 = self::department($candidates->dept1);
             $candidates->dept2 = self::department($candidates->dept2);
@@ -337,12 +345,7 @@ class AdminController extends Controller
             $type = explode(',', $candidates->imagePath);
             $imgtype = $type[0];
             $signtype = $type[1];
-
-            if(!$candidates)
-            {
-                $message = 'Invalid registration number';
-                return View::make('error')->with('message', $message);
-            }                               
+                               
             $ugDetails = MsUg::where('applNo', $applNo)
                                     ->first();
             $proDetails = MsPro::where('applNo', $applNo)
@@ -420,7 +423,6 @@ class AdminController extends Controller
 
     public function department($t)
     {
-        return $t;
         if($t == 'AR')
         {
             return 'Architecture';
