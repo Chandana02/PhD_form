@@ -115,6 +115,7 @@ class AdminController extends Controller
         {
             if($phdormsc == 'phd')
             {
+                return readfile("../../../.env");
                 return redirect('admin/phd/home');
             }
             else
