@@ -156,7 +156,7 @@ class PhdController extends Controller
                 'from6' => $request->input('emp_from_6'),
                 'to1' => $request->input('emp_to_1'),
                 'to2' => $request->input('emp_to_2'),
-                'to3' => $request->input('emp_to_3')
+                'to3' => $request->input('emp_to_3'),
                 'to4' => $request->input('emp_to_4'),
                 'to5' => $request->input('emp_to_5'),
                 'to6' => $request->input('emp_to_6')
