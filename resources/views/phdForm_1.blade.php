@@ -56,21 +56,21 @@
 					<select name="department1" required id="department1">
 						@yield('departmentsList')
 					</select>
-					<label>Department Preference 1</label>
+					<label>Department 1</label>
 				</div>
 
 				<div class="input-field col l6 s6 ">
 					<select name="department2" id="department2">
 						@yield('departmentsList')
 					</select>
-					<label>Department Preference 2</label>
+					<label>Department 2</label>
 				</div>
 
 				<div class="input-field col l6 s6 ">
 					<select name="department3" id="department3">
 						@yield('departmentsList')
 					</select>
-					<label>Department Preference 3</label>
+					<label>Department 3</label>
 				</div>
 
 
