@@ -62,7 +62,7 @@
         </ul>
         <h5 class="center"><b><u>APPLICATION PROCESS</u></b></h5>
         <ul class="pad">
-          <li><b>Stage 1</b>: Online application would be available from 16th May, 2016 - 10:00 AM IST on this site.</li>
+          <li><b>Stage 1</b>: Online application is now available <a href="/home">here</a> </li>
           <li><b>Stage 2</b>: Online payment of application fee through <a href="https://www.onlinesbi.com/prelogin/icollecthome.htm?corpID=88587">SB Collect.</a> </li>
           <li><b>Stage 3</b>: Proceed with the instructions sent through mail in stage 1. Bank reference number would be required in this stage.</li>
 
