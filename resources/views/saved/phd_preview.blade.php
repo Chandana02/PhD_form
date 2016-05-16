@@ -241,7 +241,7 @@
 
 			      <div class="row">
 			        <div class="input-field col l6 pdCheck">
-			      		  <span class="light">*Person With Disability(P.W.D):</span><br>
+			      		  <span class="light">*Person With Disability(PwD):</span><br>
 			      
 			         	<select required name="ph" id="ph">
 					      <option value="" disabled selected>Choose your option</option>
