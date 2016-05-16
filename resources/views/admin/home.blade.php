@@ -8,11 +8,9 @@
     <div class="row">
       <div class="col l6 s6 center">
           <a class="waves-effect waves-light btn" href="ms">M.S. Applicants</a>
-         
       </div>
       <div class="col l6 s6 center">
-          <a class="waves-effect waves-light btn" href="phd">PhD Applicants</a>
-          
+          <a class="waves-effect waves-light btn" href="phd">Ph.D. Applicants</a>
       </div>
     </div>
   </div>
