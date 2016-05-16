@@ -53,7 +53,7 @@
 	<div class="col s12">
 
 		<fieldset>
-			<legend>Applicant Details</legend>
+			<legend class="vlarge">Applicant Details</legend>
 			<div class="row dept">
 				<div class="input-field col l6 s6 ">
 					<span class="light">Department 1</span>
