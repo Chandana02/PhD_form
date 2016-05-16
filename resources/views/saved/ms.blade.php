@@ -263,8 +263,8 @@
 						<tr>
 							<th details-field="id">Year</th>
 							<th details-field="name">Semester</th>
-							<th details-field="price">Maximum G.P.A</th>
-							<th details-field="price">G.P.A obtained</th>
+							<th details-field="price">Maximum G.P.A/Marks</th>
+							<th details-field="price">G.P.A/Marks obtained</th>
 						</tr>
 					</thead>
 
@@ -273,80 +273,80 @@
 							<td>1</td>
 							<td>First</td>
 							<td>
-								<input required id="max1" type="number" class="validate" min="0" max="100" name="max1" value="{!! $details['gpamax1'] !!}">
+								<input required id="max1" type="number" class="validate" min="0" max="1000" name="max1" value="{!! $details['gpamax1'] !!}">
 							</td>
 							<td>
-								<input required id="gpa1" type="number" class="validate" min="0" max="100" name="gpa1" value="{!! $details['gpa1'] !!}" step="0.01">
+								<input required id="gpa1" type="number" class="validate" min="0" max="1000" name="gpa1" value="{!! $details['gpa1'] !!}" step="0.01">
 							</td>
 						</tr>
 						<tr>
 							<td>1</td>
 							<td>Second</td>
 							<td>
-								<input required id="max2" type="number" class="validate" name="max2" min="0" max="100" value="{!! $details['gpamax2'] !!}">
+								<input required id="max2" type="number" class="validate" name="max2" min="0" max="1000" value="{!! $details['gpamax2'] !!}">
 							</td>
 							<td>
-								<input required id="gpa2" type="number" class="validate" name="gpa2" min="0" max="100" value="{!! $details['gpa2'] !!}" step="0.01">
+								<input required id="gpa2" type="number" class="validate" name="gpa2" min="0" max="1000" value="{!! $details['gpa2'] !!}" step="0.01">
 							</td>
 						</tr>
 						<tr>
 							<td>2</td>
 							<td>Third</td>
 							<td>
-								<input required id="max3" type="number" class="validate" name="max3" min="0" max="100" value="{!! $details['gpamax3'] !!}">
+								<input required id="max3" type="number" class="validate" name="max3" min="0" max="1000" value="{!! $details['gpamax3'] !!}">
 							</td>
 							<td>
-								<input required id="gpa3" type="number" class="validate" name="gpa3" min="0" max="100" value="{!! $details['gpa3'] !!}" step="0.01">
+								<input required id="gpa3" type="number" class="validate" name="gpa3" min="0" max="1000" value="{!! $details['gpa3'] !!}" step="0.01">
 							</td>
 						</tr>
 						<tr>
 							<td>2</td>
 							<td>Fourth</td>
 							<td>
-								<input required id="max4" type="number" class="validate" name="max4" min="0" max="100" value="{!! $details['gpamax4'] !!}">
+								<input required id="max4" type="number" class="validate" name="max4" min="0" max="1000" value="{!! $details['gpamax4'] !!}">
 							</td>
 							<td>
-								<input required id="gpa4" type="number" class="validate" name="gpa4" min="0" max="100" value="{!! $details['gpa4'] !!}" step="0.01">
+								<input required id="gpa4" type="number" class="validate" name="gpa4" min="0" max="1000" value="{!! $details['gpa4'] !!}" step="0.01">
 							</td>
 						</tr>
 						<tr>
 							<td>3</td>
 							<td>Fifth</td>
 							<td>
-								<input required id="max5" type="number" class="validate" name="max5" min="0" max="100" value="{!! $details['gpamax5'] !!}">
+								<input required id="max5" type="number" class="validate" name="max5" min="0" max="1000" value="{!! $details['gpamax5'] !!}">
 							</td>
 							<td>
-								<input required id="gpa5" type="number" class="validate" name="gpa5" min="0" max="100" value="{!! $details['gpa5'] !!}" step="0.01">
+								<input required id="gpa5" type="number" class="validate" name="gpa5" min="0" max="1000" value="{!! $details['gpa5'] !!}" step="0.01">
 							</td>
 						</tr>
 						<tr>
 							<td>3</td>
 							<td>Sixth</td>
 							<td>
-								<input required id="max6" type="number" class="validate" name="max6" min="0" max="100" value="{!! $details['gpamax6'] !!}">
+								<input required id="max6" type="number" class="validate" name="max6" min="0" max="1000" value="{!! $details['gpamax6'] !!}">
 							</td>
 							<td>
-								<input required id="gpa6" type="number" class="validate" name="gpa6" min="0" max="100" value="{!! $details['gpa6'] !!}" step="0.01">
+								<input required id="gpa6" type="number" class="validate" name="gpa6" min="0" max="1000" value="{!! $details['gpa6'] !!}" step="0.01">
 							</td>
 						</tr>
 						<tr>
 							<td>4</td>
 							<td>Seventh</td>
 							<td>
-								<input required id="max7" type="number" class="validate" name="max7" min="0" max="100" value="{!! $details['gpamax7'] !!}">
+								<input required id="max7" type="number" class="validate" name="max7" min="0" max="1000" value="{!! $details['gpamax7'] !!}">
 							</td>
 							<td>
-								<input required id="gpa7" type="number" class="validate" name="gpa7" min="0" max="100" value="{!! $details['gpa7'] !!}" step="0.01">
+								<input required id="gpa7" type="number" class="validate" name="gpa7" min="0" max="1000" value="{!! $details['gpa7'] !!}" step="0.01">
 							</td>
 						</tr>
 						<tr>
 							<td>4</td>
 							<td>Eighth</td>
 							<td>
-								<input required id="max8" type="number" class="validate eight" name="max8" min="0" max="100" value="{!! $details['gpamax8'] !!}">
+								<input required id="max8" type="number" class="validate eight" name="max8" min="0" max="1000" value="{!! $details['gpamax8'] !!}">
 							</td>
 							<td>
-								<input required id="gpa8" type="number" class="validate eight" name="gpa8" min="0" max="100" value="{!! $details['gpa8'] !!}" step="0.01">
+								<input required id="gpa8" type="number" class="validate eight" name="gpa8" min="0" max="1000" value="{!! $details['gpa8'] !!}" step="0.01">
 							</td>
 						</tr>
 
