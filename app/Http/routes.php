@@ -13,8 +13,11 @@
 Route::get('exportphd', 'ExportController@allPhdCandidatesExport');
 Route::get('exportms', 'ExportController@allMsCandidatesExport');
 Route::get('/', function() {
+    //return view('landing');
+    return redirect('home');
+});
+Route::get('/instructions', function() {
     return view('landing');
-//    return redirect('home');
 });
 Route::post('savephd', 'SaveController@savephd');
 Route::post('savems', 'SaveController@savems');

@@ -34,8 +34,8 @@
       <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
       <ul class="hide-on-med-and-down">
 
-        <li><a href="#">Home</a></li>
-        <li><a href="#">Ph.D./M.S. Admissions</a></li>
+        <li><a href="/">Home</a></li>
+        <li><a href="/">Ph.D./M.S. Admissions</a></li>
         <li><a href="/contact">Contact</a></li>
       </ul>
       <ul class="side-nav" id="mobile-demo">
@@ -51,7 +51,7 @@
   <div class="container main">
     <div class="row">
 
-     <marquee> <p class="imp" style="color:red"><b>Stage 1 of application process will start from Monday - 16th May, 2016 at 10:00 AM IST. We recommend you to carefully read the information brochure and instructions.</b></p></marquee>
+     <!--<marquee> <p class="imp" style="color:red"><b>Stage 1 of application process will start from Monday - 16th May, 2016 at 10:00 AM IST. We recommend you to carefully read the information brochure and instructions.</b></p></marquee>-->
       <div class="space-medium"></div>
       <div class="content">
         <h5 class="center"><b><u>INSTRUCTIONS</u></b></h5>
