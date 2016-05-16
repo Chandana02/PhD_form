@@ -18,7 +18,7 @@
 		<tbody>
 			<tr>
 				<td colspan="2" align="justify">
-					<h3 align="center"><u>M.S. / Ph.D. Admissions July, 2016</u></h3>
+					<h3 align="center"><u>Ph.D. Admissions July, 2016</u></h3>
 
 					<p style="font-size: 14pt"><b>Dear {!! $name !!},</b></p>
 

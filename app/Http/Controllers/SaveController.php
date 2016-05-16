@@ -88,7 +88,7 @@ class SaveController extends Controller
                 'dob' => $candidate->dob
             ],
             function ($m) use($email) {
-                $m->from('phdsection@nitt.edu', 'NITT Admissions');
+                $m->from('phdsection@nitt.edu', 'NIT Trichy Admissions');
                 $m->to($email, 'Applicant' )->subject('NIT-Trichy Ph.D. Admissions, July 2016');
             }
         );
@@ -172,7 +172,7 @@ class SaveController extends Controller
                 'dob' => $candidate->dob
             ],
             function ($m) use($email) {
-                $m->from('phdsection@nitt.edu', 'NITT Admissions');
+                $m->from('phdsection@nitt.edu', 'NIT Trichy Admissions');
                 $m->to($email, 'Applicant' )->subject('NIT-Trichy M.S. Admissions, July 2016');
             }
         );

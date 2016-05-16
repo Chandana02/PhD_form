@@ -210,8 +210,8 @@ class AdminController extends Controller
                                 ->where('registrationNumber', $reg_number)
                                 ->first();                 
             Mail::send('emails.delete', ['user' => $user->name], function ($m) use($user) {
-                $m->from('phdsection@nitt.edu', 'NITT Admissions');
-                $m->to($user->email, 'Applicant' )->subject('Greetings from NITT!');
+                $m->from('phdsection@nitt.edu', 'NIT Trichy Admissions');
+                $m->to($user->email, 'Applicant' )->subject('NIT Trichy Admissions Notice!');
             });
 
             return json_encode($reg_number);
@@ -225,8 +225,8 @@ class AdminController extends Controller
                                 ->where('registrationNumber', $reg_number)
                                 ->first();
             Mail::send('emails.delete', ['user' => $user->name], function ($m) use($user) {
-                $m->from('phdsection@nitt.edu', 'NITT Admissions');
-                $m->to($user->email, 'Applicant')->subject('Greetings from NITT!');
+                $m->from('phdsection@nitt.edu', 'NIT Trichy Admissions');
+                $m->to($user->email, 'Applicant')->subject('NIT Trichy Admissions Notice!');
             });
 
             return json_encode($reg_number);
@@ -248,8 +248,8 @@ class AdminController extends Controller
                                 ->first();
 
             Mail::send('emails.accept', ['user' => $user->name], function ($m) use($user) {
-                $m->from('phdsection@nitt.edu', 'NITT Admissions');
-                $m->to($user->email, 'Applicant')->subject('Greetings from NITT!');
+                $m->from('phdsection@nitt.edu', 'NIT Trichy Admissions');
+                $m->to($user->email, 'Applicant')->subject('NIT Trichy Admissions Notice!');
             });
             
             return json_encode($reg_number);
@@ -263,8 +263,8 @@ class AdminController extends Controller
                                 ->where('registrationNumber', $reg_number)
                                 ->first();
             Mail::send('emails.accept', ['user' => $user->name], function ($m) use($user) {
-                $m->from('phdsection@nitt.edu', 'NITT Admissions');
-                $m->to($user->email, 'Applicant')->subject('Greetings from NITT!');
+                $m->from('phdsection@nitt.edu', 'NIT Trichy Admissions');
+                $m->to($user->email, 'Applicant')->subject('NIT Trichy Admissions Notice!');
             });
 
             return json_encode($reg_number);
