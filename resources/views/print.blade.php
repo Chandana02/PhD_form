@@ -39,7 +39,6 @@
           <tr>
             <td><h5>Application Details</h5></td>
             <td></td>
-
           </tr>
         </thead>
         <tbody>
@@ -66,9 +65,9 @@
         <tbody>
           <tr>
             <td><b>Department 1:</b></td>
-            <td>{!! $candidates['dept1'] !!}</td>
+            <td>{!! $candidates['dept1'] ? $candidates['dept1'] : 'N/A' !!}</td>
             <td><b>Department 2:</b></td>
-            <td>{!! $candidates['dept2'] !!}</td>
+            <td>{!! $candidates['dept2'] ? $candidates['dept2'] : 'N/A' !!}</td>
           </tr>
           <tr>
             <td><b>Department 3:</b></td>
@@ -243,14 +242,24 @@
           <tr>
             <td><b>Title of Project:</b></td>
             <td>{!! $others['pgproject'] !!}</td>
-            <td><b>Details of Publication 1:</b></td>
-            <td>{!! $others['publications1'] !!}</td>
           </tr>
           <tr>
+            <td><b>Details of Publication 1:</b></td>
+            <td>{!! $others['publications1'] !!}</td>
             <td><b>Details of Publication 2:</b></td>
             <td>{!! $others['publications2'] !!}</td>
+          </tr>
+          <tr>
             <td><b>Details of Publication 3:</b></td>
             <td>{!! $others['publications3'] !!}</td>
+            <td><b>Details of Publication 4:</b></td>
+            <td>{!! $others['publications4'] !!}</td>
+          </tr>
+          <tr>
+            <td><b>Details of Publication 5:</b></td>
+            <td>{!! $others['publications5'] !!}</td>
+            <td><b>Details of Publication 6:</b></td>
+            <td>{!! $others['publications6'] !!}</td>
           </tr>
           <tr>
             <td><b>Awards1:</b></td>
@@ -261,6 +270,14 @@
           <tr>
             <td><b>Awards3:</b></td>
             <td>{!! $others['awards3'] !!}</td>
+            <td><b>Awards4:</b></td>
+            <td>{!! $others['awards4'] !!}</td>
+          </tr>
+          <tr>
+            <td><b>Awards5:</b></td>
+            <td>{!! $others['awards5'] !!}</td>
+            <td><b>Awards6:</b></td>
+            <td>{!! $others['awards6'] !!}</td>
           </tr>
         </tbody>
       </table>
@@ -316,9 +333,69 @@
             <td><b>To</b></td>
             <td>{!! $pro['to3'] !!}</td>
           </tr>
+          <tr>
+            <td><b>Employer Details 4:</b></td>
+            <td>{!! $pro['proexp4'] !!}</td>
+          </tr>
+          <tr>
+            <td><b>Position 4:</b></td>
+            <td>{!! $pro['position4'] !!}</td>
+          </tr>
+          <tr>
+            <td><b>From</b></td>
+            <td>{!! $pro['from4'] !!}</td>
+            <td><b>To</b></td>
+            <td>{!! $pro['to4'] !!}</td>
+          </tr>
+          <tr></tr>
+          <tr>
+            <td><b>Employer Details 5:</b></td>
+            <td>{!! $pro['proexp5'] !!}</td>
+          </tr>
+          <tr>
+            <td><b>Position 5:</b></td>
+            <td>{!! $pro['position5'] !!}</td>
+          </tr>
+          <tr>
+            <td><b>From</b></td>
+            <td>{!! $pro['from5'] !!}</td>
+            <td><b>To</b></td>
+            <td>{!! $pro['to5'] !!}</td>
+          </tr>
+          <tr></tr>
+          <tr>
+            <td><b>Employer Details 6:</b></td>
+            <td>{!! $pro['proexp6'] !!}</td>
+          </tr>
+          <tr>
+            <td><b>Position 6:</b></td>
+            <td>{!! $pro['position6'] !!}</td>
+          </tr>
+          <tr>
+            <td><b>From</b></td>
+            <td>{!! $pro['from6'] !!}</td>
+            <td><b>To</b></td>
+            <td>{!! $pro['to6'] !!}</td>
+          </tr>
+          <tr></tr>
         </tbody>
       </table>
       <div class="space-medium"></div>
+      <div class="row left">
+         <?php
+          if($candidates['applicationCategory'] == 'External') {
+         ?>
+            <a href="{{ '/uploads/PHD/' . $applNo . '/form1.pdf' }}">Form-1 submitted by you</a><br>
+            <a href="{{ '/uploads/PHD/' . $applNo . '/form2.pdf' }}">Form-2 submitted by you</a><br>
+          <?php
+            }
+            else if($candidates['applicationCategory'] == 'onCampus') {
+          ?>
+            <a href="{{ '/uploads/PHD/' . $applNo . '/form3.pdf' }}">Form-3 submitted by you</a>
+          <?php
+            }
+          ?>
+      </div>
       <div class="row right">
          <img src="{{ URL::asset('uploads/PHD/'.$applNo.'/sign.'.$signtype) }}" width="250" height="100">
          <p><u>Signature</u></p>
@@ -600,10 +677,66 @@
             <td><b>To</b></td>
             <td>{!! $pro['to3'] !!}</td>
           </tr>
+          <tr>
+            <td><b>Employer Details 4:</b></td>
+            <td>{!! $pro['proexp4'] !!}</td>
+          </tr>
+          <tr>
+            <td><b>Position 4:</b></td>
+            <td>{!! $pro['position4'] !!}</td>
+          </tr>
+          <tr>
+            <td><b>From</b></td>
+            <td>{!! $pro['from4'] !!}</td>
+            <td><b>To</b></td>
+            <td>{!! $pro['to4'] !!}</td>
+          </tr>
+          <tr></tr>
+                    <tr>
+            <td><b>Employer Details 5:</b></td>
+            <td>{!! $pro['proexp5'] !!}</td>
+          </tr>
+          <tr>
+            <td><b>Position 5:</b></td>
+            <td>{!! $pro['position5'] !!}</td>
+          </tr>
+          <tr>
+            <td><b>From</b></td>
+            <td>{!! $pro['from5'] !!}</td>
+            <td><b>To</b></td>
+            <td>{!! $pro['to5'] !!}</td>
+          </tr>
+          <tr></tr>
+          <tr>
+            <td><b>Employer Details 6:</b></td>
+            <td>{!! $pro['proexp6'] !!}</td>
+          </tr>
+          <tr>
+            <td><b>Position 6:</b></td>
+            <td>{!! $pro['position6'] !!}</td>
+          </tr>
+          <tr>
+            <td><b>From</b></td>
+            <td>{!! $pro['from6'] !!}</td>
+            <td><b>To</b></td>
+            <td>{!! $pro['to6'] !!}</td>
+          </tr>
+          <tr></tr>
         </tbody>
       </table>
 
       <div class="space-medium"></div>
+      
+      <div class="row left">
+         <?php if(file_exists('../public/uploads/MS/' . $applNo . '/cert.pdf')) { ?>
+          <a href="{{ '/uploads/MS/' . $applNo . '/cert.pdf' }}">Sponsorship certificate submitted by you</a>
+          <?php } 
+            else {
+              echo "You haven't submitted a Sponsorship Certificate";
+            }
+          ?>
+      </div>
+
       <div class="row right">
          <img src="{{ URL::asset('uploads/MS/'.$applNo.'/sign.'.$signtype) }}" width="250" height="100">
          <p><u>Signature</u></p>
