@@ -18,7 +18,7 @@
 <option value="ME">Mechanical Engineering</option>
 <option value="PR">Production Engineering</option>
 <option value="IC">Instrumentation And Control Engineering</option>
-<option value="MME">Metalurgy and Material Sciences</option>
+<option value="MME">Metallurgical and Materials Engineering</option>
 <option value="PH">Physics</option>
 @endsection
 
