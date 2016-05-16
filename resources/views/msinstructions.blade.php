@@ -11,7 +11,8 @@
             <div class="space-small"></div>
             <div class="inst">
                 <ol>
-                    <li>Use Google Chrome to fill the application.</li>
+                    <li>Use Google Chrome for better experience.</li>
+                    <li>This site is also compatible to your Android Phone Browser.</li>
                     <li>Please read the <a href="#">information brouchure </a>before filling the aplication.</li>
                     <li>The entire registration process is of 3 stages. 
                         <ul>
