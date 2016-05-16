@@ -10,8 +10,6 @@
 | and give it the controller to call when that URI is requested.
 |
 */
-Route::get('exportphd', 'ExportController@allPhdCandidatesExport');
-Route::get('exportms', 'ExportController@allMsCandidatesExport');
 Route::get('/', function() {
     //return view('landing');
     return redirect('home');
@@ -44,11 +42,15 @@ Route::group(['middleware' => 'adminauth'], function () {
     Route::get('admin/{phdormsc}/{dept}', 'AdminController@adminall');
     Route::post('delete', 'AdminController@deleted' );
     Route::post('accept', 'AdminController@accepted');
-    Route::get('logout', 'AdminController@logout');
+    Route::get('logout', 'AdminController@logout');   
+    Route::get('exportphd', 'ExportController@allPhdCandidatesExport');
+    Route::get('exportms', 'ExportController@allMsCandidatesExport');
+    Route::get('exportphd/{dept}', 'ExportController@deptPhdCandidatesExport');
+    Route::get('exportms/{dept}', 'ExportController@deptMsCandidatesExport'); 
+    Route::get('exportphdSingle/{regNo}', 'ExportController@singlePhdCandidateExport' );
+    Route::get('exportmsSingle/{regNo}', 'ExportController@singleMsCandidatesExport' );
 });
 Route::get('print/{phdormsc}/{regNo}', 'AdminController@printer' );
-Route::get('exportphdSingle/{regNo}', 'ExportController@singlePhdCandidateExport' );
-Route::get('exportmsSingle/{regNo}', 'ExportController@singleMsCandidatesExport' );
 
 Route::post('phdvalidate', 'PhdController@validated');
 Route::post('msvalidate', 'MsController@validated');
