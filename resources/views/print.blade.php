@@ -33,8 +33,11 @@
     <div class="container center">
     <h4>Form Details: </h4>
     <div class="row">
-    <div class="col l10">
-      <table class="bordered">
+    <div class="col l12">
+      <div class="col l2">
+        <img src="{{ URL::asset('uploads/PHD/'.$applNo.'/photo.' . $imgtype) }}" width="150" height="150">
+      </div>
+      <table class="bordered" width="1000">
         <thead>
           <tr>
             <td><h5>Application Details</h5></td>
@@ -51,12 +54,9 @@
           </tr>
           <tr>
             <td><b>Application Category:</b></td>
-            <td>{!! $candidates['applicationCategory'] !!}</td>
+            <td colspan="3">{!! $candidates['applicationCategory'] !!}</td>
           </tr>
         </tbody>
-      </table>
-   
-      <table class="bordered">
         <thead>
           <tr>
             <td> <h5>General Details:</h5></td>
@@ -71,21 +71,12 @@
           </tr>
           <tr>
             <td><b>Department 3:</b></td>
-            <td>{!! $candidates['dept3'] !!}</td>
+            <td>{!! $candidates['dept3'] ? $candidates['dept3'] : 'N/A' !!}</td>
             <td><b>Area of Research:</b></td>
             <td>{!! $candidates['areaOfResearch'] !!}</td>
           </tr>
 
         </tbody>
-      </table>
-  
-      </div>
-      <div class="col l2">
-        <img src="{{ URL::asset('uploads/PHD/'.$applNo.'/photo.' . $imgtype) }}" width="150" height="150">
-
-      </div>
-      </div>
-      <table class="bordered">
         <thead>
           <tr>
             <td><h5>Personal Details:</h5></td>
@@ -130,14 +121,10 @@
           </tr>
           <tr>
             <td><b>Landline Number:</b></td>
-            <td>{!! $candidates['lanline'] !!}</td>
+            <td colspan="3">{!! $candidates['lanline'] !!}</td>
             
           </tr>
         </tbody>
-      </table>
-
-
-      <table class="bordered">
         <thead>
           <tr>
             <td><h5>Undergraduate Details</h5></td>
@@ -164,15 +151,10 @@
           </tr>
            <tr>
             <td><b>Year of passing:</b></td>
-            <td>{!! $ug['yop'] !!}</td>
+            <td colspan="3">{!! $ug['yop'] !!}</td>
             
           </tr>
         </tbody>
-      </table>
-
-  
-
-      <table class="bordered">
         <thead>
           <tr>
             <td><h5>Post-Graduate Details</h5></td>
@@ -199,14 +181,10 @@
           </tr>
            <tr>
             <td><b>Year of passing:</b></td>
-            <td>{!! $pg['yop'] !!}</td>
+            <td colspan="3">{!! $pg['yop'] !!}</td>
             
           </tr>
         </tbody>
-      </table>
-
-
-      <table class="bordered">
         <thead>
           <tr>
             <td><b>GATE/NET/SLET/CSIR/CAT/UGC/NBHM details:</b></td>
@@ -227,12 +205,9 @@
           </tr>
           <tr>
             <td><b>Discipline:</b></td>
-            <td>{!! $others['discipline'] !!}</td>
+            <td colspan="3">{!! $others['discipline'] !!}</td>
           </tr>
         </tbody>
-      </table>
-
-      <table class="bordered">
         <thead>
           <tr>
             <td><h5>Publication/Project Details:</h5></td>
@@ -240,8 +215,8 @@
         </thead>
         <tbody>
           <tr>
-            <td><b>Title of Project:</b></td>
-            <td>{!! $others['pgproject'] !!}</td>
+            <td colspan="2"><b>Title of Project:</b></td>
+            <td colspan="2">{!! $others['pgproject'] !!}</td>
           </tr>
           <tr>
             <td><b>Details of Publication 1:</b></td>
@@ -280,9 +255,6 @@
             <td>{!! $others['awards6'] !!}</td>
           </tr>
         </tbody>
-      </table>
-      
-       <table class="bordered">
         <thead>
           <tr>
             <td><h5>Employer Details:</h5></td>
@@ -290,94 +262,87 @@
         </thead>
         <tbody>
           <tr>
-            <td><b>Employer Details 1:</b></td>
+            <td><b>Employer:</b></td>
             <td>{!! $pro['proexp1'] !!}</td>
-          </tr>
-          <tr>
-            <td><b>Position 1:</b></td>
-            <td>{!! $pro['position1'] !!}</td>
-          </tr>
-          <tr>
             <td><b>From</b></td>
             <td>{!! $pro['from1'] !!}</td>
+          </tr>
+          <tr>
+            <td><b>Position:</b></td>
+            <td>{!! $pro['position1'] !!}</td>
             <td><b>To</b></td>
             <td>{!! $pro['to1'] !!}</td>
           </tr>
-          <tr></tr>
+          <tr><td colspan="4"></td></tr>
+
           <tr>
-            <td><b>Employer Details 2:</b></td>
+            <td><b>Employer:</b></td>
             <td>{!! $pro['proexp2'] !!}</td>
-          </tr>
-          <tr>
-            <td><b>Position 2:</b></td>
-            <td>{!! $pro['position2'] !!}</td>
-          </tr>
-          <tr>
             <td><b>From</b></td>
             <td>{!! $pro['from2'] !!}</td>
+          </tr>
+          <tr>
+            <td><b>Position:</b></td>
+            <td>{!! $pro['position2'] !!}</td>
             <td><b>To</b></td>
             <td>{!! $pro['to2'] !!}</td>
           </tr>
-          <tr></tr>
+          <tr><td colspan="4"></td></tr>
+
           <tr>
-            <td><b>Employer Details 3:</b></td>
+            <td><b>Employer:</b></td>
             <td>{!! $pro['proexp3'] !!}</td>
-          </tr>
-          <tr>
-            <td><b>Position 3:</b></td>
-            <td>{!! $pro['position3'] !!}</td>
-          </tr>
-          <tr>
             <td><b>From</b></td>
             <td>{!! $pro['from3'] !!}</td>
+          </tr>
+          <tr>
+            <td><b>Position:</b></td>
+            <td>{!! $pro['position3'] !!}</td>
             <td><b>To</b></td>
             <td>{!! $pro['to3'] !!}</td>
           </tr>
+          <tr><td colspan="4"></td></tr>
+
           <tr>
-            <td><b>Employer Details 4:</b></td>
+            <td><b>Employer:</b></td>
             <td>{!! $pro['proexp4'] !!}</td>
-          </tr>
-          <tr>
-            <td><b>Position 4:</b></td>
-            <td>{!! $pro['position4'] !!}</td>
-          </tr>
-          <tr>
             <td><b>From</b></td>
             <td>{!! $pro['from4'] !!}</td>
+          </tr>
+          <tr>
+            <td><b>Position:</b></td>
+            <td>{!! $pro['position4'] !!}</td>
             <td><b>To</b></td>
             <td>{!! $pro['to4'] !!}</td>
           </tr>
-          <tr></tr>
+          <tr><td colspan="4"></td></tr>
+
           <tr>
-            <td><b>Employer Details 5:</b></td>
+            <td><b>Employer:</b></td>
             <td>{!! $pro['proexp5'] !!}</td>
-          </tr>
-          <tr>
-            <td><b>Position 5:</b></td>
-            <td>{!! $pro['position5'] !!}</td>
-          </tr>
-          <tr>
             <td><b>From</b></td>
             <td>{!! $pro['from5'] !!}</td>
+          </tr>
+          <tr>
+            <td><b>Position:</b></td>
+            <td>{!! $pro['position5'] !!}</td>
             <td><b>To</b></td>
             <td>{!! $pro['to5'] !!}</td>
           </tr>
-          <tr></tr>
+          <tr><td colspan="4"></td></tr>
+
           <tr>
-            <td><b>Employer Details 6:</b></td>
+            <td><b>Employer:</b></td>
             <td>{!! $pro['proexp6'] !!}</td>
-          </tr>
-          <tr>
-            <td><b>Position 6:</b></td>
-            <td>{!! $pro['position6'] !!}</td>
-          </tr>
-          <tr>
             <td><b>From</b></td>
             <td>{!! $pro['from6'] !!}</td>
+          </tr>
+          <tr>
+            <td><b>Position:</b></td>
+            <td>{!! $pro['position6'] !!}</td>
             <td><b>To</b></td>
             <td>{!! $pro['to6'] !!}</td>
           </tr>
-          <tr></tr>
         </tbody>
       </table>
       <div class="space-medium"></div>
@@ -409,7 +374,10 @@
     <div class="container center">
     <h4>Form Details: </h4>
     <div class="row">
-      <div class="col l9">
+      <div class="col l12">
+        <div class="col l3">
+          <img src="{{ URL::asset('uploads/MS/'.$applNo.'/photo.' . $imgtype) }}" width="150" height="150">
+        </div>
       <table class="bordered">
         <thead>
           <tr>
@@ -426,6 +394,10 @@
             <td><b>Date of Registration:</b></td>
             <td>{!! $candidates['created_at'] !!}</td>
           </tr>
+          <tr>
+            <td><b>Application Category:</b></td>
+            <td colspan="3">{!! $candidates['applicationCategory'] !!}</td>
+          </tr>
         </tbody>
       </table>
    
@@ -438,27 +410,17 @@
         <tbody>
           <tr>
             <td><b>Department 1:</b></td>
-            <td>{!! $candidates['dept1'] !!}</td>
+            <td>{!! $candidates['dept1'] ? $candidates['dept1'] : 'NA' !!}</td>
             <td><b>Department 2:</b></td>
-            <td>{!! $candidates['dept2'] !!}</td>
+            <td>{!! $candidates['dept2'] ? $candidates['dept2'] : 'NA' !!}</td>
           </tr>
           <tr>
             <td><b>Department 3:</b></td>
-            <td>{!! $candidates['dept3'] !!}</td>
+            <td>{!! $candidates['dept3'] ? $candidates['dept3'] : 'NA' !!}</td>
             <td><b>Area of Research:</b></td>
-            <td>{!! $candidates['areaOfResearch'] !!}</td>
+            <td>{!! $candidates['areaOfResearch'] ? $candidates['areaOfResearch'] : 'NA' !!}</td>
           </tr>
         </tbody>
-      </table>
-      </div>
-      <div class="col l3">
-        <img src="{{ URL::asset('uploads/MS/'.$applNo.'/photo.' . $imgtype) }}" width="150" height="150">
-      </div>
-      </div>
-
-  
-
-      <table class="bordered">
         <thead>
           <tr>
             <td><h5>Personal Details:</h5></td>
@@ -503,14 +465,10 @@
           </tr>
           <tr>
             <td><b>Landline Number:</b></td>
-            <td>{!! $candidates['lanline'] !!}</td>
+            <td colspan="4">{!! $candidates['lanline'] !!}</td>
             
           </tr>
         </tbody>
-      </table>
-
-
-      <table class="bordered">
         <thead>
           <tr>
             <td><h5>Undergraduate Details</h5></td>
@@ -537,16 +495,13 @@
           </tr>
            <tr>
             <td><b>Year of passing:</b></td>
-            <td>{!! $ug['yop'] !!}</td>
+            <td colspan="3">{!! $ug['yop'] !!}</td>
             
           </tr>
         </tbody>
-      </table>
-
-      <table class="bordered">
         <thead>
           <tr>
-            <td>GATE details:</td>
+            <td><b>GATE details:</b></td>
           </tr>
         </thead>
         <tbody>
@@ -563,165 +518,142 @@
             <td>{!! $others['validity'] !!}</td>
           </tr>
           <tr>
-            <td>Discipline</td>
-            <td>{!! $others['discipline'] !!}</td>
+            <td><b>Discipline:</b></td>
+            <td colspan="3">{!! $others['discipline'] !!}</td>
           </tr>
         </tbody>
-      </table>
-
-
-      <table class="bordered">
         <thead>
           <tr>
-            <td><h5>Educational Details:</h5></td>
+            <td colspan="4"><h5>Educational Details:</h5></td>
           </tr>
           <tr>
-            <td>Semester</td>
-            <td>G.P.A. Obtained</td>
-            <td>Max G.P.A.</td>
+            <td colspan="2"><b>Semester/Year</b></td>
+            <td colspan="2"><b>G.P.A./Marks</b></td>
           </tr>
         </thead>
         <tbody>
           <tr>
-            <td><b>Semester 1</td>
-            <td>{!! $scores['gpa1'] !!}</td>
-            <td>{!! $scores['gpamax1'] !!}</td>
+            <td colspan="2"><b>Semester 1</td>
+            <td colspan="2">{!! $scores['gpa1'] ? $scores['gpa1'] : '-' !!} / {!! $scores['gpamax1'] ? $scores['gpamax1'] : '-' !!}</td>
           </tr>
           <tr>
-            <td><b>Semester 2</td>
-            <td>{!! $scores['gpa2'] !!}</td>
-            <td>{!! $scores['gpamax2'] !!}</td>
+            <td colspan="2"><b>Semester 2</td>
+            <td colspan="2">{!! $scores['gpa2'] ? $scores['gpa2'] : '-' !!} / {!! $scores['gpamax2'] ? $scores['gpamax2'] : '-' !!}</td>
           </tr>
           <tr>
-            <td><b>Semester 3</td>
-            <td>{!! $scores['gpa3'] !!}</td>
-            <td>{!! $scores['gpamax3'] !!}</td>
+            <td colspan="2"><b>Semester 3</td>
+            <td colspan="2">{!! $scores['gpa3'] ? $scores['gpa3'] : '-' !!} / {!! $scores['gpamax3'] ? $scores['gpamax3'] : '-' !!}</td>
           </tr>
           <tr>
-            <td><b>Semester 4</td>
-            <td>{!! $scores['gpa4'] !!}</td>
-            <td>{!! $scores['gpamax4'] !!}</td>
+            <td colspan="2"><b>Semester 4</td>
+            <td colspan="2">{!! $scores['gpa4'] ? $scores['gpa4'] : '-' !!} / {!! $scores['gpamax4'] ? $scores['gpamax4'] : '-' !!}</td>
           </tr>
           <tr>
-            <td><b>Semester 5</td>
-            <td>{!! $scores['gpa5'] !!}</td>
-            <td>{!! $scores['gpamax5'] !!}</td>
+            <td colspan="2"><b>Semester 5</td>
+            <td colspan="2">{!! $scores['gpa5'] ? $scores['gpa5'] : '-' !!} / {!! $scores['gpamax5'] ? $scores['gpamax5'] : '-' !!}</td>
           </tr>
           <tr>
-            <td><b>Semester 6</td>
-            <td>{!! $scores['gpa6'] !!}</td>
-            <td>{!! $scores['gpamax6'] !!}</td>
+            <td colspan="2"><b>Semester 6</td>
+            <td colspan="2">{!! $scores['gpa6'] ? $scores['gpa6'] : '-' !!} / {!! $scores['gpamax6'] ? $scores['gpamax6'] : '-' !!}</td>
           </tr>
           <tr>
-            <td><b>Semester 7</td>
-            <td>{!! $scores['gpa7'] !!}</td>
-            <td>{!! $scores['gpamax7'] !!}</td>
+            <td colspan="2"><b>Semester 7</td>
+            <td colspan="2">{!! $scores['gpa7'] ? $scores['gpa7'] : '-' !!} / {!! $scores['gpamax7'] ? $scores['gpamax7'] : '-' !!}</td>
           </tr>
           <tr>
-            <td><b>Semester 8</td>
-            <td>{!! $scores['gpa'] !!}</td>
-            <td>{!! $scores['gpamax'] !!}</td>
+            <td colspan="2"><b>Semester 8</td>
+            <td colspan="2">{!! $scores['gpa'] ?  $scores['gpa'] : '-' !!} / {!! $scores['gpamax'] ? $scores['gpamax'] : '-' !!}</td>
           </tr>
 
         </tbody>
-      </table>
-
-      <table class="bordered">
         <thead>
           <tr>
-            <td><h5>Employer Details:</h5></td>
+            <td colspan="4"><h5>Employer Details:</h5></td>
           </tr>
         </thead>
         <tbody>
           <tr>
-            <td><b>Employer Details 1:</b></td>
+            <td><b>Employer:</b></td>
             <td>{!! $pro['proexp1'] !!}</td>
-          </tr>
-          <tr>
-            <td><b>Position 1:</b></td>
-            <td>{!! $pro['position1'] !!}</td>
-          </tr>
-          <tr>
             <td><b>From</b></td>
             <td>{!! $pro['from1'] !!}</td>
+          </tr>
+          <tr>
+            <td><b>Position:</b></td>
+            <td>{!! $pro['position1'] !!}</td>
             <td><b>To</b></td>
             <td>{!! $pro['to1'] !!}</td>
           </tr>
-          <tr></tr>
+          <tr><td colspan="4"></td></tr>
+
           <tr>
-            <td><b>Employer Details 2:</b></td>
+            <td><b>Employer:</b></td>
             <td>{!! $pro['proexp2'] !!}</td>
-          </tr>
-          <tr>
-            <td><b>Position 2:</b></td>
-            <td>{!! $pro['position2'] !!}</td>
-          </tr>
-          <tr>
             <td><b>From</b></td>
             <td>{!! $pro['from2'] !!}</td>
+          </tr>
+          <tr>
+            <td><b>Position:</b></td>
+            <td>{!! $pro['position2'] !!}</td>
             <td><b>To</b></td>
             <td>{!! $pro['to2'] !!}</td>
           </tr>
-          <tr></tr>
+          <tr><td colspan="4"></td></tr>
+
           <tr>
-            <td><b>Employer Details 3:</b></td>
+            <td><b>Employer:</b></td>
             <td>{!! $pro['proexp3'] !!}</td>
-          </tr>
-          <tr>
-            <td><b>Position 3:</b></td>
-            <td>{!! $pro['position3'] !!}</td>
-          </tr>
-          <tr>
             <td><b>From</b></td>
             <td>{!! $pro['from3'] !!}</td>
+          </tr>
+          <tr>
+            <td><b>Position:</b></td>
+            <td>{!! $pro['position3'] !!}</td>
             <td><b>To</b></td>
             <td>{!! $pro['to3'] !!}</td>
           </tr>
+          <tr><td colspan="4"></td></tr>
+
           <tr>
-            <td><b>Employer Details 4:</b></td>
+            <td><b>Employer:</b></td>
             <td>{!! $pro['proexp4'] !!}</td>
-          </tr>
-          <tr>
-            <td><b>Position 4:</b></td>
-            <td>{!! $pro['position4'] !!}</td>
-          </tr>
-          <tr>
             <td><b>From</b></td>
             <td>{!! $pro['from4'] !!}</td>
+          </tr>
+          <tr>
+            <td><b>Position:</b></td>
+            <td>{!! $pro['position4'] !!}</td>
             <td><b>To</b></td>
             <td>{!! $pro['to4'] !!}</td>
           </tr>
-          <tr></tr>
-                    <tr>
-            <td><b>Employer Details 5:</b></td>
+          <tr><td colspan="4"></td></tr>
+
+          <tr>
+            <td><b>Employer:</b></td>
             <td>{!! $pro['proexp5'] !!}</td>
-          </tr>
-          <tr>
-            <td><b>Position 5:</b></td>
-            <td>{!! $pro['position5'] !!}</td>
-          </tr>
-          <tr>
             <td><b>From</b></td>
             <td>{!! $pro['from5'] !!}</td>
+          </tr>
+          <tr>
+            <td><b>Position:</b></td>
+            <td>{!! $pro['position5'] !!}</td>
             <td><b>To</b></td>
             <td>{!! $pro['to5'] !!}</td>
           </tr>
-          <tr></tr>
+          <tr><td colspan="4"></td></tr>
+
           <tr>
-            <td><b>Employer Details 6:</b></td>
+            <td><b>Employer:</b></td>
             <td>{!! $pro['proexp6'] !!}</td>
-          </tr>
-          <tr>
-            <td><b>Position 6:</b></td>
-            <td>{!! $pro['position6'] !!}</td>
-          </tr>
-          <tr>
             <td><b>From</b></td>
             <td>{!! $pro['from6'] !!}</td>
+          </tr>
+          <tr>
+            <td><b>Position:</b></td>
+            <td>{!! $pro['position6'] !!}</td>
             <td><b>To</b></td>
             <td>{!! $pro['to6'] !!}</td>
           </tr>
-          <tr></tr>
         </tbody>
       </table>
 
