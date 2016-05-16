@@ -321,21 +321,21 @@ $(document).ready(function(){
 		
 	});	
 
-	$('.applicationCateg').change(function()
+	$('#applicationCateg').change(function()
 	{
 		var p=$('.applicationCateg option:selected').text();
 		if(p=='On Campus'){
 			if($('.upload_container').has('.ext'))
 				$('.ext').remove();
 				// console.log($('.upload_container').has('.ext'));
-			$('.upload_container').append('<div class="ext"><input type="file" name="form3"/></div>');
+			$('.upload_container').append('<div class="ext"><input type="file" name="form3" required/></div>');
 
 		}
 		else if(p=='External'){
 			if($('.upload_container').has('.oc'))
 				$('.oc').remove();
 			
-			$('.upload_container').append('<div class="oc"><input type="file" name="form1"/><br><input type="file" name="form2" /></div>');
+			$('.upload_container').append('<div class="oc"><input type="file" name="form1" required/><br><input type="file" name="form2" required /></div>');
 		}
 		else{
 			if($('.upload_container').has('.ext'))
