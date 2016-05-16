@@ -56,7 +56,18 @@
 					</div>
 				</div>
 				<div class="col l6 s12">
-					<img src="" id="bannerImg" />
+					{{ 
+		      			// ugly hack to declare variables and not put it in html :P
+
+		      			($modifiedRegistrationNumber = str_replace('/', '-', $details->registrationNumber)) && 
+		      			($photoExtension = explode(',', $details->imagePath)[0]) && 
+		      			""
+		      		}}
+		      		@if ($photoExtension)
+			      		<img src="/uploads/MS/{!! $modifiedRegistrationNumber . '/photo.' . $photoExtension !!}" id="bannerImg" />
+			      	@else
+			      		<img src="" id="bannerImg" />
+			      	@endif
 				</div>
 			</div>
 			<div class="row">
@@ -519,7 +530,20 @@
 		<div class="space-medium"></div>
 		<div class="row">
 			<div class="upload col l6 s6 ">
-				<img src="" id="signImg"/>
+				{{ 
+					// ugly hack to declare variables and not put it in html :P
+
+					($modifiedRegistrationNumber = str_replace('/', '-', $details->registrationNumber)) && 
+					($tmp = explode(',', $details->imagePath)) && 
+					($signExtension = count($tmp) == 2 ? $tmp[1] : '') &&
+					""
+				}}
+				@if ($signExtension)
+				<img src="/uploads/MS/{!! $modifiedRegistrationNumber . '/sign.' . $signExtension !!}" id="signImg" />
+				@else
+				<img src="" id="signImg" />
+				@endif
+
 				<p>Upload Signature</p>
 				<div class="file-field input-field">
 					<div class="btn teal darken-1 btn waves-effect waves-light">
