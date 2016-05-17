@@ -31,4 +31,70 @@ $(document).ready(function(){
 		}
 	});
 
+	$('.button1').click(function(){
+		var data = {};
+		data.regNo = $('.button1').data('reg');
+		console.log(data);
+		var a = window.confirm("Are you sure?");
+		if(!a){
+
+		}
+		else{
+		$.ajaxSetup(
+	    {
+	        headers:
+	        {
+	            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+	        }
+	    });
+		console.log(data);
+		$.ajax(
+	    {
+	        type: "POST",
+	        url: '/dmgctrl',
+	        data: data,
+	        dataType: "json",
+	        success: function(data){
+	        	// console.log("helo");
+	        	console.log(data);
+	        	location.reload();
+	        },
+	        error: function(jqXHR,testStatus,errorThrown){
+	        	console.log(errorThrown);
+	        }
+		});
+		}
+	});
+
+	$('.exportAll').click(function(){
+		
+		var data = $('.exportAll').data('reg');
+		console.log(data);
+		
+		$.ajaxSetup(
+	    {
+	        headers:
+	        {
+	            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+	        }
+	    });
+		console.log(data);
+		$.ajax(
+	    {
+	        type: "POST",
+	        url: '/',
+	        data: data,
+	        dataType: "json",
+	        success: function(data){
+	        	// console.log("helo");
+	        	console.log(data);
+	        	location.reload();
+	        },
+	        error: function(jqXHR,testStatus,errorThrown){
+	        	console.log(errorThrown);
+	        }
+		});
+		
+	});
+
 });

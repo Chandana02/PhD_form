@@ -172,6 +172,7 @@ class AdminController extends Controller
                             'others' => $otherDetails,
                             'pro' => $proDetails
                             );
+            
             return $data;
         }
         else

@@ -54,7 +54,10 @@
           </tr>
           <tr>
             <td><b>Application Category:</b></td>
-            <td colspan="3">{!! $candidates['applicationCategory'] !!}</td>
+            <td>{!! $candidates['applicationCategory'] !!}</td>
+
+            <td><b>Bank Referance Number:</b></td>
+            <td>{!! $candidates['chalanNo'] !!}</td>
           </tr>
         </tbody>
         <thead>

@@ -14,6 +14,7 @@
   <script src="{{URL::asset('assets/js/admin.js')}}"></script>
   <script src="{{URL::asset('assets/js/materialize.min.js')}}"></script>
   <script src="{{URL::asset('assets/js/print.js')}}"></script>
+  <script src="{{URL::asset('assets/js/damage.js')}}"></script>
   
 </head>
 <body>
@@ -60,9 +61,10 @@
 </div>
 <div class="hide space-large  " hidden="true"></div>
     <h5 class="center heading" data-reg="{!! $data['dept'] !!}">{!! $data['dept'] !!}</h5>
- 
+    
   <div class="space-large"></div>
   <div class="container main">
+
     <div class="candidates row">
      @for($i = 0; $i < sizeof($data['candidates']); $i++)
         <div class="{!! $data['candidates'][$i]->applNo !!} col l5 offset-l1" data-reg = "{!! $data['candidates'][$i]->registrationNumber !!}">
@@ -78,6 +80,7 @@
             <div class="row">
               
                 <p>Registration Number:  {!! $data['candidates'][$i]->registrationNumber !!}</p>
+                <p>Email-Id:  {!! $data['candidates'][$i]->email !!}</p>
               
             </div>
                <div class="center">
@@ -112,7 +115,7 @@
         <div class="space-medium"></div>
         <div class="col l12 center buttons">
         <div class="col l6">
-        <a href="#!" data-reg={!! $data['candidates'][$i]->registrationNumber!!} class="print btn modal-action modal-close waves-effect waves-green btn" target="_blank">Print</a>
+        <a href="#!" data-reg={!! $data['candidates'][$i]->registrationNumber!!} class="print btn modal-action modal-close waves-effect waves-green btn" >Print</a>
         </div>
         <div class="col l6">
         <a href="#!" data-reg={!! $data['candidates'][$i]->registrationNumber!!} class="admit btn modal-action modal-close waves-effect waves-green btn">Admit</a>
@@ -120,11 +123,16 @@
         <div class="col l12">
         <div class="space-vsmall"></div>
         <a href="#!" data-reg={!! $data['candidates'][$i]->registrationNumber!!} class="phdExcel btn modal-action modal-close waves-effect waves-green btn">Generate Excel</a>
+        @if($data['candidates'][$i]->flag)
+        <div class="space-vsmall"></div>
+        <a href="#!" data-reg={!! $data['candidates'][$i]->registrationNumber!!} class="button1 btn modal-action modal-close waves-effect waves-green btn">Reset User</a>
+        @endif
         </div>
         </div>
         <div class="space-large"></div>
         </div>
-          
+          <div class="space-vsmall"></div>
+          <p>Created at:{!! $data['candidates'][$i]->created_at !!}</p>
           </div>
           </div>      
         
@@ -143,7 +151,9 @@
    <div class="space-medium"></div>
 <div class="center">
    <a class="waves-effect waves-light btn" href="../ms">View M.S. applicants</a>
+   <a href="#" class="export waves-effect waves-light btn" data-reg="{!! $data['session'] !!}">Export All Candidates</a>
   </div>
+
    </div>
 <div class="space-large"></div>
 

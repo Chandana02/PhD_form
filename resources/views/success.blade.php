@@ -43,7 +43,7 @@
 						<div class="space-small center">
 						</div>
 						<div class="center">
-							<a class="waves-effect waves-light btn modal-trigger print" data-reg={!! $details['reg_number'] !!} href="#!">Click Here To view full form</a>
+							<a class="waves-effect waves-light btn modal-trigger print" data-reg={!! $details['reg_number'] !!} href="#!" >Click Here To view full form</a>
 						</div>
 					</div>
 				</div>

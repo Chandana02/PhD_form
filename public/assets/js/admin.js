@@ -15,7 +15,10 @@ $(document).ready(function(){
 
 		}
 	});
-
+	$('.export').click(function(){
+		var applNo = $(this).attr('data-reg');
+		window.location = '/exportphd/' + applNo;
+	});
 	$('.discard').click(function(e){
 		var applNo = $(this).attr('data-reg');
 		ajaxCall(applNo, 'delete');

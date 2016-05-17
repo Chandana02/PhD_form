@@ -88,6 +88,7 @@
             <div class="row">
               <div class="col l12 s12">
                 <p>Registration Number:{!! $data['candidates'][$i]->registrationNumber !!}</p>
+                <p>Email-Id:  {!! $data['candidates'][$i]->email !!}</p>
               </div>
               <div class="col l12 s12">
                 <!-- <p>Date of Submission:</p> -->
@@ -113,14 +114,19 @@
         @endif
         <div class="space-medium"></div>
         <div class="col s12">
-        <a href="#!" data-reg={!! $data['candidates'][$i]->registrationNumber!!} class="print btn  waves-effect waves-green btn" target="_blank">Print</a>
+        <a href="#!" data-reg={!! $data['candidates'][$i]->registrationNumber!!} class="print btn  waves-effect waves-green btn" >Print</a>
         <a href="#!" data-reg={!! $data['candidates'][$i]->registrationNumber!!} class="admit btn  waves-effect waves-green btn">Admit</a>
         
         </div>
         <div class="space-medium"></div>
         <a href="#!" data-reg={!! $data['candidates'][$i]->registrationNumber!!} class="msExcel btn  waves-effect waves-green btn">Generate Excel</a>
+        @if($data['candidates'][$i]->flag)
+        <div class="space-vsmall"></div>
+        <a href="#!" data-reg={!! $data['candidates'][$i]->registrationNumber!!} class="button1 btn modal-action modal-close waves-effect waves-green btn">Reset User</a>
+        @endif
         </div>
           <div class="space-small"></div>
+          <p>Created at:{!! $data['candidates'][$i]->created_at !!}</p>
           </div>
           </div>
         </div>
@@ -143,6 +149,7 @@
    <div class="space-medium"></div>
 <div class="center">
    <a class="waves-effect waves-light btn" href="../phd">View Ph.D applicants</a>
+   <a href="#" class="waves-effect waves-light btn">Export All Candidates</a>
   </div>
 
 

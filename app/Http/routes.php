@@ -42,6 +42,7 @@ Route::group(['middleware' => 'adminauth'], function () {
     Route::get('admin/{phdormsc}/{dept}', 'AdminController@adminall');
     Route::post('delete', 'AdminController@deleted' );
     Route::post('accept', 'AdminController@accepted');
+    Route::post('dmgctrl', 'DamageController@dmgctrl');
     Route::get('logout', 'AdminController@logout');   
     Route::get('exportphd', 'ExportController@allPhdCandidatesExport');
     Route::get('exportms', 'ExportController@allMsCandidatesExport');
@@ -49,6 +50,7 @@ Route::group(['middleware' => 'adminauth'], function () {
     Route::get('exportms/{dept}', 'ExportController@deptMsCandidatesExport'); 
     Route::get('exportphdSingle/{regNo}', 'ExportController@singlePhdCandidateExport' );
     Route::get('exportmsSingle/{regNo}', 'ExportController@singleMsCandidatesExport' );
+
 });
 Route::get('print/{phdormsc}/{regNo}', 'AdminController@printer' );
 
