@@ -60,7 +60,7 @@
           <span class="light">Enter Date of Birth </span>
           <div class="row">
             <div class="col l4">
-              <input placeholder="Year" required id="year" type="number" class="validate" name="age" max="2016" min="1990" value="">             
+              <input placeholder="Year" required id="year" type="number" class="validate" name="age" max="2016" min="1900" value="">             
             </div>
             <div class="col l4">
               <input placeholder="Month" required id="month" type="number" class="validate" name="age" max="12" min="1" >              

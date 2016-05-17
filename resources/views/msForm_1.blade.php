@@ -93,7 +93,7 @@
                     <span class="light">*Date of Birth:</span>
                     <div class="row">
                         <div class="col l4">
-                            <input placeholder="Year" required id="year" type="number" class="validate" name="year" max="2016" min="1990" >                           
+                            <input placeholder="Year" required id="year" type="number" class="validate" name="year" max="2016" min="1900" >                           
                         </div>
                         <div class="col l4">
                             <input placeholder="Month" required id="month" type="number" class="validate" name="month" max="12" min="1" >                          

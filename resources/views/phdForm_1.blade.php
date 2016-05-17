@@ -109,7 +109,7 @@
 					<!-- <input required id="dob" type="date" class="validate datepicker" name="dob"> -->
 					<div class="row">
 						<div class="col l4">
-							<input placeholder="Year" required  type="number" class="validate" name="year" max="2016" min="1990" id="year" >							
+							<input placeholder="Year" required  type="number" class="validate" name="year" max="2016" min="1900" id="year" >							
 						</div>
 						<div class="col l4">
 							<input placeholder="Month" required  type="number" class="validate" name="month" max="12" min="1" id="month" >							
