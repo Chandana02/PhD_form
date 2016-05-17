@@ -131,7 +131,7 @@
 			<div class="row">
 				<div class="input-field col l6 s12">
 					<span class="light">*Date of Birth:</span>
-					<input required id="dob" type="date" class="validate" name="dob" value="{!! $details->dob !!}" readonly="true">
+					<input required id="dob" type="text" class="validate" name="dob" value="{!! $details->dob !!}" readonly="true">
 				</div>
 
 				<div class="input-field col l6 s12 categCheck">
