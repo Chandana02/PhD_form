@@ -32,7 +32,7 @@ $(document).ready(function(){
 		data.email = $('#email').val();
 		data.area_of_research = $('#area_of_research').val();
 		data.father_name = $('#father_name').val();
-		data.dob = $('#dob').val();
+		data.dob = $('#year').val() + '-' + $('#month').val() + '-' + $('#day').val();
 		data.nationality = $('#nationality').val();
 		data.addr_for_commn = $('#addr_for_commn').val();
 		data.permanent_addr = $('#permanent_addr').val();
@@ -253,7 +253,7 @@ $(document).ready(function(){
 		}
 		applNo = applNo + dept[dept.length - 1];
 
-		var dob = $('#dob').val();
+		var dob = $('#year').val() + '-' + $('#month').val() + '-' + $('#day').val();
 		window.location = '/fetch/' + dept[0] + '/' + applNo + '/' + dob;
 	});
 	//validating front-end in form 3
