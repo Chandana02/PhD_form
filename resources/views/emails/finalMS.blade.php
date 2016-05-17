@@ -27,13 +27,13 @@
 					<p style="font-size: 13pt"><u>Please find below the details for the next steps.</u></p>
 
 					<p style="font-size: 13pt">Your Registration Number: {!! $applNo !!}<br>
-					URL to final stage of application : <a href="http://localhost:8000/fetch/MS/{{ $dashedApplNo }}/{{ $dob }}">http://localhost:8000/fetch/MS/{{ $dashedApplNo }}/{{ $dob }}</a>
+					URL to final stage of application : <a href="http://admission.nitt.edu/fetch/MS/{{ $dashedApplNo }}/{{ $dob }}">http://admission.nitt.edu/fetch/MS/{{ $dashedApplNo }}/{{ $dob }}</a>
 
 					<p style="font-size: 13pt"><u>Instructions:</u></p>
 
 					<ol style="font-size: 13pt">
 						<li>Please read the information <a href="http://www.nitt.edu/home/admissions/phd/MS-PhD-July2016.pdf">brochure</a> carefully.</li>
-						<li>Contact Help-desk in case of any query. Click <a href="http://localhost:8000/contact">here</a> to find help desk numbers.</li>
+						<li>Contact Help-desk in case of any query. Click <a href="http://admission.nitt.edu/contact">here</a> to find help desk numbers.</li>
 						<li>Help desk would be available from 10:30 AM - 4:30 PM on all the working days.</li>
 						<li>Last date of submission is 12th June, 2016.</li>
 					</ol>
