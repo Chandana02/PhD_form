@@ -51,19 +51,31 @@
     </p>
     <div class="space-large"></div>
   	<div class="row">
+      <form>
       <div class="col l6 s12">
         <span class="light">Enter Registration Number</span>
-        <input type="text" id="regNo" class="validate" name="applNo" required>
+        <input type="text" id="regNo" class="validate" name="applNo" value="" required>
         </div>
         <div class="col l6 s12">
           <span class="light">Enter Date of Birth </span>
-          <input type="date" name="date" id="dob" required />
+          <div class="row">
+            <div class="col l4">
+              <input placeholder="Year" required id="year" type="number" class="validate" name="age" max="2016" min="1990" value="">             
+            </div>
+            <div class="col l4">
+              <input placeholder="Month" required id="month" type="number" class="validate" name="age" max="12" min="1" >              
+            </div>
+            <div class="col l4">
+              <input placeholder="Date" required id="day" type="number" class="validate" name="age" max="31" min="1" >              
+            </div>
+          </div>
       </div>
       <div class="space-medium"></div>
       <div class="center">
         <a class="btn teal darken-1 redirect1">Submit</a>
    </div>
   	</div>
+    </form>
   </div>
   <div class="space-large"></div>
   <footer class="page-footer teal darken-4">

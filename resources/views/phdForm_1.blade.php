@@ -106,7 +106,18 @@
 			<div class="row">
 				<div class="input-field col l4">
 					<span class="light">*Date of Birth:</span>
-					<input required id="dob" type="date" class="validate datepicker" name="dob">
+					<!-- <input required id="dob" type="date" class="validate datepicker" name="dob"> -->
+					<div class="row">
+						<div class="col l4">
+							<input placeholder="Year" required  type="number" class="validate" name="year" max="2016" min="1990" id="year" >							
+						</div>
+						<div class="col l4">
+							<input placeholder="Month" required  type="number" class="validate" name="month" max="12" min="1" id="month" >							
+						</div>
+						<div class="col l4">
+							<input placeholder="Day" required  type="number" class="validate" name="day" max="31" min="1" id="day" >							
+						</div>
+					</div>
 				</div>
 
 				<div class="input-field col l2">
