@@ -21,10 +21,9 @@ class DamageController extends Controller
 
     	if($category == 'PHD')
     	{
-            Log::info($regNo);
     		Phd::where('registrationNumber', $regNo)
     				->update(['flag' => false]);
-                    return json_encode(0);
+            return json_encode(0);
     	}
         else
         {

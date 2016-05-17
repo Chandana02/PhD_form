@@ -151,7 +151,7 @@
    <div class="space-medium"></div>
 <div class="center">
    <a class="waves-effect waves-light btn" href="../ms">View M.S. applicants</a>
-   <a href="#" class="export waves-effect waves-light btn" data-reg="{!! $data['session'] !!}">Export All Candidates</a>
+   <a href="#" class="exportphd waves-effect waves-light btn" data-reg="{!! $data['session'] !!}">Export All Candidates</a>
   </div>
 
    </div>

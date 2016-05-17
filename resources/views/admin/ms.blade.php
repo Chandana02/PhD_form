@@ -14,6 +14,7 @@
   <script src="{{URL::asset('assets/js/admin.js')}}"></script>
   <script src="{{URL::asset('assets/js/materialize.min.js')}}"></script>
   <script src="{{URL::asset('assets/js/print.js')}}"></script>
+  <script src="{{URL::asset('assets/js/damage.js')}}"></script>
   
 </head>
 <body>
@@ -149,7 +150,7 @@
    <div class="space-medium"></div>
 <div class="center">
    <a class="waves-effect waves-light btn" href="../phd">View Ph.D applicants</a>
-   <a href="#" class="waves-effect waves-light btn">Export All Candidates</a>
+   <a href="#" class="exportms waves-effect waves-light btn" data-reg="{!! $data['session'] !!}">Export All Candidates</a>
   </div>
 
 
@@ -288,7 +289,6 @@
               return 'Physics';
           }
         }
-  });
   </script>
 
 
