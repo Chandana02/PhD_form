@@ -14,6 +14,10 @@ Route::get('/', function() {
     return view('landing');
     // return redirect('home');
 });
+Route::get('home', function() {
+    return view('landing');
+    // return redirect('home');
+});
 Route::get('/instructions', function() {
     return view('landing');
 });
