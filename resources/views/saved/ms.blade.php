@@ -10,6 +10,7 @@
 
 <?php
 function escape_new_line($s) {
+	$s = str_replace("\r", "\\r", $s);
 	return str_replace("\n", "\\n", $s);
 }
 ?>
