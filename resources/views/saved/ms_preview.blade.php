@@ -187,7 +187,7 @@
 			      <div class="row">
 			        <div class="input-field col l6">
 			        	<span class="light">*Date of Birth:</span>
-			      		<input required id="dob" type="date" class="validate" name="dob" >
+			      		<input required id="dob" type="text" class="validate" name="dob" >
 			        </div>
 
 			         <div class="input-field col l6 categCheck">
