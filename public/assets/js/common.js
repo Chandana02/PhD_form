@@ -44,7 +44,10 @@ $(document).ready(function(){
 		data.email = $('#email').val();
 		data.name = $('#name').val();
 		data.father_name = $('#father_name').val();
-		data.dob = $('#dob').val();
+		// data.dob = $('#dob').val();
+		data.year = $('#year').val();
+		data.day = $('#day').val();
+		data.month = $('#month').val();
 		data.age = $('#age').val();
 		data.nationality = $('#nationality').val();
 		data.addr_for_commn = $('#addr_for_commn').val();
@@ -63,6 +66,18 @@ $(document).ready(function(){
 			
 			return false;
 		}
+
+		if(data.year == '' || data.month == '' || data.day == ''){
+			var error = "Please fill the dob fields";
+			$('#error .modal-content .error').remove();
+			var dived = '<div class="error"></div>';
+			$('#error .modal-content').append(dived);
+				$('#error .modal-content .error').append('<p>'+error+'</p>');
+			$('#error').openModal();
+			
+			return false;
+		}
+
 
 		if(data.area_of_research == ''){
 			var error = "Please fill the area of research field";
@@ -241,7 +256,17 @@ $(document).ready(function(){
 	});
 
 	$('.redirect1').click(function()
-	{
+	{	
+		console.log($('#regNo').val())
+		var x = $('#regNo').val();
+		var y = $('#year').val();
+		var z = $('#month').val();
+		var a = $('#day').val();
+		if(x == '' || a == '' || x == '' || y == '' || z == '' ){
+			alert('Fill all details!');
+			return false;
+		}
+
 		var regNo = $('#regNo').val();
 		var dept = regNo.split('/');
 		var categ = dept[0];
