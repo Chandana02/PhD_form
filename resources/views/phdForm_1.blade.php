@@ -25,6 +25,7 @@
 <option value="PR">Production Engineering</option>
 <option value="IC">Instrumentation &amp; Control Engineering</option>
 <option value="PH">Physics</option>
+<option value="MS">Management Studies</option>
 @endsection
 
 @section('body')
