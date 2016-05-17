@@ -40,7 +40,7 @@ function escape_new_line($s) {
 				<span class="light">*Bank Reference Number:</span>
 				<input type="text" id="chalanNo" name="chalanNo" placeholder="Enter Chalan Number" value="{!! $details->chalanNo !!}" required />
 			</div>
-			<div class="input-field col l6 s12">
+			<div class="input-field col l6 s12 applCheck">
 				<span class="light">*Application Category:</span>
 				<select class="applicationCateg validate" name="appl_categ" required id="applicationCateg"> 
 					<option value="" disabled selected>Choose category</option>
