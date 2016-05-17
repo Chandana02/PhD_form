@@ -7,6 +7,12 @@
 <script src="{{URL::asset('assets/js/preview.js')}}"></script>
 @endsection
 
+<?php
+function escape_new_line($s) {
+	$s = str_replace("\r", "\\r", $s);
+	return str_replace("\n", "\\n", $s);
+}
+?>
 
 @section('body')
 <div class="container main">
@@ -107,7 +113,7 @@
 
 				<div class="input-field col l12 s12">
 					<span class="light">*Area of Research:</span>
-					<input required placeholder="Area of Research" id="area_of_research" type="text" class="validate" name="area_of_research" maxlength="50" value="{!! $details->areaOfResearch !!}">
+					<input required placeholder="Area of Research" id="area_of_research" type="text" class="validate" name="area_of_research" maxlength="50" value="{!! escape_new_line($details->areaOfResearch) !!}">
 				</div>
 			</div>
 		</div>
@@ -191,11 +197,11 @@
 			<div class="row">
 				<div class="input-field col l6 s12"> 
 					<span for="textarea1">*Address for Communication:</span><br>     		  
-					<textarea required id="addr_for_commn" class="materialize-textarea" name="addr_for_commn" maxlength="200"></textarea>
+					<textarea required id="addr_for_commn" class="materialize-textarea" name="addr_for_commn" maxlength="200" value="{!! escape_new_line($details->addrforcomm) !!}"></textarea>
 				</div>
 				<div class="input-field col l6 s12">
 					<span for="textarea1">*Permanent Address:</span><br>
-					<textarea required id="permanent_addr" class="materialize-textarea" name="permanent_addr" maxlength="200" value="{!! $details->permanentaddr !!}"></textarea>
+					<textarea required id="permanent_addr" class="materialize-textarea" name="permanent_addr" maxlength="200" value="{!! escape_new_line($details->permanentaddr) !!}"></textarea>
 				</div>
 			</div>
 			<div class="row">
@@ -250,12 +256,12 @@
 			<div class="row">
 				<div class="input-field col l12 s12">
 					<span class="light">*College Name:</span>
-					<input required placeholder="College Name" id="ug_name_of_inst" type="text" class="validate" name="ug_name_of_inst" maxlength="50" value="{!! $details->uginstitutionName !!}">
+					<input required placeholder="College Name" id="ug_name_of_inst" type="text" class="validate" name="ug_name_of_inst" maxlength="50" value="{!! escape_new_line($details->uginstitutionName) !!}">
 				</div>
 
 				<div class="input-field col l12 s12">
 					<span class="light">*University Name:</span>
-					<input required placeholder="University Name" id="ug_name_of_uni" type="text" class="validate" name="ug_name_of_uni" maxlength="50" value="{!! $details->uguniversityName !!}">
+					<input required placeholder="University Name" id="ug_name_of_uni" type="text" class="validate" name="ug_name_of_uni" maxlength="50" value="{!! escape_new_line($details->uguniversityName) !!}">
 				</div>
 
 				<div class="input-field col l4 s4">
@@ -308,12 +314,12 @@
 			<div class="row">
 				<div class="input-field col l12 s12">
 					<span class="light">*College Name:</span>
-					<input required placeholder="College Name" id="pg_name_of_inst" type="text" class="validate" name="pg_name_of_inst" maxlength="50" value="{!! $details->pginstitutionName !!}">
+					<input required placeholder="College Name" id="pg_name_of_inst" type="text" class="validate" name="pg_name_of_inst" maxlength="50" value="{!! escape_new_line($details->pginstitutionName) !!}">
 				</div>
 
 				<div class="input-field col l12 s12">
 					<span class="light">*University Name:</span>
-					<input required placeholder="University Name" id="pg_name_of_uni" type="text" class="validate" name="pg_name_of_uni" maxlength="50" value="{!! $details->pguniversityName !!}">
+					<input required placeholder="University Name" id="pg_name_of_uni" type="text" class="validate" name="pg_name_of_uni" maxlength="50" value="{!! escape_new_line($details->pguniversityName) !!}">
 				</div>
 
 				<div class="input-field col l4 s4">
@@ -330,27 +336,27 @@
 			</div>
 			<div class="col l4 s12 input-field">
 				<p for="textarea1">Publications:</p><br>
-				<textarea id="details_of_pub1" placeholder="Enter Details here.." class="materialize-textarea" name="details_of_pub1" maxlength="200" value="{!! $details->publications1 !!}"></textarea>
+				<textarea id="details_of_pub1" placeholder="Enter Details here.." class="materialize-textarea" name="details_of_pub1" maxlength="200" value="{!! escape_new_line($details->publications1) !!}"></textarea>
 			</div>
 			<div class="col l4 s12 input-field">
 				<p for="textarea1">Publications:</p><br>
-				<textarea id="details_of_pub2" placeholder="Enter Details here.." class="materialize-textarea" name="details_of_pub2" maxlength="200" value="{!! $details->publications2 !!}"></textarea>
+				<textarea id="details_of_pub2" placeholder="Enter Details here.." class="materialize-textarea" name="details_of_pub2" maxlength="200" value="{!! escape_new_line($details->publications2) !!}"></textarea>
 			</div>
 			<div class="col l4 s12 input-field">
 				<p for="textarea1">Publications:</p><br>
-				<textarea id="details_of_pub3" placeholder="Enter Details here.." class="materialize-textarea" name="details_of_pub3" maxlength="200" value="{!! $details->publications3 !!}"></textarea>
+				<textarea id="details_of_pub3" placeholder="Enter Details here.." class="materialize-textarea" name="details_of_pub3" maxlength="200" value="{!! escape_new_line($details->publications3) !!}"></textarea>
 			</div>
 			<div class="col l4 s12 input-field">
 				<p for="textarea1">Publications:</p><br>
-				<textarea id="details_of_pub4" placeholder="Enter Details here.." class="materialize-textarea" name="details_of_pub4" maxlength="200" value="{!! $details->publications4 !!}"></textarea>
+				<textarea id="details_of_pub4" placeholder="Enter Details here.." class="materialize-textarea" name="details_of_pub4" maxlength="200" value="{!! escape_new_line($details->publications4) !!}"></textarea>
 			</div>
 			<div class="col l4 s12 input-field">
 				<p for="textarea1">Publications:</p><br>
-				<textarea id="details_of_pub5" placeholder="Enter Details here.." class="materialize-textarea" name="details_of_pub5" maxlength="200" value="{!! $details->publications5 !!}"></textarea>
+				<textarea id="details_of_pub5" placeholder="Enter Details here.." class="materialize-textarea" name="details_of_pub5" maxlength="200" value="{!! escape_new_line($details->publications5) !!}"></textarea>
 			</div>
 			<div class="col l4 s12 input-field">
 				<p for="textarea1">Publications:</p><br>
-				<textarea id="details_of_pub6" placeholder="Enter Details here.." class="materialize-textarea" name="details_of_pub6" maxlength="200" value="{!! $details->publications6 !!}"></textarea>
+				<textarea id="details_of_pub6" placeholder="Enter Details here.." class="materialize-textarea" name="details_of_pub6" maxlength="200" value="{!! escape_new_line($details->publications6) !!}"></textarea>
 			</div>
 		</div>
 	</fieldset>
@@ -372,27 +378,27 @@
 
 				<div class="col l4 s12 input-field">
 					<p for="textarea1">Awards/Prizes/Sports/NCC etc</p><br>
-					<textarea id="awards1" placeholder="Enter Details here.." class="materialize-textarea" name="awards1" maxlength="200" value="{!! $details->awards1 !!}"></textarea>
+					<textarea id="awards1" placeholder="Enter Details here.." class="materialize-textarea" name="awards1" maxlength="200" value="{!! escape_new_line($details->awards1) !!}"></textarea>
 				</div>
 				<div class="col l4 s12 input-field">
 					<p for="textarea1">Awards/Prizes/Sports/NCC etc</p><br>
-					<textarea id="awards2" placeholder="Enter Details here.." class="materialize-textarea" name="awards2" maxlength="200" value="{!! $details->awards2 !!}"></textarea>
+					<textarea id="awards2" placeholder="Enter Details here.." class="materialize-textarea" name="awards2" maxlength="200" value="{!! escape_new_line($details->awards2) !!}"></textarea>
 				</div>
 				<div class="col l4 s12 input-field">
 					<p for="textarea1">Awards/Prizes/Sports/NCC etc</p><br>
-					<textarea id="awards3" placeholder="Enter Details here.." class="materialize-textarea" name="awards3" maxlength="200" value="{!! $details->awards3 !!}"></textarea>
+					<textarea id="awards3" placeholder="Enter Details here.." class="materialize-textarea" name="awards3" maxlength="200" value="{!! escape_new_line($details->awards3) !!}"></textarea>
 				</div>
 				<div class="col l4 s12 input-field">
 					<p for="textarea1">Awards/Prizes/Sports/NCC etc</p><br>
-					<textarea id="awards4" placeholder="Enter Details here.." class="materialize-textarea" name="awards4" maxlength="200" value="{!! $details->awards4 !!}"></textarea>
+					<textarea id="awards4" placeholder="Enter Details here.." class="materialize-textarea" name="awards4" maxlength="200" value="{!! escape_new_line($details->awards4) !!}"></textarea>
 				</div>
 				<div class="col l4 s12 input-field">
 					<p for="textarea1">Awards/Prizes/Sports/NCC etc</p><br>
-					<textarea id="awards5" placeholder="Enter Details here.." class="materialize-textarea" name="awards5" maxlength="200" value="{!! $details->awards5 !!}"></textarea>
+					<textarea id="awards5" placeholder="Enter Details here.." class="materialize-textarea" name="awards5" maxlength="200" value="{!! escape_new_line($details->awards5) !!}"></textarea>
 				</div>
 				<div class="col l4 s12 input-field">
 					<p for="textarea1">Awards/Prizes/Sports/NCC etc</p><br>
-					<textarea id="awards6" placeholder="Enter Details here.." class="materialize-textarea" name="awards6" maxlength="200" value="{!! $details->awards6 !!}"></textarea>
+					<textarea id="awards6" placeholder="Enter Details here.." class="materialize-textarea" name="awards6" maxlength="200" value="{!! escape_new_line($details->awards6) !!}"></textarea>
 				</div>
 			</div>
 		</div>
@@ -409,12 +415,12 @@
 				<div id="emp_details1" class="col s12 l12 emp_details input-field">
 					<div class="col l12 s12">
 						<span class="light">Name & Address of Employer 1 </span>
-						<textarea id="employer_details_1" placeholder="Enter Details here.." class="materialize-textarea" name="employer_details_1" value="{!! $details->proexp1 !!}"></textarea>
+						<textarea id="employer_details_1" placeholder="Enter Details here.." class="materialize-textarea" name="employer_details_1" value="{!! escape_new_line($details->proexp1) !!}"></textarea>
 					</div>
 
 					<div class="col l4 s6">
 						<span class="light">Position Held:</span>
-						<input id="emp_pos_1" type="text" class="validate" name="emp_pos_1" maxlength="100" value="{!! $details->position1 !!}">
+						<input id="emp_pos_1" type="text" class="validate" name="emp_pos_1" maxlength="100" value="{!! escape_new_line($details->position1) !!}">
 					</div>
 					<div class="col l4 s3">
 						<span class="light">From:</span>
@@ -429,12 +435,12 @@
 				<div id="emp_details2" class="col s12 l12 emp_details input-field">
 					<div class="col l12 s12">
 						<span class="light">Name & Address of Employer 2</span>
-						<textarea id="employer_details_2" placeholder="Enter Details here.." class="materialize-textarea" name="employer_details_2" value="{!! $details->proexp2 !!}"></textarea>
+						<textarea id="employer_details_2" placeholder="Enter Details here.." class="materialize-textarea" name="employer_details_2" value="{!! escape_new_line($details->proexp2) !!}"></textarea>
 					</div>
 
 					<div class="col l4 s6">
 						<span class="light">Position Held:</span>
-						<input id="emp_pos_2" type="text" class="validate" name="emp_pos_2" maxlength="100" value="{!! $details->position2 !!}">
+						<input id="emp_pos_2" type="text" class="validate" name="emp_pos_2" maxlength="100" value="{!! escape_new_line($details->position2) !!}">
 					</div>
 					<div class="col l4 s3">
 						<span class="light">From:</span>
@@ -449,12 +455,12 @@
 				<div id="emp_details3" class="col s12 l12 emp_details input-field">
 					<div class="col l12 s12">
 						<span class="light">Name & Address of Employer 3 </span>
-						<textarea id="employer_details_3" placeholder="Enter Details here.." class="materialize-textarea" name="employer_details_3" value="{!! $details->proexp3 !!}"></textarea>
+						<textarea id="employer_details_3" placeholder="Enter Details here.." class="materialize-textarea" name="employer_details_3" value="{!! escape_new_line($details->proexp3) !!}"></textarea>
 					</div>
 
 					<div class="col l4 s6">
 						<span class="light">Position Held:</span>
-						<input id="emp_pos_3" type="text" class="validate" name="emp_pos_3" maxlength="100" value="{!! $details->position3 !!}">
+						<input id="emp_pos_3" type="text" class="validate" name="emp_pos_3" maxlength="100" value="{!! escape_new_line($details->position3) !!}">
 					</div>
 					<div class="col l4 s3">
 						<span class="light">From:</span>
@@ -469,12 +475,12 @@
 				<div id="emp_details4" class="col s12 l12 emp_details input-field">
 					<div class="col l12 s12">
 						<span class="light">Name & Address of Employer 4 </span>
-						<textarea id="employer_details_4" placeholder="Enter Details here.." class="materialize-textarea" name="employer_details_4" value="{!! $details->proexp4 !!}"></textarea>
+						<textarea id="employer_details_4" placeholder="Enter Details here.." class="materialize-textarea" name="employer_details_4" value="{!! escape_new_line($details->proexp4) !!}"></textarea>
 					</div>
 
 					<div class="col l4 s6">
 						<span class="light">Position Held:</span>
-						<input id="emp_pos_4" type="text" class="validate" name="emp_pos_4" maxlength="100" value="{!! $details->position4 !!}">
+						<input id="emp_pos_4" type="text" class="validate" name="emp_pos_4" maxlength="100" value="{!! escape_new_line($details->position4) !!}">
 					</div>
 					<div class="col l4 s3">
 						<span class="light">From:</span>
@@ -489,12 +495,12 @@
 				<div id="emp_details5" class="col s12 l12 emp_details input-field">
 					<div class="col l12 s12">
 						<span class="light">Name & Address of Employer 5 </span>
-						<textarea id="employer_details_5" placeholder="Enter Details here.." class="materialize-textarea" name="employer_details_5" value="{!! $details->proexp5 !!}"></textarea>
+						<textarea id="employer_details_5" placeholder="Enter Details here.." class="materialize-textarea" name="employer_details_5" value="{!! escape_new_line($details->proexp5) !!}"></textarea>
 					</div>
 
 					<div class="col l4 s6">
 						<span class="light">Position Held:</span>
-						<input id="emp_pos_5" type="text" class="validate" name="emp_pos_5" maxlength="100" value="{!! $details->position5 !!}">
+						<input id="emp_pos_5" type="text" class="validate" name="emp_pos_5" maxlength="100" value="{!! escape_new_line($details->position5) !!}">
 					</div>
 					<div class="col l4 s3">
 						<span class="light">From:</span>
@@ -509,12 +515,12 @@
 				<div id="emp_details6" class="col s12 l12 emp_details input-field">
 					<div class="col l12 s12">
 						<span class="light">Name & Address of Employer 6 </span>
-						<textarea id="employer_details_6" placeholder="Enter Details here.." class="materialize-textarea" name="employer_details_6" value="{!! $details->proexp6 !!}"></textarea>
+						<textarea id="employer_details_6" placeholder="Enter Details here.." class="materialize-textarea" name="employer_details_6" value="{!! escape_new_line($details->proexp6) !!}"></textarea>
 					</div>
 
 					<div class="col l4 s6">
 						<span class="light">Position Held:</span>
-						<input id="emp_pos_6" type="text" class="validate" name="emp_pos_6" maxlength="100" value="{!! $details->position6 !!}">
+						<input id="emp_pos_6" type="text" class="validate" name="emp_pos_6" maxlength="100" value="{!! escape_new_line($details->position6) !!}">
 					</div>
 					<div class="col l4 s3">
 						<span class="light">From:</span>
@@ -749,17 +755,17 @@
 	        var p = '<h4 class="center">APPLICATION FOR ADMISSION TO Ph.D.<br> PROGRAMME ('+ x + '-' + y + ')</h4>';
 	        $('.heading').append(p);
 
-	        $("textarea#addr_for_commn").val('{!! $details->addrforcomm !!}');
-	        $("textarea#permanent_addr").val('{!! $details->permanentaddr !!}');
-	        $("textarea#details_of_pub1").val('{!! $details->publications1 !!}');
-	        $("textarea#details_of_pub2").val('{!! $details->publications2 !!}');
-	        $("textarea#details_of_pub3").val('{!! $details->publications3 !!}');
-	        $("textarea#awards3").val('{!! $details->awards3 !!}');
-	        $("textarea#awards2").val('{!! $details->awards2 !!}');
-	        $("textarea#awards1").val('{!! $details->awards1 !!}');
-	        $("textarea#employer_details_1").val('{!! $details->proexp1 !!}');
-	        $("textarea#employer_details_2").val('{!! $details->proexp2 !!}');
-	        $("textarea#employer_details_3").val('{!! $details->proexp3 !!}');
+	        $("textarea#addr_for_commn").val('{!! escape_new_line($details->addrforcomm) !!}');
+	        $("textarea#permanent_addr").val('{!! escape_new_line($details->permanentaddr) !!}');
+	        $("textarea#details_of_pub1").val('{!! escape_new_line($details->publications1) !!}');
+	        $("textarea#details_of_pub2").val('{!! escape_new_line($details->publications2) !!}');
+	        $("textarea#details_of_pub3").val('{!! escape_new_line($details->publications3) !!}');
+	        $("textarea#awards3").val('{!! escape_new_line($details->awards3) !!}');
+	        $("textarea#awards2").val('{!! escape_new_line($details->awards2) !!}');
+	        $("textarea#awards1").val('{!! escape_new_line($details->awards1) !!}');
+	        $("textarea#employer_details_1").val('{!! escape_new_line($details->proexp1) !!}');
+	        $("textarea#employer_details_2").val('{!! escape_new_line($details->proexp2) !!}');
+	        $("textarea#employer_details_3").val('{!! escape_new_line($details->proexp3) !!}');
 
 	        var t='{!! $details->sex !!}';
 	        if(t=='Male'){
