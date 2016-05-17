@@ -394,7 +394,7 @@ function escape_new_line($s) {
 
 					<div class="col l4 s6">
 						<span class="light">Position Held:</span>
-						<input id="emp_pos_1" type="text" class="validate" name="emp_pos_1" maxlength="100" value="{!! escape_new_line($details->position1 !!}">
+						<input id="emp_pos_1" type="text" class="validate" name="emp_pos_1" maxlength="100" value="{!! escape_new_line($details->position1) !!}">
 					</div>
 					<div class="col l4 s3">
 						<span class="light">From:</span>
@@ -414,7 +414,7 @@ function escape_new_line($s) {
 
 					<div class="col l4 s6">
 						<span class="light">Position Held:</span>
-						<input id="emp_pos_2" type="text" class="validate" name="emp_pos_2" maxlength="100" value="{!! escape_new_line($details->position2 !!}">
+						<input id="emp_pos_2" type="text" class="validate" name="emp_pos_2" maxlength="100" value="{!! escape_new_line($details->position2) !!}">
 					</div>
 					<div class="col l4 s3">
 						<span class="light">From:</span>
@@ -434,7 +434,7 @@ function escape_new_line($s) {
 
 					<div class="col l4 s6">
 						<span class="light">Position Held:</span>
-						<input id="emp_pos_3" type="text" class="validate" name="emp_pos_3" maxlength="100" value="{!! escape_new_line($details->position3 !!}">
+						<input id="emp_pos_3" type="text" class="validate" name="emp_pos_3" maxlength="100" value="{!! escape_new_line($details->position3) !!}">
 					</div>
 					<div class="col l4 s3">
 						<span class="light">From:</span>
@@ -454,7 +454,7 @@ function escape_new_line($s) {
 
 					<div class="col l4 s6">
 						<span class="light">Position Held:</span>
-						<input id="emp_pos_4" type="text" class="validate" name="emp_pos_4" maxlength="100" value="{!! escape_new_line($details->position4 !!}">
+						<input id="emp_pos_4" type="text" class="validate" name="emp_pos_4" maxlength="100" value="{!! escape_new_line($details->position4) !!}">
 					</div>
 					<div class="col l4 s3">
 						<span class="light">From:</span>
@@ -474,7 +474,7 @@ function escape_new_line($s) {
 
 					<div class="col l4 s6">
 						<span class="light">Position Held:</span>
-						<input id="emp_pos_5" type="text" class="validate" name="emp_pos_5" maxlength="100" value="{!! escape_new_line($details->position5 !!}">
+						<input id="emp_pos_5" type="text" class="validate" name="emp_pos_5" maxlength="100" value="{!! escape_new_line($details->position5) !!}">
 					</div>
 					<div class="col l4 s3">
 						<span class="light">From:</span>
@@ -494,7 +494,7 @@ function escape_new_line($s) {
 
 					<div class="col l4 s6">
 						<span class="light">Position Held:</span>
-						<input id="emp_pos_6" type="text" class="validate" name="emp_pos_6" maxlength="100" value="{!! escape_new_line($details->position6 !!}">
+						<input id="emp_pos_6" type="text" class="validate" name="emp_pos_6" maxlength="100" value="{!! escape_new_line($details->position6) !!}">
 					</div>
 					<div class="col l4 s3">
 						<span class="light">From:</span>
