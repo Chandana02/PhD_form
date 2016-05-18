@@ -376,16 +376,12 @@ class AdminController extends Controller
 
     public function admitCard($phdormsc, $reg_number, $dept)
     {
-        $regNo = '';
-        $departments = explode('-', $reg_number);
-        for($i = 0; $i < sizeof($departments) - 1; $i++)
-        {
-            $regNo = $regNo.$departments[$i].'/';
-        }
-        $regNo = $regNo.$departments[sizeof($departments) - 1];
-        $applNo = $departments[sizeof($departments) - 1];
+        // $reg_number is the dashed version
+        // $reg_number_original is the slashed version (original)
+        
+        $reg_number_original = str_replace("-", "/", $reg_number);
 
-        $filename = $phdormsc.'/'.$applNo.'/'.$applNo;
+        $filename = $phdormsc.'/'.$reg_number.'/photo';
         $path = public_path() . '/uploads/' . $filename;
         if(file_exists($path.'.jpg'))
         {
@@ -404,17 +400,17 @@ class AdminController extends Controller
         if($phdormsc == 'PHD')
         {
             $candidate = Phd::select('name', 'registrationNumber','addrforcomm')
-                            ->where('registrationNumber', $regNo)
+                            ->where('registrationNumber', $reg_number_original)
                             ->first();
         }
         else
         {
             $candidate = Ms::select('name', 'registrationNumber','addrforcomm')
-                            ->where('registrationNumber', $regNo)
+                            ->where('registrationNumber', $reg_number_original)
                             ->first();
         }
         $data = array(
-            'image' => $phdormsc.'/'.$applNo.'/'.$applNo.'.',
+            'image' => $phdormsc.'/'.$reg_number.'/photo.' . $type,
             'name' => $candidate->name,
             'dept' => $dept,
             'regNo' => $candidate->registrationNumber,
