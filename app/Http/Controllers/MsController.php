@@ -16,6 +16,7 @@ use App\MsUg;
 use App\MsScores;
 use App\MsPro;
 use App\MsOther;
+use App\SaveMs;
 use Session;
 
 class MsController extends Controller
@@ -181,7 +182,7 @@ class MsController extends Controller
 
             $file = $request->file('image_path');   
 
-            $stored_image_path = Ms::where('registrationNumber', Session::get('regNo'))->select('imagePath')->first()['imagePath'];
+            $stored_image_path = SaveMs::where('registrationNumber', Session::get('regNo'))->select('imagePath')->first()['imagePath'];
             $stored_image_arr = explode(',', $stored_image_path);
             $stored_image_extension = $stored_image_arr[0];
             $stored_sign_extension = count($stored_image_arr) == 2 ? $stored_image_arr[1] : '';
