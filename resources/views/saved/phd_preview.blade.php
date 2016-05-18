@@ -620,6 +620,26 @@
 				$('.applCheck .select-wrapper ul>li:eq(8)').click();
 			}
 
+			t=a['category'];
+			if(t=='OBC'){
+				$('.categCheck .select-wrapper input').val(t);
+				$('.categCheck .select-wrapper ul>li:eq(1)').click();
+			}
+			else if(t == 'OC'){
+				$('.categCheck .select-wrapper input').val(t);
+				$('.categCheck .select-wrapper ul>li:eq(2)').click();
+			}
+			else if(t=='SC')
+			{
+				$('.categCheck .select-wrapper input').val(t);
+				$('.categCheck .select-wrapper ul>li:eq(3)').click();
+			}
+			else if(t=='ST')
+			{
+				$('.categCheck .select-wrapper input').val(t);
+				$('.categCheck .select-wrapper ul>li:eq(4)').click();
+			}
+
 			t=a['ug_class'];
 			if(t=='Honours'){
 				$('.ugclassCheck .select-wrapper input').val(t);
@@ -684,8 +704,6 @@
 			if(t!=''){
 				$('.appCheck .select-wrapper input').val(t);	
 			}
-			
-			$('.categCheck .select-wrapper ul>li:eq(1)').click();
 			
 			function department(t)
 			{

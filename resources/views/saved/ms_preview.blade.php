@@ -627,24 +627,24 @@
 				$('.ugclassCheck .select-wrapper ul>li:eq(4)').click();
 			}
 
-			t=a['pg_class'];
-			if(t=='Honours'){
-				$('.pgclassCheck .select-wrapper input').val(t);
-				$('.pgclassCheck .select-wrapper ul>li:eq(1)').click();
+			t=a['category'];
+			if(t=='OBC'){
+				$('.categCheck .select-wrapper input').val(t);
+				$('.categCheck .select-wrapper ul>li:eq(1)').click();
 			}
-			else if(t == 'Distinction'){
-				$('.pgclassCheck .select-wrapper input').val(t);
-				$('.pgclassCheck .select-wrapper ul>li:eq(2)').click();
+			else if(t == 'OC'){
+				$('.categCheck .select-wrapper input').val(t);
+				$('.categCheck .select-wrapper ul>li:eq(2)').click();
 			}
-			else if(t=='First')
+			else if(t=='SC')
 			{
-				$('.pgclassCheck .select-wrapper input').val(t);
-				$('.pgclassCheck .select-wrapper ul>li:eq(3)').click();
+				$('.categCheck .select-wrapper input').val(t);
+				$('.categCheck .select-wrapper ul>li:eq(3)').click();
 			}
-			else if(t=='Second')
+			else if(t=='ST')
 			{
-				$('.pgclassCheck .select-wrapper input').val(t);
-				$('.pgclassCheck .select-wrapper ul>li:eq(4)').click();
+				$('.categCheck .select-wrapper input').val(t);
+				$('.categCheck .select-wrapper ul>li:eq(4)').click();
 			}
 
 			t=a['marital_status'];
@@ -671,11 +671,6 @@
 			if(t!=''){
 				$('.appCheck .select-wrapper input').val(t);	
 			}
-			
-			$('.categCheck .select-wrapper ul>li:eq(1)').click();
-
-			
-
 
 			function department(t)
 			{
