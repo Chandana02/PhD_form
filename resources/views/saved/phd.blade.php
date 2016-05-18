@@ -992,6 +992,10 @@ function escape_new_line($s) {
 	        	if(t == 'MA')
 	        	{
 	        		return 'Mathematics';
+	        	}
+	        	if(t == 'MS')
+	        	{
+	        		return 'Management Studies';
 	        	}		
 	        	if(t == 'HM'){
 	        		return 'Humanities & Social Science';

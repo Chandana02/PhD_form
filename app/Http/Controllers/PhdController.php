@@ -510,5 +510,9 @@ class PhdController extends Controller
         {
             return 'Humanities & Social Science';
         }
+        if($t == 'MS')
+        {
+            return 'Management Studies';
+        }
     }
 }

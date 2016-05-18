@@ -176,6 +176,10 @@ class ApplicationController extends Controller
         {
             return 'Mechanical Engineering';
         }
+        if($t == 'MS')
+        {
+            return 'Management Studies';
+        }
         if($t == 'PR')
         {
             return 'Production Engineering';

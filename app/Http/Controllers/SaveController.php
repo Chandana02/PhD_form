@@ -673,5 +673,9 @@ class SaveController extends Controller
         {
             return 'Humanities & Social Science';
         }
+        if($t == 'MS')
+        {
+            return 'Management Studies';
+        }
     }
 }

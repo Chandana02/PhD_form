@@ -492,6 +492,10 @@ class AdminController extends Controller
         {
             return 'Humanities & Social Science';
         }
+        if($t == 'MS')
+        {
+            return 'Management Studies';
+        }
     }
     
     public function logout()
