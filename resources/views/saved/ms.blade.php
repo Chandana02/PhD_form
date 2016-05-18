@@ -586,6 +586,14 @@ function escape_new_line($s) {
 
 @section('script')
 <script type="text/javascript">
+	var bannerImage = document.getElementById('bannerImg');
+	imgData = getBase64Image(bannerImage);
+	localStorage.setItem("imgData", imgData);
+
+	var signImage = document.getElementById('signImg');
+	signData = getBase64Image(signImage);
+	localStorage.setItem("signData", signData);
+	
 	$(document).ready(function() {
 		$('#save2').click(function(e) {
 			$("form").attr("action", "/save2ms").submit();

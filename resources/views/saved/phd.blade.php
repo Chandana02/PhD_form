@@ -624,14 +624,13 @@ function escape_new_line($s) {
 
 @section('script')
 <script type="text/javascript">
-	if('{!! $photoExtension !!}' == '')
-	{
-		localStorage.removeItem('imgData');	
-	}
-	if('{!! $signExtension !!}' == '')
-	{
-		localStorage.removeItem('signData');	
-	}
+	var bannerImage = document.getElementById('bannerImg');
+	imgData = getBase64Image(bannerImage);
+	localStorage.setItem("imgData", imgData);
+
+	var signImage = document.getElementById('signImg');
+	signData = getBase64Image(signImage);
+	localStorage.setItem("signData", signData);
 	
 	$(document).ready(function() {
 		$('#save2').click(function(e) {
@@ -650,7 +649,7 @@ function escape_new_line($s) {
 			reader.onload = function (e) {
 				document.getElementById('bannerImg').src =  e.target.result;
 				bannerImage = document.getElementById('bannerImg');
-				console.log(bannerImg.width);	
+				// console.log(bannerImg.width);	
 				if(bannerImg.height>300 || bannerImg.width>200){
 					alert('Enter Image of size < 200*300');
 					return ;
