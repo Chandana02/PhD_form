@@ -585,6 +585,14 @@ function escape_new_line($s) {
 
 @section('script')
 <script type="text/javascript">
+	if('{!! $photoExtension !!}' == '')
+	{
+		localStorage.removeItem('imgData');	
+	}
+	if('{!! $signExtension !!}' == '')
+	{
+		localStorage.removeItem('signData');	
+	}
 	$(document).ready(function() {
 		$('#save2').click(function(e) {
 			$("form").attr("action", "/save2ms").submit();
