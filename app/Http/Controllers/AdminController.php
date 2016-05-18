@@ -412,7 +412,7 @@ class AdminController extends Controller
                             ->first();
         }
         $data = array(
-            'image' => $phdormsc.'/'.$applNo.'/'.$applNo.'.'.$type,
+            'image' => $phdormsc.'/'.$applNo.'/'.$applNo.'.',
             'name' => $candidate->name,
             'dept' => $dept,
             'regNo' => $candidate->registrationNumber,

@@ -77,28 +77,28 @@
       </div> -->
       <div class="col l12">
         <p><b>To</b></p>
-        <p>Mr/Mrs</p>
+        <p>Mr/Mrs {!! $name !!}</p>
         <p>{!! $address !!}</p>
         <hr>        
         <hr>        
       </div>
       <div class="col l12">
         <p><b>To</b></p>
-        <p>Mr/Mrs</p>
+        <p>Mr/Mrs {!! $name !!}</p>
         <p>{!! $address !!}</p>
         <hr>        
         <hr>        
       </div>
       <div class="col l12">
         <p><b>To</b></p>
-        <p>Mr/Mrs</p>
+        <p>Mr/Mrs {!! $name !!}</p>
         <p>{!! $address !!}</p>
         <hr>        
         <hr>        
       </div>
       <div class="col l12">
         <p><b>To</b></p>
-        <p>Mr/Mrs</p>
+        <p>Mr/Mrs {!! $name !!}</p>
         <p>{!! $address !!}</p>
         <hr>        
         <hr>        
