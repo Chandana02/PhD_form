@@ -170,17 +170,17 @@
 			        
 			         <div class="input-field col l6 s6">
 			         <span class="light">*Area of Research:</span>
-			          <input required  id="area_of_research" type="text" class="validate" name="area_of_research" maxlength="50" >
+			          <input required  id="area_of_research" type="text" class="validate" name="area_of_research" >
 			        </div>
 			        </div>
 			      <div class="row">
 			        <div class="input-field col l6 s6">
 			        	<span class="light">*Name:</span>
-			      		<input required  id="name" type="text" class="validate" name="name" maxlength="32" >
+			      		<input required  id="name" type="text" class="validate" name="name" >
 			        </div>
 			         <div class="input-field col l6  s6">
 			         <span class="light">*Father's Name:</span>
-			          <input required  id="father_name" type="text" class="validate" name="father_name" maxlength="32" >
+			          <input required  id="father_name" type="text" class="validate" name="father_name" >
 			        </div>
 			      </div>
 
@@ -247,13 +247,13 @@
 			       <div class="row">
 			        <div class="input-field col l6"> 
 			        	<span for="textarea1">*Address for Communication:</span><br>     		  
-						<textarea required id="addr_for_commn" class="materialize-textarea" name="addr_for_commn" maxlength="200"></textarea>			          
+						<textarea required id="addr_for_commn" class="materialize-textarea" name="addr_for_commn"></textarea>			          
 			            <p>*Mobile Number:</p>
 			            <input required id="mobile" type="number" min="7000000000" max="9999999999" class="validate" name="mobile"  />
 			        </div>
 			         <div class="input-field col l6 ">
 			         <span for="textarea1">*Permanent Address:</span><br>
-			         <textarea required id="permanent_addr" class="materialize-textarea" name="permanent_addr" maxlength="200" ></textarea>			            
+			         <textarea required id="permanent_addr" class="materialize-textarea" name="permanent_addr" ></textarea>			            
 			            <p>Land-Line Number:</p>
 			            <input id="landline" type="text" class="validate" name="landline"  />
 			        </div>
@@ -267,11 +267,11 @@
 	  				 <div class="row">
 			        <div class="input-field col l6">
 			        	<span class="light">*Name of Degree:</span>
-			      		<input required  id="ug_deg" type="text" class="validate" name="ug_deg" maxlength="32" >
+			      		<input required  id="ug_deg" type="text" class="validate" name="ug_deg" >
 			        </div>
 			         <div class="input-field col l6 ">
 			         	<span class="light">*Branch Name:</span>
-			         	<input required  id="ug_branch" type="text" class="validate" name="ug_branch" maxlength="50" >
+			         	<input required  id="ug_branch" type="text" class="validate" name="ug_branch" >
 			        </div>
 			      </div>
 
@@ -302,12 +302,12 @@
 			      <div class="row">
 			      	<div class="input-field col l12 s12">
 			      		<span class="light">*College Name:</span>
-			      		<input required  id="ug_name_of_inst" type="text" class="validate" name="ug_name_of_inst" maxlength="50" >
+			      		<input required  id="ug_name_of_inst" type="text" class="validate" name="ug_name_of_inst" >
 			      	</div>
 
 			      	<div class="input-field col l12 s12">
 			      		<span class="light">*University Name:</span>
-			      		<input required  id="ug_name_of_uni" type="text" class="validate" name="ug_name_of_uni" maxlength="50" >
+			      		<input required  id="ug_name_of_uni" type="text" class="validate" name="ug_name_of_uni" >
 			      	</div>
 
 			      	<div class="input-field col l4 s4">
@@ -329,7 +329,7 @@
 						</div>
 						<div class="col l4">
 							<span class="light">*Rank:</span>
-							<input type="text" id="rank" name="rank" min="1" max="99999" />
+							<input type="text" id="rank" name="rank" min="1" />
 						</div>
 						<div class="col l6">
 							<span class="light">*Validity:</span>
@@ -455,15 +455,15 @@
 			      		 <textarea id="employer_details_1"  class="materialize-textarea" name="employer_details_1"></textarea>
 
 			      		 <p>Position Held:</p>
-			      		 <input id="emp_pos_1" type="text" class="validate" name="emp_pos_1" maxlength="100" >
+			      		 <input id="emp_pos_1" type="text" class="validate" name="emp_pos_1" >
 
 			      		 <div class="col l6 s6">
 			      		 	<p>From:</p>
-			      		 	<input id="emp_from_1" type="date" class="validate" name="emp_from_1" maxlength="100" >
+			      		 	<input id="emp_from_1" type="date" class="validate" name="emp_from_1" >
 			      		 </div>
 			      		 <div class="col l6 s6">
 			      		 	<p>To:</p>
-			      		 	<input id="emp_to_1" type="date" class="validate" name="emp_to_1" maxlength="100" >
+			      		 	<input id="emp_to_1" type="date" class="validate" name="emp_to_1" >
 			      		 </div>
 			      	</div>
 			      	<div class="col s12 l12 emp_details">
@@ -471,15 +471,15 @@
 			      		 <textarea id="employer_details_2"  class="materialize-textarea" name="employer_details_2" ></textarea>
 
 			      		 <p>Position Held:</p>
-			      		 <input id="emp_pos_2" type="text" class="validate" name="emp_pos_2" maxlength="100" >
+			      		 <input id="emp_pos_2" type="text" class="validate" name="emp_pos_2" >
 
 			      		 <div class="col l6 s6">
 			      		 	<p>From:</p>
-			      		 	<input id="emp_from_2" type="date" class="validate" name="emp_from_2" maxlength="100" >
+			      		 	<input id="emp_from_2" type="date" class="validate" name="emp_from_2" >
 			      		 </div>
 			      		 <div class="col l6 s6">
 			      		 	<p>To:</p>
-			      		 	<input id="emp_to_2" type="date" class="validate" name="emp_to_2" maxlength="100" >
+			      		 	<input id="emp_to_2" type="date" class="validate" name="emp_to_2" >
 			      		 </div>
 			      	</div>
 			      	<div class="col s12 l12 emp_details">
@@ -487,15 +487,15 @@
 			      		 <textarea id="employer_details_3"  class="materialize-textarea" name="employer_details_3"></textarea>
 
 			      		 <p>Position Held:</p>
-			      		 <input id="emp_pos_3" type="text" class="validate" name="emp_pos_3" maxlength="100" >
+			      		 <input id="emp_pos_3" type="text" class="validate" name="emp_pos_3" >
 
 			      		 <div class="col l6 s6">
 			      		 	<p>From:</p>
-			      		 	<input id="emp_from_3" type="date" class="validate" name="emp_from_3" maxlength="100">
+			      		 	<input id="emp_from_3" type="date" class="validate" name="emp_from_3">
 			      		 </div>
 			      		 <div class="col l6 s6">
 			      		 	<p>To:</p>
-			      		 	<input id="emp_to_3" type="date" class="validate" name="emp_to_3" maxlength="100" >
+			      		 	<input id="emp_to_3" type="date" class="validate" name="emp_to_3" >
 			      		 </div>
 			      	</div>
 			      </div>

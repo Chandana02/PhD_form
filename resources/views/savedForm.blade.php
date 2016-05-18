@@ -54,7 +54,7 @@
       <form>
       <div class="col l6 s12">
         <span class="light">Enter Registration Number</span>
-        <input type="text" id="regNo" class="validate" name="applNo" value="" required>
+        <input type="text" id="regNo" class="validate" name="applNo" required>
         </div>
         <div class="col l6 s12">
           <span class="light">Enter Date of Birth </span>
@@ -66,7 +66,7 @@
               <input placeholder="Month" required id="month" type="number" class="validate" name="age" max="12" min="1" >              
             </div>
             <div class="col l4">
-              <input placeholder="Date" required id="day" type="number" class="validate" name="age" max="31" min="1" >              
+              <input placeholder="Day" required id="day" type="number" class="validate" name="age" max="31" min="1" >              
             </div>
           </div>
       </div>

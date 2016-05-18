@@ -113,7 +113,7 @@ function escape_new_line($s) {
 
 				<div class="input-field col l12 s12">
 					<span class="light">*Area of Research:</span>
-					<input required placeholder="Area of Research" id="area_of_research" type="text" class="validate" name="area_of_research" maxlength="50" value="{!! escape_new_line($details->areaOfResearch) !!}">
+					<input required placeholder="Area of Research" id="area_of_research" type="text" class="validate" name="area_of_research" value="{!! escape_new_line($details->areaOfResearch) !!}">
 				</div>
 			</div>
 		</div>
@@ -126,11 +126,11 @@ function escape_new_line($s) {
 			<div class="row">
 				<div class="input-field col l6 s12">
 					<span class="light">*Name:</span>
-					<input required placeholder="Name of Candidate" id="name" type="text" class="validate" name="name" maxlength="32" value="{!! $details->name !!}">
+					<input required placeholder="Name of Candidate" id="name" type="text" class="validate" name="name" value="{!! $details->name !!}">
 				</div>
 				<div class="input-field col l6 s12">
 					<span class="light">*Father's Name:</span>
-					<input required placeholder="Father's/Guardian Name" id="father_name" type="text" class="validate" name="father_name" maxlength="32" value="{!! $details->fatherName !!}">
+					<input required placeholder="Father's/Guardian Name" id="father_name" type="text" class="validate" name="father_name" value="{!! $details->fatherName !!}">
 				</div>
 			</div>
 
@@ -225,11 +225,11 @@ function escape_new_line($s) {
 					<div class="row">
 						<div class="input-field col l6">
 							<span class="light">*Name of Degree:</span>
-							<input required placeholder="Name of Degree" id="ug_deg" type="text" class="validate" name="ug_deg" maxlength="32" value="{!! $details->ugdegreeName !!}">
+							<input required placeholder="Name of Degree" id="ug_deg" type="text" class="validate" name="ug_deg" value="{!! $details->ugdegreeName !!}">
 						</div>
 						<div class="input-field col l6 ">
 							<span class="light">*Branch Name:</span>
-							<input required placeholder="Branch/Specialization" id="ug_branch" type="text" class="validate" name="ug_branch" maxlength="50" value="{!! $details->ugbranch !!}">
+							<input required placeholder="Branch/Specialization" id="ug_branch" type="text" class="validate" name="ug_branch" value="{!! $details->ugbranch !!}">
 						</div>
 					</div>
 
@@ -256,12 +256,12 @@ function escape_new_line($s) {
 			<div class="row">
 				<div class="input-field col l12 s12">
 					<span class="light">*College Name:</span>
-					<input required placeholder="College Name" id="ug_name_of_inst" type="text" class="validate" name="ug_name_of_inst" maxlength="50" value="{!! escape_new_line($details->uginstitutionName) !!}">
+					<input required placeholder="College Name" id="ug_name_of_inst" type="text" class="validate" name="ug_name_of_inst" value="{!! escape_new_line($details->uginstitutionName) !!}">
 				</div>
 
 				<div class="input-field col l12 s12">
 					<span class="light">*University Name:</span>
-					<input required placeholder="University Name" id="ug_name_of_uni" type="text" class="validate" name="ug_name_of_uni" maxlength="50" value="{!! escape_new_line($details->uguniversityName) !!}">
+					<input required placeholder="University Name" id="ug_name_of_uni" type="text" class="validate" name="ug_name_of_uni" value="{!! escape_new_line($details->uguniversityName) !!}">
 				</div>
 
 				<div class="input-field col l4 s4">
@@ -280,7 +280,7 @@ function escape_new_line($s) {
 					<div class="row">
 						<div class="input-field col l6">
 							<span class="light">*Name of Degree:</span>
-							<input required placeholder="Name of Degree" id="pg_deg" type="text" class="validate" name="pg_deg" maxlength="50" value="{!! $details->pgdegreeName !!}">
+							<input required placeholder="Name of Degree" id="pg_deg" type="text" class="validate" name="pg_deg" value="{!! $details->pgdegreeName !!}">
 						</div>
 						<div class="input-field col l6 ">
 							<span class="light">*Branch Name:</span>
@@ -314,12 +314,12 @@ function escape_new_line($s) {
 			<div class="row">
 				<div class="input-field col l12 s12">
 					<span class="light">*College Name:</span>
-					<input required placeholder="College Name" id="pg_name_of_inst" type="text" class="validate" name="pg_name_of_inst" maxlength="50" value="{!! escape_new_line($details->pginstitutionName) !!}">
+					<input required placeholder="College Name" id="pg_name_of_inst" type="text" class="validate" name="pg_name_of_inst" value="{!! escape_new_line($details->pginstitutionName) !!}">
 				</div>
 
 				<div class="input-field col l12 s12">
 					<span class="light">*University Name:</span>
-					<input required placeholder="University Name" id="pg_name_of_uni" type="text" class="validate" name="pg_name_of_uni" maxlength="50" value="{!! escape_new_line($details->pguniversityName) !!}">
+					<input required placeholder="University Name" id="pg_name_of_uni" type="text" class="validate" name="pg_name_of_uni" value="{!! escape_new_line($details->pguniversityName) !!}">
 				</div>
 
 				<div class="input-field col l4 s4">
@@ -332,31 +332,31 @@ function escape_new_line($s) {
 
 			<div class="col l12 s12">
 				<span class="light">*Title of P.G Project:</span>
-				<input required placeholder="Title of P.G Project" id="title_of_project" type="text" class="validate" name="title_of_project" maxlength="100" value="{!! $details->pgproject !!}" >
+				<input required placeholder="Title of P.G Project" id="title_of_project" type="text" class="validate" name="title_of_project" value="{!! $details->pgproject !!}" >
 			</div>
 			<div class="col l4 s12 input-field">
 				<p for="textarea1">Publications:</p><br>
-				<textarea id="details_of_pub1" placeholder="Enter Details here.." class="materialize-textarea" name="details_of_pub1" maxlength="200" value="{!! escape_new_line($details->publications1) !!}"></textarea>
+				<textarea id="details_of_pub1" placeholder="Enter Details here.." class="materialize-textarea" name="details_of_pub1" value="{!! escape_new_line($details->publications1) !!}"></textarea>
 			</div>
 			<div class="col l4 s12 input-field">
 				<p for="textarea1">Publications:</p><br>
-				<textarea id="details_of_pub2" placeholder="Enter Details here.." class="materialize-textarea" name="details_of_pub2" maxlength="200" value="{!! escape_new_line($details->publications2) !!}"></textarea>
+				<textarea id="details_of_pub2" placeholder="Enter Details here.." class="materialize-textarea" name="details_of_pub2" value="{!! escape_new_line($details->publications2) !!}"></textarea>
 			</div>
 			<div class="col l4 s12 input-field">
 				<p for="textarea1">Publications:</p><br>
-				<textarea id="details_of_pub3" placeholder="Enter Details here.." class="materialize-textarea" name="details_of_pub3" maxlength="200" value="{!! escape_new_line($details->publications3) !!}"></textarea>
+				<textarea id="details_of_pub3" placeholder="Enter Details here.." class="materialize-textarea" name="details_of_pub3" value="{!! escape_new_line($details->publications3) !!}"></textarea>
 			</div>
 			<div class="col l4 s12 input-field">
 				<p for="textarea1">Publications:</p><br>
-				<textarea id="details_of_pub4" placeholder="Enter Details here.." class="materialize-textarea" name="details_of_pub4" maxlength="200" value="{!! escape_new_line($details->publications4) !!}"></textarea>
+				<textarea id="details_of_pub4" placeholder="Enter Details here.." class="materialize-textarea" name="details_of_pub4" value="{!! escape_new_line($details->publications4) !!}"></textarea>
 			</div>
 			<div class="col l4 s12 input-field">
 				<p for="textarea1">Publications:</p><br>
-				<textarea id="details_of_pub5" placeholder="Enter Details here.." class="materialize-textarea" name="details_of_pub5" maxlength="200" value="{!! escape_new_line($details->publications5) !!}"></textarea>
+				<textarea id="details_of_pub5" placeholder="Enter Details here.." class="materialize-textarea" name="details_of_pub5" value="{!! escape_new_line($details->publications5) !!}"></textarea>
 			</div>
 			<div class="col l4 s12 input-field">
 				<p for="textarea1">Publications:</p><br>
-				<textarea id="details_of_pub6" placeholder="Enter Details here.." class="materialize-textarea" name="details_of_pub6" maxlength="200" value="{!! escape_new_line($details->publications6) !!}"></textarea>
+				<textarea id="details_of_pub6" placeholder="Enter Details here.." class="materialize-textarea" name="details_of_pub6" value="{!! escape_new_line($details->publications6) !!}"></textarea>
 			</div>
 		</div>
 	</fieldset>
@@ -378,27 +378,27 @@ function escape_new_line($s) {
 
 				<div class="col l4 s12 input-field">
 					<p for="textarea1">Awards/Prizes/Sports/NCC etc</p><br>
-					<textarea id="awards1" placeholder="Enter Details here.." class="materialize-textarea" name="awards1" maxlength="200" value="{!! escape_new_line($details->awards1) !!}"></textarea>
+					<textarea id="awards1" placeholder="Enter Details here.." class="materialize-textarea" name="awards1" value="{!! escape_new_line($details->awards1) !!}"></textarea>
 				</div>
 				<div class="col l4 s12 input-field">
 					<p for="textarea1">Awards/Prizes/Sports/NCC etc</p><br>
-					<textarea id="awards2" placeholder="Enter Details here.." class="materialize-textarea" name="awards2" maxlength="200" value="{!! escape_new_line($details->awards2) !!}"></textarea>
+					<textarea id="awards2" placeholder="Enter Details here.." class="materialize-textarea" name="awards2" value="{!! escape_new_line($details->awards2) !!}"></textarea>
 				</div>
 				<div class="col l4 s12 input-field">
 					<p for="textarea1">Awards/Prizes/Sports/NCC etc</p><br>
-					<textarea id="awards3" placeholder="Enter Details here.." class="materialize-textarea" name="awards3" maxlength="200" value="{!! escape_new_line($details->awards3) !!}"></textarea>
+					<textarea id="awards3" placeholder="Enter Details here.." class="materialize-textarea" name="awards3" value="{!! escape_new_line($details->awards3) !!}"></textarea>
 				</div>
 				<div class="col l4 s12 input-field">
 					<p for="textarea1">Awards/Prizes/Sports/NCC etc</p><br>
-					<textarea id="awards4" placeholder="Enter Details here.." class="materialize-textarea" name="awards4" maxlength="200" value="{!! escape_new_line($details->awards4) !!}"></textarea>
+					<textarea id="awards4" placeholder="Enter Details here.." class="materialize-textarea" name="awards4" value="{!! escape_new_line($details->awards4) !!}"></textarea>
 				</div>
 				<div class="col l4 s12 input-field">
 					<p for="textarea1">Awards/Prizes/Sports/NCC etc</p><br>
-					<textarea id="awards5" placeholder="Enter Details here.." class="materialize-textarea" name="awards5" maxlength="200" value="{!! escape_new_line($details->awards5) !!}"></textarea>
+					<textarea id="awards5" placeholder="Enter Details here.." class="materialize-textarea" name="awards5" value="{!! escape_new_line($details->awards5) !!}"></textarea>
 				</div>
 				<div class="col l4 s12 input-field">
 					<p for="textarea1">Awards/Prizes/Sports/NCC etc</p><br>
-					<textarea id="awards6" placeholder="Enter Details here.." class="materialize-textarea" name="awards6" maxlength="200" value="{!! escape_new_line($details->awards6) !!}"></textarea>
+					<textarea id="awards6" placeholder="Enter Details here.." class="materialize-textarea" name="awards6" value="{!! escape_new_line($details->awards6) !!}"></textarea>
 				</div>
 			</div>
 		</div>
@@ -420,15 +420,15 @@ function escape_new_line($s) {
 
 					<div class="col l4 s6">
 						<span class="light">Position Held:</span>
-						<input id="emp_pos_1" type="text" class="validate" name="emp_pos_1" maxlength="100" value="{!! escape_new_line($details->position1) !!}">
+						<input id="emp_pos_1" type="text" class="validate" name="emp_pos_1" value="{!! escape_new_line($details->position1) !!}">
 					</div>
 					<div class="col l4 s3">
 						<span class="light">From:</span>
-						<input id="emp_from_1" type="date" class="validate" name="emp_from_1" maxlength="100" value="{!! $details->from1 !!}">
+						<input id="emp_from_1" type="date" class="validate" name="emp_from_1" value="{!! $details->from1 !!}">
 					</div>
 					<div class="col l4 s3">
 						<span class="light">To:</span>
-						<input id="emp_to_1" type="date" class="validate" name="emp_to_1" maxlength="100" value="{!! $details->to1 !!}">
+						<input id="emp_to_1" type="date" class="validate" name="emp_to_1" value="{!! $details->to1 !!}">
 					</div>
 				</div>
 
@@ -440,15 +440,15 @@ function escape_new_line($s) {
 
 					<div class="col l4 s6">
 						<span class="light">Position Held:</span>
-						<input id="emp_pos_2" type="text" class="validate" name="emp_pos_2" maxlength="100" value="{!! escape_new_line($details->position2) !!}">
+						<input id="emp_pos_2" type="text" class="validate" name="emp_pos_2" value="{!! escape_new_line($details->position2) !!}">
 					</div>
 					<div class="col l4 s3">
 						<span class="light">From:</span>
-						<input id="emp_from_2" type="date" class="validate" name="emp_from_2" maxlength="100" value="{!! $details->from2 !!}">
+						<input id="emp_from_2" type="date" class="validate" name="emp_from_2" value="{!! $details->from2 !!}">
 					</div>
 					<div class="col l4 s3">
 						<span class="light">To:</span>
-						<input id="emp_to_2" type="date" class="validate" name="emp_to_2" maxlength="100" value="{!! $details->to2 !!}">
+						<input id="emp_to_2" type="date" class="validate" name="emp_to_2" value="{!! $details->to2 !!}">
 					</div>
 				</div>
 
@@ -460,15 +460,15 @@ function escape_new_line($s) {
 
 					<div class="col l4 s6">
 						<span class="light">Position Held:</span>
-						<input id="emp_pos_3" type="text" class="validate" name="emp_pos_3" maxlength="100" value="{!! escape_new_line($details->position3) !!}">
+						<input id="emp_pos_3" type="text" class="validate" name="emp_pos_3" value="{!! escape_new_line($details->position3) !!}">
 					</div>
 					<div class="col l4 s3">
 						<span class="light">From:</span>
-						<input id="emp_from_3" type="date" class="validate" name="emp_from_3" maxlength="100" value="{!! $details->from3 !!}">
+						<input id="emp_from_3" type="date" class="validate" name="emp_from_3" value="{!! $details->from3 !!}">
 					</div>
 					<div class="col l4 s3">
 						<span class="light">To:</span>
-						<input id="emp_to_3" type="date" class="validate" name="emp_to_3" maxlength="100" value="{!! $details->to3 !!}">
+						<input id="emp_to_3" type="date" class="validate" name="emp_to_3" value="{!! $details->to3 !!}">
 					</div>
 				</div>
 
@@ -480,15 +480,15 @@ function escape_new_line($s) {
 
 					<div class="col l4 s6">
 						<span class="light">Position Held:</span>
-						<input id="emp_pos_4" type="text" class="validate" name="emp_pos_4" maxlength="100" value="{!! escape_new_line($details->position4) !!}">
+						<input id="emp_pos_4" type="text" class="validate" name="emp_pos_4" value="{!! escape_new_line($details->position4) !!}">
 					</div>
 					<div class="col l4 s3">
 						<span class="light">From:</span>
-						<input id="emp_from_4" type="date" class="validate" name="emp_from_4" maxlength="100" value="{!! $details->from4 !!}">
+						<input id="emp_from_4" type="date" class="validate" name="emp_from_4" value="{!! $details->from4 !!}">
 					</div>
 					<div class="col l4 s3">
 						<span class="light">To:</span>
-						<input id="emp_to_4" type="date" class="validate" name="emp_to_4" maxlength="100" value="{!! $details->to4 !!}">
+						<input id="emp_to_4" type="date" class="validate" name="emp_to_4" value="{!! $details->to4 !!}">
 					</div>
 				</div>
 
@@ -500,15 +500,15 @@ function escape_new_line($s) {
 
 					<div class="col l4 s6">
 						<span class="light">Position Held:</span>
-						<input id="emp_pos_5" type="text" class="validate" name="emp_pos_5" maxlength="100" value="{!! escape_new_line($details->position5) !!}">
+						<input id="emp_pos_5" type="text" class="validate" name="emp_pos_5" value="{!! escape_new_line($details->position5) !!}">
 					</div>
 					<div class="col l4 s3">
 						<span class="light">From:</span>
-						<input id="emp_from_5" type="date" class="validate" name="emp_from_5" maxlength="100" value="{!! $details->from5 !!}">
+						<input id="emp_from_5" type="date" class="validate" name="emp_from_5" value="{!! $details->from5 !!}">
 					</div>
 					<div class="col l4 s3">
 						<span class="light">To:</span>
-						<input id="emp_to_5" type="date" class="validate" name="emp_to_5" maxlength="100" value="{!! $details->to5 !!}">
+						<input id="emp_to_5" type="date" class="validate" name="emp_to_5" value="{!! $details->to5 !!}">
 					</div>
 				</div>
 
@@ -520,15 +520,15 @@ function escape_new_line($s) {
 
 					<div class="col l4 s6">
 						<span class="light">Position Held:</span>
-						<input id="emp_pos_6" type="text" class="validate" name="emp_pos_6" maxlength="100" value="{!! escape_new_line($details->position6) !!}">
+						<input id="emp_pos_6" type="text" class="validate" name="emp_pos_6" value="{!! escape_new_line($details->position6) !!}">
 					</div>
 					<div class="col l4 s3">
 						<span class="light">From:</span>
-						<input id="emp_from_6" type="date" class="validate" name="emp_from_6" maxlength="100" value="{!! $details->from6 !!}">
+						<input id="emp_from_6" type="date" class="validate" name="emp_from_6" value="{!! $details->from6 !!}">
 					</div>
 					<div class="col l4 s3">
 						<span class="light">To:</span>
-						<input id="emp_to_6" type="date" class="validate" name="emp_to_6" maxlength="100" value="{!! $details->to6 !!}">
+						<input id="emp_to_6" type="date" class="validate" name="emp_to_6" value="{!! $details->to6 !!}">
 					</div>
 				</div>
 

@@ -85,7 +85,7 @@
 
 				<div class="input-field col l12 s12">
 					<span class="light">*Area of Research:</span>
-					<input required placeholder="Area of Research" id="area_of_research" type="text" class="validate" name="area_of_research" maxlength="50">
+					<input required placeholder="Area of Research" id="area_of_research" type="text" class="validate" name="area_of_research">
 				</div>
 			</div>
 		</fieldset>
@@ -95,11 +95,11 @@
 			<div class="row">
 				<div class="input-field col l6 s6">
 					<span class="light">*Name:</span>
-					<input required placeholder="Name of Candidate" id="name" type="text" class="validate" name="name" maxlength="32">
+					<input required placeholder="Name of Candidate" id="name" type="text" class="validate" name="name">
 				</div>
 				<div class="input-field col l6  s6">
 					<span class="light">*Father's/Guardian's/Husband's Name:</span>
-					<input required placeholder="Father's/Guardian Name" id="father_name" type="text" class="validate" name="father_name" maxlength="32">
+					<input required placeholder="Father's/Guardian Name" id="father_name" type="text" class="validate" name="father_name">
 				</div>
 			</div>
 
@@ -122,7 +122,7 @@
 
 				<div class="input-field col l2">
 					<span class="light">*Age:</span>
-					<input placeholder="Enter Age" required id="age" type="number" class="validate" name="age" max="50" min="12" >
+					<input placeholder="Enter Age" required id="age" type="number" class="validate" name="age" >
 				</div>
 
 				<div class="input-field col l6 ">
@@ -180,7 +180,7 @@
 			<div class="row">
 				<div class="input-field col l6"> 
 					<span for="textarea1">*Address for Communication:</span><br>
-					<textarea required id="addr_for_commn" class="materialize-textarea" name="addr_for_commn" maxlength="200" value="hey"></textarea>
+					<textarea required id="addr_for_commn" class="materialize-textarea" name="addr_for_commn" maxlength="200"></textarea>
 				</div>
 				<div class="input-field col l6">
 					<span for="textarea1">*Permanent Address:</span><br>
