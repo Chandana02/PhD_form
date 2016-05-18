@@ -565,7 +565,7 @@
           </tr>
           <tr>
             <td colspan="2"><b>Semester 8</td>
-            <td colspan="2">{!! $scores['gpa'] ?  $scores['gpa'] : '-' !!} / {!! $scores['gpamax'] ? $scores['gpamax'] : '-' !!}</td>
+            <td colspan="2">{!! $scores['gpa8'] ?  $scores['gpa8'] : '-' !!} / {!! $scores['gpamax8'] ? $scores['gpamax8'] : '-' !!}</td>
           </tr>
 
         </tbody>
