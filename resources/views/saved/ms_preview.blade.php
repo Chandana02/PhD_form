@@ -524,12 +524,12 @@
 		bannerSign.setAttribute('src', "data:image/jpeg;base64," + dataSign);
 
 		$(document ).ready(function(){
-			console.log(localStorage.getItem('img'));
+			// console.log(localStorage.getItem('img'));
 			var a = JSON.parse(localStorage.getItem('data'));
-			console.log(a);
+			// console.log(a);
 
 			var x = new Date().getFullYear();
-			console.log(x);
+			// console.log(x);
 			var y = x+1;
 			var p = '<h4 class="center">APPLICATION FOR ADMISSION TO M.S.<br> PROGRAMME ('+ x + '-' + y+ ')</h4>';
 			$('.heading').append(p);
@@ -659,7 +659,7 @@
 			}
 
 			t=a['ph'];
-			if(t=='no'){
+			if(t=='No'){
 				$('.pdCheck .select-wrapper input').val(t);
 				$('.pdCheck .select-wrapper ul>li:eq(2)').click();
 			}

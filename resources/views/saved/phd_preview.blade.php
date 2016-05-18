@@ -523,7 +523,7 @@
 
 			var x = new Date().getFullYear();
 			var y = x+1;
-			console.log(x);
+			// console.log(x);
 			var p = '<h4 class="center">APPLICATION FOR ADMISSION TO Ph.D.<br> PROGRAMME ('+ x + '-' + y + ')</h4>';
 			$('.heading').append(p);
 			$(".button-collapse").sideNav();
@@ -585,7 +585,7 @@
 			$('#discipline').val(a['discipline']);
 
 			var t=a['sex'];
-			if(t=='male'){
+			if(t=='Male'){
 				$('.sexCheck .select-wrapper input').val(t);
 				$('.sexCheck .select-wrapper ul>li:eq(1)').click();
 			}
@@ -672,7 +672,7 @@
 			}
 
 			t=a['ph'];
-			if(t=='no'){
+			if(t=='No'){
 				$('.pdCheck .select-wrapper input').val(t);
 				$('.pdCheck .select-wrapper ul>li:eq(2)').click();
 			}
@@ -686,10 +686,7 @@
 			}
 			
 			$('.categCheck .select-wrapper ul>li:eq(1)').click();
-
 			
-
-
 			function department(t)
 			{
 				if(t == 'AR')
