@@ -99,7 +99,7 @@
                 </div>
                 <div class="space-medium"></div>
                 @endif
-        @if($data['session'] == 'all')
+        @if($data['session_all'] == 'all')
         <div class="space-small"></div>
         <div class="col l12 center buttons">
         <div class="col l6">

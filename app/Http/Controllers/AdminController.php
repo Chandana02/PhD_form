@@ -144,6 +144,7 @@ class AdminController extends Controller
         $data = self::finalView($phdormsc, $rules1, $rules2, $rules3);
         $data['dept'] = self::department($dept);
         $data['session'] = $dept;
+        $data['session_all'] = Session::get('dept');
         for($i = 0; $i < sizeof($data['candidates']); $i++)
         {
             $departments = explode('/', $data['candidates'][$i]->registrationNumber);
@@ -160,6 +161,7 @@ class AdminController extends Controller
             $candidates = Phd::where($rules1)
                                         ->orWhere($rules2)
                                         ->orWhere($rules3)
+                                        ->orderBy('created_at', 'desc')
                                         ->paginate(6);
             $candidates_id = $candidates->lists('applNo');
             $ugDetails = PhdUg::whereIn('applNo', $candidates_id)->get();
@@ -172,7 +174,6 @@ class AdminController extends Controller
                             'others' => $otherDetails,
                             'pro' => $proDetails
                             );
-            
             return $data;
         }
         else
@@ -180,6 +181,7 @@ class AdminController extends Controller
             $candidates = Ms::where($rules1)
                                         ->orWhere($rules2)
                                         ->orWhere($rules3)
+                                        ->orderBy('created_at', 'desc')
                                         ->paginate(6);
             
             $candidates_id = $candidates->lists('applNo');

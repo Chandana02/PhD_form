@@ -498,6 +498,65 @@
 			      		 	<input id="emp_to_3" type="date" class="validate" name="emp_to_3" >
 			      		 </div>
 			      	</div>
+			      	<div id="emp_details4" class="col s12 l12 emp_details input-field">
+						<div class="col l12 s12">
+							<span class="light">Name & Address of Employer 4 </span>
+							<textarea id="employer_details_4" class="materialize-textarea" name="employer_details_4"></textarea>
+						</div>
+
+						<div class="col l4 s6">
+							<span class="light">Position Held:</span>
+							<input id="emp_pos_4" type="text" class="validate" name="emp_pos_4" >
+						</div>
+						<div class="col l4 s3">
+							<span class="light">From:</span>
+							<input id="emp_from_4" type="date" class="validate" name="emp_from_4" >
+						</div>
+						<div class="col l4 s3">
+							<span class="light">To:</span>
+							<input id="emp_to_4" type="date" class="validate" name="emp_to_4" >
+						</div>
+					</div>
+
+					<div id="emp_details5" class="col s12 l12 emp_details input-field">
+						<div class="col l12 s12">
+							<span class="light">Name & Address of Employer 5 </span>
+							<textarea id="employer_details_5" class="materialize-textarea" name="employer_details_5" ></textarea>
+						</div>
+
+						<div class="col l4 s6">
+							<span class="light">Position Held:</span>
+							<input id="emp_pos_5" type="text" class="validate" name="emp_pos_5" >
+						</div>
+						<div class="col l4 s3">
+							<span class="light">From:</span>
+							<input id="emp_from_5" type="date" class="validate" name="emp_from_5" >
+						</div>
+						<div class="col l4 s3">
+							<span class="light">To:</span>
+							<input id="emp_to_5" type="date" class="validate" name="emp_to_5" >
+						</div>
+					</div>
+
+					<div id="emp_details6" class="col s12 l12 emp_details input-field">
+						<div class="col l12 s12">
+							<span class="light">Name & Address of Employer 6 </span>
+							<textarea id="employer_details_6" class="materialize-textarea" name="employer_details_6" ></textarea>
+						</div>
+
+						<div class="col l4 s6">
+							<span class="light">Position Held:</span>
+							<input id="emp_pos_6" type="text" class="validate" name="emp_pos_6" >
+						</div>
+						<div class="col l4 s3">
+							<span class="light">From:</span>
+							<input id="emp_from_6" type="date" class="validate" name="emp_from_6" >
+						</div>
+						<div class="col l4 s3">
+							<span class="light">To:</span>
+							<input id="emp_to_6" type="date" class="validate" name="emp_to_6" >
+						</div>
+					</div>
 			      </div>
 
 			      <div class="right">
@@ -542,6 +601,9 @@
 			$("textarea#employer_details_1").val(a['employer_details_1']);
 			$("textarea#employer_details_2").val(a['employer_details_2']);
 			$("textarea#employer_details_3").val(a['employer_details_3']);
+			$("textarea#employer_details_4").val(a['employer_details_4']);
+	        $("textarea#employer_details_5").val(a['employer_details_5']);
+	        $("textarea#employer_details_6").val(a['employer_details_6']);
 			$('#chalanNo').val(a['chalan_no']);
 			$('#applicationCateg').val(a['appl_categ']);
 			$('#department1').val(a['department1']);
@@ -589,12 +651,21 @@
 			$('#emp_pos_1').val(a['emp_pos_1']);
 			$('#emp_pos_2').val(a['emp_pos_2']);
 			$('#emp_pos_3').val(a['emp_pos_3']);
+			$('#emp_pos_4').val(a['emp_pos_4']);
+			$('#emp_pos_5').val(a['emp_pos_5']);
+			$('#emp_pos_6').val(a['emp_pos_6']);
 			$('#emp_to_1').val(a['emp_to_1']);
 			$('#emp_to_2').val(a['emp_to_2']);
 			$('#emp_to_3').val(a['emp_to_3']);
+			$('#emp_to_4').val(a['emp_to_4']);
+			$('#emp_to_5').val(a['emp_to_5']);
+			$('#emp_to_6').val(a['emp_to_6']);
 			$('#emp_from_1').val(a['emp_from_1']);
 			$('#emp_from_2').val(a['emp_from_2']);
 			$('#emp_from_3').val(a['emp_from_3']);
+			$('#emp_from_4').val(a['emp_from_4']);
+			$('#emp_from_5').val(a['emp_from_5']);
+			$('#emp_from_6').val(a['emp_from_6']);
 
 
 			var t=a['sex'];

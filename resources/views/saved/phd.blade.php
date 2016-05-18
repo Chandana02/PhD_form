@@ -769,12 +769,21 @@ function escape_new_line($s) {
 	        $("textarea#details_of_pub1").val('{!! escape_new_line($details->publications1) !!}');
 	        $("textarea#details_of_pub2").val('{!! escape_new_line($details->publications2) !!}');
 	        $("textarea#details_of_pub3").val('{!! escape_new_line($details->publications3) !!}');
+	        $("textarea#details_of_pub4").val('{!! escape_new_line($details->publications4) !!}');
+	        $("textarea#details_of_pub5").val('{!! escape_new_line($details->publications5) !!}');
+	        $("textarea#details_of_pub6").val('{!! escape_new_line($details->publications6) !!}');
 	        $("textarea#awards3").val('{!! escape_new_line($details->awards3) !!}');
 	        $("textarea#awards2").val('{!! escape_new_line($details->awards2) !!}');
 	        $("textarea#awards1").val('{!! escape_new_line($details->awards1) !!}');
+	        $("textarea#awards4").val('{!! escape_new_line($details->awards4) !!}');
+	        $("textarea#awards5").val('{!! escape_new_line($details->awards5) !!}');
+	        $("textarea#awards6").val('{!! escape_new_line($details->awards6) !!}');
 	        $("textarea#employer_details_1").val('{!! escape_new_line($details->proexp1) !!}');
 	        $("textarea#employer_details_2").val('{!! escape_new_line($details->proexp2) !!}');
 	        $("textarea#employer_details_3").val('{!! escape_new_line($details->proexp3) !!}');
+	        $("textarea#employer_details_4").val('{!! escape_new_line($details->proexp4) !!}');
+	        $("textarea#employer_details_5").val('{!! escape_new_line($details->proexp5) !!}');
+	        $("textarea#employer_details_6").val('{!! escape_new_line($details->proexp6) !!}');
 
 	        var t='{!! $details->sex !!}';
 	        if(t=='Male'){

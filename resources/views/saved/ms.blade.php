@@ -705,6 +705,9 @@ function escape_new_line($s) {
         $("textarea#employer_details_1").val('{!! escape_new_line($details->proexp1) !!}');
         $("textarea#employer_details_2").val('{!! escape_new_line($details->proexp2) !!}');
         $("textarea#employer_details_3").val('{!! escape_new_line($details->proexp3) !!}');
+        $("textarea#employer_details_4").val('{!! escape_new_line($details->proexp4) !!}');
+        $("textarea#employer_details_5").val('{!! escape_new_line($details->proexp5) !!}');
+        $("textarea#employer_details_6").val('{!! escape_new_line($details->proexp6) !!}');
 
         $('.annn').click(function()
         {

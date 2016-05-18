@@ -52,15 +52,27 @@ $(document).ready(function(){
 		data.employer_details_1 = $('#employer_details_1').val();
 		data.employer_details_2 = $('#employer_details_2').val();
 		data.employer_details_3 = $('#employer_details_3').val();
+		data.employer_details_4 = $('#employer_details_4').val();
+		data.employer_details_5 = $('#employer_details_5').val();
+		data.employer_details_6 = $('#employer_details_6').val();
 		data.emp_pos_1 = $('#emp_pos_1').val();
 		data.emp_pos_2 = $('#emp_pos_2').val();
 		data.emp_pos_3 = $('#emp_pos_3').val();
+		data.emp_pos_4 = $('#emp_pos_4').val();
+		data.emp_pos_5 = $('#emp_pos_5').val();
+		data.emp_pos_6 = $('#emp_pos_6').val();
 		data.emp_from_1 = $('#emp_from_1').val();
 		data.emp_from_2 = $('#emp_from_2').val();
 		data.emp_from_3 = $('#emp_from_3').val();
+		data.emp_from_4 = $('#emp_from_4').val();
+		data.emp_from_5 = $('#emp_from_5').val();
+		data.emp_from_6 = $('#emp_from_6').val();
 		data.emp_to_1 = $('#emp_to_1').val();
 		data.emp_to_2 = $('#emp_to_2').val();
 		data.emp_to_3 = $('#emp_to_3').val();
+		data.emp_to_4 = $('#emp_to_4').val();
+		data.emp_to_5 = $('#emp_to_5').val();
+		data.emp_to_6 = $('#emp_to_6').val();
 		data.date = $('#date').val();
 
 		if($('#announced').is(':checked')){
@@ -134,15 +146,27 @@ $(document).ready(function(){
 		data.employer_details_1 = $('#employer_details_1').val();
 		data.employer_details_2 = $('#employer_details_2').val();
 		data.employer_details_3 = $('#employer_details_3').val();
+		data.employer_details_4 = $('#employer_details_4').val();
+		data.employer_details_5 = $('#employer_details_5').val();
+		data.employer_details_6 = $('#employer_details_6').val();
 		data.emp_pos_1 = $('#emp_pos_1').val();
 		data.emp_pos_2 = $('#emp_pos_2').val();
 		data.emp_pos_3 = $('#emp_pos_3').val();
+		data.emp_pos_4 = $('#emp_pos_4').val();
+		data.emp_pos_5 = $('#emp_pos_5').val();
+		data.emp_pos_6 = $('#emp_pos_6').val();
 		data.emp_from_1 = $('#emp_from_1').val();
 		data.emp_from_2 = $('#emp_from_2').val();
 		data.emp_from_3 = $('#emp_from_3').val();
+		data.emp_from_4 = $('#emp_from_4').val();
+		data.emp_from_5 = $('#emp_from_5').val();
+		data.emp_from_6 = $('#emp_from_6').val();
 		data.emp_to_1 = $('#emp_to_1').val();
 		data.emp_to_2 = $('#emp_to_2').val();
 		data.emp_to_3 = $('#emp_to_3').val();
+		data.emp_to_4 = $('#emp_to_4').val();
+		data.emp_to_5 = $('#emp_to_5').val();
+		data.emp_to_6 = $('#emp_to_6').val();
 		data.date = $('#date').val();
 
 		if($('#announced').is(':checked')){
