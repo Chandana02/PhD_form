@@ -64,7 +64,7 @@
         <div class="space-medium"></div>
         <hr><hr>
       <div class="row admit">
-        <div class="col l12">
+        <!-- <div class="col l12">
           <p><b>To</b></p>
           <p>Mr/Mrs</p>
           <p>Address: .............................................................................................................<br>..............................................................................................................................<br>..............................................................................................................................<br></p>
@@ -74,7 +74,36 @@
         
         <hr>
 
+      </div> -->
+      <div class="col l12">
+        <p><b>To</b></p>
+        <p>Mr/Mrs</p>
+        <p>{!! $address !!}</p>
+        <hr>        
+        <hr>        
       </div>
+      <div class="col l12">
+        <p><b>To</b></p>
+        <p>Mr/Mrs</p>
+        <p>{!! $address !!}</p>
+        <hr>        
+        <hr>        
+      </div>
+      <div class="col l12">
+        <p><b>To</b></p>
+        <p>Mr/Mrs</p>
+        <p>{!! $address !!}</p>
+        <hr>        
+        <hr>        
+      </div>
+      <div class="col l12">
+        <p><b>To</b></p>
+        <p>Mr/Mrs</p>
+        <p>{!! $address !!}</p>
+        <hr>        
+        <hr>        
+      </div>
+
   </div>
   <div class="space-large"></div>
        <a href="#!" class="admit btn  waves-effect waves-green btn-flat" onclick="$(this).hide;window.print()">Admit</a>     
