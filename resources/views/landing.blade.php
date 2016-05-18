@@ -51,7 +51,7 @@
   <div class="container main">
     <div class="row">
 
-     <marquee> <p class="imp" style="color:red"><b>Application Process will resume from 8 AM, 18/05/2016.</b></p></marquee>
+     <marquee> <p class="imp" style="color:red"><b>Application Process will resume from 9 AM, 18/05/2016.</b></p></marquee>
       <div class="space-medium"></div>
       <div class="content">
         <h5 class="center"><b><u>INSTRUCTIONS</u></b></h5>
