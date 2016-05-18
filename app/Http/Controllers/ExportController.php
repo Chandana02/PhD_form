@@ -151,7 +151,7 @@ class ExportController extends Controller
         for($i = 0; $i < sizeof($phdCandidatesPersonal); $i++)
         {
             $personArray = $phdCandidatesPersonal[$i]->toArray();
-            dd($personArray);
+            // dd($personArray);
             $ugArray = $phdCandidatesUg[$i]->toArray();
             $pgArray = $phdCandidatesPg[$i]->toArray();
             $proArray = $phdCandidatesPro[$i]->toArray();

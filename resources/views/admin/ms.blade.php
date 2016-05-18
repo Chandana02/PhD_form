@@ -107,9 +107,9 @@
         @if($data['session_all'] == 'all')
         <div class="space-small"></div>
         <div class="col s12">
-          <a href="#!" data-reg={!! $data['candidates'][$i]->registrationNumber!!} class="discard btn  waves-effect waves-green btn">Discard</a>
+          <a href="#!" data-reg={!! $data['candidates'][$i]->registrationNumber!!} hidden="true" class="discard btn  waves-effect waves-green btn">Discard</a>
         @if(!$data['candidates'][$i]->accepted)
-          <a href="#!"  data-reg={!! $data['candidates'][$i]->registrationNumber!!} class="accept btn modal-action  waves-green btn" >Accept</a>
+          <a href="#!"  data-reg={!! $data['candidates'][$i]->registrationNumber!!} hidden="true" class="accept btn modal-action  waves-green btn" >Accept</a>
         @endif
         </div>
         @endif
