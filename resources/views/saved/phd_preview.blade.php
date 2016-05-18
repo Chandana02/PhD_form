@@ -425,6 +425,18 @@
 			      		 <textarea id="details_of_pub3"  class="materialize-textarea" name="details_of_pub3" maxlength="200"></textarea>
 			      	</div>
 			      	<div class="col l4 s12">
+			      		<p for="textarea1">Publications:</p><br>
+			      		 <textarea id="details_of_pub4"  class="materialize-textarea" name="details_of_pub4" maxlength="200" ></textarea>
+			      	</div>
+			      	<div class="col l4 s12">
+			      		<p for="textarea1">Publications:</p><br>
+			      		 <textarea id="details_of_pub5"  class="materialize-textarea" name="details_of_pub5" maxlength="200" ></textarea>
+			      	</div>
+			      	<div class="col l4 s12">
+			      		<p for="textarea1">Publications:</p><br>
+			      		 <textarea id="details_of_pub6"  class="materialize-textarea" name="details_of_pub6" maxlength="200"></textarea>
+			      	</div>
+			      	<div class="col l4 s12">
 			      		<p for="textarea1">Awards/ Prizes/Sports/NCC etc</p><br>
 			      		 <textarea id="awards1"  class="materialize-textarea" name="awards1" maxlength="200" ></textarea>
 			      	</div>
@@ -435,6 +447,18 @@
 			      	<div class="col l4 s12">
 			      		<p for="textarea1">Awards/ Prizes/Sports/NCC etc</p><br>
 			      		 <textarea id="awards3"  class="materialize-textarea" name="awards3" maxlength="200" ></textarea>
+			      	</div>
+			      	<div class="col l4 s12">
+			      		<p for="textarea1">Awards/ Prizes/Sports/NCC etc</p><br>
+			      		 <textarea id="awards4"  class="materialize-textarea" name="awards4" maxlength="200" ></textarea>
+			      	</div>
+			      	<div class="col l4 s12">
+			      		<p for="textarea1">Awards/ Prizes/Sports/NCC etc</p><br>
+			      		 <textarea id="awards5" class="materialize-textarea" name="awards5" maxlength="200" ></textarea>
+			      	</div>
+			      	<div class="col l4 s12">
+			      		<p for="textarea1">Awards/ Prizes/Sports/NCC etc</p><br>
+			      		 <textarea id="awards6"  class="materialize-textarea" name="awards6" maxlength="200" ></textarea>
 			      	</div>
 			      </div>
 
@@ -534,9 +558,15 @@
 			$("textarea#details_of_pub1").val(a['details_of_pub1']);
 			$("textarea#details_of_pub2").val(a['details_of_pub2']);
 			$("textarea#details_of_pub3").val(a['details_of_pub3']);
+			$("textarea#details_of_pub4").val(a['details_of_pub4']);
+			$("textarea#details_of_pub5").val(a['details_of_pub5']);
+			$("textarea#details_of_pub6").val(a['details_of_pub6']);
 			$("textarea#awards1").val(a['awards1']);
 			$("textarea#awards2").val(a['awards2']);
 			$("textarea#awards3").val(a['awards3']);
+			$("textarea#awards4").val(a['awards4']);
+			$("textarea#awards5").val(a['awards5']);
+			$("textarea#awards6").val(a['awards6']);
 			$("textarea#employer_details_1").val(a['employer_details_1']);
 			$("textarea#employer_details_2").val(a['employer_details_2']);
 			$("textarea#employer_details_3").val(a['employer_details_3']);

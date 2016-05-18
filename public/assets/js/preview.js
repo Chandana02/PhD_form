@@ -40,9 +40,15 @@ $(document).ready(function(){
 		data.details_of_pub1 = $('#details_of_pub1').val();
 		data.details_of_pub2 = $('#details_of_pub2').val();
 		data.details_of_pub3 = $('#details_of_pub3').val();
+		data.details_of_pub4 = $('#details_of_pub4').val();
+		data.details_of_pub5 = $('#details_of_pub5').val();
+		data.details_of_pub6 = $('#details_of_pub6').val();
 		data.awards1 = $('#awards1').val();
 		data.awards2 = $('#awards2').val();
 		data.awards3 = $('#awards3').val();
+		data.awards4 = $('#awards4').val();
+		data.awards5 = $('#awards5').val();
+		data.awards6 = $('#awards6').val();
 		data.employer_details_1 = $('#employer_details_1').val();
 		data.employer_details_2 = $('#employer_details_2').val();
 		data.employer_details_3 = $('#employer_details_3').val();
