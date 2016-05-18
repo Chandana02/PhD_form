@@ -11,12 +11,8 @@
 |
 */
 Route::get('/', function() {
-    return view('landing');
-    // return redirect('home');
-});
-Route::get('home', function() {
-    return view('landing');
-    // return redirect('home');
+    // return view('landing');
+    return redirect('home');
 });
 Route::get('/instructions', function() {
     return view('landing');
@@ -82,7 +78,7 @@ Route::group(['middleware' => 'redirect_admin_if_authenticated'], function()
             });
     });
 
-Route::get('fix', function()
+Route::get('home', function()
     {
         return view('home');
     });
