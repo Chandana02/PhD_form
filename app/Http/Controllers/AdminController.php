@@ -401,23 +401,24 @@ class AdminController extends Controller
 
         if($phdormsc == 'PHD')
         {
-            $candidate = Phd::select('name', 'registrationNumber')
+            $candidate = Phd::select('name', 'registrationNumber','addrforcomm')
                             ->where('registrationNumber', $regNo)
                             ->first();
         }
         else
         {
-            $candidate = Ms::select('name', 'registrationNumber')
+            $candidate = Ms::select('name', 'registrationNumber','addrforcomm')
                             ->where('registrationNumber', $regNo)
                             ->first();
         }
-
         $data = array(
             'image' => $phdormsc.'/'.$applNo.'/'.$applNo.'.'.$type,
             'name' => $candidate->name,
             'dept' => $dept,
-            'regNo' => $candidate->registrationNumber
+            'regNo' => $candidate->registrationNumber,
+            'address'=> $candidate->addrforcomm,
         );
+        
 
         return view('admin.admit')->with($data);
     }
