@@ -771,13 +771,31 @@ function escape_new_line($s) {
         }
 
         t='{!! $details->PH !!}';
-        if(t=='no'){
+        if(t=='No'){
         	$('.pdCheck .select-wrapper input').val(t);
         	$('.pdCheck .select-wrapper ul>li:eq(2)').click();
         }
         else{
         	$('.pdCheck .select-wrapper input').val(t);
         	$('.pdCheck .select-wrapper ul>li:eq(1)').click();
+        }
+
+        t = '{!! $details->category !!}';
+        if(t == 'OBC'){
+        	$('.categCheck .select-wrapper input').val(t);
+        	$('.categCheck .select-wrapper ul>li:eq(1)').click();
+        }
+        else if(t == 'OC'){
+        	$('.categCheck .select-wrapper input').val(t);
+        	$('.categCheck .select-wrapper ul>li:eq(2)').click();
+        }
+        else if(t == 'SC'){
+        	$('.categCheck .select-wrapper input').val(t);
+        	$('.categCheck .select-wrapper ul>li:eq(3)').click();
+        }
+        else if(t == 'ST'){
+        	$('.categCheck .select-wrapper input').val(t);
+        	$('.categCheck .select-wrapper ul>li:eq(4)').click();
         }
 
         t='{!! $details->ugclass !!}';
@@ -799,7 +817,6 @@ function escape_new_line($s) {
         	$('.ugclassCheck .select-wrapper input').val(t);
         	$('.ugclassCheck .select-wrapper ul>li:eq(4)').click();
         }
-        $('.categCheck .select-wrapper ul>li:eq(1)').click();
         $('#department1_disp').val(department('{!! $details->dept1 !!}'));
         $('#department2_disp').val(department('{!! $details->dept2 !!}'));
         $('#department3_disp').val(department('{!! $details->dept3 !!}'));
