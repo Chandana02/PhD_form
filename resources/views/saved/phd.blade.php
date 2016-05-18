@@ -9,6 +9,7 @@
 
 <?php
 function escape_new_line($s) {
+	$s = addslashes($s);
 	$s = str_replace("\r", "\\r", $s);
 	return str_replace("\n", "\\n", $s);
 }
@@ -113,7 +114,7 @@ function escape_new_line($s) {
 
 				<div class="input-field col l12 s12">
 					<span class="light">*Area of Research:</span>
-					<input required placeholder="Area of Research" id="area_of_research" type="text" class="validate" name="area_of_research" value="{!! escape_new_line($details->areaOfResearch) !!}">
+					<input required placeholder="Area of Research" id="area_of_research" type="text" class="validate" name="area_of_research" value="{!! $details->areaOfResearch !!}">
 				</div>
 			</div>
 		</div>
@@ -712,11 +713,11 @@ function escape_new_line($s) {
 	        // creating inconsistencies potentially
 	        $('select').attr('tabindex', "-1");
 
-	        var a = '{!! $details->exam !!}';
-	        var b = '{!! $details->validity !!}';
-	        var c = '{!! $details->rank !!}';
-	        var d = '{!! $details->score !!}';
-	        var e = '{!! $details->discipline !!}';
+	        var a = '{!! escape_new_line($details->exam) !!}';
+	        var b = '{!! escape_new_line($details->validity) !!}';
+	        var c = '{!! escape_new_line($details->rank) !!}';
+	        var d = '{!! escape_new_line($details->score) !!}';
+	        var e = '{!! escape_new_line($details->discipline) !!}';
 	        console.log(a,b,c,d,e);
 	        if(a=='' && b=='' && c=='' && d=='' && e==''){
 
@@ -786,7 +787,7 @@ function escape_new_line($s) {
 	        $("textarea#employer_details_6").val('{!! escape_new_line($details->proexp6) !!}');
 
 	        var t='{!! $details->sex !!}';
-	        if(t=='Male'){
+	        if(t.toLowerCase()=='male'){
 	        	$('.sexCheck .select-wrapper input').val(t);
 	        	$('.sexCheck .select-wrapper ul>li:eq(1)').click();
 	        }
@@ -863,7 +864,7 @@ function escape_new_line($s) {
 
 	        t='{!! $details->maritalStatus !!}';
 
-	        if(t=='single'){
+	        if(t.toLowerCase()=='single'){
 	        	$('.statusCheck .select-wrapper input').val(t);
 	        	$('.statusCheck .select-wrapper ul>li:eq(2)').click();
 	        }
@@ -873,8 +874,7 @@ function escape_new_line($s) {
 	        }
 
 	        t='{!! $details->PH !!}';
-	        '{!! json_encode($details) !!}';
-	        if(t=='No'){
+	        if(t.toLowerCase()=='no'){
 	        	$('.pdCheck .select-wrapper input').val(t);
 	        	$('.pdCheck .select-wrapper ul>li:eq(2)').click();
 	        }
