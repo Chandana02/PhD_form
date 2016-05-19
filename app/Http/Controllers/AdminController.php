@@ -108,23 +108,59 @@ class AdminController extends Controller
         }
     }
 
-    public function adminView($phdormsc)
+    public function adminView($phdorms)
     {
         // dd(Session::get('dept'));
         if(Session::get('dept') == 'all')
         {
-            if($phdormsc == 'phd')
+            if($phdorms == 'phd')
             {
-                return redirect('admin/phd/home');
+                $count = array(
+                    'CS' => self::dept_count($phdorms, 'CS'),
+                    'EC' => self::dept_count($phdorms, 'EC'),
+                    'EE' => self::dept_count($phdorms, 'EE'),
+                    'ME' => self::dept_count($phdorms, 'ME'),
+                    'AR' => self::dept_count($phdorms, 'AR'),
+                    'CL' => self::dept_count($phdorms, 'CL'),
+                    'CV' => self::dept_count($phdorms, 'CV'),
+                    'CY' => self::dept_count($phdorms, 'CY'),
+                    'CA' => self::dept_count($phdorms, 'CA'),
+                    'CC' => self::dept_count($phdorms, 'CC'),
+                    'EN' => self::dept_count($phdorms, 'EN'),
+                    'HM' => self::dept_count($phdorms, 'HM'),
+                    'MA' => self::dept_count($phdorms, 'MA'),
+                    'MME' => self::dept_count($phdorms, 'MME'),
+                    'PR' => self::dept_count($phdorms, 'PR'),
+                    'IC' => self::dept_count($phdorms, 'IC'),
+                    'PH' => self::dept_count($phdorms, 'PH'),
+                    'MS' => self::dept_count($phdorms, 'MS')
+                    );
+                return View::make('admin.all.phd.dept')
+                                ->with('count', $count);
             }
             else
             {
-                return redirect('admin/ms/home');
+                $count = array(
+                    'CS' => self::dept_count($phdorms, 'CS'),
+                    'EC' => self::dept_count($phdorms, 'EC'),
+                    'EE' => self::dept_count($phdorms, 'EE'),
+                    'ME' => self::dept_count($phdorms, 'ME'),
+                    'CL' => self::dept_count($phdorms, 'CL'),
+                    'CV' => self::dept_count($phdorms, 'CV'),
+                    'CC' => self::dept_count($phdorms, 'CC'),
+                    'EN' => self::dept_count($phdorms, 'EN'),
+                    'MME' => self::dept_count($phdorms, 'MME'),
+                    'PR' => self::dept_count($phdorms, 'PR'),
+                    'IC' => self::dept_count($phdorms, 'IC'),
+                    'PH' => self::dept_count($phdorms, 'PH')
+                    );
+                return View::make('admin.all.ms.dept')
+                                ->with('count', $count);
             }
         }
         else
         {
-            if($phdormsc == 'phd')
+            if($phdorms == 'phd')
             {
                 return redirect('admin/phd/'.Session::get('dept'));
             }
@@ -132,6 +168,24 @@ class AdminController extends Controller
             {
                 return redirect('admin/ms/'.Session::get('dept'));
             }
+        }
+    }
+
+    public function dept_count($phdorms, $dept)
+    {
+        if($phdorms == 'phd')
+        {
+            return Phd::where('dept1', $dept)
+                            ->orWhere('dept2', $dept)
+                            ->orWhere('dept3', $dept)
+                            ->count();
+        }
+        else
+        {
+            return Ms::where('dept1', $dept)
+                            ->orWhere('dept2', $dept)
+                            ->orWhere('dept3', $dept)
+                            ->count();
         }
     }
 
