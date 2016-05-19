@@ -13,7 +13,7 @@
       <div class="space-large"></div>
       <div class="col l4"> <a href="/admin/phd/CV" class="btn teal waves">Civil Engineering <font size="2">({!! $count['CV'] !!})</font></a> </div>  
       <div class="col l4"> <a href="/admin/phd/CY" class="btn teal waves">Chemistry <font size="2">({!! $count['CY'] !!})</font></a> </div>
-      <div class="col l4"> <a href="/admin/phd/CA" class="btn teal waves">Computer Applications <font size="2">({!! $count['CA'] !!})</font></a> </div>
+      <div class="col l4"> <a href="/admin/phd/CA" class="btn teal waves">Computer Applications<font size="2">({!! $count['CA'] !!})</font></a> </div>
       <div class="space-large"></div>
       <div class="col l4"> <a href="/admin/phd/CC" class="btn teal waves">CECASE <font size="2">({!! $count['CC'] !!})</font></a> </div>
       <div class="col l4"> <a href="/admin/phd/EN" class="btn teal waves">Energy Engineering <font size="2">({!! $count['EN'] !!})</font></a> </div>
