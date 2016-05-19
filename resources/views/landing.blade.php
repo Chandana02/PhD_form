@@ -51,14 +51,14 @@
   <div class="container main">
     <div class="row">
 
-     <marquee> <p class="imp" style="color:red"><b>Application Process will resume from 6 PM, 18/05/2016.</b></p></marquee>
+     <marquee> <p class="imp" style="color:red"><b>Last date of Application Submission is 12/06/2016.</b></p></marquee>
       <div class="space-medium"></div>
       <div class="content">
         <h5 class="center"><b><u>INSTRUCTIONS</u></b></h5>
         <ul class="pad">
           <li>1) Please read carefully the application <a href="http://www.nitt.edu/home/admissions/phd/MS-PhD-July2016.pdf">brochure</a> before applying.</li>
           <li>2) Reach out to help desk numbers provided in the <a href="contact">Contact</a> in case of a query.</li>
-          <li>3) Help desk would be live from 17th May, 2016 (10:30 AM -4:30 PM) at NIT Trichy. </li>
+          <li>3) Help desk is live on Admission desk on all working days (10:30 AM -4:30 PM) at NIT Trichy. </li>
         </ul>
         <h5 class="center"><b><u>APPLICATION PROCESS</u></b></h5>
         <ul class="pad">
