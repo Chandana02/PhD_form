@@ -51,7 +51,7 @@
   <div class="container main">
     <div class="row">
 
-     <marquee> <p class="imp" style="color:red"><b>Last date of Application Submission is 12/06/2016.</b></p></marquee>
+     <marquee> <p class="imp" style="color:red"><b>Last date of Application Submission is 12/06/2016. No hardcopies are required to be sent to institute.</b></p></marquee>
       <div class="space-medium"></div>
       <div class="content">
         <h5 class="center"><b><u>INSTRUCTIONS</u></b></h5>

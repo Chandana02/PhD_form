@@ -15,7 +15,7 @@
 <option value="CY">Chemistry </option>
 <option value="CA">Computer Applications </option>
 <option value="CC">CECASE</option>
-<option value="EN">Energy Engineering</option>
+<option value="EN">Energy & Environment</option>
 <option value="EC">Electronics &amp; Communication Engineering</option>
 <option value="EE">Electrical &amp; Electronics Engineering</option>		      			
 <option value="HM">Humanities &amp; Social Science</option>

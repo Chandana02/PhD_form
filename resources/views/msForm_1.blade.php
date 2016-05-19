@@ -12,14 +12,14 @@
 <option value="CL">Chemical Engineering</option>
 <option value="CV">Civil Engineering </option>
 <option value="CC">CECASE</option>
-<option value="EN">Energy Engineering</option>
+<option value="EN">Energy & Environment</option>
 <option value="EE">Electrical &amp; Electronics Engineering</option>
 <option value="EC">Electronics &amp; Communication Engineering</option>
 <option value="ME">Mechanical Engineering</option>
 <option value="PR">Production Engineering</option>
 <option value="IC">Instrumentation And Control Engineering</option>
 <option value="MME">Metallurgical and Materials Engineering</option>
-<option value="PH">Physics</option>
+<option value="PH">Physics(NDT)</option>
 @endsection
 
 @section('body')
