@@ -48,8 +48,7 @@
     
 
       <form class="searchbox">
-          <input id="search" type="search" placeholder="Search.." name="search" class="searchbox-input" required>
-
+          <input id="search" dept="{!! $data['session'] !!}" phdorms="PHD" type="search" placeholder="Search.." name="search" class="searchbox-input" required>
       </form>
       
   </div>
@@ -100,17 +99,17 @@
                 <div class="space-medium"></div>
                 @endif
         @if($data['session_all'] == 'all')
-        <div class="space-small"></div>
+        <!-- <div class="space-small"></div>
         <div class="col l12 center buttons">
         <div class="col l6">
-          <a href="#!" data-reg={!! $data['candidates'][$i]->registrationNumber!!} hidden="true" class="discard btn modal-action modal-close waves-effect waves-green btn">Discard</a>
-          </div>
+          <a href="#!" data-reg={!! $data['candidates'][$i]->registrationNumber!!} class="discard btn modal-action modal-close waves-effect waves-green btn">Discard</a>
+          </div> -->
         @if(!$data['candidates'][$i]->accepted)
-        <div class="col l6">
-        <a href="#!"  data-reg={!! $data['candidates'][$i]->registrationNumber!!} hidden="true" class="accept btn modal-action modal-close waves-effect waves-green btn">Accept</a>
-        </div>
+        <!-- <div class="col l6">
+        <a href="#!"  data-reg={!! $data['candidates'][$i]->registrationNumber!!} class="accept btn modal-action modal-close waves-effect waves-green btn">Accept</a>
+        </div> -->
         @endif
-        </div>
+        <!-- </div> -->
         @endif
         <div class="space-medium"></div>
         <div class="col l12 center buttons">
@@ -124,8 +123,8 @@
         <div class="space-vsmall"></div>
         <a href="#!" data-reg={!! $data['candidates'][$i]->registrationNumber!!} class="phdExcel btn modal-action modal-close waves-effect waves-green btn">Generate Excel</a>
         @if($data['candidates'][$i]->flag)
-        <div class="space-vsmall"></div>
-        <a href="#!" data-reg={!! $data['candidates'][$i]->registrationNumber!!} class="button1 btn modal-action modal-close waves-effect waves-green btn">Reset User</a>
+        <!-- <div class="space-vsmall"></div>
+        <a href="#!" data-reg={!! $data['candidates'][$i]->registrationNumber!!} class="button1 btn modal-action modal-close waves-effect waves-green btn">Reset User</a> -->
         @endif
         </div>
         </div>

@@ -1,18 +1,45 @@
 $(document).ready(function(){
 	$('#search').keyup(function(){
 		var searchVal = $(this).val().toLowerCase();
+		// var dept = $(this).attr('dept');
+		// var phdorms = $(this).attr('phdorms');
 		// console.log(searchVal);
 		if(searchVal == ''){
 			$('.candidates > div').show();
 		}
 		else{
+			// $.ajaxSetup(
+		 //    {
+		 //        headers:
+		 //        {
+		 //            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+		 //        }
+		 //    });
+			// var data = {};
+			// data.value = searchVal;
+			// data.phdorms = phdorms;
+			// data.dept = dept;
+			// var url = '/search';
+			// $.ajax(
+		 //    {
+		 //        type: "POST",
+		 //        url: url,
+		 //        data: data,
+		 //        dataType: "json",
+		 //        success: function(data){
+		 //        	for(i = 0; i < data.length; i++)
+		 //        		console.log(data[i]);
+		 //        },
+		 //        error: function(jqXHR,testStatus,errorThrown){
+		 //        	console.log(errorThrown);
+		 //        }
+			// });
 			$('.candidates > div').each(function(){
 				var text = $(this).attr('data-reg');
 				text = text.toLowerCase();
 				// console.log("text is-"+text);
 				(text.indexOf(searchVal) >= 0) ? $(this).show("slow") : $(this).hide("slow");
 			});
-
 		}
 	});
 	$('.exportphd').click(function(){

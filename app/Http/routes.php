@@ -31,7 +31,6 @@ Route::get('admin/ms/home', function () {
 Route::get('admin/phd/home', function () {
     return view('admin.all.phd.dept');
 });
-
 Route::group(['middleware' => 'adminauth'], function () {
     Route::get('admin/home', function()
         {
@@ -43,6 +42,7 @@ Route::group(['middleware' => 'adminauth'], function () {
     Route::post('delete', 'AdminController@deleted' );
     Route::post('accept', 'AdminController@accepted');
     Route::post('dmgctrl', 'DamageController@dmgctrl');
+    // Route::post('search', 'AdminController@search');
     Route::get('logout', 'AdminController@logout');   
     Route::get('exportphd', 'ExportController@allPhdCandidatesExport');
     Route::get('exportms', 'ExportController@allMsCandidatesExport');

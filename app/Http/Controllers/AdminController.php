@@ -154,6 +154,22 @@ class AdminController extends Controller
         return View::make('admin.'.$phdormsc)->with('data', $data);
     }
 
+    // public function search(Request $request)
+    // {
+    //     $search_val = $request->input('value');        
+    //     $phdorms = $request->input('phdorms');
+    //     $dept = $request->input('dept');
+
+    //     $data = Phd::select('registrationNumber')
+    //                     ->where('dept1', $dept)
+    //                     ->orWhere('dept2', $dept)
+    //                     ->orWhere('dept3', $dept)
+    //                     ->where('registrationNumber', 'LIKE', '%'.$search_val.'%')
+    //                     ->get();
+
+    //     return json_encode($data);
+    // }
+
     public function finalView($phdormsc, $rules1, $rules2, $rules3)
     {
         if($phdormsc == 'phd')
