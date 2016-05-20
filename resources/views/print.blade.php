@@ -685,9 +685,16 @@
   $(document).ready(function(){
     var x = new Date().getFullYear();
       var y = x+1;
-      console.log(x);
-      var p = '<h4 class="center">APPLICATION FOR ADMISSION TO Ph.D. PROGRAMME ('+ x + '-' + y + ')</h4>';
-      $('.heading').append(p);
+      // console.log(x);
+      if('{!! $phdorms !!}' == 'PHD')
+      {
+        var p = '<h4 class="center">APPLICATION FOR ADMISSION TO Ph.D. PROGRAMME ('+ x + '-' + y + ')</h4>';
+        $('.heading').append(p);
+      }else
+      {
+        var p = '<h4 class="center">APPLICATION FOR ADMISSION TO M.S. PROGRAMME ('+ x + '-' + y + ')</h4>';
+        $('.heading').append(p);
+      }
     });
 </script>
 </body>
