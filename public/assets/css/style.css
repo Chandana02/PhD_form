@@ -228,6 +228,9 @@ span{
 	padding-bottom: 4px;
 
 }
+.card-content{
+	height: 345px;
+}
 .nope{
 	padding: 0px;
 	margin: 0px;
