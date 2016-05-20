@@ -378,15 +378,14 @@
     <h4>Form Details: </h4>
     <div class="row">
       <div class="col l12">
-        <div class="col l3">
+        <div class="col l2">
           <img src="{{ URL::asset('uploads/MS/'.$applNo.'/photo.' . $imgtype) }}" width="150" height="150">
         </div>
-      <table class="bordered">
+      <table class="bordered" width="1000">
         <thead>
           <tr>
             <td><h5>Application Details</h5></td>
             <td></td>
-
           </tr>
         </thead>
         <tbody>
@@ -399,12 +398,12 @@
           </tr>
           <tr>
             <td><b>Application Category:</b></td>
-            <td colspan="3">{!! $candidates['applicationCategory'] !!}</td>
+            <td>{!! $candidates['applicationCategory'] !!}</td>
+
+            <td><b>Bank Referance Number:</b></td>
+            <td>{!! $candidates['chalanNo'] !!}</td>
           </tr>
         </tbody>
-      </table>
-   
-      <table class="bordered">
         <thead>
           <tr>
             <td> <h5>General Details:</h5></td>
