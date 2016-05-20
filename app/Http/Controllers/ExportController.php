@@ -22,11 +22,11 @@ class ExportController extends Controller
 {
     public function allPhdCandidatesExport()
     {
-    	$phdCandidatesPersonal = Phd::all();
-    	$phdCandidatesUg = PhdUg::all();
-    	$phdCandidatesPg = PhdPg::all();
-    	$phdCandidatesPro = PhdPro::all();
-    	$phdCandidatesOther = PhdOther::all();
+    	$phdCandidatesPersonal = Phd::orderBy('created_at', 'desc')->get();
+    	$phdCandidatesUg = PhdUg::orderBy('created_at', 'desc')->get();
+    	$phdCandidatesPg = PhdPg::orderBy('created_at', 'desc')->get();
+    	$phdCandidatesPro = PhdPro::orderBy('created_at', 'desc')->get();
+    	$phdCandidatesOther = PhdOther::orderBy('created_at', 'desc')->get();
     	$phdCandidates = array();
     	for($i = 0; $i < sizeof($phdCandidatesPersonal); $i++)
     	{
@@ -50,11 +50,11 @@ class ExportController extends Controller
 
 	public function allMsCandidatesExport() 
 	{
-		$msCandidatesPersonal = Ms::all();
-    	$msCandidatesUg = MsUg::all();
-    	$msCandidatesScores = MsScores::all();
-    	$msCandidatesPro = MsPro::all();
-    	$msCandidatesOther = MsOther::all();
+		$msCandidatesPersonal = Ms::orderBy('created_at', 'desc')->get();
+    	$msCandidatesUg = MsUg::orderBy('created_at', 'desc')->get();
+    	$msCandidatesScores = MsScores::orderBy('created_at', 'desc')->get();
+    	$msCandidatesPro = MsPro::orderBy('created_at', 'desc')->get();
+    	$msCandidatesOther = MsOther::orderBy('created_at', 'desc')->get();
     	$msCandidates = array();
     	for($i = 0; $i < sizeof($msCandidatesPersonal); $i++)
     	{
@@ -80,21 +80,22 @@ class ExportController extends Controller
         $phdCandidatesPersonal = Phd::where('dept1', $dept)
                                         ->orWhere('dept2', $dept)
                                         ->orWhere('dept3', $dept)
+                                        ->orderBy('created_at', 'desc')
                                         ->get();
         $phdCandidates = array();
         for($i = 0; $i < sizeof($phdCandidatesPersonal); $i++)
         {
             $personArray = $phdCandidatesPersonal[$i]->toArray();
-            $ugArray = PhdUg::where('applNo', $personArray['applNo'])->get()[0]->toArray();
-            $pgArray = PhdPg::where('applNo', $personArray['applNo'])->get()[0]->toArray();
-            $proArray = PhdPro::where('applNo', $personArray['applNo'])->get()[0]->toArray();
-            $otherArray = PhdOther::where('applNo', $personArray['applNo'])->get()[0]->toArray();
+            $ugArray = PhdUg::where('applNo', $personArray['applNo'])->orderBy('created_at', 'desc')->get()[0]->toArray();
+            $pgArray = PhdPg::where('applNo', $personArray['applNo'])->orderBy('created_at', 'desc')->get()[0]->toArray();
+            $proArray = PhdPro::where('applNo', $personArray['applNo'])->orderBy('created_at', 'desc')->get()[0]->toArray();
+            $otherArray = PhdOther::where('applNo', $personArray['applNo'])->orderBy('created_at', 'desc')->get()[0]->toArray();
             $phdCandidates[$i] = array_merge($personArray, $ugArray);
             $phdCandidates[$i] = array_merge($phdCandidates[$i], $pgArray);
             $phdCandidates[$i] = array_merge($phdCandidates[$i], $proArray);
             $phdCandidates[$i] = array_merge($phdCandidates[$i], $otherArray);
         }
-        Excel::create($dept.'_phd', function($excel) use($phdCandidates) {
+        Excel::create($dept.'_phd_'.$phdCandidates[0]['created_at'], function($excel) use($phdCandidates) {
             $excel->sheet('Sheet 1', function($sheet) use($phdCandidates) {
                 $sheet->fromArray($phdCandidates);
             });
@@ -106,21 +107,22 @@ class ExportController extends Controller
         $msCandidatesPersonal = Ms::where('dept1', $dept)
                                         ->orWhere('dept2', $dept)
                                         ->orWhere('dept3', $dept)
+                                        ->orderBy('created_at', 'desc')
                                         ->get();
         $msCandidates = array();
         for($i = 0; $i < sizeof($msCandidatesPersonal); $i++)
         {
             $personArray = $msCandidatesPersonal[$i]->toArray();
-            $ugArray = MsUg::where('applNo', $personArray['applNo'])->get()[0]->toArray();
-            $pgArray = MsScores::where('applNo', $personArray['applNo'])->get()[0]->toArray();
-            $proArray = MsPro::where('applNo', $personArray['applNo'])->get()[0]->toArray();
-            $otherArray = MsOther::where('applNo', $personArray['applNo'])->get()[0]->toArray();
+            $ugArray = MsUg::where('applNo', $personArray['applNo'])->orderBy('created_at', 'desc')->get()[0]->toArray();
+            $pgArray = MsScores::where('applNo', $personArray['applNo'])->orderBy('created_at', 'desc')->get()[0]->toArray();
+            $proArray = MsPro::where('applNo', $personArray['applNo'])->orderBy('created_at', 'desc')->get()[0]->toArray();
+            $otherArray = MsOther::where('applNo', $personArray['applNo'])->orderBy('created_at', 'desc')->get()[0]->toArray();
             $msCandidates[$i] = array_merge($personArray, $ugArray);
             $msCandidates[$i] = array_merge($msCandidates[$i], $pgArray);
             $msCandidates[$i] = array_merge($msCandidates[$i], $proArray);
             $msCandidates[$i] = array_merge($msCandidates[$i], $otherArray);
         }
-        Excel::create($dept.'_ms', function($excel) use($msCandidates) {
+        Excel::create($dept.'_ms_'.$msCandidates[0]['created_at'], function($excel) use($msCandidates) {
             $excel->sheet('Sheet 2', function($sheet) use($msCandidates) {
                 $sheet->fromArray($msCandidates);
             });
