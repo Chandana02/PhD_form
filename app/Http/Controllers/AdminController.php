@@ -22,6 +22,7 @@ use App\MsOther;
 use App\Admin;
 use paginate;
 use Session;
+use Redirect;
 use File;
 use Log;
 
@@ -42,7 +43,7 @@ class AdminController extends Controller
         if($validator->fails())
         {
             $message = 'Please fill in all the details';
-            return View::make('error')->with('message', $message);
+            return view('error')->with('message', $message);
         }
         else
         {
@@ -61,14 +62,23 @@ class AdminController extends Controller
                     'PHD' => self::dept_count('phd', Session::get('dept')),
                     'MS' => self::dept_count('ms', Session::get('dept'))
                     );
-                return View::make('admin.home')->with('count', $count);
+                return view('admin.home')->with('count', $count);
             }
             else
             {
                 $message = 'Username or Password is incorrect';
-                return View::make('error')->with('message', $message);
+                return view('error')->with('message', $message);
             }
         }
+    }
+
+    public function returnHome()
+    {
+        $count = array(
+            'PHD' => self::dept_count('phd', Session::get('dept')),
+            'MS' => self::dept_count('ms', Session::get('dept'))
+            );
+        return view('admin.home')->with('count', $count);   
     }
 
     public function change(Request $request)
@@ -83,7 +93,7 @@ class AdminController extends Controller
         if($validator->fails())
         {
             $message = 'Please fill in all the details';
-            return View::make('error')->with('message', $message);
+            return view('error')->with('message', $message);
         }
         else
         {
@@ -106,12 +116,12 @@ class AdminController extends Controller
                     'PHD' => self::dept_count('phd', Session::get('dept')),
                     'MS' => self::dept_count('ms', Session::get('dept'))
                     );
-                return View::make('admin.home')->with('count', $count);
+                return view('admin.home')->with('count', $count);
             }
             else
             {
                 $message = 'Username or Password is incorrect';
-                return View::make('error')->with('message', $message);
+                return view('error')->with('message', $message);
             }
         }
     }
@@ -143,7 +153,7 @@ class AdminController extends Controller
                     'PH' => self::dept_count($phdorms, 'PH'),
                     'MS' => self::dept_count($phdorms, 'MS')
                     );
-                return View::make('admin.all.phd.dept')
+                return view('admin.all.phd.dept')
                                 ->with('count', $count);
             }
             else
@@ -162,7 +172,7 @@ class AdminController extends Controller
                     'IC' => self::dept_count($phdorms, 'IC'),
                     'PH' => self::dept_count($phdorms, 'PH')
                     );
-                return View::make('admin.all.ms.dept')
+                return view('admin.all.ms.dept')
                                 ->with('count', $count);
             }
         }
@@ -221,7 +231,7 @@ class AdminController extends Controller
             $reg_appl_no = $departments[sizeof($departments) - 1];
             $data['candidates'][$i]->applNo = $reg_appl_no;
         }
-        return View::make('admin.'.$phdormsc)->with('data', $data);
+        return view('admin.'.$phdormsc)->with('data', $data);
     }
 
     // public function search(Request $request)
@@ -379,7 +389,7 @@ class AdminController extends Controller
             if(!$candidates)
             {
                 $message = 'Invalid registration number';
-                return View::make('error')->with('message', $message);
+                return view('error')->with('message', $message);
             }
 
             $applNo = $candidates->applNo;
@@ -410,7 +420,7 @@ class AdminController extends Controller
                             'signtype' => $signtype
                             );
             
-            return View::make('print')->with($data);
+            return view('print')->with($data);
             // $pdf = PDF::loadView('print', $data);
             // return response($pdf->output())
             //                 ->header('Content-Type', 'application/pdf');
@@ -423,7 +433,7 @@ class AdminController extends Controller
             if(!$candidates)
             {
                 $message = 'Invalid registration number';
-                return View::make('error')->with('message', $message);
+                return view('error')->with('message', $message);
             }
 
             $applNo = $candidates->applNo;
@@ -453,7 +463,7 @@ class AdminController extends Controller
                             'imgtype' => $imgtype,
                             'signtype' => $signtype
                             );
-            return View::make('print')->with($data);
+            return view('print')->with($data);
             // $pdf = PDF::loadView('print', $data);
             // return response($pdf->output())
             //                 ->header('Content-Type', 'application/pdf');

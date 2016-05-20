@@ -1,6 +1,25 @@
-@extends('layouts.master')
+@extends('layouts.admin')
 
 @section('title', 'MS Admin Portal')
+
+@section('navbar')
+<nav>
+  <div class="nav-wrapper ">
+    
+    <a href="#" details-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
+    <ul class="hide-on-med-and-down">
+      <li><a href="home">Home</a></li>
+      <li><a href="home">Ph.D/M.S. Admissions</a></li>
+      <li><a href="/logout">Logout</a></li>
+    </ul>
+    <ul class="side-nav" id="mobile-demo">
+      <li><a href="home">Home</a></li>
+      <li><a href="home">Ph.D/M.S. Admissions</a></li>
+      <li><a href="/logout">Logout</a></li>
+    </ul>
+  </div>
+</nav>
+@endsection
 
 @section('body')
   <div class="container main">

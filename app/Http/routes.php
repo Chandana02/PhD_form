@@ -32,10 +32,7 @@ Route::get('admin/phd/home', function () {
     return view('admin.all.phd.dept');
 });
 Route::group(['middleware' => 'adminauth'], function () {
-    Route::get('admin/home', function()
-        {
-            return view('admin.home');
-        });
+    Route::get('admin/home', 'AdminController@returnHome');
     Route::get('admin/{phdormsc}', 'AdminController@adminView');
     Route::get('admit/{phdormsc}/{regNo}/{dept}', 'AdminController@admitCard');
     Route::get('admin/{phdormsc}/{dept}', 'AdminController@adminall');
