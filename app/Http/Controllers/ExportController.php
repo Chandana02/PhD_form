@@ -32,7 +32,15 @@ class ExportController extends Controller
     	{
     		$personArray = $phdCandidatesPersonal[$i]->toArray();
     		$ugArray = $phdCandidatesUg[$i]->toArray();
+            foreach ($ugArray as $key => $value) {
+                $ugArray['ug'.$key] = $value;
+                unset($ugArray[$key]);
+            }
     		$pgArray = $phdCandidatesPg[$i]->toArray();
+            foreach ($pgArray as $key => $value) {
+                $pgArray['pg'.$key] = $value;
+                unset($pgArray[$key]);
+            }
     		$proArray = $phdCandidatesPro[$i]->toArray();
     		$otherArray = $phdCandidatesOther[$i]->toArray();
     		$phdCandidates[$i] = array_merge($personArray, $ugArray);
@@ -60,6 +68,10 @@ class ExportController extends Controller
     	{
     		$personArray = $msCandidatesPersonal[$i]->toArray();
     		$ugArray = $msCandidatesUg[$i]->toArray();
+            foreach ($ugArray as $key => $value) {
+                $ugArray['ug'.$key] = $value;
+                unset($ugArray[$key]);
+            }
     		$scoresArray = $msCandidatesScores[$i]->toArray();
     		$proArray = $msCandidatesPro[$i]->toArray();
     		$otherArray = $msCandidatesOther[$i]->toArray();
@@ -87,7 +99,15 @@ class ExportController extends Controller
         {
             $personArray = $phdCandidatesPersonal[$i]->toArray();
             $ugArray = PhdUg::where('applNo', $personArray['applNo'])->orderBy('created_at', 'desc')->get()[0]->toArray();
+            foreach ($ugArray as $key => $value) {
+                $ugArray['ug'.$key] = $value;
+                unset($ugArray[$key]);
+            }
             $pgArray = PhdPg::where('applNo', $personArray['applNo'])->orderBy('created_at', 'desc')->get()[0]->toArray();
+            foreach ($pgArray as $key => $value) {
+                $pgArray['pg'.$key] = $value;
+                unset($pgArray[$key]);
+            }
             $proArray = PhdPro::where('applNo', $personArray['applNo'])->orderBy('created_at', 'desc')->get()[0]->toArray();
             $otherArray = PhdOther::where('applNo', $personArray['applNo'])->orderBy('created_at', 'desc')->get()[0]->toArray();
             $phdCandidates[$i] = array_merge($personArray, $ugArray);
@@ -114,6 +134,10 @@ class ExportController extends Controller
         {
             $personArray = $msCandidatesPersonal[$i]->toArray();
             $ugArray = MsUg::where('applNo', $personArray['applNo'])->orderBy('created_at', 'desc')->get()[0]->toArray();
+            foreach ($ugArray as $key => $value) {
+                $ugArray['ug'.$key] = $value;
+                unset($ugArray[$key]);
+            }
             $pgArray = MsScores::where('applNo', $personArray['applNo'])->orderBy('created_at', 'desc')->get()[0]->toArray();
             $proArray = MsPro::where('applNo', $personArray['applNo'])->orderBy('created_at', 'desc')->get()[0]->toArray();
             $otherArray = MsOther::where('applNo', $personArray['applNo'])->orderBy('created_at', 'desc')->get()[0]->toArray();
@@ -154,7 +178,15 @@ class ExportController extends Controller
         {
             $personArray = $phdCandidatesPersonal[$i]->toArray();
             $ugArray = $phdCandidatesUg[$i]->toArray();
+            foreach ($ugArray as $key => $value) {
+                $ugArray['ug'.$key] = $value;
+                unset($ugArray[$key]);
+            }
             $pgArray = $phdCandidatesPg[$i]->toArray();
+            foreach ($pgArray as $key => $value) {
+                $pgArray['pg'.$key] = $value;
+                unset($pgArray[$key]);
+            }
             $proArray = $phdCandidatesPro[$i]->toArray();
             $otherArray = $phdCandidatesOther[$i]->toArray();
             $phdCandidates[$i] = array_merge($personArray, $ugArray);
@@ -197,6 +229,10 @@ class ExportController extends Controller
         {
             $personArray = $msCandidatesPersonal[$i]->toArray();
             $ugArray = $msCandidatesUg[$i]->toArray();
+            foreach ($ugArray as $key => $value) {
+                $ugArray['ug'.$key] = $value;
+                unset($ugArray[$key]);
+            }
             $scoresArray = $msCandidatesScores[$i]->toArray();
             $proArray = $msCandidatesPro[$i]->toArray();
             $otherArray = $msCandidatesOther[$i]->toArray();
