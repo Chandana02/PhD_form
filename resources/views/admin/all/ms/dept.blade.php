@@ -8,7 +8,7 @@
     <input type="hidden" value="PHD" class="phdormsc" />
     <div class="row buttons">
       <div class="col l4"> <a href="/admin/ms/CS" class="btn teal waves">C.S.E <font size="2">({!! $count['CS'] !!})</font></a> </div>
-      <div class="col l4"> <a href="/admin/ms/CL" class="btn teal waves">Chemical Engineering <font size="2">({!! $count['CL'] !!})</font></a> </div>
+      <div class="col l4"> <a href="/admin/ms/CL" class="btn teal waves">Chemical Engg. <font size="2">({!! $count['CL'] !!})</font></a> </div>
       <div class="col l4"> <a href="/admin/ms/CV" class="btn teal waves">Civil Engineering <font size="2">({!! $count['CV'] !!})</font></a> </div> 
       <div class="space-large"></div>
       <div class="col l4"> <a href="/admin/ms/CC" class="btn teal waves">CECASE <font size="2">({!! $count['CC'] !!})</font></a> </div>
