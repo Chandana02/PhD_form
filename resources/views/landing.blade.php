@@ -67,6 +67,13 @@
           <li><b>Stage 3</b>: Proceed with the instructions sent through mail in stage 1. Bank reference number would be required in this stage.</li>
 
         </ul>
+        <h6 class="center"><b><u>**ATTENTION**</u></b></h6>
+        <ul class="pad">
+          <li><span style="color:red">1.Application number(mentioned in SB collect) and Registration number(mentioned in application/e-mail) are same.</span></li>
+          <li><span style="color:red">2.Selection of one department is compulsory and more than one department is optional.</span></li>
+          <li><span style="color:red">3."Invalid name error": Name in the SB Collect form should start with Capital letter. Use standard Name writing convention.</span> </li>
+          
+        </ul>
       </div>
     </div>
 
