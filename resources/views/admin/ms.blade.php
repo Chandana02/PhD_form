@@ -97,9 +97,9 @@
             </div>           
             <div class="space-small center">
             </div>
-            @if($data['candidates'][$i]->applicationCategory == 'Part Time')
+            @if(file_exists('./uploads/MS/'.$data['candidates'][$i]->dashed_reg_number.'/cert.pdf'))
                 <div class="col l12 center">
-                <a href="{{ URL::asset('uploads/MS/'.$data['candidates'][$i]->applNo.'/'.$data['candidates'][$i]->applNo.'cert.pdf') }}"  class="btn waves-effect waves-green btn" target="_blank">Form</a>
+                <a href="{{ URL::asset('uploads/MS/'.$data['candidates'][$i]->dashed_reg_number.'/cert.pdf') }}"  class="btn waves-effect waves-green btn" target="_blank">Form</a>
                 </div>
                 <div class="space-medium"></div>
                 @endif

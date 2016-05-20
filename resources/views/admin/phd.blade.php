@@ -66,7 +66,7 @@
 
     <div class="candidates row">
      @for($i = 0; $i < sizeof($data['candidates']); $i++)
-        <div class="{!! $data['candidates'][$i]->applNo !!} col l5 offset-l1" data-reg = "{!! $data['candidates'][$i]->registrationNumber !!}">
+        <div class="{!! $data['candidates'][$i]->dashed_reg_number !!} col l5 offset-l1" data-reg = "{!! $data['candidates'][$i]->registrationNumber !!}">
         @if($data['candidates'][$i]->accepted)
         <div class="card center border">
         @elseif($data['candidates'][$i]->deleted)
@@ -83,18 +83,18 @@
               
             </div>
                <div class="center">
-                @if($data['candidates'][$i]->applicationCategory == 'External')
+                @if($data['candidates'][$i]->applicationCategory == 'onCampus')
                 <div class="col l12">
-                <a href="{{ URL::asset('uploads/PHD/'.$data['candidates'][$i]->applNo.'/'.$data['candidates'][$i]->applNo.'form3.pdf') }}" target="_blank" class="btn waves-effect waves-green btn">Form 3</a>
+                <a href="{{ URL::asset('uploads/PHD/'.$data['candidates'][$i]->dashed_reg_number.'/form3.pdf') }}" target="_blank" class="btn waves-effect waves-green btn">Form 3</a>
                 </div>
                 <div class="space-medium"></div>
                 @endif
-                @if($data['candidates'][$i]->applicationCategory == 'onCampus')
+                @if($data['candidates'][$i]->applicationCategory == 'External')
                 <div class="col l6">
-                <a href="{{ URL::asset('uploads/PHD/'.$data['candidates'][$i]->applNo.'/'.$data['candidates'][$i]->applNo.'form1.pdf') }}" target="_blank" class="btn waves-effect waves-green btn">Form 1</a>
+                <a href="{{ URL::asset('uploads/PHD/'.$data['candidates'][$i]->dashed_reg_number.'/form1.pdf') }}" target="_blank" class="btn waves-effect waves-green btn">Form 1</a>
                 </div>
                 <div class="col l6">
-                <a href="{{ URL::asset('uploads/PHD/'.$data['candidates'][$i]->applNo.'/'.$data['candidates'][$i]->applNo.'form2.pdf') }}" target="_blank" class="btn waves-effect waves-green btn">Form 2</a>
+                <a href="{{ URL::asset('uploads/PHD/'.$data['candidates'][$i]->dashed_reg_number.'/form2.pdf') }}" target="_blank" class="btn waves-effect waves-green btn">Form 2</a>
                 </div>
                 <div class="space-medium"></div>
                 @endif

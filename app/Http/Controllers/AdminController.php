@@ -227,9 +227,7 @@ class AdminController extends Controller
         $data['session_all'] = Session::get('dept');
         for($i = 0; $i < sizeof($data['candidates']); $i++)
         {
-            $departments = explode('/', $data['candidates'][$i]->registrationNumber);
-            $reg_appl_no = $departments[sizeof($departments) - 1];
-            $data['candidates'][$i]->applNo = $reg_appl_no;
+            $data['candidates'][$i]->dashed_reg_number = str_replace('/', '-', $data['candidates'][$i]->registrationNumber);
         }
         return view('admin.'.$phdormsc)->with('data', $data);
     }
