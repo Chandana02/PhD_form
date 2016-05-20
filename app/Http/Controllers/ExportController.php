@@ -45,7 +45,7 @@ class ExportController extends Controller
 		    $excel->sheet('Sheet 1', function($sheet) use($phdCandidates) {
 		        $sheet->fromArray($phdCandidates);
 		    });
-		})->export('xls');
+		})->export('xlsx');
 	}
 
 	public function allMsCandidatesExport() 
@@ -72,7 +72,7 @@ class ExportController extends Controller
 		    $excel->sheet('Sheet 2', function($sheet) use($msCandidates) {
 		        $sheet->fromArray($msCandidates);
 		    });
-		})->export('xls');
+		})->export('xlsx');
     }
 
     public function deptPhdCandidatesExport($dept)
@@ -98,7 +98,7 @@ class ExportController extends Controller
             $excel->sheet('Sheet 1', function($sheet) use($phdCandidates) {
                 $sheet->fromArray($phdCandidates);
             });
-        })->export('xls');
+        })->export('xlsx');
     }
 
     public function deptMsCandidatesExport($dept)
@@ -124,7 +124,7 @@ class ExportController extends Controller
             $excel->sheet('Sheet 2', function($sheet) use($msCandidates) {
                 $sheet->fromArray($msCandidates);
             });
-        })->export('xls');
+        })->export('xlsx');
     }
 
     public function singlePhdCandidateExport($regNo)
@@ -162,7 +162,7 @@ class ExportController extends Controller
             $phdCandidates[$i] = array_merge($phdCandidates[$i], $otherArray);
         }
         
-        $name = $regNo.'//'.$phdCandidates[0]['dob'];  
+        $name = $regNo.'//'.$phdCandidates[0]['dob'];
 
         Excel::create($name, function($excel) use($phdCandidates) {
             $regNo = $phdCandidates[0]['registrationNumber'];
@@ -171,7 +171,7 @@ class ExportController extends Controller
             $excel->sheet($name, function($sheet) use($phdCandidates) {
                 $sheet->fromArray($phdCandidates);
             });
-        })->export('xls');
+        })->export('xlsx');
     }   
 
     public function singleMsCandidatesExport($regNo) 
@@ -215,7 +215,7 @@ class ExportController extends Controller
             $excel->sheet($name, function($sheet) use($msCandidates) {
                 $sheet->fromArray($msCandidates);
             });
-        })->export('xls');
+        })->export('xlsx');
     }
 
 

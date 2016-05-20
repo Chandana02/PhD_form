@@ -57,7 +57,11 @@ class AdminController extends Controller
             {
                 Session::put('userName', $username);
                 Session::put('dept', $auth->dept);
-                return redirect('admin/home');
+                $count = array(
+                    'PHD' => self::dept_count('phd', Session::get('dept')),
+                    'MS' => self::dept_count('ms', Session::get('dept'))
+                    );
+                return View::make('admin.home')->with('count', $count);
             }
             else
             {
@@ -98,7 +102,11 @@ class AdminController extends Controller
                             ->update(['password' => sha1($newpassword)]);
                 Session::put('userName', $username);
                 Session::put('dept', $auth->dept);
-                return redirect('admin/home');
+                $count = array(
+                    'PHD' => self::dept_count('phd', Session::get('dept')),
+                    'MS' => self::dept_count('ms', Session::get('dept'))
+                    );
+                return View::make('admin.home')->with('count', $count);
             }
             else
             {
@@ -175,6 +183,10 @@ class AdminController extends Controller
     {
         if($phdorms == 'phd')
         {
+            if($dept == 'all')
+            {
+                return Phd::all()->count();
+            }
             return Phd::where('dept1', $dept)
                             ->orWhere('dept2', $dept)
                             ->orWhere('dept3', $dept)
@@ -182,6 +194,10 @@ class AdminController extends Controller
         }
         else
         {
+            if($dept == 'all')
+            {
+                return Ms::all()->count();
+            }
             return Ms::where('dept1', $dept)
                             ->orWhere('dept2', $dept)
                             ->orWhere('dept3', $dept)
