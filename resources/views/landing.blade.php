@@ -51,12 +51,12 @@
   <div class="container main">
     <div class="row">
 
-     <marquee> <p class="imp" style="color:red"><b>Last date of Application Submission is 12/06/2016. No hardcopies are required to be sent to institute.</b></p></marquee>
+     <marquee> <p class="imp" style="color:black"><b><img src="http://schoolreportcards.in/SRC-New/images/newgood.gif"> For any notices & updates we request you to keep visiting this site. </b></p></marquee>
       <div class="space-medium"></div>
       <div class="content">
         <h5 class="center"><b><u>INSTRUCTIONS</u></b></h5>
         <ul class="pad">
-          <li>1) Please read carefully the application <a href="http://www.nitt.edu/home/admissions/phd/MS-PhD-July2016.pdf">brochure</a> before applying.</li>
+          <li>1) Please read carefully the application <a href="http://www.nitt.edu/home/MS%20and%20Ph_D%20advt%20July%202016%20(1).pdf">brochure</a> before applying.</li>
           <li>2) Reach out to help desk numbers provided in the <a href="contact">Contact</a> in case of a query.</li>
           <li>3) Help desk is live on Admission desk on all working days (10:30 AM -4:30 PM) at NIT Trichy. </li>
         </ul>
@@ -69,9 +69,11 @@
         </ul>
         <h6 class="center"><b><u>**ATTENTION**</u></b></h6>
         <ul class="pad">
-          <li><span style="color:red">1.Application number(mentioned in SB collect) and Registration number(mentioned in application/e-mail) are same.</span></li>
-          <li><span style="color:red">2.Selection of one department is compulsory and more than one department is optional.</span></li>
-          <li><span style="color:red">3."Invalid name error": Name in the SB Collect form should start with Capital letter. Use standard Name writing convention.</span> </li>
+          <li><span style="color:black">1. Last date of application submission is 12/05/2016.</span></li>
+          <li><span style="color:black">2. No hardcopies are required to be sent to the institute.</span></li>
+          <li><span style="color:black">3. Application number(mentioned in SB collect) and Registration number(mentioned in application/e-mail) are same.</span></li>
+          <li><span style="color:black">4. Selection of one department is compulsory and more than one department is optional.</span></li>
+          <li><span style="color:black">5. <img src="http://schoolreportcards.in/SRC-New/images/newgood.gif">"Invalid name error": Contact your local SBI branch or wait till the payment error is rectified. We though recommend you to use standard Name writing convention.</span> </li>
           
         </ul>
       </div>
