@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use DB;
 use View;
 use Validator;
 use Input;
@@ -232,21 +233,50 @@ class AdminController extends Controller
         return view('admin.'.$phdormsc)->with('data', $data);
     }
 
-    // public function search(Request $request)
-    // {
-    //     $search_val = $request->input('value');        
-    //     $phdorms = $request->input('phdorms');
-    //     $dept = $request->input('dept');
+    public function search(Request $request)
+    {
+        $search_val = $request->input('search');        
+        $phdorms = $request->input('phdorms');
+        $dept = Session::get('dept');
 
-    //     $data = Phd::select('registrationNumber')
-    //                     ->where('dept1', $dept)
-    //                     ->orWhere('dept2', $dept)
-    //                     ->orWhere('dept3', $dept)
-    //                     ->where('registrationNumber', 'LIKE', '%'.$search_val.'%')
-    //                     ->get();
+        if($phdorms == 'ms') {
+            $table = DB::table('ms');
+        }
+        else if($phdorms == 'phd') {
+            $table = DB::table('phd');
+        }
+        else {
+            return json_encode($phdorms);
+        }
+        $candidates = $table->where('dept1', $dept)
+                        ->orWhere('dept2', $dept)
+                        ->orWhere('dept3', $dept)
+                        ->orWhere('registrationNumber', 'LIKE', '%'.$search_val.'%')
+                        ->orWhere('name', 'LIKE', '%'.$search_val.'%')
+                        ->paginate(500);
 
-    //     return json_encode($data);
-    // }
+        $candidates_id = $candidates->lists('applNo');
+            $ugDetails = PhdUg::whereIn('applNo', $candidates_id)->get();
+            $pgDetails = PhdPg::whereIn('applNo', $candidates_id)->get(); 
+            $otherDetails = PhdOther::whereIn('applNo', $candidates_id)->get();
+            $proDetails = PhdPro::whereIn('applNo', $candidates_id)->get();
+            $data = array('candidates' => $candidates,
+                            'ug' => $ugDetails,
+                            'pg' => $pgDetails,
+                            'others' => $otherDetails,
+                            'pro' => $proDetails
+                            );
+
+        $data['dept'] = self::department($dept);
+        $data['session'] = $dept;
+        $data['session_all'] = Session::get('dept');
+        for($i = 0; $i < sizeof($data['candidates']); $i++)
+        {
+            $data['candidates'][$i]->dashed_reg_number = str_replace('/', '-', $data['candidates'][$i]->registrationNumber);
+        }
+
+        return view('admin.'.$phdorms)->with('data', $data);
+    }
 
     public function finalView($phdormsc, $rules1, $rules2, $rules3)
     {

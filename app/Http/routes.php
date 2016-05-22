@@ -33,13 +33,13 @@ Route::get('admin/phd/home', function () {
 });
 Route::group(['middleware' => 'adminauth'], function () {
     Route::get('admin/home', 'AdminController@returnHome');
+    Route::get('admin/search', 'AdminController@search');
     Route::get('admin/{phdormsc}', 'AdminController@adminView');
     Route::get('admit/{phdormsc}/{regNo}/{dept}', 'AdminController@admitCard');
     Route::get('admin/{phdormsc}/{dept}', 'AdminController@adminall');
     Route::post('delete', 'AdminController@deleted' );
     Route::post('accept', 'AdminController@accepted');
     Route::post('dmgctrl', 'DamageController@dmgctrl');
-    // Route::post('search', 'AdminController@search');
     Route::get('logout', 'AdminController@logout');   
     Route::get('exportphd', 'ExportController@allPhdCandidatesExport');
     Route::get('exportms', 'ExportController@allMsCandidatesExport');

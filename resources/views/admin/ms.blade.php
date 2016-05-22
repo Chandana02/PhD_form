@@ -40,24 +40,23 @@
       
       <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
       <ul class="hide-on-med-and-down">
-        <li><a href="../home">Home</a></li>
-        <li><a href="../phd">Ph.D Applicants</a></li>
+        <li><a href="/admin/home">Home</a></li>
+        <li><a href="/phd">Ph.D Applicants</a></li>
         <li><a href="/logout">Logout</a></li>
       </ul>
       <ul class="side-nav" id="mobile-demo">
-       <li><a href="../home">Home</a></li>
-        <li><a href="../phd">Ph.D Applicants</a></li>
+       <li><a href="/admin/home">Home</a></li>
+        <li><a href="/admin/phd">Ph.D Applicants</a></li>
         <li><a href="/logout">Logout</a></li>
       </ul>
     </div>
   </nav>
 <div class="container search" hidden="true">
 
-      <form class="searchbox">
-          <input id="search" type="search" placeholder="Search.." name="search" class="searchbox-input" required>
-          
-
-
+      <form action="/admin/search" method="get" class="searchbox">
+      	  <input type="hidden" name="phdorms" id="phdorms" value="ms">
+      	  <input id="hidden_token" name="_token" value="{{ csrf_token() }}">
+          <input id="search" type="search" phdorms="ms" placeholder="Search.." name="search" class="searchbox-input" required>
       </form>
       
   </div>
@@ -68,7 +67,7 @@
   
 </div>
 <div class="hide space-large  " hidden="true"></div>
-  <h5 class="center" id="heading" data-reg="{!! $data['dept'] !!}">{!! $data['dept'] !!}</h5>
+  <h5 class="center heading" data-reg="{!! $data['dept'] !!}">{!! $data['dept'] !!}</h5>
   <div class="space-large"></div>
   <div class="container main">
 

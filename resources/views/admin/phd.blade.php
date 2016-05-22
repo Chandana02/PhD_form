@@ -31,13 +31,13 @@
       
       <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
       <ul class="hide-on-med-and-down">
-        <li><a href="../home">Home</a></li>
-        <li><a href="../ms">M.S. Applicants</a></li>
+        <li><a href="/admin/home">Home</a></li>
+        <li><a href="/admin/ms">M.S. Applicants</a></li>
         <li><a href="/logout">Logout</a></li>
       </ul>
       <ul class="side-nav" id="mobile-demo">
-       <li><a href="../home">Home</a></li>
-        <li><a href="../ms">M.S. Applicants</a></li>
+       <li><a href="/admin/home">Home</a></li>
+        <li><a href="/admin/ms">M.S. Applicants</a></li>
         <li><a href="/logout">Logout</a></li>
       </ul>
     </div>
@@ -47,8 +47,10 @@
 
     
 
-      <form class="searchbox">
-          <input id="search" dept="{!! $data['session'] !!}" phdorms="PHD" type="search" placeholder="Search.." name="search" class="searchbox-input" required>
+      <form action="/admin/search" method="get" class="searchbox">
+          <input type="hidden" name="phdorms" id="phdorms" value="phd">
+          <input id="hidden_token" name="_token" value="{{ csrf_token() }}">
+          <input id="search" dept="{!! $data['session'] !!}" phdorms="phd" type="search" placeholder="Search.." name="search" class="searchbox-input" required>
       </form>
       
   </div>
