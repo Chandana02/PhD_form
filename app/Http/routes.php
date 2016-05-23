@@ -46,6 +46,8 @@ Route::group(['middleware' => 'adminauth'], function () {
     Route::get('exportms', 'ExportController@allMsCandidatesExport');
     Route::get('exportphd/{dept}', 'ExportController@deptPhdCandidatesExport');
     Route::get('exportms/{dept}', 'ExportController@deptMsCandidatesExport'); 
+    Route::get('exportselphd/{dept}', 'ExportController@deptPhdSelCandidatesExport');
+    Route::get('exportselms/{dept}', 'ExportController@deptMsSelCandidatesExport');
     Route::get('exportphdSingle/{regNo}', 'ExportController@singlePhdCandidateExport' );
     Route::get('exportmsSingle/{regNo}', 'ExportController@singleMsCandidatesExport' );
 });

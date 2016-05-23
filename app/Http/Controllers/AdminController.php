@@ -240,37 +240,42 @@ class AdminController extends Controller
 
         if($phdorms == 'PHD')
         {
-            $selected_or_not_json = Phd::select('verified_by_HOD')
+            $selected_or_not_json = Phd::select('verified_by_HOD', 'selected_depts')
                                         ->where('registrationNumber', $regNo)
                                         ->first();
             if($selected_or_not_json->verified_by_HOD == false)
             {
+                Log::info($selected_or_not_json->verified_by_HOD);
                 $selected_or_not = true;
+                $selected_depts_db = $selected_or_not_json->selected_depts.Session::get('dept').',';
             }
             else
             {
                 $selected_or_not = false;
+                $selected_depts_db = str_replace(Session::get('dept').',', '', $selected_or_not_json->selected_depts);
             }
             Phd::where('registrationNumber', $regNo)
-                    ->update(['verified_by_HOD' => $selected_or_not]);
+                    ->update(['verified_by_HOD' => $selected_or_not, 'selected_depts' => $selected_depts_db]);
 
             return json_encode($regNo);
         }
         else
         {
-            $selected_or_not_json = Ms::select('verified_by_HOD')
+            $selected_or_not_json = Ms::select('verified_by_HOD', 'selected_depts')
                                         ->where('registrationNumber', $regNo)
                                         ->first();
             if($selected_or_not_json->verified_by_HOD == false)
             {
                 $selected_or_not = true;
+                $selected_depts_db = $selected_or_not_json->selected_depts.Session::get('dept').',';
             }
             else
             {
                 $selected_or_not = false;
+                $selected_depts_db = str_replace(Session::get('dept').',', '', $selected_or_not_json->selected_depts);
             }
             Ms::where('registrationNumber', $regNo)
-                    ->update(['verified_by_HOD' => $selected_or_not]);
+                    ->update(['verified_by_HOD' => $selected_or_not, 'selected_depts' => $selected_depts_db]);
 
             return json_encode($regNo);
         }

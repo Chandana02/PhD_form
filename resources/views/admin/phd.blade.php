@@ -61,9 +61,13 @@
   
 </div>
 <div class="hide space-large  " hidden="true"></div>
-    <h5 class="center heading" data-reg="{!! $data['dept'] !!}">{!! $data['dept'] !!}</h5>
-    
-  <div class="space-large"></div>
+    <h5 class="center heading" data-reg="{!! $data['dept'] !!}">{!! $data['dept'] !!}</h5><br>
+    @if($data['session_all'] == 'all')
+    <div class="col l6 center">
+    <a href="#" class="exportselphd waves-effect waves-light btn" data-reg="{!! $data['session'] !!}">Export Selected Candidates</a>
+    </div>
+    @endif
+  <div class="space-small"></div>
   <div class="container main">
 
     <div class="candidates row">
@@ -102,11 +106,18 @@
                 @endif
                 @if($data['session_all'] != 'all')
                 <a href="#!" data-reg={!! $data['candidates'][$i]->registrationNumber!!} categ='PHD' class="verify btn modal-action modal-close waves-effect waves-green btn">
-                @if($data['candidates'][$i]->verified_by_HOD == false)
-                Select
-                @else
+                <?php
+                  if (strpos($data['candidates'][$i]->selected_depts, $data['session']) !== false) {
+                 ?>
                 Deselect
-                @endif
+                <?php
+                  }
+                  else {
+                ?>
+                Select
+                <?php
+                  }
+                ?>
                 </a>
                 @endif
         @if($data['session_all'] == 'all')

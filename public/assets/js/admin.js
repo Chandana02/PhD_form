@@ -11,6 +11,14 @@ $(document).ready(function(){
 		var dept = $(this).attr('data-reg');
 		window.location = '/exportms/' + dept;
 	});
+	$('.exportselphd').click(function(){
+		var dept = $(this).attr('data-reg');
+		window.location = '/exportselphd/' + dept;
+	});
+	$('.exportselms').click(function(){
+		var dept = $(this).attr('data-reg');
+		window.location = '/exportselms/' + dept;
+	});
 	$('.discard').click(function(e){
 		var applNo = $(this).attr('data-reg');
 		ajaxCall(applNo, 'delete');
