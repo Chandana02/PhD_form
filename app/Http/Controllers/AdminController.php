@@ -233,6 +233,49 @@ class AdminController extends Controller
         return view('admin.'.$phdormsc)->with('data', $data);
     }
 
+    public function verify(Request $request)
+    {
+        $regNo = $request->input('regNo');
+        $phdorms = $request->input('phdorms');
+
+        if($phdorms == 'PHD')
+        {
+            $selected_or_not_json = Phd::select('verified_by_HOD')
+                                        ->where('registrationNumber', $regNo)
+                                        ->first();
+            if($selected_or_not_json->verified_by_HOD == false)
+            {
+                $selected_or_not = true;
+            }
+            else
+            {
+                $selected_or_not = false;
+            }
+            Phd::where('registrationNumber', $regNo)
+                    ->update(['verified_by_HOD' => $selected_or_not]);
+
+            return json_encode($regNo);
+        }
+        else
+        {
+            $selected_or_not_json = Ms::select('verified_by_HOD')
+                                        ->where('registrationNumber', $regNo)
+                                        ->first();
+            if($selected_or_not_json->verified_by_HOD == false)
+            {
+                $selected_or_not = true;
+            }
+            else
+            {
+                $selected_or_not = false;
+            }
+            Ms::where('registrationNumber', $regNo)
+                    ->update(['verified_by_HOD' => $selected_or_not]);
+
+            return json_encode($regNo);
+        }
+    }
+
     public function search(Request $request)
     {
         $search_val = $request->input('search');        

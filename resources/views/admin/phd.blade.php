@@ -74,7 +74,7 @@
         @elseif($data['candidates'][$i]->deleted)
         <div class="card center border-del">
         @else
-        <div class="card center">
+        <div class="card center no-border">
         @endif
           <div class="card-content">
             <span class="card-title activator grey-text text-darken-4">{!! $data['candidates'][$i]->name !!}</span>
@@ -100,6 +100,13 @@
                 </div>
                 <div class="space-medium"></div>
                 @endif
+                <a href="#!" data-reg={!! $data['candidates'][$i]->registrationNumber!!} categ='PHD' class="verify btn modal-action modal-close waves-effect waves-green btn">
+                @if($data['candidates'][$i]->verified_by_HOD == false)
+                Select
+                @else
+                Deselect
+                @endif
+                </a>
         @if($data['session_all'] == 'all')
         <!-- <div class="space-small"></div>
         <div class="col l12 center buttons">

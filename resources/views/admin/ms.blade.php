@@ -41,7 +41,7 @@
       <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
       <ul class="hide-on-med-and-down">
         <li><a href="/admin/home">Home</a></li>
-        <li><a href="/phd">Ph.D Applicants</a></li>
+        <li><a href="/admin/phd">Ph.D Applicants</a></li>
         <li><a href="/logout">Logout</a></li>
       </ul>
       <ul class="side-nav" id="mobile-demo">
@@ -79,7 +79,7 @@
         @elseif($data['candidates'][$i]->deleted)
         <div class="card center border-del">
         @else
-        <div class="card center">
+        <div class="card center no-border">
         @endif
           <div class=" waves-effect waves-block waves-light">  
           </div>
@@ -103,6 +103,13 @@
                 <div class="space-medium"></div>
                 @endif
                <div class="center">
+                <a href="#!" data-reg={!! $data['candidates'][$i]->registrationNumber!!} categ='MS' class="verify btn modal-action modal-close waves-effect waves-green btn">
+                @if($data['candidates'][$i]->verified_by_HOD == false)
+                Select
+                @else
+                Deselect
+                @endif
+                </a>
         @if($data['session_all'] == 'all')
         <!-- <div class="space-small"></div>
         <div class="col s12">
