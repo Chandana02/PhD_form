@@ -100,6 +100,7 @@
                 </div>
                 <div class="space-medium"></div>
                 @endif
+                @if($data['session_all'] != 'all')
                 <a href="#!" data-reg={!! $data['candidates'][$i]->registrationNumber!!} categ='PHD' class="verify btn modal-action modal-close waves-effect waves-green btn">
                 @if($data['candidates'][$i]->verified_by_HOD == false)
                 Select
@@ -107,6 +108,7 @@
                 Deselect
                 @endif
                 </a>
+                @endif
         @if($data['session_all'] == 'all')
         <!-- <div class="space-small"></div>
         <div class="col l12 center buttons">
