@@ -51,7 +51,9 @@
   <div class="container main">
     <div class="row">
 
-     <marquee> <p class="imp" style="color:black"><b><img src="http://schoolreportcards.in/SRC-New/images/newgood.gif"> For any notices & updates we request you to keep visiting this site. </b></p></marquee>
+     <marquee> <p class="imp" style="color:black"><b><!-- <img src="http://schoolreportcards.in/SRC-New/images/newgood.gif"> --> <!-- For any notices & updates we request you to keep visiting this site. --> 
+      Application process will resume from 8 PM, 24/05/2016
+     </b></p></marquee>
       <div class="space-medium"></div>
       <div class="content">
         <h5 class="center"><b><u>INSTRUCTIONS</u></b></h5>
