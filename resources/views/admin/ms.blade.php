@@ -40,8 +40,8 @@
       
       <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
       <ul class="hide-on-med-and-down">
-        <li><a href="/admin/home">Home</a></li>
-        <li><a href="/admin/phd">Ph.D Applicants</a></li>
+        <li><a href="../home">Home</a></li>
+        <li><a href="../phd">Ph.D Applicants</a></li>
         <li><a href="/logout">Logout</a></li>
       </ul>
       <ul class="side-nav" id="mobile-demo">
@@ -68,13 +68,8 @@
   
 </div>
 <div class="hide space-large  " hidden="true"></div>
-  <h5 class="center heading" data-reg="{!! $data['dept'] !!}">{!! $data['dept'] !!}</h5>
-  @if($data['session_all'] == 'all')
-  <div class="col l6 center">
-  <a href="#" class="exportselms waves-effect waves-light btn" data-reg="{!! $data['session'] !!}">Export Selected Candidates</a>
-  </div>
-  @endif
-  <div class="space-small"></div>
+  <h5 class="center" id="heading" data-reg="{!! $data['dept'] !!}">{!! $data['dept'] !!}</h5>
+  <div class="space-large"></div>
   <div class="container main">
 
     <div class="row candidates">
@@ -85,7 +80,7 @@
         @elseif($data['candidates'][$i]->deleted)
         <div class="card center border-del">
         @else
-        <div class="card center no-border">
+        <div class="card center">
         @endif
           <div class=" waves-effect waves-block waves-light">  
           </div>
@@ -109,22 +104,6 @@
                 <div class="space-medium"></div>
                 @endif
                <div class="center">
-                @if($data['session_all'] != 'all')
-                <a href="#!" data-reg={!! $data['candidates'][$i]->registrationNumber!!} categ='PHD' class="verify btn modal-action modal-close waves-effect waves-green btn">
-                <?php
-                  if (strpos($data['candidates'][$i]->selected_depts, $data['session']) !== false) {
-                 ?>
-                Deselect
-                <?php
-                  }
-                  else {
-                ?>
-                Select
-                <?php
-                  }
-                ?>
-                </a>
-                @endif
         @if($data['session_all'] == 'all')
         <!-- <div class="space-small"></div>
         <div class="col s12">

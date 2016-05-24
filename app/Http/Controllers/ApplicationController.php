@@ -49,7 +49,7 @@ class ApplicationController extends Controller
 	                                ->first();
 	            if(!$candidates)
 	            {
-	                $message = 'Kindly finish the application process and come back here';
+	                $message = 'Invalid registration number';
 	                return View::make('error')->with('message', $message);
 	            } 
 	            $applNo = $candidates->applNo;  
@@ -91,7 +91,7 @@ class ApplicationController extends Controller
 	                                ->first();
 	            if(!$candidates)
 	            {
-	                $message = 'Kindly finish the application process and come back here';
+	                $message = 'Invalid registration number';
 	                return View::make('error')->with('message', $message);
 	            }  
 	            $applNo = $candidates->applNo;  

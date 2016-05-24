@@ -231,99 +231,22 @@ class AdminController extends Controller
         }
         return view('admin.'.$phdormsc)->with('data', $data);
     }
-    
-    public function verify(Request $request)
-    {
-        $regNo = $request->input('regNo');
-        $phdorms = $request->input('phdorms');
 
-        if($phdorms == 'PHD')
-        {
-            $selected_or_not_json = Phd::select('verified_by_HOD', 'selected_depts')
-                                        ->where('registrationNumber', $regNo)
-                                        ->first();
-            if($selected_or_not_json->verified_by_HOD == false)
-            {
-                Log::info($selected_or_not_json->verified_by_HOD);
-                $selected_or_not = true;
-                $selected_depts_db = $selected_or_not_json->selected_depts.Session::get('dept').',';
-            }
-            else
-            {
-                $selected_or_not = false;
-                $selected_depts_db = str_replace(Session::get('dept').',', '', $selected_or_not_json->selected_depts);
-            }
-            Phd::where('registrationNumber', $regNo)
-                    ->update(['verified_by_HOD' => $selected_or_not, 'selected_depts' => $selected_depts_db]);
+    // public function search(Request $request)
+    // {
+    //     $search_val = $request->input('value');        
+    //     $phdorms = $request->input('phdorms');
+    //     $dept = $request->input('dept');
 
-            return json_encode($regNo);
-        }
-        else
-        {
-            $selected_or_not_json = Ms::select('verified_by_HOD', 'selected_depts')
-                                        ->where('registrationNumber', $regNo)
-                                        ->first();
-            if($selected_or_not_json->verified_by_HOD == false)
-            {
-                $selected_or_not = true;
-                $selected_depts_db = $selected_or_not_json->selected_depts.Session::get('dept').',';
-            }
-            else
-            {
-                $selected_or_not = false;
-                $selected_depts_db = str_replace(Session::get('dept').',', '', $selected_or_not_json->selected_depts);
-            }
-            Ms::where('registrationNumber', $regNo)
-                    ->update(['verified_by_HOD' => $selected_or_not, 'selected_depts' => $selected_depts_db]);
+    //     $data = Phd::select('registrationNumber')
+    //                     ->where('dept1', $dept)
+    //                     ->orWhere('dept2', $dept)
+    //                     ->orWhere('dept3', $dept)
+    //                     ->where('registrationNumber', 'LIKE', '%'.$search_val.'%')
+    //                     ->get();
 
-            return json_encode($regNo);
-        }
-    }
-
-    public function search(Request $request)
-    {
-        $search_val = $request->input('search');        
-        $phdorms = $request->input('phdorms');
-        $dept = Session::get('dept');
-
-        if($phdorms == 'ms') {
-            $table = DB::table('ms');
-        }
-        else if($phdorms == 'phd') {
-            $table = DB::table('phd');
-        }
-        else {
-            return json_encode($phdorms);
-        }
-        $candidates = $table->where('dept1', $dept)
-                        ->orWhere('dept2', $dept)
-                        ->orWhere('dept3', $dept)
-                        ->orWhere('registrationNumber', 'LIKE', '%'.$search_val.'%')
-                        ->orWhere('name', 'LIKE', '%'.$search_val.'%')
-                        ->paginate(500);
-
-        $candidates_id = $candidates->lists('applNo');
-            $ugDetails = PhdUg::whereIn('applNo', $candidates_id)->get();
-            $pgDetails = PhdPg::whereIn('applNo', $candidates_id)->get(); 
-            $otherDetails = PhdOther::whereIn('applNo', $candidates_id)->get();
-            $proDetails = PhdPro::whereIn('applNo', $candidates_id)->get();
-            $data = array('candidates' => $candidates,
-                            'ug' => $ugDetails,
-                            'pg' => $pgDetails,
-                            'others' => $otherDetails,
-                            'pro' => $proDetails
-                            );
-
-        $data['dept'] = self::department($dept);
-        $data['session'] = $dept;
-        $data['session_all'] = Session::get('dept');
-        for($i = 0; $i < sizeof($data['candidates']); $i++)
-        {
-            $data['candidates'][$i]->dashed_reg_number = str_replace('/', '-', $data['candidates'][$i]->registrationNumber);
-        }
-
-        return view('admin.'.$phdorms)->with('data', $data);
-    }
+    //     return json_encode($data);
+    // }
 
     public function finalView($phdormsc, $rules1, $rules2, $rules3)
     {

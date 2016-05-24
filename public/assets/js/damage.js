@@ -34,7 +34,7 @@ $(document).ready(function(){
 	$('.button1').click(function(){
 		var data = {};
 		data.regNo = $('.button1').data('reg');
-		// console.log(data);
+		console.log(data);
 		var a = window.confirm("Are you sure?");
 		if(!a){
 

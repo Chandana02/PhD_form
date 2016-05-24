@@ -51,9 +51,7 @@
   <div class="container main">
     <div class="row">
 
-     <marquee> <p class="imp" style="color:black"><b><!-- <img src="http://schoolreportcards.in/SRC-New/images/newgood.gif"> --> <!-- For any notices & updates we request you to keep visiting this site. --> 
-      Application process will resume from 8 PM, 24/05/2016
-     </b></p></marquee>
+     <marquee> <p class="imp" style="color:black"><b><img src="http://schoolreportcards.in/SRC-New/images/newgood.gif"> For any notices & updates we request you to keep visiting this site. </b></p></marquee>
       <div class="space-medium"></div>
       <div class="content">
         <h5 class="center"><b><u>INSTRUCTIONS</u></b></h5>
@@ -71,7 +69,7 @@
         </ul>
         <h6 class="center"><b><u>**ATTENTION**</u></b></h6>
         <ul class="pad">
-          <li><span style="color:black">1. Last date of application submission is 12/06/2016.</span></li>
+          <li><span style="color:black">1. Last date of application submission is 12/05/2016.</span></li>
           <li><span style="color:black">2. No hardcopies are required to be sent to the institute.</span></li>
           <li><span style="color:black">3. Application number(mentioned in SB collect) and Registration number(mentioned in application/e-mail) are same.</span></li>
           <li><span style="color:black">4. Selection of one department is compulsory and more than one department is optional.</span></li>

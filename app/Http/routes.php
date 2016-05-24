@@ -11,12 +11,8 @@
 |
 */
 Route::get('/', function() {
-    return view('landing');
-    // return redirect('home');
-});
-Route::get('/home', function() {
-    return view('landing');
-    // return redirect('home');
+    // return view('landing');
+    return redirect('home');
 });
 Route::get('/instructions', function() {
     return view('landing');
@@ -42,7 +38,6 @@ Route::group(['middleware' => 'adminauth'], function () {
     Route::get('admin/{phdormsc}/{dept}', 'AdminController@adminall');
     Route::post('delete', 'AdminController@deleted' );
     Route::post('accept', 'AdminController@accepted');
-    Route::post('verify', 'AdminController@verify');
     Route::post('dmgctrl', 'DamageController@dmgctrl');
     // Route::post('search', 'AdminController@search');
     Route::get('logout', 'AdminController@logout');   
@@ -50,10 +45,9 @@ Route::group(['middleware' => 'adminauth'], function () {
     Route::get('exportms', 'ExportController@allMsCandidatesExport');
     Route::get('exportphd/{dept}', 'ExportController@deptPhdCandidatesExport');
     Route::get('exportms/{dept}', 'ExportController@deptMsCandidatesExport'); 
-    Route::get('exportselphd/{dept}', 'ExportController@deptPhdSelCandidatesExport');
-    Route::get('exportselms/{dept}', 'ExportController@deptMsSelCandidatesExport');
     Route::get('exportphdSingle/{regNo}', 'ExportController@singlePhdCandidateExport' );
     Route::get('exportmsSingle/{regNo}', 'ExportController@singleMsCandidatesExport' );
+
 });
 Route::get('print/{phdormsc}/{regNo}', 'AdminController@printer' );
 
@@ -81,7 +75,7 @@ Route::group(['middleware' => 'redirect_admin_if_authenticated'], function()
             });
     });
 
-Route::get('fix', function()
+Route::get('home', function()
     {
         return view('home');
     });

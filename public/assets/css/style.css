@@ -229,7 +229,7 @@ span{
 
 }
 .card-content{
-	height: 403px;
+	height: 345px;
 }
 .nope{
 	padding: 0px;
@@ -278,9 +278,6 @@ span{
 }
 .border-del{
 	border: 2px solid rgb(230,150,100);
-}
-.no-border{
-	border: 2px solid white;
 }
 
 input.select-dropdown{

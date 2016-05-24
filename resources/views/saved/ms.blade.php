@@ -697,7 +697,7 @@ function escape_new_line($s) {
 
         var x = new Date().getFullYear();
         var y = x+1;
-        // console.log(x);
+        console.log(x);
         var p = '<h4 class="center">APPLICATION FOR ADMISSION TO M.S.<br> PROGRAMME ('+ x + '-' + y + ')</h4>';
         $('.heading').append(p);
 
