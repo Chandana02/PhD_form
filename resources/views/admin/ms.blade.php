@@ -45,18 +45,19 @@
         <li><a href="/logout">Logout</a></li>
       </ul>
       <ul class="side-nav" id="mobile-demo">
-       <li><a href="/admin/home">Home</a></li>
-        <li><a href="/admin/phd">Ph.D Applicants</a></li>
+       <li><a href="../home">Home</a></li>
+        <li><a href="../phd">Ph.D Applicants</a></li>
         <li><a href="/logout">Logout</a></li>
       </ul>
     </div>
   </nav>
 <div class="container search" hidden="true">
 
-      <form action="/admin/search" method="get" class="searchbox">
-      	  <input type="hidden" name="phdorms" id="phdorms" value="ms">
-      	  <input id="hidden_token" name="_token" value="{{ csrf_token() }}">
-          <input id="search" type="search" phdorms="ms" placeholder="Search.." name="search" class="searchbox-input" required>
+      <form class="searchbox">
+          <input id="search" type="search" placeholder="Search.." name="search" class="searchbox-input" required>
+          
+
+
       </form>
       
   </div>
