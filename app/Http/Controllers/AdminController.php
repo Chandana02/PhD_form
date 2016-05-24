@@ -231,7 +231,7 @@ class AdminController extends Controller
         }
         return view('admin.'.$phdormsc)->with('data', $data);
     }
-
+    
     public function verify(Request $request)
     {
         $regNo = $request->input('regNo');
