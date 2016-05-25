@@ -237,45 +237,73 @@ class AdminController extends Controller
     {
         $regNo = $request->input('regNo');
         $phdorms = $request->input('phdorms');
+        $reason = $request->input('reason');
 
         if($phdorms == 'PHD')
         {
-            $selected_or_not_json = Phd::select('verified_by_HOD', 'selected_depts')
+            $selected_or_not_json = Phd::select('dept1', 'dept2', 'dept3', 'selected_depts')
                                         ->where('registrationNumber', $regNo)
                                         ->first();
-            if($selected_or_not_json->verified_by_HOD == false)
+            if (strpos($selected_or_not_json->selected_depts, Session::get('dept')) === false) 
             {
-                Log::info($selected_or_not_json->verified_by_HOD);
-                $selected_or_not = true;
                 $selected_depts_db = $selected_or_not_json->selected_depts.Session::get('dept').',';
             }
             else
             {
-                $selected_or_not = false;
                 $selected_depts_db = str_replace(Session::get('dept').',', '', $selected_or_not_json->selected_depts);
             }
             Phd::where('registrationNumber', $regNo)
-                    ->update(['verified_by_HOD' => $selected_or_not, 'selected_depts' => $selected_depts_db]);
+                    ->update(['selected_depts' => $selected_depts_db]);
+
+            switch (Session::get('dept')) 
+            {
+                case $selected_or_not_json->dept1:
+                    Phd::where('registrationNumber', $regNo)
+                            ->update(['dept1_comments' => $reason]);
+                    break;
+                case $selected_or_not_json->dept2:
+                    Phd::where('registrationNumber', $regNo)
+                            ->update(['dept2_comments' => $reason]);
+                    break;
+                case $selected_or_not_json->dept3:
+                    Phd::where('registrationNumber', $regNo)
+                            ->update(['dept3_comments' => $reason]);
+                    break;
+            }
 
             return json_encode($regNo);
         }
         else
         {
-            $selected_or_not_json = Ms::select('verified_by_HOD', 'selected_depts')
+            $selected_or_not_json = Ms::select('dept1', 'dept2', 'dept3', 'selected_depts')
                                         ->where('registrationNumber', $regNo)
                                         ->first();
-            if($selected_or_not_json->verified_by_HOD == false)
+            if(strpos($selected_or_not_json->selected_depts, Session::get('dept')) === false)
             {
-                $selected_or_not = true;
                 $selected_depts_db = $selected_or_not_json->selected_depts.Session::get('dept').',';
             }
             else
             {
-                $selected_or_not = false;
                 $selected_depts_db = str_replace(Session::get('dept').',', '', $selected_or_not_json->selected_depts);
             }
             Ms::where('registrationNumber', $regNo)
-                    ->update(['verified_by_HOD' => $selected_or_not, 'selected_depts' => $selected_depts_db]);
+                    ->update(['selected_depts' => $selected_depts_db]);
+
+            switch (Session::get('dept')) 
+            {
+                case $selected_or_not_json->dept1:
+                    Ms::where('registrationNumber', $regNo)
+                            ->update(['dept1_comments' => $reason]);
+                    break;
+                case $selected_or_not_json->dept2:
+                    Ms::where('registrationNumber', $regNo)
+                            ->update(['dept2_comments' => $reason]);
+                    break;
+                case $selected_or_not_json->dept3:
+                    Ms::where('registrationNumber', $regNo)
+                            ->update(['dept3_comments' => $reason]);
+                    break;
+            }
 
             return json_encode($regNo);
         }

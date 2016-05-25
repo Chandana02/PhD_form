@@ -265,7 +265,9 @@ span{
 .results_announced p{
 	font-size: 18px;
 }
-
+.buttons .col a{
+	font-size: 14px;
+}
 .admit .col p , .head{
 	padding: 10px;
 	font-size: 18px;
