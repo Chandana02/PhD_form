@@ -31,7 +31,7 @@
       <div class="col l4"> <a href="/admin/ms/CV" class="btn teal waves">Civil Engineering <font size="2">({!! $count['CV'] !!})</font></a> </div> 
       <div class="space-large"></div>
       <div class="col l4"> <a href="/admin/ms/CC" class="btn teal waves">CECASE <font size="2">({!! $count['CC'] !!})</font></a> </div>
-      <div class="col l4"> <a href="/admin/ms/EN" class="btn teal waves">Energy Engineering <font size="2">({!! $count['EN'] !!})</font></a> </div>
+      <div class="col l4"> <a href="/admin/ms/EN" class="btn teal waves">Energy & Environment <font size="2">({!! $count['EN'] !!})</font></a> </div>
       <div class="col l4"> <a href="/admin/ms/EC" class="btn teal waves">E.C.E <font size="2">({!! $count['EC'] !!})</font></a> </div>
       <div class="space-large"></div>
       <div class="col l4"> <a href="/admin/ms/EE" class="btn teal waves">E.E.E <font size="2">({!! $count['EE'] !!})</font></a> </div>  
