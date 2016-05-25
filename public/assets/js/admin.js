@@ -32,7 +32,7 @@ $(document).ready(function(){
  	$('.verify').click(function(e){
  		var applNo = $(this).attr('data-reg');
  		var categ = $(this).attr('categ');
- 		var reason = prompt("Please enter your name", "Harry Potter");
+ 		var reason = prompt("Please enter the reason:", "");
 
 		if (reason != null) 
 		{
