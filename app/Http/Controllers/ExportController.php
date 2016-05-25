@@ -87,6 +87,76 @@ class ExportController extends Controller
 		})->export('xlsx');
     }
 
+    public function deptPhdSelCandidatesExport($dept)
+    {
+        $phdCandidatesPersonal = Phd::where('selected_depts', 'LIKE', '%'.$dept.'%')
+                                        ->orderBy('created_at', 'desc')
+                                        ->get();
+        if(sizeof($phdCandidatesPersonal) == 0)
+        {
+            return redirect()->back();
+        }
+        $phdCandidates = array();
+        for($i = 0; $i < sizeof($phdCandidatesPersonal); $i++)
+        {
+            $personArray = $phdCandidatesPersonal[$i]->toArray();
+            $ugArray = PhdUg::where('applNo', $personArray['applNo'])->orderBy('created_at', 'desc')->get()[0]->toArray();
+            foreach ($ugArray as $key => $value) {
+                $ugArray['ug'.$key] = $value;
+                unset($ugArray[$key]);
+            }
+            $pgArray = PhdPg::where('applNo', $personArray['applNo'])->orderBy('created_at', 'desc')->get()[0]->toArray();
+            foreach ($pgArray as $key => $value) {
+                $pgArray['pg'.$key] = $value;
+                unset($pgArray[$key]);
+            }
+            $proArray = PhdPro::where('applNo', $personArray['applNo'])->orderBy('created_at', 'desc')->get()[0]->toArray();
+            $otherArray = PhdOther::where('applNo', $personArray['applNo'])->orderBy('created_at', 'desc')->get()[0]->toArray();
+            $phdCandidates[$i] = array_merge($personArray, $ugArray);
+            $phdCandidates[$i] = array_merge($phdCandidates[$i], $pgArray);
+            $phdCandidates[$i] = array_merge($phdCandidates[$i], $proArray);
+            $phdCandidates[$i] = array_merge($phdCandidates[$i], $otherArray);
+        }
+        Excel::create($dept.'_phd_selected'.$phdCandidates[0]['created_at'], function($excel) use($phdCandidates) {
+            $excel->sheet('Sheet 1', function($sheet) use($phdCandidates) {
+                $sheet->fromArray($phdCandidates);
+            });
+        })->export('xlsx');
+    }
+
+    public function deptMsSelCandidatesExport($dept)
+    {
+        $msCandidatesPersonal = Ms::where('selected_depts', 'LIKE', '%'.$dept.'%')
+                                        ->orderBy('created_at', 'desc')
+                                        ->get();
+        if(sizeof($msCandidatesPersonal) == 0)
+        {
+            return redirect()->back();
+        }
+        $msCandidates = array();
+        for($i = 0; $i < sizeof($msCandidatesPersonal); $i++)
+        {
+            $personArray = $msCandidatesPersonal[$i]->toArray();
+            $ugArray = MsUg::where('applNo', $personArray['applNo'])->orderBy('created_at', 'desc')->get()[0]->toArray();
+            foreach ($ugArray as $key => $value) {
+                $ugArray['ug'.$key] = $value;
+                unset($ugArray[$key]);
+            }
+            $pgArray = MsScores::where('applNo', $personArray['applNo'])->orderBy('created_at', 'desc')->get()[0]->toArray();
+            $proArray = MsPro::where('applNo', $personArray['applNo'])->orderBy('created_at', 'desc')->get()[0]->toArray();
+            $otherArray = MsOther::where('applNo', $personArray['applNo'])->orderBy('created_at', 'desc')->get()[0]->toArray();
+            $msCandidates[$i] = array_merge($personArray, $ugArray);
+            $msCandidates[$i] = array_merge($msCandidates[$i], $pgArray);
+            $msCandidates[$i] = array_merge($msCandidates[$i], $proArray);
+            $msCandidates[$i] = array_merge($msCandidates[$i], $otherArray);
+        }
+        Excel::create($dept.'_ms_selected'.$msCandidates[0]['created_at'], function($excel) use($msCandidates) {
+            $excel->sheet('Sheet 2', function($sheet) use($msCandidates) {
+                $sheet->fromArray($msCandidates);
+            });
+        })->export('xlsx');
+    }
+
     public function deptPhdCandidatesExport($dept)
     {
         $phdCandidatesPersonal = Phd::where('dept1', $dept)

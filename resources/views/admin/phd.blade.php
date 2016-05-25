@@ -31,13 +31,13 @@
       
       <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
       <ul class="hide-on-med-and-down">
-        <li><a href="../home">Home</a></li>
-        <li><a href="../ms">M.S. Applicants</a></li>
+        <li><a href="/admin/home">Home</a></li>
+        <li><a href="/admin/ms">M.S. Applicants</a></li>
         <li><a href="/logout">Logout</a></li>
       </ul>
       <ul class="side-nav" id="mobile-demo">
-       <li><a href="../home">Home</a></li>
-        <li><a href="../ms">M.S. Applicants</a></li>
+       <li><a href="/admin/home">Home</a></li>
+        <li><a href="/admin/ms">M.S. Applicants</a></li>
         <li><a href="/logout">Logout</a></li>
       </ul>
     </div>
@@ -47,8 +47,10 @@
 
     
 
-      <form class="searchbox">
-          <input id="search" dept="{!! $data['session'] !!}" phdorms="PHD" type="search" placeholder="Search.." name="search" class="searchbox-input" required>
+      <form action="/admin/search" method="get" class="searchbox">
+          <input type="hidden" name="phdorms" id="phdorms" value="phd">
+          <input id="hidden_token" name="_token" value="{{ csrf_token() }}">
+          <input id="search" dept="{!! $data['session'] !!}" phdorms="phd" type="search" placeholder="Search.." name="search" class="searchbox-input" required>
       </form>
       
   </div>
@@ -59,9 +61,13 @@
   
 </div>
 <div class="hide space-large  " hidden="true"></div>
-    <h5 class="center heading" data-reg="{!! $data['dept'] !!}">{!! $data['dept'] !!}</h5>
-    
-  <div class="space-large"></div>
+    <h5 class="center heading" data-reg="{!! $data['dept'] !!}">{!! $data['dept'] !!}</h5><br>
+    @if($data['session_all'] == 'all')
+    <div class="col l6 center">
+    <a href="#" class="exportselphd waves-effect waves-light btn" data-reg="{!! $data['session'] !!}">Export Selected Candidates</a>
+    </div>
+    @endif
+  <div class="space-small"></div>
   <div class="container main">
 
     <div class="candidates row">
@@ -72,7 +78,7 @@
         @elseif($data['candidates'][$i]->deleted)
         <div class="card center border-del">
         @else
-        <div class="card center">
+        <div class="card center no-border">
         @endif
           <div class="card-content">
             <span class="card-title activator grey-text text-darken-4">{!! $data['candidates'][$i]->name !!}</span>
@@ -97,6 +103,22 @@
                 <a href="{{ URL::asset('uploads/PHD/'.$data['candidates'][$i]->dashed_reg_number.'/form2.pdf') }}" target="_blank" class="btn waves-effect waves-green btn">Form 2</a>
                 </div>
                 <div class="space-medium"></div>
+                @endif
+                @if($data['session_all'] != 'all')
+                <a href="#!" data-reg={!! $data['candidates'][$i]->registrationNumber!!} categ='PHD' class="verify btn modal-action modal-close waves-effect waves-green btn">
+                <?php
+                  if (strpos($data['candidates'][$i]->selected_depts, $data['session']) !== false) {
+                 ?>
+                Deselect
+                <?php
+                  }
+                  else {
+                ?>
+                Select
+                <?php
+                  }
+                ?>
+                </a>
                 @endif
         @if($data['session_all'] == 'all')
         <!-- <div class="space-small"></div>
