@@ -52,6 +52,8 @@
     <div class="row">
 
      <marquee> <p class="imp" style="color:black"><b><img src="http://schoolreportcards.in/SRC-New/images/newgood.gif"> For any notices & updates we request you to keep visiting this site. </b></p></marquee>
+       <marquee> <p class="imp" style="color:black"><b><img src="http://schoolreportcards.in/SRC-New/images/newgood.gif"> Applicants who want to modify/edit their application form, kindly wait for the notice on this. Keep visiting the site. </b></p></marquee>
+
       <div class="space-medium"></div>
       <div class="content">
         <h5 class="center"><b><u>INSTRUCTIONS</u></b></h5>
@@ -74,6 +76,7 @@
           <li><span style="color:black">3. Application number(mentioned in SB collect) and Registration number(mentioned in application/e-mail) are same.</span></li>
           <li><span style="color:black">4. Selection of one department is compulsory and more than one department is optional.</span></li>
           <li><span style="color:black">5. <img src="http://schoolreportcards.in/SRC-New/images/newgood.gif">"Invalid name error": Contact your local SBI branch or wait till the payment error is rectified. We though recommend you to use standard Name writing convention.</span> </li>
+          <li><span style="color:black">6. <img src="http://schoolreportcards.in/SRC-New/images/newgood.gif">Application resetting will be enabled for the needy candidates soon. Kindly wait for update on this.</span> </li>
           
         </ul>
       </div>
