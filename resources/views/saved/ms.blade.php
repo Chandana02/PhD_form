@@ -903,7 +903,7 @@ function escape_new_line($s) {
         	}
         	if(t == 'EN')
         	{
-        		return 'Department of Energy Engineering';
+        		return 'Energy and Environment';
         	}
         	if(t == 'EE')
         	{
@@ -927,7 +927,7 @@ function escape_new_line($s) {
         	}
         	if(t == 'MME')
         	{
-        		return 'Metalurgy and Material Sciences';
+        		return 'Metalurgical and Materials Engineering';
         	}
         	if(t == 'PH')
         	{

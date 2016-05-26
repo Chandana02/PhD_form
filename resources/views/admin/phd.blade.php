@@ -272,7 +272,7 @@
           }
           if(t == 'EN')
           {
-              return 'Department of Energy Engineering';
+              return 'Energy and Environment';
           }
           if(t == 'EE')
           {
@@ -292,21 +292,24 @@
           }
           if(t == 'MME')
           {
-              return 'Metalurgy and Material Sciences';
+              return 'Metalurgical and Materials Engineering';
           }
           if(t == 'MA')
           {
               return 'Mathematics';
           }
-          if(t == 'HM'){
-          return 'Humanities & Social Science';
-        }
-        if(t == 'IC'){
-          return 'Instrumentation & Control';
-        }
-        if(t == 'PH'){
-          return 'Physics';
-        }
+          if(t == 'HM')
+          {
+              return 'Humanities and Social Sciences';
+          }
+          if(t == 'IC')
+          {
+              return 'Instrumentation and Control Engineering';
+          }
+          if(t == 'PH')
+          {
+              return 'Physics';
+          }
         }
   });
   </script>

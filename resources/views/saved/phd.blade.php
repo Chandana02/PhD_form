@@ -984,7 +984,7 @@ function escape_new_line($s) {
 	        	}
 	        	if(t == 'EN')
 	        	{
-	        		return 'Department of Energy Engineering';
+	        		return 'Energy and Environment';
 	        	}
 	        	if(t == 'EE')
 	        	{
@@ -1004,7 +1004,7 @@ function escape_new_line($s) {
 	        	}
 	        	if(t == 'MME')
 	        	{
-	        		return 'Metalurgy and Material Sciences';
+	        		return 'Metalurgical and Materials Engineering';
 	        	}
 	        	if(t == 'MA')
 	        	{
@@ -1014,13 +1014,16 @@ function escape_new_line($s) {
 	        	{
 	        		return 'Management Studies';
 	        	}		
-	        	if(t == 'HM'){
-	        		return 'Humanities & Social Science';
+	        	if(t == 'HM')
+	        	{
+	        		return 'Humanities and Social Sciences';
 	        	}
-	        	if(t == 'IC'){
-	        		return 'Instrumentation & Control';
+	        	if(t == 'IC')
+	        	{
+	        		return 'Instrumentation and Control Engineering';
 	        	}
-	        	if(t == 'PH'){
+	        	if(t == 'PH')
+	        	{
 	        		return 'Physics';
 	        	}
 

@@ -444,7 +444,7 @@ class MsController extends Controller
         }
         if($t == 'EN')
         {
-            return 'Department of Energy Engineering';
+            return 'Energy and Environment';
         }
         if($t == 'EE')
         {
@@ -464,7 +464,7 @@ class MsController extends Controller
         }
         if($t == 'MME')
         {
-            return 'Metalurgy and Material Sciences';
+            return 'Metalurgical and Materials Engineering';
         }
         if($t == 'MA')
         {
@@ -480,7 +480,7 @@ class MsController extends Controller
         }
         if($t == 'HM')
         {
-            return 'Humanities & Social Science';
+            return 'Humanities and Social Sciences';
         }
     }
 }
