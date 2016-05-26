@@ -165,9 +165,9 @@
            </div>
            <div class="center">
       <ul class="pagination">
-    <li class="disabled"><a href={!! $data["candidates"]->previousPageUrl()!!}><i class="material-icons">chevron_left</i></a></li>
-    <li class="active teal" ><a href="#!">{!! $data["candidates"]->currentPage() !!}</a></li>
-    <li class="waves-effect"><a href={!! $data["candidates"]->nextPageUrl()!!}><i class="material-icons">chevron_right</i></a></li>
+    <li><a href={!! $data["candidates"]->appends(Request::except('page'))->previousPageUrl()!!}><i class="material-icons">chevron_left</i></a></li>
+    <li class="active teal" ><a href="#!">{!! $data["candidates"]->appends(Request::except('page'))->currentPage() !!}</a></li>
+    <li class="waves-effect"><a href={!! $data["candidates"]->appends(Request::except('page'))->nextPageUrl()!!}><i class="material-icons">chevron_right</i></a></li>
   </ul>
   </div>
 
