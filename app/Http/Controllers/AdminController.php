@@ -329,7 +329,7 @@ class AdminController extends Controller
                         ->orWhere('dept3', $dept)
                         ->orWhere('registrationNumber', 'LIKE', '%'.$search_val.'%')
                         ->orWhere('name', 'LIKE', '%'.$search_val.'%')
-                        ->paginate(500);
+                        ->paginate(6);
 
         $candidates_id = $candidates->lists('applNo');
             $ugDetails = PhdUg::whereIn('applNo', $candidates_id)->get();
