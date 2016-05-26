@@ -58,7 +58,7 @@
       <div class="content">
         <h5 class="center"><b><u>INSTRUCTIONS</u></b></h5>
         <ul class="pad">
-          <li>1) Please read carefully the application <a href="http://www.nitt.edu/home/MS%20and%20Ph_D%20advt%20July%202016%20(1).pdf">brochure</a> before applying.</li>
+          <li>1) Please read carefully the application <a href="http://www.nitt.edu/home/MS%20and%20Ph_D%20advt%20July%202016%20(1)-revised-26th-may-2016.pdf">brochure</a> before applying.</li>
           <li>2) Reach out to help desk numbers provided in the <a href="contact">Contact</a> in case of a query.</li>
           <li>3) Help desk is live on Admission desk on all working days (10:30 AM -4:30 PM) at NIT Trichy. </li>
         </ul>
