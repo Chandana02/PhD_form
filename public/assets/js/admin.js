@@ -29,11 +29,15 @@ $(document).ready(function(){
 		ajaxCall(applNo, 'accept')
  	});
 
- 	$('.verify').click(function(e){
+ 	$('#verify').click(function(e){
+ 		var desel = ($(this).html().indexOf("Deselect") > -1);
  		var applNo = $(this).attr('data-reg');
  		var categ = $(this).attr('categ');
- 		var reason = prompt("Please enter the reason:", "");
-
+ 		if(desel == true)
+ 		{
+ 			var reason = prompt("Please enter the reason:", "");
+ 		}
+ 		var reason = "";
 		if (reason != null) 
 		{
 			$.ajaxSetup(
