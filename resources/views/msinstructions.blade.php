@@ -13,7 +13,7 @@
                 <ol>
                     <li>Use Google Chrome for better experience.</li>
                     <li>This site is also compatible to your Android Phone Browser.</li>
-                    <li>Please read the <a href="#">information brouchure </a>before filling the aplication.</li>
+                    <li>Please read the <a href="http://www.nitt.edu/home/MS%20and%20Ph_D%20advt%20July%202016%20(1)-revised-26th-may-2016.pdf">information brouchure </a>before filling the aplication.</li>
                     <li>The entire registration process is of 3 stages. 
                         <ul>
                             <li>Stage 1: Personal details</li>
