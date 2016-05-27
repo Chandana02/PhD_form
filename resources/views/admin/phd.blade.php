@@ -121,8 +121,6 @@
                 </a>
                 @endif
         @if($data['session_all'] == 'all')
-        <input type="checkbox" id="paid_{!! $i !!}" data-reg={!! $data['candidates'][$i]->registrationNumber!!} class="paid" name="paid_{!! $i !!}" {!! $data["candidates"][$i]->paid ? 'checked' : '' !!} />
-        <label for="paid_{!! $i !!}">Paid</label>
         <!-- <div class="space-small"></div>
         <div class="col l12 center buttons">
         <div class="col l6">

@@ -3,33 +3,6 @@ $(document).ready(function(){
 		if(e.keyCode == 13)
 			return $("form").submit();
 	});
-	$('.paid').change(function() {
-		var applNo = $(this).attr('data-reg');
-        $.ajaxSetup(
-	    {
-	        headers:
-	        {
-	            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-	        }
-	    });
- 		var data = {};
- 		data.regNo = applNo;
- 		data.paid = true;
- 		console.log(data.paid);
-		$.ajax(
-	    {
-	        type: "POST",
-	        url: '/paidornot',
-	        data: data,
-	        dataType: "json",
-	        success: function(data){
-
-	        },
-	        error: function(jqXHR,testStatus,errorThrown){
-	        	console.log(errorThrown);
-	        }
-		});     
-    });
 	$('.exportphd').click(function(){
 		var dept = $(this).attr('data-reg');
 		window.location = '/exportphd/' + dept;

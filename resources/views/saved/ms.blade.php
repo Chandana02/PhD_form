@@ -561,12 +561,10 @@ function escape_new_line($s) {
 					<div class="file-path-wrapper">
 						<input class="file-path validate" type="text">
 					</div>
-				</div>	
+				</div>
 				<div class="space-medium"></div>			      	
-				{!! captcha_image_html('ExampleCaptcha') !!}
-				<input type="text" id="CaptchaCode" name="CaptchaCode" required>
-				<div class="space-medium"></div>		      	
 			</div>
+			<div class="space-medium"></div>
 		</div>
 
 		<p>(*) indicates that it's a required field.</p> 

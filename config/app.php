@@ -147,8 +147,8 @@ return [
 
         Collective\Html\HtmlServiceProvider::class,
         Barryvdh\Snappy\ServiceProvider::class,
+        Anhskohbo\NoCaptcha\NoCaptchaServiceProvider::class,
         Maatwebsite\Excel\ExcelServiceProvider::class,
-        LaravelCaptcha\Providers\LaravelCaptchaServiceProvider::class,
 
     ],
 

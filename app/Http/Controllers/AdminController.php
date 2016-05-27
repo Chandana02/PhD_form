@@ -233,27 +233,6 @@ class AdminController extends Controller
         return view('admin.'.$phdormsc)->with('data', $data);
     }
 
-    public function paidornot(Request $request)
-    {
-        $regNo = $request->input('regNo');
-        $category = explode('/', $regNo)[0];
-
-        if($category == 'PHD')
-        {
-            Phd::where('registrationNumber', $regNo)
-                    ->update(['paidornot' => $request->input('paid')]);
-
-            return json_encode($regNo);
-        }
-        else
-        {
-            Ms::where('registrationNumber', $regNo)
-                    ->update(['paidornot' => $request->input('paid')]);
-
-            return json_encode($regNo);
-        }
-    }
-
     public function verify(Request $request)
     {
         $regNo = $request->input('regNo');
