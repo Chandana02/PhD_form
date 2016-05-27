@@ -3,6 +3,7 @@
 @section('title', 'Ph.D Registration Form')
 
 @section('headerIncludes')
+<link href="{{ captcha_layout_stylesheet_url() }}" type="text/css" rel="stylesheet">
 <script src="{{URL::asset('assets/js/common.js')}}"></script>
 <script src="{{URL::asset('assets/js/preview.js')}}"></script>
 @endsection
@@ -570,24 +571,27 @@ function escape_new_line($s) {
 					<img src="" id="signImg" />
 					@endif
 
-				<p>Upload Signature</p>
-				<div class="file-field input-field">
-					<div class="btn teal darken-1 btn waves-effect waves-light">
-						<span class="light">File</span>
-						<input type="file" id="signImg" name="sign" onchange="signURL(this);"/>
+					<p>Upload Signature</p>
+					<div class="file-field input-field">
+						<div class="btn teal darken-1 btn waves-effect waves-light">
+							<span class="light">File</span>
+							<input type="file" id="signImg" name="sign" onchange="signURL(this);"/>
+						</div>
+						<div class="file-path-wrapper">
+							<input class="file-path validate" type="text">
+						</div>
 					</div>
-					<div class="file-path-wrapper">
-						<input class="file-path validate" type="text">
-					</div>
+					<div class="space-medium"></div>			      	
+					{!! captcha_image_html('ExampleCaptcha') !!}
+	  				<input type="text"id="CaptchaCode" name="CaptchaCode" required>
+					<div class="space-medium"></div>			      	
 				</div>
-				<div class="space-medium"></div>			      	
-			</div>
 
 
-			<div class="col l12 s12">
-				<p><b>Note:</b> The part time external Ph.D. applicant should attach the duly filled in Form-1 & Form-2, and Part-Time on campus applicant should attach the duly filled in Form-3. Otherwise, the application will be summarily rejected.</p>
+				<div class="col l12 s12">
+					<p><b>Note:</b> The part time external Ph.D. applicant should attach the duly filled in Form-1 & Form-2, and Part-Time on campus applicant should attach the duly filled in Form-3. Otherwise, the application will be summarily rejected.</p>
+				</div>
 			</div>
-		</div>
 
 		<div class="upload_container " >
 

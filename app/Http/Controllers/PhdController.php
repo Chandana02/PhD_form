@@ -56,7 +56,8 @@ class PhdController extends Controller
             'pg_class' => 'required|in:Honours,Distinction,First,Second',
             'pg_name_of_inst' => 'required',
             'pg_name_of_uni' => 'required',
-            'pg_yop' => 'required'
+            'pg_yop' => 'required',
+            'CaptchaCode'=> 'valid_captcha'
             // 'g-recaptcha-response' => 'required|captcha'              
     	);
 

@@ -40,6 +40,7 @@ Route::group(['middleware' => 'adminauth'], function () {
     Route::post('delete', 'AdminController@deleted' );
     Route::post('accept', 'AdminController@accepted');
     Route::post('verify', 'AdminController@verify');
+    Route::post('paidornot', 'AdminController@paidornot');
     Route::post('dmgctrl', 'DamageController@dmgctrl');
     Route::get('logout', 'AdminController@logout');   
     Route::get('exportphd', 'ExportController@allPhdCandidatesExport');
