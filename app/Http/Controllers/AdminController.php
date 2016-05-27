@@ -238,17 +238,21 @@ class AdminController extends Controller
         $regNo = $request->input('regNo');
         $category = explode('/', $regNo)[0];
 
+        $hasPaid = false;
+        if($request->input("paid") == "true")
+            $hasPaid = true;
+
         if($category == 'PHD')
         {
             Phd::where('registrationNumber', $regNo)
-                    ->update(['paidornot' => $request->input('paid')]);
+                    ->update(['paidornot' => $hasPaid]);
 
             return json_encode($regNo);
         }
         else
         {
             Ms::where('registrationNumber', $regNo)
-                    ->update(['paidornot' => $request->input('paid')]);
+                    ->update(['paidornot' => $hasPaid]);
 
             return json_encode($regNo);
         }

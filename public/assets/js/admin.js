@@ -14,7 +14,7 @@ $(document).ready(function(){
 	    });
  		var data = {};
  		data.regNo = applNo;
- 		data.paid = true;
+ 		data.paid = $(this).prop('checked');
  		console.log(data.paid);
 		$.ajax(
 	    {
