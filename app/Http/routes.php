@@ -1,5 +1,4 @@
 <?php
-
 /*
 |--------------------------------------------------------------------------
 | Application Routes
@@ -10,6 +9,31 @@
 | and give it the controller to call when that URI is requested.
 |
 */
+
+// Workaround for Laravel Captcha's bug.
+// https://gist.github.com/mix5003/e77324a90697141fba2e
+class DummySession implements ArrayAccess{
+    
+    public function offsetExists($offset)
+    {
+        return \Session::get($offset);
+    }
+    public function offsetGet($offset)
+    {
+        return \Session::get($offset);
+    }
+    public function offsetSet($offset, $value)
+    {
+        \Session::set($offset,$value);
+    }
+    public function offsetUnset($offset)
+    {
+        \Session::remove($offset);
+    }
+}
+$_SESSION = new DummySession;
+// workaround over
+
 Route::get('/', function() {
     // return view('landing');
     return redirect('home');
