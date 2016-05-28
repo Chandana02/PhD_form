@@ -52,13 +52,13 @@
     <div class="row">
 
      <marquee> <p class="imp" style="color:black"><b><img src="http://schoolreportcards.in/SRC-New/images/newgood.gif"> For any notices & updates we request you to keep visiting this site. </b></p></marquee>
-       <marquee> <p class="imp" style="color:black"><b><img src="http://schoolreportcards.in/SRC-New/images/newgood.gif"> Applicants who want to modify/edit their application form, kindly wait for the notice on this. Keep visiting the site. </b></p></marquee>
+<!--       <marquee> <p class="imp" style="color:black"><b><img src="http://schoolreportcards.in/SRC-New/images/newgood.gif"> Applicants who want to modify/edit their application form, kindly wait for the notice on this. Keep visiting the site. </b></p></marquee>-->
 
       <div class="space-medium"></div>
       <div class="content">
         <h5 class="center"><b><u>INSTRUCTIONS</u></b></h5>
         <ul class="pad">
-          <li>1) Please read carefully the application <a href="http://www.nitt.edu/home/MS%20and%20Ph_D%20advt%20July%202016%20(1)-revised-26th-may-2016.pdf">brochure</a> before applying.</li>
+          <li>1) Please read carefully the application <a href="http://www.nitt.edu/home/MS%20and%20Ph_D%20advt%20July%202016%20(1)%20(1).pdf">brochure</a> before applying.</li>
           <li>2) Reach out to help desk numbers provided in the <a href="contact">Contact</a> in case of a query.</li>
           <li>3) Help desk is live on Admission desk on all working days (10:30 AM -4:30 PM) at NIT Trichy. </li>
         </ul>
@@ -75,7 +75,7 @@
           <li><span style="color:black">2. No hardcopies are required to be sent to the institute.</span></li>
           <li><span style="color:black">3. Application number(mentioned in SB collect) and Registration number(mentioned in application/e-mail) are same.</span></li>
           <li><span style="color:black">4. Selection of one department is compulsory and more than one department is optional.</span></li>
-          <li><span style="color:black">5. <img src="http://schoolreportcards.in/SRC-New/images/newgood.gif">"Invalid name error": Contact your local SBI branch or wait till the payment error is rectified. We though recommend you to use standard Name writing convention.</span> </li>
+         <!-- <li><span style="color:black">5. <img src="http://schoolreportcards.in/SRC-New/images/newgood.gif">"Invalid name error": Contact your local SBI branch or wait till the payment error is rectified. We though recommend you to use standard Name writing convention.</span> </li> -->
           <li><span style="color:black">6. <img src="http://schoolreportcards.in/SRC-New/images/newgood.gif">Application resetting will be enabled for the needy candidates soon. Kindly wait for update on this.</span> </li>
           
         </ul>
