@@ -49,7 +49,7 @@
 
       <form action="/admin/search" method="get" class="searchbox">
           <input type="hidden" name="phdorms" id="phdorms" value="phd">
-          <input id="hidden_token" name="_token" value="{{ csrf_token() }}">
+          <input type="hidden" id="hidden_token" name="_token" value="{{ csrf_token() }}">
           <input id="search" dept="{!! $data['session'] !!}" phdorms="phd" type="search" placeholder="Search.." name="search" class="searchbox-input" required>
       </form>
       

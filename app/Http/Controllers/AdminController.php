@@ -339,6 +339,7 @@ class AdminController extends Controller
         $search_val = $request->input('search');        
         $phdorms = $request->input('phdorms');
         $dept = Session::get('dept');
+        $ajax = $request->input('ajax');
 
         if($phdorms == 'ms') {
             $table = DB::table('ms');
@@ -376,7 +377,10 @@ class AdminController extends Controller
             $data['candidates'][$i]->dashed_reg_number = str_replace('/', '-', $data['candidates'][$i]->registrationNumber);
         }
 
-        return view('admin.'.$phdorms)->with('data', $data);
+        if(!$ajax)
+            return view('admin.'.$phdorms)->with('data', $data);
+        else
+            return view('admin.search_partial_'.$phdorms)->with('data', $data);
     }
 
     public function finalView($phdormsc, $rules1, $rules2, $rules3)

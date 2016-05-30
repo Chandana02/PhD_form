@@ -55,7 +55,7 @@
 
       <form action="/admin/search" method="get" class="searchbox">
       	  <input type="hidden" name="phdorms" id="phdorms" value="ms">
-      	  <input id="hidden_token" name="_token" value="{{ csrf_token() }}">
+      	  <input type="hidden" id="hidden_token" name="_token" value="{{ csrf_token() }}">
           <input id="search" type="search" phdorms="ms" placeholder="Search.." name="search" class="searchbox-input" required>
       </form>
       
@@ -163,9 +163,6 @@
       @endfor
     </div>
 
- </div>
- </div>
-
 
   <div class="row">
     <div class="center">
@@ -182,7 +179,7 @@
    <a href="#" class="exportms waves-effect waves-light btn" data-reg="{!! $data['session'] !!}">Export All Candidates</a>
   </div>
 
-
+</div>
 
 
 <div class="space-large"></div>
