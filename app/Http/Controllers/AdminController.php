@@ -218,6 +218,7 @@ class AdminController extends Controller
 
     public function adminall($phdormsc, $dept)
     {
+        Session::put('dept_folder', $dept);
         $rules1 = ['dept1' => $dept];
         $rules2 = ['dept2' => $dept];
         $rules3 = ['dept3' => $dept];
@@ -338,7 +339,7 @@ class AdminController extends Controller
     {
         $search_val = $request->input('search');        
         $phdorms = $request->input('phdorms');
-        $dept = Session::get('dept');
+        $dept = Session::get('dept_folder');
         $ajax = $request->input('ajax');
 
         if($phdorms == 'ms') {
@@ -350,12 +351,25 @@ class AdminController extends Controller
         else {
             return json_encode($phdorms);
         }
-        $candidates = $table->where('dept1', $dept)
-                        ->orWhere('dept2', $dept)
-                        ->orWhere('dept3', $dept)
-                        ->orWhere('registrationNumber', 'LIKE', '%'.$search_val.'%')
-                        ->orWhere('name', 'LIKE', '%'.$search_val.'%')
-                        ->paginate(6);
+        $candidates = $table->where(function ($query) use ($search_val, $dept) {
+            $query->where('dept1', $dept)
+                    ->where('registrationNumber', 'LIKE', '%'.$search_val.'%');
+        })->orWhere(function ($query) use ($search_val, $dept) {
+            $query->where('dept2', $dept)
+                    ->where('registrationNumber', 'LIKE', '%'.$search_val.'%');
+        })->orWhere(function ($query) use ($search_val, $dept) {
+            $query->where('dept3', $dept)
+                    ->where('registrationNumber', 'LIKE', '%'.$search_val.'%');
+        })->orWhere(function ($query) use ($search_val, $dept) {
+            $query->where('dept1', $dept)
+                    ->where('name', 'LIKE', '%'.$search_val.'%');
+        })->orWhere(function ($query) use ($search_val, $dept) {
+            $query->where('dept2', $dept)
+                    ->where('name', 'LIKE', '%'.$search_val.'%');
+        })->orWhere(function ($query) use ($search_val, $dept) {
+            $query->where('dept3', $dept)
+                    ->where('name', 'LIKE', '%'.$search_val.'%');
+        })->paginate(6);
 
         $candidates_id = $candidates->lists('applNo');
             $ugDetails = PhdUg::whereIn('applNo', $candidates_id)->get();
