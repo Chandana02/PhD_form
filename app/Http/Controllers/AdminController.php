@@ -129,12 +129,10 @@ class AdminController extends Controller
 
     public function upload(Request $request)
     {
-        $signature = $request->input('sign');
-        // dd($request->input('sign'));
+        $signature = $request->file('sign');
         if($signature)
         {
             $signExt = $signature->getClientOriginalExtension();
-            dd($signExt);
             if($signExt == 'jpg' || $signExt == 'png' || $signExt == 'jpeg')
             {
                 list($width, $height) = getimagesize($signature);
