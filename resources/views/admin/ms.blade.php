@@ -109,7 +109,7 @@
                 @endif
                <div class="center">
                 @if($data['session_all'] != 'all')
-                <a href="#!" data-reg={!! $data['candidates'][$i]->registrationNumber!!} categ='PHD' id="verify" class="btn modal-action modal-close waves-effect waves-green btn">
+                <a href="#!" data-reg={!! $data['candidates'][$i]->registrationNumber!!} categ='MS' class="verify btn modal-action modal-close waves-effect waves-green btn">
                 <?php
                   if (strpos($data['candidates'][$i]->selected_depts, $data['session']) !== false) {
                  ?>
@@ -150,6 +150,13 @@
         </div>
           <div class="space-small"></div>
           <p>Created at:{!! $data['candidates'][$i]->created_at !!}</p>
+          <?php
+            if (strpos($data['candidates'][$i]->selected_depts, $data['session']) !== false) {
+           ?>
+          <p style="color:teal;">selected</p>
+          <?php
+            }
+          ?>
           </div>
           </div>
         </div>
