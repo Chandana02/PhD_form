@@ -303,7 +303,7 @@
           }
           if(t == 'MME')
           {
-              return 'Metalurgical and Materials Engineering';
+              return 'Metallurgical and Materials Engineering';
           }
           if(t == 'MA')
           {

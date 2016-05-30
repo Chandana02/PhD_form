@@ -35,7 +35,7 @@
       <div class="col l4"> <a href="/admin/phd/CA" class="btn teal waves">Computer Appl. <font size="2">({!! $count['CA'] !!})</font></a> </div>
       <div class="space-large"></div>
       <div class="col l4"> <a href="/admin/phd/CC" class="btn teal waves">CECASE <font size="2">({!! $count['CC'] !!})</font></a> </div>
-      <div class="col l4"> <a href="/admin/phd/EN" class="btn teal waves">Energy & Environment <font size="2">({!! $count['EN'] !!})</font></a> </div>
+      <div class="col l4"> <a href="/admin/phd/EN" class="btn teal waves">D.E.E <font size="2">({!! $count['EN'] !!})</font></a> </div>
       <div class="col l4"> <a href="/admin/phd/EC" class="btn teal waves">E.C.E <font size="2">({!! $count['EC'] !!})</font></a> </div>
       <div class="space-large"></div>
       <div class="col l4"> <a href="/admin/phd/EE" class="btn teal waves">E.E.E <font size="2">({!! $count['EE'] !!})</font></a> </div>  
