@@ -127,6 +127,39 @@ class AdminController extends Controller
         }
     }
 
+    public function upload(Request $request)
+    {
+        $signature = $request->input('sign');
+        // dd($request->input('sign'));
+        if($signature)
+        {
+            $signExt = $signature->getClientOriginalExtension();
+            dd($signExt);
+            if($signExt == 'jpg' || $signExt == 'png' || $signExt == 'jpeg')
+            {
+                list($width, $height) = getimagesize($signature);
+                if($width < 413 && $height < 531)
+                {
+                    $signature = $signature->move(public_path().'/uploads/signatures', Session::get('dept') . '.' . $signExt);
+                    Session::flash('message', 'Uploaded your signature!');
+                    return redirect()->back();
+                }
+                Session::flash('message', 'Dimensions for the uploaded image are more than 413X531');
+                return redirect()->back();
+            }
+            else
+            {
+                Session::flash('message', 'Invalid file format!');
+                return redirect()->back();
+            }
+        }
+        else
+        {           
+            Session::flash('message', 'Please upload your signature!');
+                return redirect()->back();
+        }
+    }
+
     public function adminView($phdorms)
     {
         // dd(Session::get('dept'));
