@@ -41,6 +41,10 @@
       <div class="col center">
         <a class="waves-effect waves-light btn" href="upload">Upload Signature</a>
       </div>
+    @else
+      <div class="col center">
+        <a class="waves-effect waves-light btn" href="hodsignatures">HOD Signatures</a>
+      </div>
     @endif
   </div>
   <div class="space-medium"></div>

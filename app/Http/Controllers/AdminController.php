@@ -202,6 +202,59 @@ class AdminController extends Controller
         }
     }
 
+    public function signatures()
+    {
+        if(Session::get('dept') == 'all')
+        {
+            $types = array(
+                'CS' => self::ifExists('CS'),
+                'EC' => self::ifExists('EC'),
+                'EE' => self::ifExists('EE'),
+                'AR' => self::ifExists('AR'),
+                'ME' => self::ifExists('ME'),
+                'MME' => self::ifExists('MME'),
+                'PR' => self::ifExists('PR'),
+                'PH' => self::ifExists('PH'),
+                'CL' => self::ifExists('CL'),
+                'CY' => self::ifExists('CY'),
+                'HM' => self::ifExists('HM'),
+                'IC' => self::ifExists('IC'),
+                'MS' => self::ifExists('MS'),
+                'CC' => self::ifExists('CC'),
+                'CA' => self::ifExists('CA'),
+                'EN' => self::ifExists('EN'),
+                'CV' => self::ifExists('CV'), 
+                'MA' => self::ifExists('MA')           
+                );
+            return view('admin.all.signatures')->with($types);
+        }
+        else
+        {
+            return redirect()->back();
+        }
+    }
+
+    public function ifExists($dept)
+    {
+        $hod_sign_file = public_path().'/uploads/signatures/'.$dept.'.';
+        if(file_exists($hod_sign_file.'jpg'))
+        {
+            return 'jpg';
+        }
+        else if(file_exists($hod_sign_file.'jpeg'))
+        {
+            return 'jpeg';
+        }
+        else if(file_exists($hod_sign_file.'png'))
+        {
+            return 'png';
+        }
+        else
+        {
+            return null;
+        }
+    }
+
     public function upload(Request $request)
     {
         $signature = $request->file('sign');
