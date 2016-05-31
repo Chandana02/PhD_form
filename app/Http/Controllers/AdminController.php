@@ -136,13 +136,13 @@ class AdminController extends Controller
             if($signExt == 'jpg' || $signExt == 'png' || $signExt == 'jpeg')
             {
                 list($width, $height) = getimagesize($signature);
-                if($width < 413 && $height < 531)
+                if($width < 300 && $height < 200)
                 {
                     $signature = $signature->move(public_path().'/uploads/signatures', Session::get('dept') . '.' . $signExt);
                     Session::flash('message', 'Uploaded your signature!');
                     return redirect()->back();
                 }
-                Session::flash('message', 'Dimensions for the uploaded image are more than 413X531');
+                Session::flash('message', 'Dimensions for the uploaded image are more than 300X200');
                 return redirect()->back();
             }
             else
@@ -683,14 +683,34 @@ class AdminController extends Controller
                             ->where('registrationNumber', $reg_number_original)
                             ->first();
         }
+
+        $hod_sign_file = public_path().'/uploads/signatures/'.Session::get('dept_folder').'.';
+        $hod_sign_type = '';
+        if(file_exists($hod_sign_file.'jpg'))
+        {
+            $hod_sign_type = 'jpg';
+        }
+        else if(file_exists($hod_sign_file.'jpeg'))
+        {
+            $hod_sign_type = 'jpeg';
+        }
+        else if(file_exists($hod_sign_file.'png'))
+        {
+            $hod_sign_type = 'png';
+        }
+
         $data = array(
             'image' => $phdormsc.'/'.$reg_number.'/photo.' . $type,
+            'hod_sign' => Session::get('dept_folder').'.'.$hod_sign_type,
             'name' => $candidate->name,
             'dept' => $dept,
             'regNo' => $candidate->registrationNumber,
             'address'=> $candidate->addrforcomm,
         );
-        
+        if($hod_sign_type == '')
+        {
+            $data['hod_sign'] = null;
+        }
 
         return view('admin.admit')->with($data);
     }

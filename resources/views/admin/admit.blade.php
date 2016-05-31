@@ -11,7 +11,6 @@
 
   <script src="{{URL::asset('assets/js/jquery-2.1.1.min.js')}}"></script>
   <script src="{{URL::asset('assets/js/materialize.min.js')}}"></script>
-  <script src="{{URL::asset('assets/js/print.js')}}"></script>
 </head>
 <body>
 
@@ -53,6 +52,12 @@
         <p><b>Examination Date:</b>  </p>
         <p><b>Examination Time:</b>  </p>
         <div class="space-medium"></div>
+        @if($hod_sign != null)
+        <div>
+          <img src={{URL::asset('uploads/signatures/'.$hod_sign)}} width="230" height="100">
+        </div>
+        @endif
+        
         <span class="left"><b>HoD/Admission Co-ordinator</b></span>
         <span class="right"><b>Seal</b></span>
         <div class="space-large"></div>
@@ -64,56 +69,48 @@
         <div class="space-medium"></div>
         <hr><hr>
       <div class="row admit">
-        <!-- <div class="col l12">
+        <div class="col l12">
           <p><b>To</b></p>
-          <p>Mr/Mrs</p>
-          <p>Address: .............................................................................................................<br>..............................................................................................................................<br>..............................................................................................................................<br></p>
-          <p>PIN: .....................................................................................................................<br></p>
+          <p>Mr/Mrs {!! $name !!}</p>
+          <p>{!! $address !!}</p>
+          <hr>        
+          <hr>        
         </div>
-        <hr>
-        
-        <hr>
+        <div class="col l12">
+          <p><b>To</b></p>
+          <p>Mr/Mrs {!! $name !!}</p>
+          <p>{!! $address !!}</p>
+          <hr>        
+          <hr>        
+        </div>
+        <div class="col l12">
+          <p><b>To</b></p>
+          <p>Mr/Mrs {!! $name !!}</p>
+          <p>{!! $address !!}</p>
+          <hr>        
+          <hr>        
+        </div>
+        <div class="col l12">
+          <p><b>To</b></p>
+          <p>Mr/Mrs {!! $name !!}</p>
+          <p>{!! $address !!}</p>
+          <hr>        
+          <hr>        
+        </div>
 
-      </div> -->
-      <div class="col l12">
-        <p><b>To</b></p>
-        <p>Mr/Mrs {!! $name !!}</p>
-        <p>{!! $address !!}</p>
-        <hr>        
-        <hr>        
       </div>
-      <div class="col l12">
-        <p><b>To</b></p>
-        <p>Mr/Mrs {!! $name !!}</p>
-        <p>{!! $address !!}</p>
-        <hr>        
-        <hr>        
-      </div>
-      <div class="col l12">
-        <p><b>To</b></p>
-        <p>Mr/Mrs {!! $name !!}</p>
-        <p>{!! $address !!}</p>
-        <hr>        
-        <hr>        
-      </div>
-      <div class="col l12">
-        <p><b>To</b></p>
-        <p>Mr/Mrs {!! $name !!}</p>
-        <p>{!! $address !!}</p>
-        <hr>        
-        <hr>        
-      </div>
-
-  </div>
   <div class="space-large"></div>
-       <a href="#!" class="admit btn  waves-effect waves-green btn-flat" onclick="$(this).hide;window.print()">Admit</a>     
+       <a href="#!" class="admit-btn btn waves-effect waves-green btn-flat">Admit</a>     
 
   <script type="text/javascript">
-      $(document).ready(function(){
-        $(".button-collapse").sideNav();
-    // the "href" attribute of .modal-trigger must specify the modal ID that wants to be triggered
-    $('.modal-trigger').leanModal();
-  });
+    $(document).ready(function(){
+      $(".button-collapse").sideNav();
+
+      $('.admit-btn').click(function() {
+        $(this).hide();
+        window.print();
+      });
+    });
   </script>
 
 </body>
