@@ -52,7 +52,7 @@
         <p><b>Examination Date:</b>  </p>
         <p><b>Examination Time:</b>  </p>
         <div class="space-medium"></div>
-        @if($hod_sign != null)
+        @if($hod_sign != null && $selected)
         <div>
           <img src={{URL::asset('uploads/signatures/'.$hod_sign)}} width="230" height="100">
         </div>

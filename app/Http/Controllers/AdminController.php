@@ -673,13 +673,13 @@ class AdminController extends Controller
 
         if($phdormsc == 'PHD')
         {
-            $candidate = Phd::select('name', 'registrationNumber','addrforcomm')
+            $candidate = Phd::select('name', 'registrationNumber','addrforcomm', 'selected_depts')
                             ->where('registrationNumber', $reg_number_original)
                             ->first();
         }
         else
         {
-            $candidate = Ms::select('name', 'registrationNumber','addrforcomm')
+            $candidate = Ms::select('name', 'registrationNumber','addrforcomm', 'selected_depts')
                             ->where('registrationNumber', $reg_number_original)
                             ->first();
         }
@@ -707,6 +707,14 @@ class AdminController extends Controller
             'regNo' => $candidate->registrationNumber,
             'address'=> $candidate->addrforcomm,
         );
+        if (strpos($candidate->selected_depts, Session::get('dept_folder')) !== false) 
+        {
+            $data['selected'] = true;
+        }
+        else
+        {
+            $data['selected'] = false;
+        }
         if($hod_sign_type == '')
         {
             $data['hod_sign'] = null;
