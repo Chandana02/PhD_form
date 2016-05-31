@@ -63,7 +63,32 @@ class AdminController extends Controller
                     'PHD' => self::dept_count('phd', Session::get('dept')),
                     'MS' => self::dept_count('ms', Session::get('dept'))
                     );
-                return view('admin.home')->with('count', $count);
+                $hod_sign_type = '';
+                if(Session::get('dept') != 'all')
+                {
+                    $hod_sign_file = public_path().'/uploads/signatures/'.Session::get('dept').'.';
+                    if(file_exists($hod_sign_file.'jpg'))
+                    {
+                        $hod_sign_type = 'jpg';
+                    }
+                    else if(file_exists($hod_sign_file.'jpeg'))
+                    {
+                        $hod_sign_type = 'jpeg';
+                    }
+                    else if(file_exists($hod_sign_file.'png'))
+                    {
+                        $hod_sign_type = 'png';
+                    }
+                }
+                $data = array(
+                    'count' => $count,
+                    'hod_sign' => Session::get('dept').'.'.$hod_sign_type
+                    );
+                if($hod_sign_type == '')
+                {
+                    $data['hod_sign'] = null;
+                }
+                return view('admin.home')->with($data);
             }
             else
             {
@@ -79,7 +104,32 @@ class AdminController extends Controller
             'PHD' => self::dept_count('phd', Session::get('dept')),
             'MS' => self::dept_count('ms', Session::get('dept'))
             );
-        return view('admin.home')->with('count', $count);   
+        $hod_sign_type = '';
+        if(Session::get('dept') != 'all')
+        {
+            $hod_sign_file = public_path().'/uploads/signatures/'.Session::get('dept').'.';
+            if(file_exists($hod_sign_file.'jpg'))
+            {
+                $hod_sign_type = 'jpg';
+            }
+            else if(file_exists($hod_sign_file.'jpeg'))
+            {
+                $hod_sign_type = 'jpeg';
+            }
+            else if(file_exists($hod_sign_file.'png'))
+            {
+                $hod_sign_type = 'png';
+            }
+        }
+        $data = array(
+            'count' => $count,
+            'hod_sign' => Session::get('dept').'.'.$hod_sign_type
+            );
+        if($hod_sign_type == '')
+        {
+            $data['hod_sign'] = null;
+        }
+        return view('admin.home')->with($data);  
     }
 
     public function change(Request $request)
@@ -117,7 +167,32 @@ class AdminController extends Controller
                     'PHD' => self::dept_count('phd', Session::get('dept')),
                     'MS' => self::dept_count('ms', Session::get('dept'))
                     );
-                return view('admin.home')->with('count', $count);
+                $hod_sign_type = '';
+                if(Session::get('dept') != 'all')
+                {
+                    $hod_sign_file = public_path().'/uploads/signatures/'.Session::get('dept').'.';
+                    if(file_exists($hod_sign_file.'jpg'))
+                    {
+                        $hod_sign_type = 'jpg';
+                    }
+                    else if(file_exists($hod_sign_file.'jpeg'))
+                    {
+                        $hod_sign_type = 'jpeg';
+                    }
+                    else if(file_exists($hod_sign_file.'png'))
+                    {
+                        $hod_sign_type = 'png';
+                    }
+                }
+                $data = array(
+                    'count' => $count,
+                    'hod_sign' => Session::get('dept').'.'.$hod_sign_type
+                    );
+                if($hod_sign_type == '')
+                {
+                    $data['hod_sign'] = null;
+                }
+                return view('admin.home')->with($data);
             }
             else
             {
@@ -263,6 +338,51 @@ class AdminController extends Controller
             $data['candidates'][$i]->dashed_reg_number = str_replace('/', '-', $data['candidates'][$i]->registrationNumber);
         }
         return view('admin.'.$phdormsc)->with('data', $data);
+    }
+
+    public function finalView($phdormsc, $rules1, $rules2, $rules3)
+    {
+        if($phdormsc == 'phd')
+        {
+            $candidates = Phd::where($rules1)
+                                        ->orWhere($rules2)
+                                        ->orWhere($rules3)
+                                        ->orderBy('created_at', 'desc')
+                                        ->paginate(6);
+            $candidates_id = $candidates->lists('applNo');
+            $ugDetails = PhdUg::whereIn('applNo', $candidates_id)->get();
+            $pgDetails = PhdPg::whereIn('applNo', $candidates_id)->get(); 
+            $otherDetails = PhdOther::whereIn('applNo', $candidates_id)->get();
+            $proDetails = PhdPro::whereIn('applNo', $candidates_id)->get();
+            $data = array('candidates' => $candidates,
+                            'ug' => $ugDetails,
+                            'pg' => $pgDetails,
+                            'others' => $otherDetails,
+                            'pro' => $proDetails
+                            );
+            return $data;
+        }
+        else
+        {
+            $candidates = Ms::where($rules1)
+                                        ->orWhere($rules2)
+                                        ->orWhere($rules3)
+                                        ->orderBy('created_at', 'desc')
+                                        ->paginate(6);
+            
+            $candidates_id = $candidates->lists('applNo');
+            $ugDetails = MsUg::whereIn('applNo', $candidates_id)->get(); 
+            $scores = MsScores::whereIn('applNo', $candidates_id)->get();//changed this from MsScores to MsSemScore 
+            $proDetails = MsPro::whereIn('applNo', $candidates_id)->get();
+            $otherDetails = MsOther::whereIn('applNo', $candidates_id)->get();
+            $data = array('candidates' => $candidates,
+                            'ug' => $ugDetails,
+                            'scores' => $scores,
+                            'pro' => $proDetails,
+                            'others' => $otherDetails
+                            );
+            return $data;
+        }
     }
 
     public function paidornot(Request $request)
@@ -426,51 +546,6 @@ class AdminController extends Controller
             return view('admin.'.$phdorms)->with('data', $data);
         else
             return view('admin.search_partial_'.$phdorms)->with('data', $data);
-    }
-
-    public function finalView($phdormsc, $rules1, $rules2, $rules3)
-    {
-        if($phdormsc == 'phd')
-        {
-            $candidates = Phd::where($rules1)
-                                        ->orWhere($rules2)
-                                        ->orWhere($rules3)
-                                        ->orderBy('created_at', 'desc')
-                                        ->paginate(6);
-            $candidates_id = $candidates->lists('applNo');
-            $ugDetails = PhdUg::whereIn('applNo', $candidates_id)->get();
-            $pgDetails = PhdPg::whereIn('applNo', $candidates_id)->get(); 
-            $otherDetails = PhdOther::whereIn('applNo', $candidates_id)->get();
-            $proDetails = PhdPro::whereIn('applNo', $candidates_id)->get();
-            $data = array('candidates' => $candidates,
-                            'ug' => $ugDetails,
-                            'pg' => $pgDetails,
-                            'others' => $otherDetails,
-                            'pro' => $proDetails
-                            );
-            return $data;
-        }
-        else
-        {
-            $candidates = Ms::where($rules1)
-                                        ->orWhere($rules2)
-                                        ->orWhere($rules3)
-                                        ->orderBy('created_at', 'desc')
-                                        ->paginate(6);
-            
-            $candidates_id = $candidates->lists('applNo');
-            $ugDetails = MsUg::whereIn('applNo', $candidates_id)->get(); 
-            $scores = MsScores::whereIn('applNo', $candidates_id)->get();//changed this from MsScores to MsSemScore 
-            $proDetails = MsPro::whereIn('applNo', $candidates_id)->get();
-            $otherDetails = MsOther::whereIn('applNo', $candidates_id)->get();
-            $data = array('candidates' => $candidates,
-                            'ug' => $ugDetails,
-                            'scores' => $scores,
-                            'pro' => $proDetails,
-                            'others' => $otherDetails
-                            );
-            return $data;
-        }
     }
 
     public function deleted(Request $request)

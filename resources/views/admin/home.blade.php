@@ -24,6 +24,11 @@
 @section('body')
   <div class="space-large"></div>
   <div class="container main">
+    @if(Session::get('dept') != 'all' && $hod_sign != null)
+    <div class="center">
+      <img src={{URL::asset('uploads/signatures/'.$hod_sign)}} width="230" height="100">
+    </div>
+    @endif
     <div class="row">
       <div class="col l6 s6 center">
           <a class="waves-effect waves-light btn" href="ms">M.S. Applicants <font size="2">({!! $count['MS'] !!})</font></a>
