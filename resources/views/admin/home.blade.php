@@ -32,6 +32,11 @@
           <a class="waves-effect waves-light btn" href="phd">Ph.D. Applicants <font size="2">({!! $count['PHD'] !!})</font></a>
       </div>
     </div>
+    @if(Session::get('dept') != 'all')
+      <div class="col center">
+        <a class="waves-effect waves-light btn" href="upload">Upload Signature</a>
+      </div>
+    @endif
   </div>
   <div class="space-medium"></div>
 @endsection

@@ -1,7 +1,15 @@
 $(document).ready(function(){
 	$('#search').keyup(function(e){
-		if(e.keyCode == 13)
-			return $("form").submit();
+		$.get("/admin/search", {
+				ajax: 1,
+				phdorms: $("#phdorms").val(),
+				_token: $("#hidden_token").val(),
+				search: $("#search").val()
+			}, function(html) {
+				$("div.container.main").html(html)
+			},
+			"html"
+		);
 	});
 	$('.paid').change(function() {
 		var applNo = $(this).attr('data-reg');
@@ -56,7 +64,7 @@ $(document).ready(function(){
 		ajaxCall(applNo, 'accept')
  	});
 
- 	$('#verify').click(function(e){
+ 	$('.verify').click(function(e){
  		var desel = ($(this).html().indexOf("Deselect") > -1);
  		var applNo = $(this).attr('data-reg');
  		var categ = $(this).attr('categ');

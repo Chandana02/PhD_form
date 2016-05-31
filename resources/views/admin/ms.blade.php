@@ -55,7 +55,7 @@
 
       <form action="/admin/search" method="get" class="searchbox">
       	  <input type="hidden" name="phdorms" id="phdorms" value="ms">
-      	  <input id="hidden_token" name="_token" value="{{ csrf_token() }}">
+      	  <input type="hidden" id="hidden_token" name="_token" value="{{ csrf_token() }}">
           <input id="search" type="search" phdorms="ms" placeholder="Search.." name="search" class="searchbox-input" required>
       </form>
       
@@ -109,7 +109,7 @@
                 @endif
                <div class="center">
                 @if($data['session_all'] != 'all')
-                <a href="#!" data-reg={!! $data['candidates'][$i]->registrationNumber!!} categ='PHD' id="verify" class="btn modal-action modal-close waves-effect waves-green btn">
+                <a href="#!" data-reg={!! $data['candidates'][$i]->registrationNumber!!} categ='MS' class="verify btn modal-action modal-close waves-effect waves-green btn">
                 <?php
                   if (strpos($data['candidates'][$i]->selected_depts, $data['session']) !== false) {
                  ?>
@@ -150,14 +150,18 @@
         </div>
           <div class="space-small"></div>
           <p>Created at:{!! $data['candidates'][$i]->created_at !!}</p>
+          <?php
+            if (strpos($data['candidates'][$i]->selected_depts, $data['session']) !== false) {
+           ?>
+          <p style="color:teal;">selected</p>
+          <?php
+            }
+          ?>
           </div>
           </div>
         </div>
       @endfor
     </div>
-
- </div>
- </div>
 
 
   <div class="row">
@@ -175,7 +179,7 @@
    <a href="#" class="exportms waves-effect waves-light btn" data-reg="{!! $data['session'] !!}">Export All Candidates</a>
   </div>
 
-
+</div>
 
 
 <div class="space-large"></div>

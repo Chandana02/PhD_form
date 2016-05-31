@@ -127,6 +127,37 @@ class AdminController extends Controller
         }
     }
 
+    public function upload(Request $request)
+    {
+        $signature = $request->file('sign');
+        if($signature)
+        {
+            $signExt = $signature->getClientOriginalExtension();
+            if($signExt == 'jpg' || $signExt == 'png' || $signExt == 'jpeg')
+            {
+                list($width, $height) = getimagesize($signature);
+                if($width < 413 && $height < 531)
+                {
+                    $signature = $signature->move(public_path().'/uploads/signatures', Session::get('dept') . '.' . $signExt);
+                    Session::flash('message', 'Uploaded your signature!');
+                    return redirect()->back();
+                }
+                Session::flash('message', 'Dimensions for the uploaded image are more than 413X531');
+                return redirect()->back();
+            }
+            else
+            {
+                Session::flash('message', 'Invalid file format!');
+                return redirect()->back();
+            }
+        }
+        else
+        {           
+            Session::flash('message', 'Please upload your signature!');
+                return redirect()->back();
+        }
+    }
+
     public function adminView($phdorms)
     {
         // dd(Session::get('dept'));
@@ -218,6 +249,7 @@ class AdminController extends Controller
 
     public function adminall($phdormsc, $dept)
     {
+        Session::put('dept_folder', $dept);
         $rules1 = ['dept1' => $dept];
         $rules2 = ['dept2' => $dept];
         $rules3 = ['dept3' => $dept];
@@ -338,7 +370,8 @@ class AdminController extends Controller
     {
         $search_val = $request->input('search');        
         $phdorms = $request->input('phdorms');
-        $dept = Session::get('dept');
+        $dept = Session::get('dept_folder');
+        $ajax = $request->input('ajax');
 
         if($phdorms == 'ms') {
             $table = DB::table('ms');
@@ -349,12 +382,25 @@ class AdminController extends Controller
         else {
             return json_encode($phdorms);
         }
-        $candidates = $table->where('dept1', $dept)
-                        ->orWhere('dept2', $dept)
-                        ->orWhere('dept3', $dept)
-                        ->orWhere('registrationNumber', 'LIKE', '%'.$search_val.'%')
-                        ->orWhere('name', 'LIKE', '%'.$search_val.'%')
-                        ->paginate(6);
+        $candidates = $table->where(function ($query) use ($search_val, $dept) {
+            $query->where('dept1', $dept)
+                    ->where('registrationNumber', 'LIKE', '%'.$search_val.'%');
+        })->orWhere(function ($query) use ($search_val, $dept) {
+            $query->where('dept2', $dept)
+                    ->where('registrationNumber', 'LIKE', '%'.$search_val.'%');
+        })->orWhere(function ($query) use ($search_val, $dept) {
+            $query->where('dept3', $dept)
+                    ->where('registrationNumber', 'LIKE', '%'.$search_val.'%');
+        })->orWhere(function ($query) use ($search_val, $dept) {
+            $query->where('dept1', $dept)
+                    ->where('name', 'LIKE', '%'.$search_val.'%');
+        })->orWhere(function ($query) use ($search_val, $dept) {
+            $query->where('dept2', $dept)
+                    ->where('name', 'LIKE', '%'.$search_val.'%');
+        })->orWhere(function ($query) use ($search_val, $dept) {
+            $query->where('dept3', $dept)
+                    ->where('name', 'LIKE', '%'.$search_val.'%');
+        })->paginate(6);
 
         $candidates_id = $candidates->lists('applNo');
             $ugDetails = PhdUg::whereIn('applNo', $candidates_id)->get();
@@ -376,7 +422,10 @@ class AdminController extends Controller
             $data['candidates'][$i]->dashed_reg_number = str_replace('/', '-', $data['candidates'][$i]->registrationNumber);
         }
 
-        return view('admin.'.$phdorms)->with('data', $data);
+        if(!$ajax)
+            return view('admin.'.$phdorms)->with('data', $data);
+        else
+            return view('admin.search_partial_'.$phdorms)->with('data', $data);
     }
 
     public function finalView($phdormsc, $rules1, $rules2, $rules3)

@@ -49,7 +49,7 @@
 
       <form action="/admin/search" method="get" class="searchbox">
           <input type="hidden" name="phdorms" id="phdorms" value="phd">
-          <input id="hidden_token" name="_token" value="{{ csrf_token() }}">
+          <input type="hidden" id="hidden_token" name="_token" value="{{ csrf_token() }}">
           <input id="search" dept="{!! $data['session'] !!}" phdorms="phd" type="search" placeholder="Search.." name="search" class="searchbox-input" required>
       </form>
       
@@ -105,7 +105,7 @@
                 <div class="space-medium"></div>
                 @endif
                 @if($data['session_all'] != 'all')
-                <a href="#!" data-reg={!! $data['candidates'][$i]->registrationNumber!!} categ='PHD' id="verify" class="btn modal-action modal-close waves-effect waves-green btn">
+                <a href="#!" data-reg={!! $data['candidates'][$i]->registrationNumber!!} categ='PHD' class="verify btn modal-action modal-close waves-effect waves-green btn">
                 <?php
                   if (strpos($data['candidates'][$i]->selected_depts, $data['session']) !== false) {
                  ?>
@@ -156,6 +156,13 @@
         </div>
           <div class="space-vsmall"></div>
           <p>Created at:{!! $data['candidates'][$i]->created_at !!}</p>
+          <?php
+            if (strpos($data['candidates'][$i]->selected_depts, $data['session']) !== false) {
+           ?>
+          <p style="color:teal;">selected</p>
+          <?php
+            }
+          ?>
           </div>
           </div>      
         

@@ -58,6 +58,10 @@ Route::get('admin/phd/home', function () {
 Route::group(['middleware' => 'adminauth'], function () {
     Route::get('admin/home', 'AdminController@returnHome');
     Route::get('admin/search', 'AdminController@search');
+    Route::get('admin/upload', function(){
+        return view('admin.upload');
+    });
+    Route::post('admin/uploadsign', 'AdminController@upload');
     Route::get('admin/{phdormsc}', 'AdminController@adminView');
     Route::get('admit/{phdormsc}/{regNo}/{dept}', 'AdminController@admitCard');
     Route::get('admin/{phdormsc}/{dept}', 'AdminController@adminall');
