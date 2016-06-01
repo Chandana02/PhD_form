@@ -70,7 +70,7 @@
 
         </ul>
 
-         <h5 class="center"><b><u><img src="http://schoolreportcards.in/SRC-New/images/newgood.gif">Shortlisting/Admit Card</u></b></h5>
+       <h5 class="center"><b><u><img src="http://schoolreportcards.in/SRC-New/images/newgood.gif">Shortlisting/Admit Card</u></b></h5>
         <ul class="pad">
           <li>Dear applicants, your applications are under review. Rejected applicants would be notified through e-mail.
            Shortlisted applicants would be able to download their admit card here. We request you to keep visiting this site for any further update.</li>
@@ -88,8 +88,8 @@
           <li><span style="color:black">7. <img src="http://schoolreportcards.in/SRC-New/images/newgood.gif">Application resetting will live from (5th June - 8th June, 2016).</span> </li></span> </li>
           
         </ul>
-        
-        <h6 class="center"><img src="http://schoolreportcards.in/SRC-New/images/newgood.gif"><b><u>Application Resetting Process</u></b></h6>
+
+        <h5 class="center"><img src="http://schoolreportcards.in/SRC-New/images/newgood.gif"><b><u>Application Resetting Process</u></b></h5>
         <ul class="pad">
           <li><span style="color:black">Step 1. Call to admission Desk numbers and request for application reset.</span></li>
           <li><span style="color:black">Step 2. Admission Desk would reset your Reg. URL and approve your application to be edited. </span></li>
