@@ -51,7 +51,7 @@
   <div class="container main">
     <div class="row">
 
-     <marquee> <p class="imp" style="color:black"><b><img src="http://schoolreportcards.in/SRC-New/images/newgood.gif"> For any notices & updates we request you to keep visiting this site. </b></p></marquee>
+     <marquee> <p class="imp" style="color:black"><b><img src="http://schoolreportcards.in/SRC-New/images/newgood.gif">For any notices & updates we request you to keep visiting this site. </b></p></marquee>
 <!--       <marquee> <p class="imp" style="color:black"><b><img src="http://schoolreportcards.in/SRC-New/images/newgood.gif"> Applicants who want to modify/edit their application form, kindly wait for the notice on this. Keep visiting the site. </b></p></marquee>-->
 
       <div class="space-medium"></div>
@@ -69,16 +69,35 @@
           <li><b>Stage 3</b>: Proceed with the instructions sent through mail in stage 1. Bank reference number would be required in this stage.</li>
 
         </ul>
+
+         <h5 class="center"><b><u><img src="http://schoolreportcards.in/SRC-New/images/newgood.gif">Shortlisting/Admit Card</u></b></h5>
+        <ul class="pad">
+          <li>Dear applicants, your applications are under review. Rejected applicants would be notified through e-mail.
+           Shortlisted applicants would be able to download their admit card here. We request you to keep visiting this site for any further update.</li>
+          
+        </ul>
+
+
         <h6 class="center"><b><u>**ATTENTION**</u></b></h6>
         <ul class="pad">
           <li><span style="color:black">1. Last date of application submission is 12/06/2016.</span></li>
           <li><span style="color:black">2. No hardcopies are required to be sent to the institute.</span></li>
           <li><span style="color:black">3. Application number(mentioned in SB collect) and Registration number(mentioned in application/e-mail) are same.</span></li>
           <li><span style="color:black">4. Selection of one department is compulsory and more than one department is optional.</span></li>
-         <!-- <li><span style="color:black">5. <img src="http://schoolreportcards.in/SRC-New/images/newgood.gif">"Invalid name error": Contact your local SBI branch or wait till the payment error is rectified. We though recommend you to use standard Name writing convention.</span> </li> -->
-          <li><span style="color:black">5. <img src="http://schoolreportcards.in/SRC-New/images/newgood.gif">Application resetting will be enabled for the needy candidates soon. Kindly wait for update on this.</span> </li>
+          <li><span style="color:black">6. <img src="http://schoolreportcards.in/SRC-New/images/newgood.gif">Category Query: OC Category & General Category are same.</span> </li>
+          <li><span style="color:black">7. <img src="http://schoolreportcards.in/SRC-New/images/newgood.gif">Application resetting will live from (5th June - 8th June, 2016).</span> </li></span> </li>
           
         </ul>
+        
+        <h6 class="center"><img src="http://schoolreportcards.in/SRC-New/images/newgood.gif"><b><u>Application Resetting Process</u></b></h6>
+        <ul class="pad">
+          <li><span style="color:black">Step 1. Call to admission Desk numbers and request for application reset.</span></li>
+          <li><span style="color:black">Step 2. Admission Desk would reset your Reg. URL and approve your application to be edited. </span></li>
+          <li><span style="color:black">Step 3. Visit your Reg. URL and continue editing. </span></li>
+          <li><span style="color:black">Note: This shall be considered as your final submission.</span></li>
+        
+        </ul>
+
       </div>
     </div>
 
