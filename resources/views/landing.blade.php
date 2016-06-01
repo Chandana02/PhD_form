@@ -82,21 +82,21 @@
 
         <h5 class="center"><img src="http://schoolreportcards.in/SRC-New/images/newgood.gif"><b><u>Application Resetting Process</u></b></h5>
         <ul class="pad">
-          <li><span style="color:black">Step 1. Call to admission Desk numbers and request for application reset.</span></li>
-          <li><span style="color:black">Step 2. Admission Desk would reset your Reg. URL and approve your application to be edited. </span></li>
-          <li><span style="color:black">Step 3. Visit your Reg. URL and continue editing. </span></li>
-          <li><span style="color:black">Note: This shall be considered as your final submission.</span></li>
+          <li>Step 1. Call to admission Desk numbers and request for application reset.</li>
+          <li>Step 2. Admission Desk would reset your Reg. URL and approve your application to be edited.</li>
+          <li>Step 3. Visit your Reg. URL and continue editing. </li>
+          <li>Note: This shall be considered as your final submission.</li>
         
         </ul>
 
-         <h6 class="center"><b><u>**ATTENTION**</u></b></h6>
+         <h5 class="center"><b><u>**ATTENTION**</u></b></h5>
         <ul class="pad">
-          <li><span style="color:black">1. Last date of application submission is 12/06/2016.</span></li>
-          <li><span style="color:black">2. No hardcopies are required to be sent to the institute.</span></li>
-          <li><span style="color:black">3. Application number(mentioned in SB collect) and Registration number(mentioned in application/e-mail) are same.</span></li>
-          <li><span style="color:black">4. Selection of one department is compulsory and more than one department is optional.</span></li>
-          <li><span style="color:black">6. <img src="http://schoolreportcards.in/SRC-New/images/newgood.gif">Category Query: OC Category & General Category are same.</span> </li>
-          <li><span style="color:black">7. <img src="http://schoolreportcards.in/SRC-New/images/newgood.gif">Application resetting will live from (5th June - 8th June, 2016).</span> </li></span> </li>
+          <li>1. Last date of application submission is 12/06/2016.</li>
+          <li>2. No hardcopies are required to be sent to the institute.</li>
+          <li>3. Application number(mentioned in SB collect) and Registration number(mentioned in application/e-mail) are same.</li>
+          <li>4. Selection of one department is compulsory and more than one department is optional.</li>
+          <li>5. <img src="http://schoolreportcards.in/SRC-New/images/newgood.gif">Category Query: OC Category & General Category are same.</li>
+          <li>6. <img src="http://schoolreportcards.in/SRC-New/images/newgood.gif">Application resetting will live from (5th June - 8th June, 2016).</li>
           
         </ul>
 
