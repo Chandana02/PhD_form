@@ -56,7 +56,7 @@
       <form action="/admin/search" method="get" class="searchbox">
       	  <input type="hidden" name="phdorms" id="phdorms" value="ms">
       	  <input type="hidden" id="hidden_token" name="_token" value="{{ csrf_token() }}">
-          <input id="search" type="search" phdorms="ms" placeholder="Search.." name="search" class="searchbox-input" required>
+          <input id="search" type="search" phdorms="ms" placeholder="Enter Registration No. or Name of applicant to Search." name="search" class="searchbox-input" required>
       </form>
       
   </div>
