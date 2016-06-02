@@ -62,7 +62,7 @@
   </div>
   <div class="search-pad">
   <div class="box">
-       <i class="material-icons">search</i><a class="box-a"> Search </a>
+       <i class="material-icons">search</i><a class="box-a">Click here to Search Applicants</a>
    </div>
   
 </div>
