@@ -175,6 +175,18 @@ class MsController extends Controller
                     $details['exam'] = 'NA';
                 }
 
+                if($request->get('ra3') == 'on')
+                {
+                    $details['ug_gpa'] = $details['ug_gpa'] . " excluding final semester";
+                    $details['gpa8'] = 'NA';
+                    $details['max8'] = 'NA';
+                }
+                else
+                {
+                    $details['gpa8'] = $request->get('gpa8');
+                    $details['max8'] = $request->get('max8');
+                }
+
                 $file = $request->file('image_path');   
 
                 $stored_image_path = SaveMs::where('registrationNumber', Session::get('regNo'))->select('imagePath')->first()['imagePath'];
@@ -237,22 +249,18 @@ class MsController extends Controller
                 }
 
                 $cert = null;
-
-                if($request->input('appl_categ') == 'Part Time')
+                $cert = $request->file('form1');
+                if(!$cert)
                 {
-                    $cert = $request->file('form1');
-                    if(!$cert)
+                    
+                }
+                else
+                {
+                    $extension3 = $request->file('form1')->getClientOriginalExtension();
+                    if($extension3 != 'pdf')
                     {
-                        
-                    }
-                    else
-                    {
-                        $extension3 = $request->file('form1')->getClientOriginalExtension();
-                        if($extension3 != 'pdf')
-                        {
-                            $message = 'Upload a PDF file for the certificate.';
-                            return View::make('error')->with('message', $message);
-                        }
+                        $message = 'Upload a PDF file for the certificate.';
+                        return View::make('error')->with('message', $message);
                     }
                 }
 
@@ -316,18 +324,6 @@ class MsController extends Controller
                 $candidate->save();
 
                 $applNo = $candidate->applNo;
-
-                if($request->get('ra3') == 'on')
-                {
-                    $details['ug_gpa'] = $details['ug_gpa'] . " excluding final semester";
-                    $details['gpa8'] = 'NA';
-                    $details['max8'] = 'NA';
-                }
-                else
-                {
-                	$details['gpa8'] = $request->get('gpa8');
-                	$details['max8'] = $request->get('max8');
-                }
 
                 $ugDetails = new MsUg();
 
@@ -416,7 +412,7 @@ class MsController extends Controller
                     'dob' => $request->input('dob'),
                     'areaOfResearch' => $request->input('area_of_research'),
                     'applicationCategory' => $request->input('appl_categ'),
-                    'chalanNo' => $request->input('chanlanNo'),
+                    'chalanNo' => $request->input('chalanNo'),
                     'imagePath' => $details['imagePath'],
                     'dept1' => $request->input('department1'),
                     'dept2' => $request->input('department2'),
@@ -481,25 +477,25 @@ class MsController extends Controller
                 MsPro::where('applNo', $applNo)->update($pro_details);
 
                 $score_details = array(
-                    'gpamax1' = $request->get('max1');
-                    'gpamax2' = $request->get('max2');
-                    'gpamax3' = $request->get('max3');
-                    'gpamax4' = $request->get('max4');
-                    'gpamax5' = $request->get('max5');
-                    'gpamax6' = $request->get('max6');
-                    'gpamax7' = $request->get('max7');
-                    'gpamax8' = $details['max8'];
-                    'gpa1' = $request->get('gpa1');
-                    'gpa2' = $request->get('gpa2');
-                    'gpa3' = $request->get('gpa3');
-                    'gpa4' = $request->get('gpa4');
-                    'gpa5' = $request->get('gpa5');
-                    'gpa6' = $request->get('gpa6');
-                    'gpa7' = $request->get('gpa7');
-                    'gpa8' = $details['gpa8'];
+                    'gpamax1' => $request->input('max1'),
+                    'gpamax2' => $request->input('max2'),
+                    'gpamax3' => $request->input('max3'),
+                    'gpamax4' => $request->input('max4'),
+                    'gpamax5' => $request->input('max5'),
+                    'gpamax6' => $request->input('max6'),
+                    'gpamax7' => $request->input('max7'),
+                    'gpamax8' => $details['max8'],
+                    'gpa1' => $request->input('gpa1'),
+                    'gpa2' => $request->input('gpa2'),
+                    'gpa3' => $request->input('gpa3'),
+                    'gpa4' => $request->input('gpa4'),
+                    'gpa5' => $request->input('gpa5'),
+                    'gpa6' => $request->input('gpa6'),
+                    'gpa7' => $request->input('gpa7'),
+                    'gpa8' => $details['gpa8']
                     );
 
-                MsScores::where('applNo', $applNo)->update($pro_details);
+                MsScores::where('applNo', $applNo)->update($score_details);
 
                 $other_details = array(
                     'score' => $details['score'],

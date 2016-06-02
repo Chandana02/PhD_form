@@ -3,6 +3,7 @@
 @section('title', 'M.S. Registration Form')
 
 @section('headerIncludes')
+<link href="{{ captcha_layout_stylesheet_url() }}" type="text/css" rel="stylesheet">
 <script src="{{URL::asset('assets/js/preview.js')}}"></script>
 <script src="{{URL::asset('assets/js/common.js')}}"></script>
 <script src="{{URL::asset('assets/js/code_ms.js')}}"></script>

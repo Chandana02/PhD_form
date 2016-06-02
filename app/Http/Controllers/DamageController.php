@@ -46,7 +46,7 @@ class DamageController extends Controller
                 'dob' => $personal_details->dob,
                 'areaOfResearch' => $personal_details->areaOfResearch,
                 'applicationCategory' => $personal_details->applicationCategory,
-                'chalanNo' => $personal_details->chanlanNo,
+                'chalanNo' => $personal_details->chalanNo,
                 'imagePath' => $personal_details->imagePath,
                 'dept1' => $personal_details->dept1,
                 'dept2' => $personal_details->dept2,
@@ -64,14 +64,14 @@ class DamageController extends Controller
                 'lanline' => $personal_details->lanline,
                 'ugdegreeName' => $ug_details->degreeName,
                 'ugbranch' => $ug_details->branch,
-                'uggpa' => $ug_details->gpa,
+                'uggpa' => floatval($ug_details->gpa),
                 'ugclass' => $ug_details->class,
                 'uginstitutionName' => $ug_details->institutionName,
                 'uguniversityName' => $ug_details->universityName,
                 'ugyop' => $ug_details->yop,
                 'pgdegreeName' => $pg_details->degreeName,
                 'pgbranch' => $pg_details->branch,
-                'pggpa' => $pg_details->gpa,
+                'pggpa' => floatval($pg_details->gpa),
                 'pgclass' => $pg_details->class,
                 'pginstitutionName' => $pg_details->institutionName,
                 'pguniversityName' => $pg_details->universityName,
@@ -120,6 +120,27 @@ class DamageController extends Controller
                 'to6' => $pro_details->to6
                 );
 
+            if($details['score'] == 'NA')
+            {
+                $details['score'] = '';
+            }
+            if($details['rank'] == 'NA')
+            {
+                $details['rank'] = '';
+            }
+            if($details['validity'] == 'NA')
+            {
+                $details['validity'] = '';
+            }
+            if($details['discipline'] == 'NA')
+            {
+                $details['discipline'] = '';
+            }
+            if($details['exam'] == 'NA')
+            {
+                $details['exam'] = '';
+            }
+
             SavePhd::where('registrationNumber', $regNo)->update($details);
 
             return json_encode(0);
@@ -140,7 +161,7 @@ class DamageController extends Controller
                 'email' => $personal_details->email,
                 'dob' => $personal_details->dob,
                 'applicationCategory' => $personal_details->applicationCategory,
-                'chalanNo' => $personal_details->chanlanNo,
+                'chalanNo' => $personal_details->chalanNo,
                 'imagePath' => $personal_details->imagePath,
                 'dept1' => $personal_details->dept1,
                 'dept2' => $personal_details->dept2,
@@ -158,7 +179,7 @@ class DamageController extends Controller
                 'lanline' => $personal_details->lanline,
                 'ugdegreeName' => $ug_details->degreeName,
                 'ugbranch' => $ug_details->branch,
-                'uggpa' => $ug_details->gpa,
+                'uggpa' => floatval($ug_details->gpa),
                 'ugclass' => $ug_details->class,
                 'uginstitutionName' => $ug_details->institutionName,
                 'uguniversityName' => $ug_details->universityName,
@@ -209,6 +230,27 @@ class DamageController extends Controller
                 'to5' => $pro_details->to5,
                 'to6' => $pro_details->to6
                 );
+            
+            if($details['score'] == 'NA')
+            {
+                $details['score'] = '';
+            }
+            if($details['rank'] == 'NA')
+            {
+                $details['rank'] = '';
+            }
+            if($details['validity'] == 'NA')
+            {
+                $details['validity'] = '';
+            }
+            if($details['discipline'] == 'NA')
+            {
+                $details['discipline'] = '';
+            }
+            if($details['exam'] == 'NA')
+            {
+                $details['exam'] = '';
+            }
 
             SaveMs::where('registrationNumber', $regNo)->update($details);
 
