@@ -21,7 +21,6 @@ $(document).ready(function(){
 	        data: data,
 	        dataType: "json",
 	        success: function(data){
-	        	// console.log("helo");
 	        	location.reload();
 	        },
 	        error: function(jqXHR,testStatus,errorThrown){
@@ -34,7 +33,6 @@ $(document).ready(function(){
 	$('.button1').click(function(){
 		var data = {};
 		data.regNo = $('.button1').data('reg');
-		// console.log(data);
 		var a = window.confirm("Are you sure?");
 		if(!a){
 
@@ -47,7 +45,7 @@ $(document).ready(function(){
 	            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
 	        }
 	    });
-		console.log(data);
+		// console.log(data);
 		$.ajax(
 	    {
 	        type: "POST",
@@ -55,8 +53,6 @@ $(document).ready(function(){
 	        data: data,
 	        dataType: "json",
 	        success: function(data){
-	        	// console.log("helo");
-	        	console.log(data);
 	        	location.reload();
 	        },
 	        error: function(jqXHR,testStatus,errorThrown){
@@ -69,7 +65,6 @@ $(document).ready(function(){
 	$('.exportAll').click(function(){
 		
 		var data = $('.exportAll').data('reg');
-		console.log(data);
 		
 		$.ajaxSetup(
 	    {
@@ -78,7 +73,6 @@ $(document).ready(function(){
 	            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
 	        }
 	    });
-		console.log(data);
 		$.ajax(
 	    {
 	        type: "POST",
@@ -86,8 +80,6 @@ $(document).ready(function(){
 	        data: data,
 	        dataType: "json",
 	        success: function(data){
-	        	// console.log("helo");
-	        	console.log(data);
 	        	location.reload();
 	        },
 	        error: function(jqXHR,testStatus,errorThrown){
