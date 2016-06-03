@@ -149,6 +149,11 @@
         @if($data['session_all'] == 'all' && $data['candidates'][$i]->flag)
         <!-- <div class="space-vsmall"></div>
         <a href="#!" data-reg={!! $data['candidates'][$i]->registrationNumber!!} class="button1 btn modal-action modal-close waves-effect waves-green btn">Reset User</a> -->
+        @elseif(!$data['candidates'][$i]->flag)
+        <p style="color:red;">Reset approved</p>
+        @endif
+        @if($data['candidates'][$i]->re_submitted)
+        <p style="color:green;">Re-submitted</p>
         @endif
         </div>
         </div>

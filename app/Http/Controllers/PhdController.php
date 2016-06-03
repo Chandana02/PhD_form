@@ -460,7 +460,8 @@ class PhdController extends Controller
                     'permanentaddr' => $request->input('permanent_addr'),
                     'mobile' => $request->input('mobile'),
                     'lanline' => $request->input('lanline'),
-                    'flag' => true
+                    'flag' => true,
+                    're_submitted' => true
                     );
 
                 Phd::where('registrationNumber', $request->input('regNo'))->update($personal_details);
