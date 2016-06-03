@@ -143,7 +143,7 @@
         </div>
         <div class="space-medium"></div>
         <a href="#!" data-reg={!! $data['candidates'][$i]->registrationNumber!!} class="msExcel btn  waves-effect waves-green btn">Generate Excel</a>
-        @if($data['candidates'][$i]->flag)
+        @if($data['session_all'] == 'all' && $data['candidates'][$i]->flag)
         <!-- <div class="space-vsmall"></div>
         <a href="#!" data-reg={!! $data['candidates'][$i]->registrationNumber!!} class="button1 btn modal-action modal-close waves-effect waves-green btn">Reset User</a> -->
         @endif

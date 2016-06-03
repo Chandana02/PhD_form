@@ -95,6 +95,7 @@
           <li>2. No hardcopies are required to be sent to the institute.</li>
           <li>3. Application number(mentioned in SB collect) and Registration number(mentioned in application/e-mail) are same.</li>
           <li>4. Selection of one department is compulsory and more than one department is optional.</li>
+          <li>5. During the application process, dimensions of the image that you upload should be less than 300X200 px and that of the signature should be less than 200X150 px and the images can only be jpeg, jpg or png.</li>
           <li>5. <img src="http://schoolreportcards.in/SRC-New/images/newgood.gif">Category Query: OC Category & General Category are same.</li>
           <li>6. <img src="http://schoolreportcards.in/SRC-New/images/newgood.gif">Application resetting will live from (5th June - 8th June, 2016).</li>
           
