@@ -1,5 +1,5 @@
 $(document).ready(function(){
-	$('.print').click(function(e){
+	$('.main.container').on('click', '.print', function(e){
 		// e.preventDefault();
 		var regNo = $(this).attr('data-reg');
 		var dept = regNo.split('/');
@@ -14,7 +14,7 @@ $(document).ready(function(){
 		var route = '/print/' + categ + '/' + department;
 		window.open(route,'_blank');
 	}); 
-	$('.admit').click(function(e){
+	$('.main.container').on('click', '.admit', function(e){
 		// e.preventDefault();
 		var regNo = $(this).attr('data-reg');
 		var dept = regNo.split('/');
