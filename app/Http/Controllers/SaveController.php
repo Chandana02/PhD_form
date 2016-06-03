@@ -191,7 +191,7 @@ class SaveController extends Controller
         if($category == 'PHD')
 		{
             $hasSubmitted = Phd::where('registrationNumber', $regNo)->first();
-            if($hasSubmitted != NULL) {
+            if($hasSubmitted != NULL && $hasSubmitted->flag == true) {
                 return view('success')->with('details', array(
                     "reg_number" => $hasSubmitted->registrationNumber,
                     "name" => $hasSubmitted->name,
@@ -218,7 +218,7 @@ class SaveController extends Controller
 		else
 		{
             $hasSubmitted = Ms::where('registrationNumber', $regNo)->first();
-            if($hasSubmitted != NULL) {
+            if($hasSubmitted != NULL && $hasSubmitted->flag == true) {
                 return view('success')->with('details', array(
                     "reg_number" => $hasSubmitted->registrationNumber,
                     "name" => $hasSubmitted->name,
@@ -401,7 +401,6 @@ class SaveController extends Controller
         }
         $image_path = $image_extension . "," . $sign_extension;
         $details['imagePath'] = $image_path;
-        Log::info($request->input('score'));
         SavePhd::where('registrationNumber', Session::get('regNo'))
                     ->update($details);
 
@@ -563,7 +562,6 @@ class SaveController extends Controller
         }
         $image_path = $image_extension . "," . $sign_extension;
         $details['imagePath'] = $image_path;
-        Log::info($request->input('score'));
         SaveMs::where('registrationNumber', Session::get('regNo'))
                     ->update($details);
 
