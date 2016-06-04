@@ -47,5 +47,9 @@
       </div>
     @endif
   </div>
-  <div class="space-medium"></div>
+  <div class="space-medium">
+    
+     <a class="waves-effect waves-light btn" href="/hod-instructions">Instructions for HOD</a>
+
+  </div>
 @endsection
