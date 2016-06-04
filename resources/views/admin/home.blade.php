@@ -32,7 +32,7 @@
     <div class="row">
     
      
-          <a href="hod-instructions">Instructions for Admission Coordinator</a>
+          <a href="hod-instructions">Instructions</a>
 
       <div class="col l6 s6 center">
           <a class="waves-effect waves-light btn" href="ms">M.S. Applicants <font size="2">({!! $count['MS'] !!})</font></a>
