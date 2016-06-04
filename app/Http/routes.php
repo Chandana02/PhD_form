@@ -150,7 +150,7 @@ Route::get('damage', function()
 
 
 # route for HOD instructions starts    
-Route::get('hod-instructions', function()
+Route::get('admin/hod-instructions', function()
     {
         return view('admin.hod-instructions');
     });
