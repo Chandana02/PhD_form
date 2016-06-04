@@ -51,12 +51,12 @@
   <div class="container main">
     <div class="row">
 
-     <marquee> <p class="imp" style="color:black"><b><img src="http://schoolreportcards.in/SRC-New/images/newgood.gif">For any notices & updates we request you to keep visiting this site. </b></p></marquee>
+     <!--<marquee> <p class="imp" style="color:black"><b><img src="http://schoolreportcards.in/SRC-New/images/newgood.gif">For any notices & updates we request you to keep visiting this site. </b></p></marquee> -->
 <!--       <marquee> <p class="imp" style="color:black"><b><img src="http://schoolreportcards.in/SRC-New/images/newgood.gif"> Applicants who want to modify/edit their application form, kindly wait for the notice on this. Keep visiting the site. </b></p></marquee>-->
 
       <div class="space-medium"></div>
       <div class="content">
-        <h5 class="center"><b>Instructions to Login</b></h5>
+        <h5 class="center"><b>Instructions for HOD/Admission Coordinator to Login</b></h5>
         <ul class="pad">
           <li>1) Click here to <a href="http://admission.nitt.edu/adminlogin">login</a> into admin panel.</li>
           <li>2) Use <b>Username</b> & <b>Password</b> issued by Dean Academic to login. </li>
@@ -73,7 +73,7 @@
 
         </ul>
 
-       <h5 class="center">Select/Reject Application</b></h5>
+       <h5 class="center"><b>Select/Reject Application</b></h5>
         <ul class="pad">
           <li><b>Step 1:</b> To read candidates application form, click on <b>View</b> button.</li>
           <li><b>Step 2:</b> If applicant's form is eligible for further rounds and if applicant has paid the application fee,kindly click on <b>Select</b> button.</li>
@@ -86,11 +86,12 @@
 
         <h5 class="center"><b>Admit Card Generation</b></h5>
         <ul class="pad">
-          <li>Signature of HOD/Admission Coordinator will automatically get deployed to all the selected candidates admit card.</li>
+          <li>Signature of HOD/Admission Coordinator will automatically get deployed to all the selected candidates admit card.
+           Selected candidates will be able to download their admit cards.</li>
         
         </ul>
 
-         <h5 class="center"><b><u>Other Instructions</u></b></h5>
+         <h5 class="center"><b>Other Instructions</b></h5>
         <ul class="pad">
           <li> Click Logout to logout.</li>
           
