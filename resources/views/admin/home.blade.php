@@ -8,9 +8,10 @@
     
     <a href="#" details-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
     <ul class="hide-on-med-and-down">
-      <li><a href="#">Home</a></li>
-      <li><a href="#">Ph.D/M.S. Admissions</a></li>
+      <li><a href="/admin/home">Home</a></li>
+      <li><a href="hod-instructions">Instructions</a></li>
       <li><a href="/logout">Logout</a></li>
+
     </ul>
     <ul class="side-nav" id="mobile-demo">
       <li><a href="#">Home</a></li>
@@ -31,9 +32,6 @@
     @endif
     <div class="row">
     
-     
-          <a href="hod-instructions">Instructions</a>
-
       <div class="col l6 s6 center">
           <a class="waves-effect waves-light btn" href="ms">M.S. Applicants <font size="2">({!! $count['MS'] !!})</font></a>
       </div>
