@@ -134,6 +134,9 @@
           <!-- <a href="#!"  data-reg={!! $data['candidates'][$i]->registrationNumber!!} hidden="true" class="accept btn modal-action  waves-green btn" >Accept</a> -->
         @endif
         <!-- </div> -->
+        @elseif($data["candidates"][$i]->paidornot)
+        <div class="space-small"></div>
+        <p style="color:green;">Paid</p>
         @endif
         <div class="space-medium"></div>
         <div class="col s12">

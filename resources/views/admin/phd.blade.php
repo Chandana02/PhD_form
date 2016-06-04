@@ -134,6 +134,9 @@
         </div> -->
         @endif
         <!-- </div> -->
+        @elseif($data["candidates"][$i]->paidornot)
+        <div class="space-small"></div>
+        <p style="color:green;">Paid</p>
         @endif
         <div class="space-medium"></div>
         <div class="col l12 center buttons">
