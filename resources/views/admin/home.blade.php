@@ -30,6 +30,11 @@
     </div>
     @endif
     <div class="row">
+    
+     <div class="col l6 s6 center">
+          <a class="waves-effect waves-light btn" href="hod-instructions">Instructions for Admission Coordinator</a>
+      </div>
+
       <div class="col l6 s6 center">
           <a class="waves-effect waves-light btn" href="ms">M.S. Applicants <font size="2">({!! $count['MS'] !!})</font></a>
       </div>
@@ -48,8 +53,6 @@
     @endif
   </div>
   <div class="space-medium">
-    
-     <a class="waves-effect waves-light btn" href="/hod-instructions">Instructions for HOD</a>
 
   </div>
 @endsection
