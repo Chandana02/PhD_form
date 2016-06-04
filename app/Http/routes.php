@@ -148,4 +148,11 @@ Route::get('damage', function()
         return view('admin.dmgctrl');
     });
 
-    
+
+# route for HOD instructions starts    
+Route::get('hod-instructions', function()
+    {
+        return view('admin.hod-instructions');
+    });
+
+# ends..
