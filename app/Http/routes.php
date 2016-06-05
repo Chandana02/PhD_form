@@ -82,7 +82,10 @@ Route::group(['middleware' => 'adminauth'], function () {
     Route::get('exportmsSingle/{regNo}', 'ExportController@singleMsCandidatesExport' );
 });
 Route::get('print/{phdormsc}/{regNo}', 'AdminController@printer' );
-
+Route::get('admit', function() {
+    return view('admit');
+});
+Route::post('admitcard', 'ApplicationController@admit');
 Route::post('phdvalidate', 'PhdController@validated');
 Route::post('msvalidate', 'MsController@validated');
 Route::post('application', 'ApplicationController@view');

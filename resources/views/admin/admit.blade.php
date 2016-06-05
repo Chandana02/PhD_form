@@ -62,54 +62,11 @@
         <span class="right"><b>Seal</b></span>
         <div class="space-large"></div>
       </div>
-    </div>
-      <hr><hr>
-      <div class="space-medium"></div>
-        <h5 class="center"><u>Address Slip</u></h5>
-        <div class="space-medium"></div>
-        <hr><hr>
-      <div class="row admit">
-        <div class="col l12">
-          <p><b>To</b></p>
-          <p>Mr/Mrs {!! $name !!}</p>
-          <p>{!! $address !!}</p>
-          <hr>        
-          <hr>        
-        </div>
-        <div class="col l12">
-          <p><b>To</b></p>
-          <p>Mr/Mrs {!! $name !!}</p>
-          <p>{!! $address !!}</p>
-          <hr>        
-          <hr>        
-        </div>
-        <div class="col l12">
-          <p><b>To</b></p>
-          <p>Mr/Mrs {!! $name !!}</p>
-          <p>{!! $address !!}</p>
-          <hr>        
-          <hr>        
-        </div>
-        <div class="col l12">
-          <p><b>To</b></p>
-          <p>Mr/Mrs {!! $name !!}</p>
-          <p>{!! $address !!}</p>
-          <hr>        
-          <hr>        
-        </div>
-
-      </div>
-  <div class="space-large"></div>
-       <a href="#!" class="admit-btn btn waves-effect waves-green btn-flat">Admit</a>     
+    </div>    
 
   <script type="text/javascript">
     $(document).ready(function(){
       $(".button-collapse").sideNav();
-
-      $('.admit-btn').click(function() {
-        $(this).hide();
-        window.print();
-      });
     });
   </script>
 

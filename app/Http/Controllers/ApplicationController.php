@@ -130,6 +130,32 @@ class ApplicationController extends Controller
 	    }
     }
 
+    public function admit(Request $request)
+    {
+        $rules = array(
+            'regNo' => 'required',
+            'year' => 'required',
+            'month' => 'required',
+            'day' => 'required'
+            );
+        $validator = Validator::make($request->all(), $rules);
+        if(count($validator->errors()) > 0)
+        {
+            $message = 'Please fill in all the required details';
+            return view('error')->with('message', $message);
+        }
+        $candidate = Phd::where('registrationNumber', $request->input('regNo'))
+                            ->where('dob', $request->input('year').'-'.$request->input('month').'-'.$request->input('day'))
+                            ->first();
+
+        if($candidate == null)
+        {
+            $message = 'Invalid details';
+            return view('error')->with('message', $message);
+        } 
+        return view('dept')->with('candidate', $candidate);          
+    }
+
     public function department($t)
     {
         if($t == 'AR')
