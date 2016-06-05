@@ -127,13 +127,13 @@
         @if($data['session_all'] == 'all')
         <input type="checkbox" id="paid_{!! $i !!}" data-reg={!! $data['candidates'][$i]->registrationNumber!!} class="paid" name="paid_{!! $i !!}" {!! $data["candidates"][$i]->paidornot ? 'checked' : '' !!} />
         <label for="paid_{!! $i !!}">Paid</label>
-        <!-- <div class="space-small"></div>
+        <div class="space-small"></div>
         <div class="col s12">
-          <a href="#!" data-reg={!! $data['candidates'][$i]->registrationNumber!!} hidden="true" class="discard btn  waves-effect waves-green btn">Discard</a> -->
+          <a href="#!" data-reg={!! $data['candidates'][$i]->registrationNumber!!} hidden="true" class="discard btn  waves-effect waves-green btn">Discard</a>
         @if(!$data['candidates'][$i]->accepted)
-          <!-- <a href="#!"  data-reg={!! $data['candidates'][$i]->registrationNumber!!} hidden="true" class="accept btn modal-action  waves-green btn" >Accept</a> -->
+          <a href="#!"  data-reg={!! $data['candidates'][$i]->registrationNumber!!} hidden="true" class="accept btn modal-action  waves-green btn" >Accept</a>
         @endif
-        <!-- </div> -->
+        </div>
         @elseif($data["candidates"][$i]->paidornot)
         <div class="space-small"></div>
         <p style="color:green;">Paid</p>
@@ -147,8 +147,8 @@
         <div class="space-medium"></div>
         <a href="#!" data-reg={!! $data['candidates'][$i]->registrationNumber!!} class="msExcel btn  waves-effect waves-green btn">Generate Excel</a>
         @if($data['session_all'] == 'all' && $data['candidates'][$i]->flag)
-        <!-- <div class="space-vsmall"></div>
-        <a href="#!" data-reg={!! $data['candidates'][$i]->registrationNumber!!} class="button1 btn modal-action modal-close waves-effect waves-green btn">Reset User</a> -->
+        <div class="space-vsmall"></div>
+        <a href="#!" data-reg={!! $data['candidates'][$i]->registrationNumber!!} class="button1 btn modal-action modal-close waves-effect waves-green btn">Reset User</a>
         @elseif(!$data['candidates'][$i]->flag)
         <p style="color:red;">Reset approved</p>
         @endif
