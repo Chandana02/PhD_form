@@ -52,7 +52,7 @@
     <div class="row">
 
      <marquee> <p class="imp" style="color:black"><b><img src="http://schoolreportcards.in/SRC-New/images/newgood.gif">For any notices & updates we request you to keep visiting this site. </b></p></marquee>
-<!--       <marquee> <p class="imp" style="color:black"><b><img src="http://schoolreportcards.in/SRC-New/images/newgood.gif"> Applicants who want to modify/edit their application form, kindly wait for the notice on this. Keep visiting the site. </b></p></marquee>-->
+      <marquee> <p class="imp" style="color:black"><b><img src="http://schoolreportcards.in/SRC-New/images/newgood.gif"> Applicants resetting will resume from 8th June, 2016. We request you to mail your registration number alongwith the query to edit/modify to phdsection@nitt.edu.</b></p></marquee>
 
       <div class="space-medium"></div>
       <div class="content">
@@ -82,7 +82,7 @@
 
         <h5 class="center"><img src="http://schoolreportcards.in/SRC-New/images/newgood.gif"><b><u>Application Resetting Process</u></b></h5>
         <ul class="pad">
-          <li>Step 1. Call to admission Desk numbers and request for application reset.</li>
+          <li>Step 1. Email to <b>phdsection@nitt.edu</b> or call at Admission Desk with regitration URL and Query(for edit/modify) and request for application reset.</li>
           <li>Step 2. Admission Desk would reset your Reg. URL and approve your application to be edited.</li>
           <li>Step 3. Visit your Reg. URL and continue editing. </li>
           <li>Note: This shall be considered as your final submission.</li>
@@ -97,7 +97,7 @@
           <li>4. Selection of one department is compulsory and more than one department is optional.</li>
           <li>5. <img src="http://schoolreportcards.in/SRC-New/images/newgood.gif"><b>Image/File Upload: </b>During the application process, dimensions of the image that you upload should be less than 300X200 px and that of the signature should be less than 200X150 px and the images can only be jpeg, jpg or png.</li>
           <li>6. <img src="http://schoolreportcards.in/SRC-New/images/newgood.gif">Category Query: OC Category & General Category are same.</li>
-          <li>7. <img src="http://schoolreportcards.in/SRC-New/images/newgood.gif">Application resetting will live from (5th June - 8th June, 2016).</li>
+          <li>7. <img src="http://schoolreportcards.in/SRC-New/images/newgood.gif">Application resetting will live from (8th June - 11th June, 2016).</li>
           
         </ul>
 
