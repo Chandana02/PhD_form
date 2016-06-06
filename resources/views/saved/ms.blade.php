@@ -129,7 +129,7 @@ function escape_new_line($s) {
 					<div class="row">
 						<div class="input-field col l6">
 							<span class="light">*Date of Birth:</span>
-							<input required id="dob" type="text" class="validate" name="dob" value="{!! $details->dob !!}" readonly="true">
+							<input required id="dob" type="text" class="validate" name="dob" value="{!! $details->dob !!}" placeholder="yyyy-mm-dd">
 						</div>
 
 						<div class="input-field col l6 categCheck">
