@@ -188,7 +188,7 @@ class PhdController extends Controller
                 $extension = '';
                 if($file)
                     $extension = $request->file('image_path')->getClientOriginalExtension();
-                if($extension == 'jpg' || $extension == 'png' || $extension == 'jpeg')
+                if($extension == 'jpg' || $extension == 'png' || $extension == 'jpeg' || $extension == 'JPG' || $extension == 'JPEG' || $extension == 'PNG')
                 {
                     list($width, $height) = getimagesize($file);
                     if($width < 413 && $height < 531)
@@ -215,7 +215,7 @@ class PhdController extends Controller
                 $signExt = '';
                 if($sign)
                     $signExt = $request->file('sign')->getClientOriginalExtension();
-                if($signExt == 'jpg' || $signExt == 'png' || $signExt == 'jpeg')
+                if($signExt == 'jpg' || $signExt == 'png' || $signExt == 'jpeg'  || $signExt == 'JPG' || $signExt == 'JPEG' || $signExt == 'PNG')
                 {
                     list($width, $height) = getimagesize($sign);
                     if($width < 413 && $height < 531)

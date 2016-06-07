@@ -79,6 +79,18 @@ class AdminController extends Controller
                     {
                         $hod_sign_type = 'png';
                     }
+                    else if(file_exists($hod_sign_file.'JPG'))
+                    {
+                        $hod_sign_type = 'JPG';
+                    }
+                    else if(file_exists($hod_sign_file.'JPEG'))
+                    {
+                        $hod_sign_type = 'JPEG';
+                    }
+                    else if(file_exists($hod_sign_file.'PNG'))
+                    {
+                        $hod_sign_type = 'PNG';
+                    }
                 }
                 $data = array(
                     'count' => $count,
@@ -119,6 +131,18 @@ class AdminController extends Controller
             else if(file_exists($hod_sign_file.'png'))
             {
                 $hod_sign_type = 'png';
+            }
+            else if(file_exists($hod_sign_file.'JPG'))
+            {
+                $hod_sign_type = 'JPG';
+            }
+            else if(file_exists($hod_sign_file.'JPEG'))
+            {
+                $hod_sign_type = 'JPEG';
+            }
+            else if(file_exists($hod_sign_file.'PNG'))
+            {
+                $hod_sign_type = 'PNG';
             }
         }
         $data = array(
@@ -182,6 +206,18 @@ class AdminController extends Controller
                     else if(file_exists($hod_sign_file.'png'))
                     {
                         $hod_sign_type = 'png';
+                    }
+                    else if(file_exists($hod_sign_file.'JPG'))
+                    {
+                        $hod_sign_type = 'JPG';
+                    }
+                    else if(file_exists($hod_sign_file.'JPEG'))
+                    {
+                        $hod_sign_type = 'JPEG';
+                    }
+                    else if(file_exists($hod_sign_file.'PNG'))
+                    {
+                        $hod_sign_type = 'PNG';
                     }
                 }
                 $data = array(
@@ -249,6 +285,18 @@ class AdminController extends Controller
         {
             return 'png';
         }
+        else if(file_exists($hod_sign_file.'JPG'))
+        {
+            return 'JPG';
+        }
+        else if(file_exists($hod_sign_file.'JPEG'))
+        {
+            return 'JPEG';
+        }
+        else if(file_exists($hod_sign_file.'PNG'))
+        {
+            return 'PNG';
+        }
         else
         {
             return null;
@@ -261,7 +309,7 @@ class AdminController extends Controller
         if($signature)
         {
             $signExt = $signature->getClientOriginalExtension();
-            if($signExt == 'jpg' || $signExt == 'png' || $signExt == 'jpeg')
+            if($signExt == 'jpg' || $signExt == 'png' || $signExt == 'jpeg' || $extension == 'JPG' || $extension == 'JPEG' || $extension == 'PNG')
             {
                 list($width, $height) = getimagesize($signature);
                 if($width < 300 && $height < 200)
@@ -797,6 +845,18 @@ class AdminController extends Controller
         {
             $type = 'png';
         }
+        else if(file_exists($path.'JPG'))
+        {
+            $type = 'JPG';
+        }
+        else if(file_exists($path.'JPEG'))
+        {
+            $type = 'JPEG';
+        }
+        else if(file_exists($path.'PNG'))
+        {
+            $type = 'PNG';
+        }
 
 
         if($phdormsc == 'PHD')
@@ -825,6 +885,18 @@ class AdminController extends Controller
         else if(file_exists($hod_sign_file.'png'))
         {
             $hod_sign_type = 'png';
+        }
+        else if(file_exists($hod_sign_file.'JPG'))
+        {
+            $hod_sign_type = 'JPG';
+        }
+        else if(file_exists($hod_sign_file.'JPEG'))
+        {
+            $hod_sign_type = 'JPEG';
+        }
+        else if(file_exists($hod_sign_file.'PNG'))
+        {
+            $hod_sign_type = 'PNG';
         }
 
         $data = array(
