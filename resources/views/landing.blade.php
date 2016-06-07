@@ -52,7 +52,7 @@
     <div class="row">
 
      <marquee> <p class="imp" style="color:black"><b><img src="http://schoolreportcards.in/SRC-New/images/newgood.gif">For any notices & updates we request you to keep visiting this site. </b></p></marquee>
-      <marquee> <p class="imp" style="color:black"><b><img src="http://schoolreportcards.in/SRC-New/images/newgood.gif"> Applicants resetting will resume from 8th June, 2016. We request you to mail your registration number alongwith the query to edit/modify to phdsection@nitt.edu.</b></p></marquee>
+      <!--<marquee> <p class="imp" style="color:black"><b><img src="http://schoolreportcards.in/SRC-New/images/newgood.gif"> Applicants resetting will resume from 7th June, 2016. We request you to mail your registration number alongwith the query to edit/modify to phdsection@nitt.edu.</b></p></marquee> -->
 
       <div class="space-medium"></div>
       <div class="content">
