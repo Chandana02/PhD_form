@@ -75,9 +75,14 @@
         <div class="col l12">
         <div class="space-vsmall"></div>
         <a href="#!" data-reg={!! $data['candidates'][$i]->registrationNumber!!} class="phdExcel btn modal-action modal-close waves-effect waves-green btn">Generate Excel</a>
-        @if($data['candidates'][$i]->flag)
+        @if($data['session_all'] == 'all' && $data['candidates'][$i]->flag)
         <div class="space-vsmall"></div>
         <a href="#!" data-reg={!! $data['candidates'][$i]->registrationNumber!!} class="button1 btn modal-action modal-close waves-effect waves-green btn">Reset User</a>
+        @elseif(!$data['candidates'][$i]->flag)
+        <p style="color:red;">Reset approved</p>
+        @endif
+        @if($data['candidates'][$i]->re_submitted)
+        <p style="color:green;">Re-submitted</p>
         @endif
         </div>
         </div>
@@ -112,4 +117,7 @@
    <a class="waves-effect waves-light btn" href="../ms">View M.S. applicants</a>
    <a href="#" class="exportphd waves-effect waves-light btn" data-reg="{!! $data['session'] !!}">Export All Candidates</a>
   </div>
+  <script src="{{URL::asset('assets/js/print.js')}}"></script>
+  <script src="{{URL::asset('assets/js/damage.js')}}"></script>
+  <script src="{{URL::asset('assets/js/admin.js')}}"></script>
 
