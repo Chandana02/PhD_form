@@ -52,17 +52,17 @@
         @if($data['session_all'] == 'all')
         <input type="checkbox" id="paid_{!! $i !!}" data-reg={!! $data['candidates'][$i]->registrationNumber!!} class="paid" name="paid_{!! $i !!}" {!! $data["candidates"][$i]->paidornot ? 'checked' : '' !!} />
         <label for="paid_{!! $i !!}">Paid</label>
-        <!-- <div class="space-small"></div>
+        <div class="space-small"></div>
         <div class="col l12 center buttons">
         <div class="col l6">
           <a href="#!" data-reg={!! $data['candidates'][$i]->registrationNumber!!} class="discard btn modal-action modal-close waves-effect waves-green btn">Discard</a>
-          </div> -->
+          </div>
         @if(!$data['candidates'][$i]->accepted)
-        <!-- <div class="col l6">
+        <div class="col l6">
         <a href="#!"  data-reg={!! $data['candidates'][$i]->registrationNumber!!} class="accept btn modal-action modal-close waves-effect waves-green btn">Accept</a>
-        </div> -->
+        </div>
         @endif
-        <!-- </div> -->
+        </div>
         @endif
         <div class="space-medium"></div>
         <div class="col l12 center buttons">
@@ -76,8 +76,8 @@
         <div class="space-vsmall"></div>
         <a href="#!" data-reg={!! $data['candidates'][$i]->registrationNumber!!} class="phdExcel btn modal-action modal-close waves-effect waves-green btn">Generate Excel</a>
         @if($data['candidates'][$i]->flag)
-        <!-- <div class="space-vsmall"></div>
-        <a href="#!" data-reg={!! $data['candidates'][$i]->registrationNumber!!} class="button1 btn modal-action modal-close waves-effect waves-green btn">Reset User</a> -->
+        <div class="space-vsmall"></div>
+        <a href="#!" data-reg={!! $data['candidates'][$i]->registrationNumber!!} class="button1 btn modal-action modal-close waves-effect waves-green btn">Reset User</a>
         @endif
         </div>
         </div>
