@@ -90,17 +90,33 @@
             </div>
                <div class="center">
                 @if($data['candidates'][$i]->applicationCategory == 'onCampus')
+                <?php { 
+                    if(file_exists('./uploads/PHD/'.$data['candidates'][$i]->dashed_reg_number.'/form3.pdf')) { $extension3 = 'pdf'; }
+                    else if(file_exists('./uploads/PHD/'.$data['candidates'][$i]->dashed_reg_number.'/form3.PDF')) { $extension3 = 'PDF'; }
+                    else { $extension3 = null; }
+                 }
+                 ?>
                 <div class="col l12">
-                <a href="{{ URL::asset('uploads/PHD/'.$data['candidates'][$i]->dashed_reg_number.'/form3.pdf') }}" target="_blank" class="btn waves-effect waves-green btn">Form 3</a>
+                <a href="{{ URL::asset('uploads/PHD/'.$data['candidates'][$i]->dashed_reg_number.'/form3.'.$extension3) }}" target="_blank" class="btn waves-effect waves-green btn">Form 3</a>
                 </div>
                 <div class="space-medium"></div>
                 @endif
                 @if($data['candidates'][$i]->applicationCategory == 'External')
+                <?php { 
+                    if(file_exists('./uploads/PHD/'.$data['candidates'][$i]->dashed_reg_number.'/form1.pdf')) { $extension1 = 'pdf'; }
+                    else if(file_exists('./uploads/PHD/'.$data['candidates'][$i]->dashed_reg_number.'/form1.PDF')) { $extension1 = 'PDF'; }
+                    else { $extension1 = null; }
+
+                    if(file_exists('./uploads/PHD/'.$data['candidates'][$i]->dashed_reg_number.'/form2.pdf')) { $extension2 = 'pdf'; }
+                    else if(file_exists('./uploads/PHD/'.$data['candidates'][$i]->dashed_reg_number.'/form2.PDF')) { $extension2 = 'PDF'; }
+                    else { $extension2 = null; }
+                 }
+                 ?>
                 <div class="col l6">
-                <a href="{{ URL::asset('uploads/PHD/'.$data['candidates'][$i]->dashed_reg_number.'/form1.pdf') }}" target="_blank" class="btn waves-effect waves-green btn">Form 1</a>
+                <a href="{{ URL::asset('uploads/PHD/'.$data['candidates'][$i]->dashed_reg_number.'/form1.'.$extension1) }}" target="_blank" class="btn waves-effect waves-green btn">Form 1</a>
                 </div>
                 <div class="col l6">
-                <a href="{{ URL::asset('uploads/PHD/'.$data['candidates'][$i]->dashed_reg_number.'/form2.pdf') }}" target="_blank" class="btn waves-effect waves-green btn">Form 2</a>
+                <a href="{{ URL::asset('uploads/PHD/'.$data['candidates'][$i]->dashed_reg_number.'/form2.'.$extension2) }}" target="_blank" class="btn waves-effect waves-green btn">Form 2</a>
                 </div>
                 <div class="space-medium"></div>
                 @endif

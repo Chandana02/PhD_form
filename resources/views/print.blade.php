@@ -352,14 +352,24 @@
       <div class="row left">
          <?php
           if($candidates['applicationCategory'] == 'External') {
+            if(file_exists('./uploads/PHD/'.$applNo.'/form1.pdf')) { $extension1 = 'pdf'; }
+            else if(file_exists('./uploads/PHD/'.$applNo.'/form1.PDF')) { $extension1 = 'PDF'; }
+            else { $extension1 = null; }
+
+            if(file_exists('./uploads/PHD/'.$applNo.'/form2.pdf')) { $extension2 = 'pdf'; }
+            else if(file_exists('./uploads/PHD/'.$applNo.'/form2.PDF')) { $extension2 = 'PDF'; }
+            else { $extension2 = null; }
          ?>
-            <a href="{{ '/uploads/PHD/' . $applNo . '/form1.pdf' }}">Form-1 submitted by you</a><br>
-            <a href="{{ '/uploads/PHD/' . $applNo . '/form2.pdf' }}">Form-2 submitted by you</a><br>
+            <a href="{{ '/uploads/PHD/' . $applNo . '/form1.'.$extension1 }}">Form-1 submitted by you</a><br>
+            <a href="{{ '/uploads/PHD/' . $applNo . '/form2.'.$extension2 }}">Form-2 submitted by you</a><br>
           <?php
             }
             else if($candidates['applicationCategory'] == 'onCampus') {
+              if(file_exists('./uploads/PHD/'.$applNo.'/form3.pdf')) { $extension3 = 'pdf'; }
+              else if(file_exists('./uploads/PHD/'.$applNo.'/form3.PDF')) { $extension3 = 'PDF'; }
+              else { $extension3 = null; }
           ?>
-            <a href="{{ '/uploads/PHD/' . $applNo . '/form3.pdf' }}">Form-3 submitted by you</a>
+            <a href="{{ '/uploads/PHD/' . $applNo . '/form3.'.$extension3 }}">Form-3 submitted by you</a>
           <?php
             }
           ?>
@@ -662,13 +672,16 @@
       <div class="space-medium"></div>
       
       <div class="row left">
-         <?php if(file_exists('../public/uploads/MS/' . $applNo . '/cert.pdf')) { ?>
-          <a href="{{ '/uploads/MS/' . $applNo . '/cert.pdf' }}">Sponsorship certificate submitted by you</a>
-          <?php } 
-            else {
-              echo "You haven't submitted a Sponsorship Certificate";
-            }
-          ?>
+        <?php if(file_exists('./uploads/MS/'.$applNo.'/cert.pdf')) { $extension = 'pdf'; }
+              else if(file_exists('./uploads/MS/'.$applNo.'/cert.PDF')) { $extension = 'PDF'; }
+              else { echo "You haven't submitted a Sponsorship Certificate"; $extension = null; }
+        ?>
+        @if($extension != null)
+          <div class="col l12 center">
+          <a href="{{ URL::asset('uploads/MS/'.$applNo.'/cert.'.$extension) }}">Sponsorship certificate submitted by you</a>
+          </div>
+          <div class="space-medium"></div>
+        @endif
       </div>
 
       <div class="row right">

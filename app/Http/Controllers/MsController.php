@@ -257,7 +257,7 @@ class MsController extends Controller
                 else
                 {
                     $extension3 = $request->file('form1')->getClientOriginalExtension();
-                    if($extension3 != 'pdf')
+                    if($extension3 != 'pdf' || $extension3 != 'PDF')
                     {
                         $message = 'Upload a PDF file for the certificate.';
                         return View::make('error')->with('message', $message);
@@ -284,7 +284,7 @@ class MsController extends Controller
                 }
                 if($cert)
                 {
-                    $cert = $cert->move(public_path().'/uploads/MS/'.$reg_number_modified, 'cert.pdf');
+                    $cert = $cert->move(public_path().'/uploads/MS/'.$reg_number_modified, 'cert.' . $extension3);
                 }
 
                 $details['imagePath'] = $image_extension . "," . $sign_extension;

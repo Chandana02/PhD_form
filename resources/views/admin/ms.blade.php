@@ -101,12 +101,16 @@
             </div>           
             <div class="space-small center">
             </div>
-            @if(file_exists('./uploads/MS/'.$data['candidates'][$i]->dashed_reg_number.'/cert.pdf'))
+            <?php if(file_exists('./uploads/MS/'.$data['candidates'][$i]->dashed_reg_number.'/cert.pdf')) { $extension = 'pdf'; }
+                  else if(file_exists('./uploads/MS/'.$data['candidates'][$i]->dashed_reg_number.'/cert.PDF')) { $extension = 'PDF'; }
+                  else { $extension = null; }
+            ?>
+            @if($extension != null)
                 <div class="col l12 center">
-                <a href="{{ URL::asset('uploads/MS/'.$data['candidates'][$i]->dashed_reg_number.'/cert.pdf') }}"  class="btn waves-effect waves-green btn" target="_blank">Form</a>
+                <a href="{{ URL::asset('uploads/MS/'.$data['candidates'][$i]->dashed_reg_number.'/cert.'.$extension) }}"  class="btn waves-effect waves-green btn" target="_blank">Form</a>
                 </div>
                 <div class="space-medium"></div>
-                @endif
+            @endif
                <div class="center">
                 @if($data['session_all'] != 'all')
                 <a href="#!" data-reg={!! $data['candidates'][$i]->registrationNumber!!} categ='MS' class="verify btn modal-action modal-close waves-effect waves-green btn">

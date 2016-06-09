@@ -253,7 +253,7 @@ class PhdController extends Controller
                     {
                         $extension1 = $request->file('form1')->getClientOriginalExtension();
                         $extension2 = $request->file('form2')->getClientOriginalExtension();
-                        if($extension1 != 'pdf' || $extension2 != 'pdf')
+                        if($extension1 != 'pdf' || $extension2 != 'pdf' || $extension1 != 'PDF' || $extension2 != 'PDF')
                         {
                             $message = 'PDFs expected for Form-1 and Form-2';
                             return View::make('error')->with('message', $message);
@@ -271,7 +271,7 @@ class PhdController extends Controller
                     else
                     {
                         $extension3 = $request->file('form3')->getClientOriginalExtension();
-                        if($extension3 != 'pdf')
+                        if($extension3 != 'pdf' || $extension3 != 'PDF')
                         {
                             $message = 'PDF expected for Form-3';
                             return View::make('error')->with('message', $message);
