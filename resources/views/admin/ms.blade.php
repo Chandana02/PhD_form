@@ -143,12 +143,14 @@
         <p style="color:green;">Paid</p>
         @endif
         <div class="space-small"></div>
-        <div class="col s12">
+        <div class="col l6">
         <a href="#!" data-reg={!! $data['candidates'][$i]->registrationNumber!!} class="print btn  waves-effect waves-green btn" >View</a>
         <a href="#!" data-reg={!! $data['candidates'][$i]->registrationNumber!!} class="admit btn  waves-effect waves-green btn">Admit</a>
         
         </div>
-        <div class="space-small"></div>
+
+        <div class="col l12">
+        <div class="space-vsmall"></div>
         <a href="#!" data-reg={!! $data['candidates'][$i]->registrationNumber!!} class="msExcel btn  waves-effect waves-green btn">Generate Excel</a>
         @if($data['session_all'] == 'all' && $data['candidates'][$i]->flag)
         <div class="space-vsmall"></div>
@@ -160,6 +162,8 @@
         <p style="color:green;">Re-submitted</p>
         @endif
         </div>
+        </div>
+        
           <div class="space-small"></div>
           <p>Created at:{!! $data['candidates'][$i]->created_at !!}</p>
           <?php
