@@ -23,12 +23,16 @@
             </div>           
             <div class="space-small center">
             </div>
-            @if(file_exists('./uploads/MS/'.$data['candidates'][$i]->dashed_reg_number.'/cert.pdf'))
+            <?php if(file_exists('./uploads/MS/'.$data['candidates'][$i]->dashed_reg_number.'/cert.pdf')) { $extension = 'pdf'; }
+                  else if(file_exists('./uploads/MS/'.$data['candidates'][$i]->dashed_reg_number.'/cert.PDF')) { $extension = 'PDF'; }
+                  else { $extension = null; }
+            ?>
+            @if($extension != null)
                 <div class="col l12 center">
-                <a href="{{ URL::asset('uploads/MS/'.$data['candidates'][$i]->dashed_reg_number.'/cert.pdf') }}"  class="btn waves-effect waves-green btn" target="_blank">Form</a>
+                <a href="{{ URL::asset('uploads/MS/'.$data['candidates'][$i]->dashed_reg_number.'/cert.'.$extension) }}"  class="btn waves-effect waves-green btn" target="_blank">Form</a>
                 </div>
                 <div class="space-medium"></div>
-                @endif
+            @endif
                <div class="center">
                 @if($data['session_all'] != 'all')
                 <a href="#!" data-reg={!! $data['candidates'][$i]->registrationNumber!!} categ='MS' class="verify btn modal-action modal-close waves-effect waves-green btn">
@@ -56,15 +60,21 @@
           <a href="#!"  data-reg={!! $data['candidates'][$i]->registrationNumber!!} hidden="true" class="accept btn modal-action  waves-green btn" >Accept</a>
         @endif
         </div> -->
+        @elseif($data["candidates"][$i]->paidornot)
+        <div class="space-small"></div>
+        <p style="color:green;">Paid</p>
         @endif
         <div class="space-small"></div>
-        <div class="col s12">
-        <a href="#!" data-reg={!! $data['candidates'][$i]->registrationNumber!!} class="print btn  waves-effect waves-green btn" >View</a>
-        <a href="#!" data-reg={!! $data['candidates'][$i]->registrationNumber!!} class="admit btn  waves-effect waves-green btn">Admit</a>
-        
-        </div>
-        <div class="space-small"></div>
-        <a href="#!" data-reg={!! $data['candidates'][$i]->registrationNumber!!} class="msExcel btn  waves-effect waves-green btn">Generate Excel</a>
+        <div class="col l12 center buttons">
+          <div class="col l6">
+            <a href="#!" data-reg={!! $data['candidates'][$i]->registrationNumber!!} class="print btn  waves-effect waves-green btn" >View</a>
+          </div>
+          <div class="col l6">
+            <a href="#!" data-reg={!! $data['candidates'][$i]->registrationNumber!!} class="admit btn  waves-effect waves-green btn">Admit</a>
+          </div>
+          <div class="col l12">
+        <div class="space-vsmall"></div>
+        <a href="#!" data-reg={!! $data['candidates'][$i]->registrationNumber!!} class="msExcel btn modal-action modal-close waves-effect waves-green btn">Generate Excel</a>
         @if($data['session_all'] == 'all' && $data['candidates'][$i]->flag)
         <div class="space-vsmall"></div>
         <a href="#!" data-reg={!! $data['candidates'][$i]->registrationNumber!!} class="button1 btn modal-action modal-close waves-effect waves-green btn">Reset User</a>
@@ -74,6 +84,8 @@
         @if($data['candidates'][$i]->re_submitted)
         <p style="color:green;">Re-submitted</p>
         @endif
+        </div>
+        </div>
         </div>
           <div class="space-small"></div>
           <p>Created at:{!! $data['candidates'][$i]->created_at !!}</p>
