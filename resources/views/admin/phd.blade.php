@@ -154,7 +154,7 @@
         <div class="space-small"></div>
         <p style="color:green;">Paid</p>
         @endif
-        <div class="space-medium"></div>
+        <div class="space-small"></div>
         <div class="col l12 center buttons">
         <div class="col l6">
         <a href="#!" data-reg={!! $data['candidates'][$i]->registrationNumber!!} class="print btn modal-action modal-close waves-effect waves-green btn" >View</a>
