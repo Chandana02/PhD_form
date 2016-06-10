@@ -10,7 +10,7 @@
         <div class="card center no-border">
         @endif
           <div class="card-content">
-            <span class="card-title activator grey-text text-darken-4" style="font-size:18px" >{!! $data['candidates'][$i]->name !!}</span>
+            <span class="card-title activator grey-text text-darken-4" style="font-size:18px;color:#388477" >{!! $data['candidates'][$i]->name !!}</span>
             <div class="row">
               
                 <p>Registration Number:  {!! $data['candidates'][$i]->registrationNumber !!}</p>
@@ -64,7 +64,7 @@
         @endif
         </div>
         @endif
-        <div class="space-medium"></div>
+        <div class="space-small"></div>
         <div class="col l12 center buttons">
         <div class="col l6">
         <a href="#!" data-reg={!! $data['candidates'][$i]->registrationNumber!!} class="print btn modal-action modal-close waves-effect waves-green btn" >View</a>

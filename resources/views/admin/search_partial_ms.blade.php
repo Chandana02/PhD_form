@@ -11,7 +11,7 @@
           <div class=" waves-effect waves-block waves-light">  
           </div>
           <div class="card-content">
-            <span class="card-title activator grey-text text-darken-4" style="font-size:18px" >{!! $data['candidates'][$i]->name !!}</span>
+            <span class="card-title activator grey-text text-darken-4" style="font-size:18px;color:#388477" >{!! $data['candidates'][$i]->name !!}</span>
             <div class="row">
               <div class="col l12 s12">
                 <p>Registration Number:{!! $data['candidates'][$i]->registrationNumber !!}</p>
@@ -57,7 +57,7 @@
         @endif
         </div> -->
         @endif
-        <div class="space-medium"></div>
+        <div class="space-small"></div>
         <div class="col s12">
         <a href="#!" data-reg={!! $data['candidates'][$i]->registrationNumber!!} class="print btn  waves-effect waves-green btn" >View</a>
         <a href="#!" data-reg={!! $data['candidates'][$i]->registrationNumber!!} class="admit btn  waves-effect waves-green btn">Admit</a>
