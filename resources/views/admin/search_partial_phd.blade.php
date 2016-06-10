@@ -10,7 +10,7 @@
         <div class="card center no-border">
         @endif
           <div class="card-content">
-            <span class="card-title activator grey-text text-darken-4">{!! $data['candidates'][$i]->name !!}</span>
+            <span class="card-title activator grey-text text-darken-4" style="font-size:18px" >{!! $data['candidates'][$i]->name !!}</span>
             <div class="row">
               
                 <p>Registration Number:  {!! $data['candidates'][$i]->registrationNumber !!}</p>

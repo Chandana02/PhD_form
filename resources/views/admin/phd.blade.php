@@ -81,7 +81,7 @@
         <div class="card center no-border">
         @endif
           <div class="card-content">
-            <span class="card-title activator grey-text text-darken-4">{!! $data['candidates'][$i]->name !!}</span>
+            <span class="card-title activator grey-text text-darken-4" style="font-size:18px" >{!! $data['candidates'][$i]->name !!}</span>
             <div class="row">
               
                 <p>Registration Number:  {!! $data['candidates'][$i]->registrationNumber !!}</p>
@@ -140,16 +140,16 @@
         <input type="checkbox" id="paid_{!! $i !!}" data-reg={!! $data['candidates'][$i]->registrationNumber!!} class="paid" name="paid_{!! $i !!}" {!! $data["candidates"][$i]->paidornot ? 'checked' : '' !!} />
         <label for="paid_{!! $i !!}">Paid</label>
         <div class="space-small"></div>
-        <div class="col l12 center buttons">
-     <!--   <div class="col l6">
+       <!-- <div class="col l12 center buttons">
+        <div class="col l6">
           <a href="#!" data-reg={!! $data['candidates'][$i]->registrationNumber!!} class="discard btn modal-action modal-close waves-effect waves-green btn">Discard</a>
           </div>
         @if(!$data['candidates'][$i]->accepted)
         <div class="col l6">
         <a href="#!"  data-reg={!! $data['candidates'][$i]->registrationNumber!!} class="accept btn modal-action modal-close waves-effect waves-green btn">Accept</a>
-        </div> -->
+        </div> 
         @endif
-        </div>
+        </div> -->
         @elseif($data["candidates"][$i]->paidornot)
         <div class="space-small"></div>
         <p style="color:green;">Paid</p>
