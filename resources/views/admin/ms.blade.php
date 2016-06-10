@@ -143,13 +143,16 @@
         <p style="color:green;">Paid</p>
         @endif
         <div class="space-small"></div>
-        <div class="col s12">
-        <a href="#!" data-reg={!! $data['candidates'][$i]->registrationNumber!!} class="print btn  waves-effect waves-green btn" >View</a>
-        <a href="#!" data-reg={!! $data['candidates'][$i]->registrationNumber!!} class="admit btn  waves-effect waves-green btn">Admit</a>
-        
-        </div>
-        <div class="space-small"></div>
-        <a href="#!" data-reg={!! $data['candidates'][$i]->registrationNumber!!} class="msExcel btn  waves-effect waves-green btn">Generate Excel</a>
+        <div class="col l12 center buttons">
+          <div class="col l6">
+            <a href="#!" data-reg={!! $data['candidates'][$i]->registrationNumber!!} class="print btn  waves-effect waves-green btn" >View</a>
+          </div>
+          <div class="col l6">
+            <a href="#!" data-reg={!! $data['candidates'][$i]->registrationNumber!!} class="admit btn  waves-effect waves-green btn">Admit</a>
+          </div>
+          <div class="col l12">
+        <div class="space-vsmall"></div>
+        <a href="#!" data-reg={!! $data['candidates'][$i]->registrationNumber!!} class="msExcel btn modal-action modal-close waves-effect waves-green btn">Generate Excel</a>
         @if($data['session_all'] == 'all' && $data['candidates'][$i]->flag)
         <div class="space-vsmall"></div>
         <a href="#!" data-reg={!! $data['candidates'][$i]->registrationNumber!!} class="button1 btn modal-action modal-close waves-effect waves-green btn">Reset User</a>
@@ -159,6 +162,8 @@
         @if($data['candidates'][$i]->re_submitted)
         <p style="color:green;">Re-submitted</p>
         @endif
+        </div>
+        </div>
         </div>
           <div class="space-small"></div>
           <p>Created at:{!! $data['candidates'][$i]->created_at !!}</p>
