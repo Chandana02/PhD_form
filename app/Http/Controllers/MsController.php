@@ -257,7 +257,7 @@ class MsController extends Controller
                 else
                 {
                     $extension3 = $request->file('form1')->getClientOriginalExtension();
-                    if($extension3 != 'pdf' || $extension3 != 'PDF')
+                    if($extension3 != 'pdf' && $extension3 != 'PDF')
                     {
                         $message = 'Upload a PDF file for the certificate.';
                         return View::make('error')->with('message', $message);
