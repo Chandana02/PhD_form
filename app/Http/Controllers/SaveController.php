@@ -21,15 +21,11 @@ class SaveController extends Controller
     public function savephd(Request $request)
     {
 
-        $bool1 = SavePhd::where('name' , $request->input('name'))
-                                ->where('email', $request->input('email'))
-                                ->where('addrforcomm' , $request->input('addr_for_commn'))
+        $bool1 = SavePhd::where('email', $request->input('email'))
                                 ->where('dob', $request->input('dob'))
                                 ->first();
 
-        $checkcandidate = Phd::where('name' , $request->input('name'))
-                                ->where('email', $request->input('email'))
-                                ->where('addrforcomm' , $request->input('addr_for_commn'))
+        $checkcandidate = Phd::where('email', $request->input('email'))
                                 ->where('dob', $request->input('dob'))
                                 ->first();
 
@@ -105,15 +101,11 @@ class SaveController extends Controller
     public function savems(Request $request)
     {
 
-        $bool = SaveMs::where('name' , $request->input('name'))
-                                ->where('email', $request->input('email'))
-                                ->where('addrforcomm' , $request->input('addr_for_commn'))
+        $bool = SaveMs::where('email', $request->input('email'))
                                 ->where('dob', $request->input('dob'))
                                 ->first();
 
-        $checkcandidate = Ms::where('name' , $request->input('name'))
-                                ->where('email', $request->input('email'))
-                                ->where('addrforcomm' , $request->input('addr_for_commn'))
+        $checkcandidate = Ms::where('email', $request->input('email'))
                                 ->where('dob', $request->input('dob'))
                                 ->first();
 
