@@ -136,7 +136,4 @@
    <a class="waves-effect waves-light btn" href="../ms">View M.S. applicants</a>
    <a href="#" class="exportphd waves-effect waves-light btn" data-reg="{!! $data['session'] !!}">Export All Candidates</a>
   </div>
-   <script src="{{URL::asset('assets/js/print.js')}}"></script>
-   <script src="{{URL::asset('assets/js/damage.js')}}"></script>
-   <script src="{{URL::asset('assets/js/admin.js')}}"></script>
 

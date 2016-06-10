@@ -1,5 +1,5 @@
 $(document).ready(function(){
-	$('.button1').click(function(){
+	$('.main.container').on('click', '.button1', function(){
 		var data = {};
 		data.regNo = $(this).data('reg');
 		var a = window.confirm("Are you sure?");
@@ -30,7 +30,7 @@ $(document).ready(function(){
 		}
 	});
 
-	$('.exportAll').click(function(){
+	$('.main.container').on('click', '.exportAll', function(){
 		
 		var data = $('.exportAll').data('reg');
 		
