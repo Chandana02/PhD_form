@@ -81,8 +81,8 @@
 
          <h5 class="center"><img src="http://schoolreportcards.in/SRC-New/images/newgood.gif"><b><u>Important Dates</u></b></h5>
         <ul class="pad">
-           <li>1. <b>30th June, 2016</b> Entrance test for Ph.D. </li>
-           <li>2. <b>July 1, 2016</b> Interview for Ph.D.</li>
+           <li>1. <b>30/06/2016 -</b> Entrance test for Ph.D. </li>
+           <li>2. <b>01/07/2016 -</b> Interview for Ph.D.</li>
         </ul>
 
        
