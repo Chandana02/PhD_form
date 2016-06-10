@@ -148,7 +148,7 @@
         <a href="#!" data-reg={!! $data['candidates'][$i]->registrationNumber!!} class="admit btn  waves-effect waves-green btn">Admit</a>
         
         </div>
-        <div class="space-medium"></div>
+        <div class="space-small"></div>
         <a href="#!" data-reg={!! $data['candidates'][$i]->registrationNumber!!} class="msExcel btn  waves-effect waves-green btn">Generate Excel</a>
         @if($data['session_all'] == 'all' && $data['candidates'][$i]->flag)
         <div class="space-vsmall"></div>
