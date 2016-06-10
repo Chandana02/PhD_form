@@ -54,13 +54,13 @@
         <label for="paid_{!! $i !!}">Paid</label>
         <div class="space-small"></div>
         <div class="col l12 center buttons">
-        <div class="col l6">
+      <!--  <div class="col l6">
           <a href="#!" data-reg={!! $data['candidates'][$i]->registrationNumber!!} class="discard btn modal-action modal-close waves-effect waves-green btn">Discard</a>
           </div>
         @if(!$data['candidates'][$i]->accepted)
         <div class="col l6">
         <a href="#!"  data-reg={!! $data['candidates'][$i]->registrationNumber!!} class="accept btn modal-action modal-close waves-effect waves-green btn">Accept</a>
-        </div>
+        </div> -->
         @endif
         </div>
         @endif
