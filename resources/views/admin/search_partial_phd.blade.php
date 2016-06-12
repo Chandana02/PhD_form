@@ -19,50 +19,57 @@
             </div>
                <div class="center">
                 @if($data['candidates'][$i]->applicationCategory == 'onCampus')
+                <?php { 
+                    if(file_exists('./uploads/PHD/'.$data['candidates'][$i]->dashed_reg_number.'/form3.pdf')) { $extension3 = 'pdf'; }
+                    else if(file_exists('./uploads/PHD/'.$data['candidates'][$i]->dashed_reg_number.'/form3.PDF')) { $extension3 = 'PDF'; }
+                    else { $extension3 = null; }
+                 }
+                 ?>
                 <div class="col l12">
-                <a href="{{ URL::asset('uploads/PHD/'.$data['candidates'][$i]->dashed_reg_number.'/form3.pdf') }}" target="_blank" class="btn waves-effect waves-green btn">Form 3</a>
+                <a href="{{ URL::asset('uploads/PHD/'.$data['candidates'][$i]->dashed_reg_number.'/form3.'.$extension3) }}" target="_blank" class="btn waves-effect waves-green btn">Form 3</a>
                 </div>
                 <div class="space-medium"></div>
                 @endif
                 @if($data['candidates'][$i]->applicationCategory == 'External')
+                <?php { 
+                    if(file_exists('./uploads/PHD/'.$data['candidates'][$i]->dashed_reg_number.'/form1.pdf')) { $extension1 = 'pdf'; }
+                    else if(file_exists('./uploads/PHD/'.$data['candidates'][$i]->dashed_reg_number.'/form1.PDF')) { $extension1 = 'PDF'; }
+                    else { $extension1 = null; }
+
+                    if(file_exists('./uploads/PHD/'.$data['candidates'][$i]->dashed_reg_number.'/form2.pdf')) { $extension2 = 'pdf'; }
+                    else if(file_exists('./uploads/PHD/'.$data['candidates'][$i]->dashed_reg_number.'/form2.PDF')) { $extension2 = 'PDF'; }
+                    else { $extension2 = null; }
+                 }
+                 ?>
                 <div class="col l6">
-                <a href="{{ URL::asset('uploads/PHD/'.$data['candidates'][$i]->dashed_reg_number.'/form1.pdf') }}" target="_blank" class="btn waves-effect waves-green btn">Form 1</a>
+                <a href="{{ URL::asset('uploads/PHD/'.$data['candidates'][$i]->dashed_reg_number.'/form1.'.$extension1) }}" target="_blank" class="btn waves-effect waves-green btn">Form 1</a>
                 </div>
                 <div class="col l6">
-                <a href="{{ URL::asset('uploads/PHD/'.$data['candidates'][$i]->dashed_reg_number.'/form2.pdf') }}" target="_blank" class="btn waves-effect waves-green btn">Form 2</a>
+                <a href="{{ URL::asset('uploads/PHD/'.$data['candidates'][$i]->dashed_reg_number.'/form2.'.$extension2) }}" target="_blank" class="btn waves-effect waves-green btn">Form 2</a>
                 </div>
                 <div class="space-medium"></div>
                 @endif
                 @if($data['session_all'] != 'all')
-                <a href="#!" data-reg={!! $data['candidates'][$i]->registrationNumber!!} categ='PHD' class="verify btn modal-action modal-close waves-effect waves-green btn">
-                <?php
-                  if (strpos($data['candidates'][$i]->selected_depts, $data['session']) !== false) {
-                 ?>
-                Deselect
-                <?php
-                  }
-                  else {
-                ?>
-                Select
-                <?php
-                  }
-                ?>
-                </a>
+                <input type="checkbox" id="{!! $data['candidates'][$i]->registrationNumber!!}" name="{!! $data['candidates'][$i]->registrationNumber!!}" data-reg={!! $data['candidates'][$i]->registrationNumber!!} categ='PHD' class="verify" {!! strpos($data['candidates'][$i]->selected_depts, $data['session']) !== false ? 'checked' : '' !!} />
+                <label for="{!! $data['candidates'][$i]->registrationNumber!!}">Selected</label>
                 @endif
         @if($data['session_all'] == 'all')
         <input type="checkbox" id="paid_{!! $i !!}" data-reg={!! $data['candidates'][$i]->registrationNumber!!} class="paid" name="paid_{!! $i !!}" {!! $data["candidates"][$i]->paidornot ? 'checked' : '' !!} />
         <label for="paid_{!! $i !!}">Paid</label>
         <div class="space-small"></div>
         <div class="col l12 center buttons">
-      <!--  <div class="col l6">
+       <!-- <div class="col l6">
           <a href="#!" data-reg={!! $data['candidates'][$i]->registrationNumber!!} class="discard btn modal-action modal-close waves-effect waves-green btn">Discard</a>
           </div>
         @if(!$data['candidates'][$i]->accepted)
         <div class="col l6">
         <a href="#!"  data-reg={!! $data['candidates'][$i]->registrationNumber!!} class="accept btn modal-action modal-close waves-effect waves-green btn">Accept</a>
-        </div> -->
-        @endif
         </div>
+        @endif -->
+        </div>
+        @elseif($data["candidates"][$i]->paidornot)
+        <div class="space-small"></div>
+        <p style="color:green;">Paid</p>
         @endif
         <div class="space-small"></div>
         <div class="col l12 center buttons">
@@ -117,7 +124,4 @@
    <a class="waves-effect waves-light btn" href="../ms">View M.S. applicants</a>
    <a href="#" class="exportphd waves-effect waves-light btn" data-reg="{!! $data['session'] !!}">Export All Candidates</a>
   </div>
-  <script src="{{URL::asset('assets/js/print.js')}}"></script>
-  <script src="{{URL::asset('assets/js/damage.js')}}"></script>
-  <script src="{{URL::asset('assets/js/admin.js')}}"></script>
 

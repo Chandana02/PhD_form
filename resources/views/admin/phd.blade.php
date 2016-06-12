@@ -121,20 +121,8 @@
                 <div class="space-medium"></div>
                 @endif
                 @if($data['session_all'] != 'all')
-                <a href="#!" data-reg={!! $data['candidates'][$i]->registrationNumber!!} categ='PHD' class="verify btn modal-action modal-close waves-effect waves-green btn">
-                <?php
-                  if (strpos($data['candidates'][$i]->selected_depts, $data['session']) !== false) {
-                 ?>
-                Deselect
-                <?php
-                  }
-                  else {
-                ?>
-                Select
-                <?php
-                  }
-                ?>
-                </a>
+                <input type="checkbox" id="{!! $data['candidates'][$i]->registrationNumber!!}" name="{!! $data['candidates'][$i]->registrationNumber!!}" data-reg={!! $data['candidates'][$i]->registrationNumber!!} categ='PHD' class="verify" {!! strpos($data['candidates'][$i]->selected_depts, $data['session']) !== false ? 'checked' : '' !!} />
+                <label for="{!! $data['candidates'][$i]->registrationNumber!!}">Selected</label>
                 @endif
         @if($data['session_all'] == 'all')
         <input type="checkbox" id="paid_{!! $i !!}" data-reg={!! $data['candidates'][$i]->registrationNumber!!} class="paid" name="paid_{!! $i !!}" {!! $data["candidates"][$i]->paidornot ? 'checked' : '' !!} />
