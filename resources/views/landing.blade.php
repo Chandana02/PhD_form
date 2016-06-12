@@ -104,7 +104,7 @@
           <li>4. Selection of one department is compulsory and more than one department is optional.</li>
           <li>5. <b>Image/File Upload: </b>During the application process, dimensions of the image that you upload should be less than 300X200 px and that of the signature should be less than 200X150 px and the images can only be jpeg, jpg or png.</li>
           <li>6. Category Query: OC Category & General Category are same.</li>
-          <li>7. Application resetting will be live from (7th June - 11th June, 2016).</li>
+          <li>7. Application resetting will be live from (7th June - 14th June, 2016).</li>
           
         </ul>
 
