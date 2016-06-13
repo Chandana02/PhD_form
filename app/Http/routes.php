@@ -63,6 +63,7 @@ Route::group(['middleware' => 'adminauth'], function () {
     });
     Route::post('admin/uploadsign', 'AdminController@upload');
     Route::get('admin/hodsignatures', 'AdminController@signatures');
+    Route::get('admin/hod-passwords', 'AdminController@passwords');
     Route::get('admin/{phdormsc}', 'AdminController@adminView');
     Route::get('admit/{phdormsc}/{regNo}/{dept}', 'AdminController@admitCard');
     Route::get('admin/{phdormsc}/{dept}', 'AdminController@adminall');

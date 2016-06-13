@@ -184,7 +184,7 @@ class AdminController extends Controller
             {
                 Admin::where('userName', $username)
                             ->where('password', sha1($oldpassword))
-                            ->update(['password' => sha1($newpassword)]);
+                            ->update(['password' => sha1($newpassword), 'encrypt_pass' => bin2hex($newpassword)]);
                 Session::put('userName', $username);
                 Session::put('dept', $auth->dept);
                 $count = array(
@@ -263,6 +263,24 @@ class AdminController extends Controller
                 'MA' => self::ifExists('MA')           
                 );
             return view('admin.all.signatures')->with($types);
+        }
+        else
+        {
+            return redirect()->back();
+        }
+    }
+
+    public function passwords()
+    {
+        if(Session::get('dept') == 'all')
+        {
+            $credentials = Admin::all();
+            for($i = 0; $i < sizeof($credentials); $i++)
+            {
+                $credentials[$i]->encrypt_pass = hex2bin($credentials[$i]->encrypt_pass);
+                $credentials[$i]->dept = self::department($credentials[$i]->dept);
+            }
+            return view('admin.all.passwords')->with('credentials', $credentials);
         }
         else
         {
