@@ -39,7 +39,7 @@
     <div class="nav-wrapper ">
       
       <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
-      <ul class="hide-on-med-and-down">
+      <ul class="hide-on-sm-and-down">
         <li><a href="/admin/home">Home</a></li>
         <li><a href="/admin/phd">Ph.D Applicants</a></li>
         <li><a href="/logout">Logout</a></li>
