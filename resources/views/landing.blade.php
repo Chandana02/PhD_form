@@ -51,7 +51,7 @@
   <div class="container main">
     <div class="row">
 
-     <marquee> <p class="imp" style="color:black"><b><img src="{{URL::asset('assets/images/newgood.gif')}}">Application process had stopped at 11:59 PM IST, 14th June, 2016. For any notices & updates we request you to keep visiting this site. </b></p></marquee>
+     <marquee> <p class="imp" style="color:black"><b><img src="{{URL::asset('assets/images/newgood.gif')}}">Application process had stopped at 11:59 PM IST, 14th June, 2016. For any notices & updates we request you to keep visiting http://admission.nitt.edu or http://nittadmission.org/. </b></p></marquee>
       <!--<marquee> <p class="imp" style="color:black"><b><img src="http://schoolreportcards.in/SRC-New/images/newgood.gif"> Applicants resetting will resume from 7th June, 2016. We request you to mail your registration number alongwith the query to edit/modify to phdsection@nitt.edu.</b></p></marquee> -->
 
       <div class="space-medium"></div>
@@ -74,8 +74,10 @@
 
        <h5 class="center"><b><u>Shortlisting/Admit Card</u></b></h5>
         <ul class="pad">
-          <li>Dear applicants, your applications are under review. Rejected applicants would be notified through e-mail.
-           Shortlisted applicants would be able to download their admit card here. We request you to keep visiting this site for any further update.</li>
+          <li>Dear applicants, <br>
+          Thank you for applications at NIT Trichy. <br>
+          Your applications are under review. Rejected applicants would be notified through e-mail.
+          Shortlisted applicants would be able to download their admit card here. We request you to keep visiting this site for any further update.</li>
           
         </ul>
 
