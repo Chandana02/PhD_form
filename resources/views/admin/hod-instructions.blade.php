@@ -32,10 +32,10 @@
     <div class="nav-wrapper ">
       
       <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
-      <ul class="hide-on-med-and-down">
+      <ul class="hide-on-sm-and-down">
 
         <li><a href="/admin/home">Home</a></li>
-        <li><a href="/admin/home">Ph.D./M.S. Admissions</a></li>
+        <li><a href="/admin/hod-passwords">HOD-Passwords</a></li>
         <li><a href="/contact">Contact</a></li>
       </ul>
       <ul class="side-nav" id="mobile-demo">
