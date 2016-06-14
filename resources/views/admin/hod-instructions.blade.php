@@ -5,7 +5,7 @@
 
     <li><a href="/admin/home">Home</a></li>
     <li><a href="/contact">Contact</a></li>
-    <li><a href="/logout">Contact</a></li>
+    <li><a href="/logout">Logout</a></li>
   </ul>
   <ul class="side-nav" id="mobile-demo">
    <li><a href="/admin/home">Home</a></li>
