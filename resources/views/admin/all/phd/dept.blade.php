@@ -3,10 +3,6 @@
 @section('title', 'PhD Admin Portal')
 
 @section('navbar')
-<nav>
-  <div class="nav-wrapper ">
-    
-    <a href="#" details-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
     <ul class="hide-on-sm-and-down">
       <li><a href="/admin/home">Home</a></li>
       <li><a href="/admin/ms">M.S. Admissions</a></li>
@@ -18,11 +14,10 @@
       <li><a href="/admin/ms">M.S. Admissions</a></li>
       <li><a href="/logout">Logout</a></li>
     </ul>
-  </div>
-</nav>
 @endsection
 
 @section('body')
+<div class="space-medium"></div>
   <div class="container main">
     <h5 class="center">List of Ph.D Departments</h5>
     <input type="hidden" value="PHD" class="phdormsc" />

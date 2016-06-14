@@ -1,45 +1,9 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta id="token" name="csrf-token" content="{{ csrf_token() }}">
-  <title>Admissions NITT | Admin Page</title>
-  <link rel="stylesheet" href="{{URL::asset('assets/css/style.css')}}">
-  <link rel="stylesheet" href="{{URL::asset('assets/css/materialize.min.css')}}">
-  <link rel="shortcut icon" href="{{URL::asset('assets/images/logo.png')}}">
-  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-  <script src="{{URL::asset('assets/js/jquery-2.1.1.min.js')}}"></script>
-  <script src="{{URL::asset('assets/js/admin.js')}}"></script>
-  <script src="{{URL::asset('assets/js/materialize.min.js')}}"></script>
-  <script src="{{URL::asset('assets/js/print.js')}}"></script>
-  <script src="{{URL::asset('assets/js/damage.js')}}"></script>
-  
-</head>
-<body>
-<script type="text/javascript">
-  $(document ).ready(function(){
-    $(".button-collapse").sideNav();
-  })
-  </script>    
+@extends('layouts.admin')
 
-  
-  <header style="height: 25vh;
-  padding: 0px;
-  margin: 0px;
-  background-image: url('{{URL::asset('assets/images/header.png')}}');
-  background-repeat: no-repeat;
-  background-position: center;
-  background-color: #004d40;
-  background-size: contain;"></header>
+@section('title', 'Admissions NITT | Admin Page')
 
-  
-  <nav>
-    <div class="nav-wrapper ">
-      
-      <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
-      <ul class="hide-on-sm-and-down">
+@section('navbar')
+    <ul class="hide-on-sm-and-down">
         <li><a href="/admin/home">Home</a></li>
         <li><a href="/admin/phd">Ph.D Applicants</a></li>
         <li><a href="/logout">Logout</a></li>
@@ -49,8 +13,15 @@
         <li><a href="/admin/phd">Ph.D Applicants</a></li>
         <li><a href="/logout">Logout</a></li>
       </ul>
-    </div>
-  </nav>
+@endsection
+
+@section('headerIncludes')
+<script src="{{URL::asset('assets/js/print.js')}}"></script>
+<script src="{{URL::asset('assets/js/damage.js')}}"></script>
+<script src="{{URL::asset('assets/js/admin.js')}}"></script>
+@endsection
+
+@section('body')
 <div class="container search" hidden="true">
 
       <form action="/admin/search" method="get" class="searchbox">
@@ -189,40 +160,10 @@
   </div>
 
 </div>
-
-
-<div class="space-large"></div>
-
-<footer class="page-footer teal darken-4">
-          <div class="container">
-            <div class="row">
-              <div class="col l6 s12">
-                <h5 class="white-text">Contact Us</h5>
-                <p class="grey-text text-lighten-4">National Institute of Technology</p>
-                <p class="grey-text text-lighten-4">Tiruchirappalli - 620015</p>
-                <p class="grey-text text-lighten-4">Tamil Nadu, INDIA</p>
-              </div>
-              <div class="col l4 offset-l2 s12">
-                <h5 class="white-text">QuickLinks</h5>
-                <ul>
-                  <li><a class="grey-text text-lighten-3" href="http://www.nitt.edu/">Institute Website</a></li>
-                  <li><a class="grey-text text-lighten-3" href="http://www.nitt.edu/home/academics/departments/">Departments</a></li>
-                  <li><a class="grey-text text-lighten-3" href="http://www.nitt.edu/home/admissions/">Admissions</a></li>
-                  <li><a class="grey-text text-lighten-3" href="http://www.nitt.edu/contact">Contact Us</a></li>
-                </ul>
-              </div>
-            </div>
-          </div>
-          <div class="footer-copyright dark">
-            <div class="container center">
-            
-            <a class="grey-text text-lighten-4" href="#!">Made with &hearts; by Delta Force</a>
-            </div>
-          </div>
-        </footer>
             
 <script type="text/javascript">
       $(document).ready(function(){
+        $(".button-collapse").sideNav();
     // the "href" attribute of .modal-trigger must specify the modal ID that wants to be triggered
 
     //adding buttons
@@ -256,76 +197,5 @@
         });
 
         });
-
-        function department(t)
-        {
-          if(t == 'AR')
-          {
-              return 'Architecture';
-          }
-          if(t == 'CS')
-          {
-              return 'Computer Science and Engineering';
-          }
-          if(t == 'CL')
-          {
-              return 'Chemical Engineering';
-          }
-          if(t == 'CV')
-          {
-              return 'Civil Engineering';
-          }
-          if(t == 'CY')
-          {
-              return 'Chemistry';
-          }
-          if(t == 'CA')
-          {
-              return 'Computer Applications';
-          }
-          if(t == 'CC')
-          {
-              return 'CECASE';
-          }
-          if(t == 'EN')
-          {
-              return 'Energy and Environment';
-          }
-          if(t == 'EE')
-          {
-              return 'Electrical and Electronics Engineering';
-          }
-          if(t == 'EC')
-          {
-              return 'Electronics and Communication Engineering';
-          }
-          if(t == 'ME')
-          {
-              return 'Mechanical Engineering';
-          }
-          if(t == 'PR')
-          {
-              return 'Production Engineering';
-          }
-          if(t == 'MME')
-          {
-              return 'Metallurgical and Materials Engineering';
-          }
-          if(t == 'MA')
-          {
-              return 'Mathematics';
-          }
-          if(t == 'IC')
-          {
-              return 'Instrumentation and Control Engineering';
-          }
-          if(t == 'PH')
-          {
-              return 'Physics';
-          }
-        }
   </script>
-
-
-</body>
-</html>
+  @endsection

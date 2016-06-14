@@ -3,10 +3,6 @@
 @section('title', 'Home - Admin')
 
 @section('navbar')
-<nav>
-  <div class="nav-wrapper ">
-    
-    <a href="#" details-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
     <ul class="hide-on-sm-and-down">
       <li><a href="home">Home</a></li>
       <li><a href="/hod-instructions">Instructions for HOD/Admission Coordinator</a></li>
@@ -17,11 +13,10 @@
       <li><a href="home">Ph.D/M.S. Admissions</a></li>
       <li><a href="/logout">Logout</a></li>
     </ul>
-  </div>
-</nav>
 @endsection
 
 @section('body')
+<div class="space-medium"></div>
 <div class="container">
   <table class="centered striped">
     <thead>

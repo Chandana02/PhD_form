@@ -28,10 +28,14 @@
 	background-color: #004d40;
 	background-size: contain;"></header>
 	
+	<nav>
+  		<div class="nav-wrapper ">
+  			<a href="#" details-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
+  			<a href="#!" class="brand-logo right"></a>
 	@yield('navbar')
-
-	<div class="space-medium"></div>
-	
+	  	</div>
+	</nav>
+    	
 	@yield('body')
 	
 	<div class="space-medium"></div>
@@ -66,7 +70,88 @@
 	<script type="text/javascript">
 		$(document ).ready(function(){
 			$(".button-collapse").sideNav();
-		})
+			if("{!! Session::get('dept') !!}")
+				$('.brand-logo').html("Welcome " + department("{!! Session::get('dept') !!}")).css("font-size", "14px");
+		function department(t)
+        {
+        	if(t == 'AR')
+        	{
+        		return 'Architecture';
+        	}
+        	if(t == 'CS')
+        	{
+        		return 'Computer Science and Engineering';
+        	}
+        	if(t == 'CL')
+        	{
+        		return 'Chemical Engineering';
+        	}
+        	if(t == 'CV')
+        	{
+        		return 'Civil Engineering';
+        	}
+        	if(t == 'CY')
+        	{
+        		return 'Chemistry';
+        	}
+        	if(t == 'CA')
+        	{
+        		return 'Computer Applications';
+        	}
+        	if(t == 'CC')
+        	{
+        		return 'CECASE';
+        	}
+        	if(t == 'EN')
+        	{
+        		return 'Energy and Environment';
+        	}
+        	if(t == 'EE')
+        	{
+        		return 'Electrical and Electronics Engineering';
+        	}
+        	if(t == 'EC')
+        	{
+        		return 'Electronics and Communication Engineering';
+        	}
+        	if(t == 'ME')
+        	{
+        		return 'Mechanical Engineering';
+        	}
+        	if(t == 'PR')
+        	{
+        		return 'Production Engineering';
+        	}
+        	if(t == 'MME')
+        	{
+        		return 'Metalurgical and Materials Engineering';
+        	}
+        	if(t == 'MA')
+        	{
+        		return 'Mathematics';
+        	}
+        	if(t == 'MS')
+        	{
+        		return 'Management Studies';
+        	}		
+        	if(t == 'HM')
+        	{
+        		return 'Humanities and Social Sciences';
+        	}
+        	if(t == 'IC')
+        	{
+        		return 'Instrumentation and Control Engineering';
+        	}
+        	if(t == 'PH')
+        	{
+        		return 'Physics';
+        	}
+            if(t == 'all')
+            {
+                return 'Dean Academic';
+            }
+		}
+	});
 	</script>
 
 	@yield('script')
