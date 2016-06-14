@@ -35,7 +35,7 @@
       <ul class="hide-on-sm-and-down">
 
         <li><a href="/admin/home">Home</a></li>
-        <li><a href="/admin/home">Ph.D./M.S. Admissions</a></li>
+        <li><a href="/admin/hod-passwords">HOD-Passwords</a></li>
         <li><a href="/contact">Contact</a></li>
       </ul>
       <ul class="side-nav" id="mobile-demo">
