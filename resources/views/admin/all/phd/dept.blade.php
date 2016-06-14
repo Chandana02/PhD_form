@@ -10,6 +10,7 @@
     <ul class="hide-on-med-and-down">
       <li><a href="/admin/home">Home</a></li>
       <li><a href="/admin/ms">M.S. Admissions</a></li>
+      <li><a href="/admin/hod-passwords">HOD-Passwords</a></li>
       <li><a href="/logout">Logout</a></li>
     </ul>
     <ul class="side-nav" id="mobile-demo">

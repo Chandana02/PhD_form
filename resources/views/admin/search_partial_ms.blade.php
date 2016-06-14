@@ -35,8 +35,11 @@
             @endif
                <div class="center">
                 @if($data['session_all'] != 'all')
-                <input type="checkbox" id="{!! $data['candidates'][$i]->registrationNumber!!}" name="{!! $data['candidates'][$i]->registrationNumber!!}" data-reg={!! $data['candidates'][$i]->registrationNumber!!} categ='MS' class="verify" {!! strpos($data['candidates'][$i]->selected_depts, $data['session']) !== false ? 'checked' : '' !!} />
-                <label for="{!! $data['candidates'][$i]->registrationNumber!!}">Selected</label>
+                <input type="radio" id="{!! $data['candidates'][$i]->registrationNumber!!}-yes" name="{!! $data['candidates'][$i]->registrationNumber!!}" data-reg={!! $data['candidates'][$i]->registrationNumber!!} categ='MS' class="verify" {!! strpos($data['candidates'][$i]->selected_depts, $data['session']) !== false ? 'checked' : '' !!} value="yes" />
+                <label for="{!! $data['candidates'][$i]->registrationNumber!!}-yes">Selected</label>
+
+                <input type="radio" id="{!! $data['candidates'][$i]->registrationNumber!!}-no" name="{!! $data['candidates'][$i]->registrationNumber!!}" data-reg={!! $data['candidates'][$i]->registrationNumber!!} categ='MS' class="verify" {!! strpos($data['candidates'][$i]->selected_depts, $data['session']) !== false ? '' : 'checked' !!} value="no"/>
+                <label for="{!! $data['candidates'][$i]->registrationNumber!!}-no">Not Selected</label>
                 @endif
         @if($data['session_all'] == 'all')
         <input type="checkbox" id="paid_{!! $i !!}" data-reg={!! $data['candidates'][$i]->registrationNumber!!} class="paid" name="paid_{!! $i !!}" {!! $data["candidates"][$i]->paidornot ? 'checked' : '' !!} />

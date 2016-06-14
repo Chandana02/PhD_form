@@ -64,14 +64,14 @@ $(document).ready(function(){
 		ajaxCall(applNo, 'accept')
  	});
 
- 	$('.main.container').on('change', '.verify', function(e){
- 		var desel = !$(this).prop('checked'); //($(this).html().indexOf("Deselect") > -1);
+ 	$('.main.container').on('click', '.verify', function(e){
+ 		var desel = !/-yes$/.test(this.id); //($(this).html().indexOf("Deselect") > -1);
  		var applNo = $(this).attr('data-reg');
  		var categ = $(this).attr('categ');
  		var reason = "";
  		if(desel == true)
  		{
- 			var reason = prompt("Please enter the reason:", "");
+ 			reason = prompt("Please enter the reason:", "");
  		}
 		if (reason != null) 
 		{
@@ -95,15 +95,14 @@ $(document).ready(function(){
 		        dataType: "json",
 		        success: function(data){
 		        	// console.log("helo");
-		        	location.reload();
+		        	//location.reload();
 		        },
 		        error: function(jqXHR,testStatus,errorThrown){
 		        	console.log(errorThrown);
 		        }
 			});
 		}
-		else
-			$(this).prop('checked', true);
+		//return false;
  	});
 
  	$('.main.container').on('click', '.phdExcel', function(){
