@@ -71,7 +71,7 @@
 		$(document ).ready(function(){
 			$(".button-collapse").sideNav();
 			if("{!! Session::get('dept') !!}")
-				$('.brand-logo').html("Welcome " + department("{!! Session::get('dept') !!}")).css("font-size", "14px");
+				$('.brand-logo').html("Welcome, " + department("{!! Session::get('dept') !!}")).css("font-size", "14px");
 		function department(t)
         {
         	if(t == 'AR')

@@ -51,13 +51,13 @@
   <div class="container main">
     <div class="row">
 
-     <marquee> <p class="imp" style="color:black"><b><img src="{{URL::asset('assets/images/newgood.gif')}}">Application process will get stopped at 11:59 PM IST, 14th June, 2016. For any notices & updates we request you to keep visiting this site. </b></p></marquee>
+     <marquee> <p class="imp" style="color:black"><b><img src="{{URL::asset('assets/images/newgood.gif')}}">Application process had stopped at 11:59 PM IST, 14th June, 2016. For any notices & updates we request you to keep visiting this site. </b></p></marquee>
       <!--<marquee> <p class="imp" style="color:black"><b><img src="http://schoolreportcards.in/SRC-New/images/newgood.gif"> Applicants resetting will resume from 7th June, 2016. We request you to mail your registration number alongwith the query to edit/modify to phdsection@nitt.edu.</b></p></marquee> -->
 
       <div class="space-medium"></div>
       <div class="content">
 
-        <h5 class="center"><b><u>Instructions</u></b></h5>
+        <!-- <h5 class="center"><b><u>Instructions</u></b></h5>
         <ul class="pad">
           <li>1) Please read carefully the application <a href="http://www.nitt.edu/home/MS%20and%20Ph_D%20advt%20July%202016%20(1)%20(1).pdf">brochure</a> before applying.</li>
           <li>2) Reach out to help desk numbers provided in the <a href="contact">Contact</a> in case of a query.</li>
@@ -70,7 +70,7 @@
           <li><b>Stage 2</b>: Online payment of application fee through <a href="https://www.onlinesbi.com/prelogin/icollecthome.htm?corpID=88587">SB Collect.</a> </li>
           <li><b>Stage 3</b>: Proceed with the instructions sent through mail in stage 1. Bank reference number would be required in this stage.</li>
 
-        </ul>
+        </ul> -->
 
        <h5 class="center"><b><u>Shortlisting/Admit Card</u></b></h5>
         <ul class="pad">
@@ -87,7 +87,7 @@
 
        
 
-        <h5 class="center"><b><u>Application Resetting Process</u></b></h5>
+        <!-- <h5 class="center"><b><u>Application Resetting Process</u></b></h5>
         <ul class="pad">
           <li>Step 1. Email to <b>phdsection@nitt.edu</b> or call at Admission Desk with regitration URL and Query(for edit/modify) and request for application reset.</li>
           <li>Step 2. Admission Desk would reset your Reg. URL and approve your application to be edited.</li>
@@ -106,7 +106,7 @@
           <li>6. Category Query: OC Category & General Category are same.</li>
           <li>7. Application resetting will be live from (7th June - 14th June, 2016).</li>
           
-        </ul>
+        </ul> -->
 
       </div>
     </div>

@@ -20,6 +20,9 @@ class SaveController extends Controller
 {
     public function savephd(Request $request)
     {
+        //registration process stopped
+        return redirect('instructions');
+        //registration process stopped
 
         $bool1 = SavePhd::where('email', $request->input('email'))
                                 ->where('dob', $request->input('dob'))
@@ -100,6 +103,9 @@ class SaveController extends Controller
 
     public function savems(Request $request)
     {
+        //registration process stopped
+        return redirect('instructions');
+        //registration process stopped
 
         $bool = SaveMs::where('email', $request->input('email'))
                                 ->where('dob', $request->input('dob'))
@@ -178,6 +184,9 @@ class SaveController extends Controller
 
     public function fetch($category, $applNo, $dob)
     {
+        //registration process stopped
+        return redirect('instructions');
+        //registration process stopped
         $regNo = str_replace("-", "/", $applNo);
 
         if($category == 'PHD')
@@ -238,6 +247,9 @@ class SaveController extends Controller
 
     public function save2phd(Request $request)
     {
+        //registration process stopped
+        return redirect('instructions');
+        //registration process stopped
         $reg_number = Session::get('regNo');
         $reg_number_modified = str_replace("/", "-", $reg_number);
 
@@ -401,6 +413,9 @@ class SaveController extends Controller
 
     public function save2ms(Request $request)
     {
+        //registration process stopped
+        return redirect('instructions');
+        //registration process stopped
         $reg_number = Session::get('regNo');
         $reg_number_modified = str_replace("/", "-", $reg_number);
 

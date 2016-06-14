@@ -23,6 +23,9 @@ class MsController extends Controller
 {
     public function validated(Request $request)
     {
+        //registration process stopped
+        return redirect('instructions');
+        //registration process stopped
 
     	$rules = array(   
             'chalanNo' => 'required',                     

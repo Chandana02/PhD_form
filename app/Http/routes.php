@@ -35,8 +35,8 @@ $_SESSION = new DummySession;
 // workaround over
 
 Route::get('/', function() {
-    // return view('landing');
-    return redirect('home');
+    return redirect('instructions');
+    // return redirect('home');
 });
 Route::get('/instructions', function() {
     return view('landing');
@@ -49,12 +49,6 @@ Route::post('dmgctrl', 'DamageController@dmgctrl');
 Route::get('fetch/{phdorms}/{applNo}/{dob}', 'SaveController@fetch');
 Route::post('admin/auth', 'AdminController@login');
 Route::post('admin/change', 'AdminController@change');
-Route::get('admin/ms/home', function () {
-    return view('admin.all.ms.dept');
-});
-Route::get('admin/phd/home', function () {
-    return view('admin.all.phd.dept');
-});
 Route::group(['middleware' => 'adminauth'], function () {
     Route::get('admin/home', 'AdminController@returnHome');
     Route::get('admin/search', 'AdminController@search');
@@ -113,27 +107,33 @@ Route::group(['middleware' => 'redirect_admin_if_authenticated'], function()
 
 Route::get('home', function()
     {
-        return view('home');
+        // return view('home');
+        return redirect('instructions');
     });
 Route::get('continue', function()
     {
-        return view('savedForm');
+        // return view('savedForm');
+        return redirect('instructions');
     });
 Route::get('phd', function()
     {
-        return view('phdForm_1');
+        // return view('phdForm_1');
+        return redirect('instructions');
     });
 Route::get('ms', function()
     {
-        return view('msForm_1');
+        // return view('msForm_1');
+        return redirect('instructions');
     });
 Route::get('msinstructions', function()
     {
-        return view('msinstructions');
+        // return view('msinstructions');
+        return redirect('instructions');
     });
 Route::get('phdinstructions', function()
     {
-        return view('phdinstructions');
+        // return view('phdinstructions');
+        return redirect('instructions');
     });
 Route::get('change', function()
     {
@@ -141,11 +141,13 @@ Route::get('change', function()
     });
 Route::get('phdpreview', function()
     {
-        return view('saved.phd_preview');
+        // return view('saved.phd_preview');
+        return redirect('instructions');
     });
 Route::get('mspreview', function()
     {
-        return view('saved.ms_preview');
+        // return view('saved.ms_preview');
+        return redirect('instructions');
     });
 Route::get('damage', function()
     {
