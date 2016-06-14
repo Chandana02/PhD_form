@@ -5,7 +5,7 @@
 @section('navbar')
     <ul class="hide-on-sm-and-down">
       <li><a href="home">Home</a></li>
-      <li><a href="home">Ph.D/M.S. Admissions</a></li>
+      <li><a href="/hod-instructions">Instructions</a></li>
       <li><a href="/logout">Logout</a></li>
     </ul>
     <ul class="side-nav" id="mobile-demo">

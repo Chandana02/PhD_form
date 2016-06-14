@@ -4,8 +4,8 @@
   <ul class="hide-on-sm-and-down">
 
     <li><a href="/admin/home">Home</a></li>
-    <li><a href="/admin/hod-passwords">HOD-Passwords</a></li>
     <li><a href="/contact">Contact</a></li>
+    <li><a href="/logout">Contact</a></li>
   </ul>
   <ul class="side-nav" id="mobile-demo">
    <li><a href="/admin/home">Home</a></li>
