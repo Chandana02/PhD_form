@@ -7,8 +7,8 @@
   <title>Admissions NITT | Admit Card</title>
   <link rel="stylesheet" href="{{URL::asset('assets/css/style.css')}}">
   <link rel="stylesheet" href="{{URL::asset('assets/css/materialize.min.css')}}">
-  <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link rel="shortcut icon" href="{{URL::asset('assets/images/logo.png')}}">
   <script src="{{URL::asset('assets/js/jquery-2.1.1.min.js')}}"></script>
   <script src="{{URL::asset('assets/js/materialize.min.js')}}"></script>
 </head>

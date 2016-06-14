@@ -39,7 +39,7 @@
             <p>Click <a href="continue">here</a> to continue with saved application form </p>
         </div>
 
-         <marquee><img src="http://schoolreportcards.in/SRC-New/images/newgood.gif"> For any notices & updates we request you to keep visiting the instructions page. Click <a href="instructions">here</a></marquee>
+         <marquee><img src="{{URL::asset('assets/images/newgood.gif')}}"> For any notices & updates we request you to keep visiting the instructions page. Click <a href="instructions">here</a></marquee>
 
     </div>
 @endsection

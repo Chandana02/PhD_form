@@ -9,8 +9,8 @@
 
   <link rel="stylesheet" href="{{URL::asset('assets/css/style.css')}}">
   <link rel="stylesheet" href="{{URL::asset('assets/css/materialize.min.css')}}">
-  <!-- <link rel="shortcut icon" href="{{URL::asset('assets/logo.jpg')}}"> -->
-  <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link rel="shortcut icon" href="{{URL::asset('assets/images/logo.png')}}">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
   <script src="{{URL::asset('assets/js/jquery-2.1.1.min.js')}}"></script>
   <script src="{{URL::asset('assets/js/materialize.min.js')}}"></script>
@@ -51,8 +51,8 @@
   <div class="container main">
     <div class="row">
 
-     <marquee> <p class="imp" style="color:black"><b><img src="http://schoolreportcards.in/SRC-New/images/newgood.gif">Last date of application submission is extended to 14th June, 2016. For any notices & updates we request you to keep visiting this site. </b></p></marquee>
-      <!--<marquee> <p class="imp" style="color:black"><b><img src="http://schoolreportcards.in/SRC-New/images/newgood.gif"> Applicants resetting will resume from 7th June, 2016. We request you to mail your registration number alongwith the query to edit/modify to phdsection@nitt.edu.</b></p></marquee> -->
+     <marquee> <p class="imp" style="color:black"><b><img src="{{URL::asset('assets/images/newgood.gif')}}">Last date of application submission is extended to 14th June, 2016. For any notices & updates we request you to keep visiting this site. </b></p></marquee>
+      <!--<marquee> <p class="imp" style="color:black"><b><img src="{{URL::asset('assets/images/newgood.gif')}}"> Applicants resetting will resume from 7th June, 2016. We request you to mail your registration number alongwith the query to edit/modify to phdsection@nitt.edu.</b></p></marquee> -->
 
       <div class="space-medium"></div>
       <div class="content">
@@ -79,7 +79,7 @@
           
         </ul>
 
-         <h5 class="center"><img src="http://schoolreportcards.in/SRC-New/images/newgood.gif"><b><u>Important Dates</u></b></h5>
+         <h5 class="center"><img src="{{URL::asset('assets/images/newgood.gif')}}"><b><u>Important Dates</u></b></h5>
         <ul class="pad">
            <li>1. <b>30/06/2016 -</b> Entrance test for Ph.D. </li>
            <li>2. <b>01/07/2016 -</b> Interview for Ph.D.</li>

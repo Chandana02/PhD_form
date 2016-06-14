@@ -9,8 +9,8 @@
 
   <link rel="stylesheet" href="{{URL::asset('assets/css/style.css')}}">
   <link rel="stylesheet" href="{{URL::asset('assets/css/materialize.min.css')}}">
-  <!-- <link rel="shortcut icon" href="{{URL::asset('assets/logo.jpg')}}"> -->
-  <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link rel="shortcut icon" href="{{URL::asset('assets/images/logo.png')}}">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
   <script src="{{URL::asset('assets/js/jquery-2.1.1.min.js')}}"></script>
   <script src="{{URL::asset('assets/js/materialize.min.js')}}"></script>
@@ -51,14 +51,14 @@
   <div class="container main">
     <div class="row">
 
-     <!--<marquee> <p class="imp" style="color:black"><b><img src="http://schoolreportcards.in/SRC-New/images/newgood.gif">For any notices & updates we request you to keep visiting this site. </b></p></marquee> -->
-<!--       <marquee> <p class="imp" style="color:black"><b><img src="http://schoolreportcards.in/SRC-New/images/newgood.gif"> Applicants who want to modify/edit their application form, kindly wait for the notice on this. Keep visiting the site. </b></p></marquee>-->
+     <!--<marquee> <p class="imp" style="color:black"><b><img src="{{URL::asset('assets/images/newgood.gif')}}">For any notices & updates we request you to keep visiting this site. </b></p></marquee> -->
+<!--       <marquee> <p class="imp" style="color:black"><b><img src="{{URL::asset('assets/images/newgood.gif')}}"> Applicants who want to modify/edit their application form, kindly wait for the notice on this. Keep visiting the site. </b></p></marquee>-->
 
       <div class="space-medium"></div>
       <div class="content">
         <h5 class="center"><b>Instructions for HOD/Admission Coordinator to Login</b></h5>
         <ul class="pad">
-          <li>1) Click here to <a href="http://admission.nitt.edu/adminlogin">login</a> into admin panel.</li>
+          <li>1) Click here to <a href="/adminlogin">login</a> into admin panel.</li>
           <li>2) Use <b>Username</b> & <b>Password</b> issued by Dean Academic to login. </li>
         </ul>
         

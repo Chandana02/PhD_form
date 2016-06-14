@@ -8,8 +8,8 @@
   <title>Admissions NITT | Admin Page</title>
   <link rel="stylesheet" href="{{URL::asset('assets/css/style.css')}}">
   <link rel="stylesheet" href="{{URL::asset('assets/css/materialize.min.css')}}">
-  <!-- <link rel="shortcut icon" href="{{URL::asset('assets/logo.jpg')}}"> -->
-  <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link rel="shortcut icon" href="{{URL::asset('assets/images/logo.png')}}">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <script src="{{URL::asset('assets/js/jquery-2.1.1.min.js')}}"></script>
   <script src="{{URL::asset('assets/js/admin.js')}}"></script>
   <script src="{{URL::asset('assets/js/materialize.min.js')}}"></script>
