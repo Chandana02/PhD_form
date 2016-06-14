@@ -9,7 +9,7 @@
     <a href="#" details-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
     <ul class="hide-on-sm-and-down">
       <li><a href="/admin/home">Home</a></li>
-      <li><a href="/hod-instructions">Instructions for HOD/Admission Coordinator</a></li>
+      <li><a href="/hod-instructions">Instructions</a></li>
       <li><a href="/logout">Logout</a></li>
 
     </ul>
