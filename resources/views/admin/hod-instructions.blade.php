@@ -26,13 +26,13 @@
         <h5 class="center"><b>Step by Step instructions for HOD/Admission Coordinator to use Portal</b></h5>
 
 
-        <h6 class="center"> Before login <h6>
+        <h6 class="center"> Before login </h6>
         <ul class="pad">
         
           <li><b>Step 1:</b> Click here to <a href="/adminlogin">login</a> into admin panel.</li>
           <li><b>Step 2:</b> Use <b>Username</b> & <b>Password</b> issued by Dean Academic and click on <b>Submit</b> button to login. </li>
           </ul>
-        <h6 class="center"> After login <h6>
+        <h6 class="center"> After login </h6>
         <ul class="pad">
         
           <li><b>Step 3:</b> Click on <b>M.S. APPLICANTS</b> button to view MS applications for your department.</li>
