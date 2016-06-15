@@ -85,6 +85,7 @@
         <ul class="pad">
            <li>1. <b>30/06/2016 -</b> Entrance test for Ph.D. </li>
            <li>2. <b>01/07/2016 -</b> Interview for Ph.D.</li>
+           <li>3. <b>24/06/2016 -</b> M.S. (by research) counseling/interview</li>
         </ul>
 
        
