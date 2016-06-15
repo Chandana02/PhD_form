@@ -23,7 +23,15 @@
 
       <div class="space-medium"></div>
       <div class="content">
-        <h5 class="center"><b>Instructions for HOD/Admission Coordinator to Login</b></h5>
+        <h5 class="center"><b>Instructions for HOD/Admission Coordinator to use Portal</b></h5>
+        <h4 class="center">Step by Step Procedure</h4>
+
+        <ul class="pad">
+          <li><b>Step 1:</b> Click here to <a href="/adminlogin">login</a> into admin panel.</li>
+          <li><b>Step 2:</b> Use <b>Username</b> & <b>Password</b> issued by Dean Academic to login. </li>
+          <li><b>You will get the home screen as shown: <img src="http://imgur.com/AFW0zEc" height="300px" width="400px"></li>
+        </ul>
+        
         <ul class="pad">
           <li>1) Click here to <a href="/adminlogin">login</a> into admin panel.</li>
           <li>2) Use <b>Username</b> & <b>Password</b> issued by Dean Academic to login. </li>
