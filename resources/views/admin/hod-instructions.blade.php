@@ -55,7 +55,7 @@
         <ul class="pad">
           <li><b>Step 6:</b> To read candidates application form, click on <b>View</b> button.</li>
           <li><b>Step 7:</b> If applicant's form is eligible for further rounds and if applicant has paid the application fee, kindly click on <b>Selected</b> cicle.</li>
-          <li><b>Step 8:</b> If you want to reject any application click on <b>Not Selected</b> cicle. Clicking on <b>Not Selected</b> circle will pop a alert box asking you to reason for rejecting the application. Kindly mention the reason for rejection(e.g, Fees not paid, Form not submitted, False information etc). Click <b>Cancel</b> if you want to mention any reason.</li>
+          <li><b>Step 8:</b> If you want to reject any application click on <b>Not Selected</b> cicle. Clicking on <b>Not Selected</b> circle will pop a alert box asking you to reason for rejecting the application. Kindly mention the reason for rejection(e.g, Fees not paid, Form not submitted, False information etc). Click <b>Cancel</b> if you do not want to mention any reason.</li>
           
           
         </ul>
@@ -66,7 +66,7 @@
 
         </ul>
 
-        <h6 class="center">Logut & Change Password</h6>
+        <h6 class="center">Logout & Change Password</h6>
         <ul class="pad">
           <li><b>Step 11:</b> Click on <b>Logout</b> to logout.</li>
           <li><b>Step 12:</b> You can change your password for department on the login screen. Or Click <a href="/change"> here </a> to change your password.</li>
