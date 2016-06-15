@@ -76,8 +76,7 @@
         <ul class="pad">
           <li>Dear applicants, <br>
           Thank you for applying at NIT Trichy. <br>
-          Your applications are under review. Rejected applicants would be notified here.
-          Shortlisted applicants would be able to download their admit card here. We request you to keep visiting <a href="http://admission.nitt.edu">http://admission.nitt.edu</a> or <a href="http://nittadmission.org/">http://nittadmission.org/</a> for any further update.</li>
+          Your applications are under review. List of shortlisted applicants would be made public soon. Shortlisted candidates would be able to download their admit card here. We request you to keep visiting <a href="http://admission.nitt.edu">http://admission.nitt.edu</a> or <a href="http://nittadmission.org/">http://nittadmission.org/</a> for any further update.</li>
           
         </ul>
 
