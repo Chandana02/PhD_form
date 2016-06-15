@@ -23,54 +23,73 @@
 
       <div class="space-medium"></div>
       <div class="content">
-        <h5 class="center"><b>Instructions for HOD/Admission Coordinator to use Portal</b></h5>
-        <h4 class="center">Step by Step Procedure</h4>
+        <h5 class="center"><b>Step by Step instructions for HOD/Admission Coordinator to use Portal</b></h5>
 
+
+        <h6 class="center"> Before login <h6>
         <ul class="pad">
+        
           <li><b>Step 1:</b> Click here to <a href="/adminlogin">login</a> into admin panel.</li>
-          <li><b>Step 2:</b> Use <b>Username</b> & <b>Password</b> issued by Dean Academic to login. </li>
-          <li><b>You will get the home screen as shown: <img src="http://imgur.com/AFW0zEc" height="300px" width="400px"></li>
+          <li><b>Step 2:</b> Use <b>Username</b> & <b>Password</b> issued by Dean Academic and click on <b>Submit</b> button to login. </li>
+          </ul>
+        <h6 class="center"> After login <h6>
+        <ul class="pad">
+        
+          <li><b>Step 3:</b> Click on <b>M.S. APPLICANTS</b> button to view MS applications for your department.</li>
+          <li><b>Step 4:</b> Click on <b>PH.D. APPLICANTS</b> button to view PH.D applications for your department.</li>
         </ul>
         
+
+
+        <h6 class="center"><b>Upload Signature</b></h6>
         <ul class="pad">
-          <li>1) Click here to <a href="/adminlogin">login</a> into admin panel.</li>
-          <li>2) Use <b>Username</b> & <b>Password</b> issued by Dean Academic to login. </li>
-        </ul>
-        
-        <h5 class="center"><b>Upload Signature</b></h5>
-        <ul class="pad">
-          <li>Dear Admission Co-ordinator,<br>
-          	  We request you to upload your signature in PNG/JPG/JPEG format.<br>
-          	  The dimension of signature should be less that 200px wide and 150px high.<br>
-          	  (less than or equal to 200x150 px) <br>
+          <li><b>Step 5:</b>Click on <b>UPLOAD SIGNATURE</b> button to upload your signature.<br> 
+          	  Signature should be uploaded only in PNG/JPG/JPEG format.The dimension of signature should be less that 200px wide and 150px high.<br>
+          	  (less than or equal to 200x150 px).
 
           </li>
 
         </ul>
 
-       <h5 class="center"><b>Select/Reject Application</b></h5>
+       <h6 class="center"><b>Select/Reject Application</b></h6>
         <ul class="pad">
-          <li><b>Step 1:</b> To read candidates application form, click on <b>View</b> button.</li>
-          <li><b>Step 2:</b> If applicant's form is eligible for further rounds and if applicant has paid the application fee,kindly click on <b>Select</b> button.</li>
-          <li><b>Or Step 2:</b> If applicant's form is not eligible for further rounds and if applicant has not paid the application fee,kindly do not click on <b>Select</b> button.</li>
+          <li><b>Step 6:</b> To read candidates application form, click on <b>View</b> button.</li>
+          <li><b>Step 7:</b> If applicant's form is eligible for further rounds and if applicant has paid the application fee, kindly click on <b>Selected</b> cicle.</li>
+          <li><b>Step 8:</b> If you want to reject any application click on <b>Not Selected</b> cicle. Clicking on <b>Not Selected</b> circle will pop a alert box asking you to reason for rejecting the application. Kindly mention the reason for rejection(e.g, Fees not paid, Form not submitted, False information etc). Click <b>Cancel</b> if you want to mention any reason.</li>
+          
           
         </ul>
+           <h6 class="center"><b>Generate Excel</b></h6>
+        <ul class="pad">
+          <li><b>Step 9:</b>Click on <b>GENERATE EXCEL</b> button to download individual application in excel format.</li>
+          <li><b>Step 10:</b>Click on <b>EXPORT ALL CANDIDATES</b> button to download all applications of your department in excel format.</li>
 
+        </ul>
 
+        <h6 class="center"><b>Logut & Change Password</b></h6>
+        <ul class="pad">
+          <li><b>Step 11:</b> Click on <b>Logout</b> to logout.</li>
+          <li><b>Step 12:</b> You can change your password for department on the login screen. Or Click <a href="/change"> here </a> to change your password.</li>
+          
+        </ul>
        
 
-        <h5 class="center"><b>Admit Card Generation</b></h5>
+        <h6 class="center"><b>Admit Card Generation</b></h6>
         <ul class="pad">
-          <li>Signature of HOD/Admission Coordinator will automatically get deployed to all the selected candidates admit card.
-           Selected candidates will be able to download their admit cards.</li>
+          <li>Signature of HOD/Admission Coordinator will automatically get deployed to all the selected candidate's admit card.
+           Selected candidates will be able to download their admit cards from the portal</li>
         
         </ul>
 
-         <h5 class="center"><b>Other Instructions</b></h5>
+        <h6 class="center"><b>Help Desk</b></h6>
         <ul class="pad">
-          <li> Click Logout to logout.</li>
-          
+          <li> Write to delta@nitt.edu for technical queries.</li>
+          <li> Write to phdsection@nitt.edu for other queries.</li>
+          <li> Call on +91-431-2503011 for any query.</li>
+        
         </ul>
+
+         
 
       </div>
     </div>
