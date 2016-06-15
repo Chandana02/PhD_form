@@ -26,13 +26,14 @@
         <h5 class="center"><b>Step by Step instructions for HOD/Admission Coordinator to use Portal</b></h5>
 
 
-        <h6 class="center"> Before login </h6>
+        <h6 class="center"> <b>Before login</b> </h6>
         <ul class="pad">
         
           <li><b>Step 1:</b> Click here to <a href="/adminlogin">login</a> into admin panel.</li>
           <li><b>Step 2:</b> Use <b>Username</b> & <b>Password</b> issued by Dean Academic and click on <b>Submit</b> button to login. </li>
           </ul>
-        <h6 class="center"> After login </h6>
+
+        <h6 class="center"> <b>After login</b> </h6>
         <ul class="pad">
         
           <li><b>Step 3:</b> Click on <b>M.S. APPLICANTS</b> button to view MS applications for your department.</li>
@@ -41,9 +42,9 @@
         
 
 
-        <h6 class="center"><b>Upload Signature</b></h6>
+        <h6 class="center">Upload Signature</h6>
         <ul class="pad">
-          <li><b>Step 5:</b>Click on <b>UPLOAD SIGNATURE</b> button to upload your signature.<br> 
+          <li><b>Step 5:</b> Click on <b>UPLOAD SIGNATURE</b> button to upload your signature.<br> 
           	  Signature should be uploaded only in PNG/JPG/JPEG format.The dimension of signature should be less that 200px wide and 150px high.<br>
           	  (less than or equal to 200x150 px).
 
@@ -51,7 +52,7 @@
 
         </ul>
 
-       <h6 class="center"><b>Select/Reject Application</b></h6>
+       <h6 class="center">Select/Reject Application</h6>
         <ul class="pad">
           <li><b>Step 6:</b> To read candidates application form, click on <b>View</b> button.</li>
           <li><b>Step 7:</b> If applicant's form is eligible for further rounds and if applicant has paid the application fee, kindly click on <b>Selected</b> cicle.</li>
@@ -59,14 +60,14 @@
           
           
         </ul>
-           <h6 class="center"><b>Generate Excel</b></h6>
+           <h6 class="center">Generate Excel</h6>
         <ul class="pad">
-          <li><b>Step 9:</b>Click on <b>GENERATE EXCEL</b> button to download individual application in excel format.</li>
-          <li><b>Step 10:</b>Click on <b>EXPORT ALL CANDIDATES</b> button to download all applications of your department in excel format.</li>
+          <li><b>Step 9:</b> Click on <b>GENERATE EXCEL</b> button to download individual application in excel format.</li>
+          <li><b>Step 10:</b> Click on <b>EXPORT ALL CANDIDATES</b> button to download all applications of your department in excel format.</li>
 
         </ul>
 
-        <h6 class="center"><b>Logut & Change Password</b></h6>
+        <h6 class="center">Logut & Change Password</h6>
         <ul class="pad">
           <li><b>Step 11:</b> Click on <b>Logout</b> to logout.</li>
           <li><b>Step 12:</b> You can change your password for department on the login screen. Or Click <a href="/change"> here </a> to change your password.</li>
