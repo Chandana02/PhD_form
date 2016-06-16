@@ -41,7 +41,7 @@
   <h5 class="center heading" data-reg="{!! $data['dept'] !!}">{!! $data['dept'] !!}</h5>
   @if($data['session_all'] == 'all')
   <div class="col l6 center">
-  <a href="#" class="exportselms waves-effect waves-light btn" data-reg="{!! $data['session'] !!}">Export Selected Candidates</a>
+    <a href="#" class="exportms waves-effect waves-light btn" data-reg="{!! $data['session'] !!}">Export All Candidates</a>
   </div>
   @endif
   <div class="space-small"></div>
@@ -155,8 +155,8 @@
 </div>
    <div class="space-medium"></div>
 <div class="center">
-   <a class="waves-effect waves-light btn" href="../phd">View Ph.D applicants</a>
-   <a href="#" class="exportms waves-effect waves-light btn" data-reg="{!! $data['session'] !!}">Export All Candidates</a>
+   <a href="#" class="exportselms waves-effect waves-light btn" data-reg="{!! $data['session'] !!}">Export Selected Candidates</a>
+   <a href="#" class="exportunselms waves-effect waves-light btn" data-reg="{!! $data['session'] !!}">Export Candidates Not Selected</a>
   </div>
 
 </div>

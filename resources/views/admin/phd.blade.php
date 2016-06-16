@@ -5,12 +5,12 @@
 @section('navbar')
     <ul class="hide-on-sm-and-down">
         <li><a href="/admin/home">Home</a></li>
-        <li><a href="/admin/phd">Ph.D Applicants</a></li>
+        <li><a href="/admin/ms">M.S. Applicants</a></li>
         <li><a href="/logout">Logout</a></li>
       </ul>
       <ul class="side-nav" id="mobile-demo">
        <li><a href="/admin/home">Home</a></li>
-        <li><a href="/admin/phd">Ph.D Applicants</a></li>
+        <li><a href="/admin/ms">M.S. Applicants</a></li>
         <li><a href="/logout">Logout</a></li>
       </ul>
 @endsection
@@ -44,7 +44,7 @@
     <h5 class="center heading" data-reg="{!! $data['dept'] !!}">{!! $data['dept'] !!}</h5><br>
     @if($data['session_all'] == 'all')
     <div class="col l6 center">
-    <a href="#" class="exportselphd waves-effect waves-light btn" data-reg="{!! $data['session'] !!}">Export Selected Candidates</a>
+    <a href="#" class="exportphd waves-effect waves-light btn" data-reg="{!! $data['session'] !!}">Export All Candidates</a>
     </div>
     @endif
   <div class="space-small"></div>
@@ -175,8 +175,8 @@
 
    <div class="space-medium"></div>
 <div class="center">
-   <a class="waves-effect waves-light btn" href="../ms">View M.S. applicants</a>
-   <a href="#" class="exportphd waves-effect waves-light btn" data-reg="{!! $data['session'] !!}">Export All Candidates</a>
+   <a href="#" class="exportselphd waves-effect waves-light btn" data-reg="{!! $data['session'] !!}">Export Selected Candidates</a>
+   <a href="#" class="exportunselphd waves-effect waves-light btn" data-reg="{!! $data['session'] !!}">Export Candidates Not Selected</a>
   </div>
 
    </div>

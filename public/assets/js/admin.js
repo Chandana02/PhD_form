@@ -38,11 +38,11 @@ $(document).ready(function(){
 	        }
 		});     
     });
-	$('.main.container').on('click', '.exportphd', function(){
+	$('.exportphd').on('click', function(){
 		var dept = $(this).attr('data-reg');
 		window.location = '/exportphd/' + dept;
 	});
-	$('.main.container').on('click', '.exportms', function(){
+	$('.exportms').on('click', function(){
 		var dept = $(this).attr('data-reg');
 		window.location = '/exportms/' + dept;
 	});
@@ -53,6 +53,14 @@ $(document).ready(function(){
 	$('.main.container').on('click', '.exportselms', function(){
 		var dept = $(this).attr('data-reg');
 		window.location = '/exportselms/' + dept;
+	});
+	$('.main.container').on('click', '.exportunselphd', function(){
+		var dept = $(this).attr('data-reg');
+		window.location = '/exportunselphd/' + dept;
+	});
+	$('.main.container').on('click', '.exportunselms', function(){
+		var dept = $(this).attr('data-reg');
+		window.location = '/exportunselms/' + dept;
 	});
 	$('.main.container').on('click', '.discard', function(e){
 		var applNo = $(this).attr('data-reg');
