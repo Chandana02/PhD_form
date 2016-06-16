@@ -72,18 +72,43 @@
 
         </ul> -->
 
-       <h5 class="center"><b><u>Shortlisting/Admit Card</u></b></h5>
+       <h5 class="center"><img src="{{URL::asset('assets/images/newgood.gif')}}"><b><u>Shortlisting/Admit Card/Reporting</u></b></h5>
+        <br>
+
+        <h6 class="center"><b>Instructions for M.S. (by research) candidates:</b> </h6>
+
         <ul class="pad">
-          <li>Dear applicants, <br>
-          Thank you for applying at NIT Trichy. <br>
-          Your applications are under review. List of shortlisted applicants would be made public soon. Shortlisted candidates would be able to download their admit card here. We request you to keep visiting <a href="http://admission.nitt.edu">http://admission.nitt.edu</a> or <a href="http://nittadmission.org/">http://nittadmission.org/</a> for any further update.</li>
-          
-        </ul>
+          <li>1. M.S. candidates can download their admit card for counseling/interview from the portal from 20.06.2016 AN.</li>
+          <li>2. Admit card (hard copy) will not be sent to the candidates.</li>
+          <li>3. Candidates should bring original and photocopies of admit card, all the previous degree certificates, mark sheets, GATE score card, OBC/SC/ST/PwD certificate, proof for awards, publications & experience, etc. for counselling/interview.</li>
+          <li>4. No TA/DA will be provided for counseling/interview. </li>
+          <li>5. For OBC certificate format and other details, see information brochure.</li>
+          <li>6. M.S. counselling will only ascertain the eligibility of the candidates to pursue M.S. program.</li>
+          <li>7. For M.S. counseling/interview schedule, click <a href="http://www.nitt.edu/home/admissions/phd/COUNSELING%20SCHEDULE%20(1).pdf" target="_blank"> here</a> here. </li>
+         </ul>
+
+         
+          <h6 class="center"><b>Instructions for Ph.D. candidates:</b> </h6>
+          <ul class="pad">
+          <li>1. Ph.D. candidates can download their admit card for written test from the portal from 22.06.2016 AN. You will not be permitted to write the written test without the admit card.</li>
+          <li>2. Candidates shortlisted in more than one Department can write written test in any one of the Departments and have to attend interview in all the shortlisted Departments in which they would like to join.</li>
+          <li>3. Admit card (hard copy) will not be sent to the candidates. </li>
+          <li>4. There is negative mark in the written test for each wrong answer. For each wrong answer, 1/4 of the marks of that question will be deducted.</li>
+          <li>5. Candidates are requested to report 15 minutes before the commencement of the test at the venue.</li>
+          <li>6. Shortlisted candidates after the written test will be interviewed on 01.07.2016 (next day) by the expert committee. Therefore, you are requested to prepare to stay for one day if you are shortlisted for the interview.</li>
+          <li>7. Candidates should bring original and photocopies of admit card, all the previous degree certificates, mark sheets, GATE/NET score card, OBC/SC/ST/PwD certificate, proof for awards, publications & experience, etc. for the interview.</li>
+          <li>8. No TA/DA will be provided for written test/interview.</li>
+          <li>9. For OBC certificate format and other details, see <a href="http://www.nitt.edu/home/MS%20and%20Ph_D%20advt%20July%202016%20(1)%20(1).pdf"> information brochure.</a> </li>
+
+          </ul>
+
+
+
 
          <h5 class="center"><img src="{{URL::asset('assets/images/newgood.gif')}}"><b><u>Important Dates</u></b></h5>
         <ul class="pad">
-           <li>1. <b>30/06/2016 -</b> Entrance test for Ph.D. </li>
-           <li>2. <b>01/07/2016 -</b> Interview for Ph.D.</li>
+           <li>1. <b>30/06/2016 -</b> Written test for Ph.D. (10.30 a.m.-11.30 a.m.) </li>
+           <li>2. <b>01/07/2016 -</b> Interview for Ph.D. (only for shortlisted candidates) </li>
            <li>3. <b>24/06/2016 -</b> M.S. (by research) counseling/interview</li>
         </ul>
 
