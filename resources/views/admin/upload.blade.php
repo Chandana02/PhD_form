@@ -24,7 +24,7 @@
   {!! Form::open(array( 'action' => 'AdminController@upload', 'method'=>'POST', 'files'=>true)) !!}
   <div class="file-field">
     <div class="btn teal darken-1 btn waves-effect waves-light">
-      <span class="light">Sign</span>
+      <span class="light">Choose File</span>
       <input type="file" name="sign">    
     </div>
     <div class="file-path-wrapper">
