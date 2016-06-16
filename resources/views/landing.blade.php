@@ -75,7 +75,7 @@
        <h5 class="center"><img src="{{URL::asset('assets/images/newgood.gif')}}"><b><u>Shortlisting/Admit Card/Reporting</u></b></h5>
         <br>
 
-        <h6 class="center">Instructions for M.S. (by research) candidates: </h6>
+        <h6 class="center"><b>Instructions for M.S. (by research) candidates:</b> </h6>
 
         <ul class="pad">
           <li>1. M.S. candidates can download their admit card for counseling/interview from the portal from 20.06.2016 AN.</li>
@@ -88,7 +88,7 @@
          </ul>
 
          
-          <h6 class="center">Instructions for Ph.D. candidates: </h6>
+          <h6 class="center"><b>Instructions for Ph.D. candidates:</b> </h6>
           <ul class="pad">
           <li>1. Ph.D. candidates can download their admit card for written test from the portal from 22.06.2016 AN. You will not be permitted to write the written test without the admit card.</li>
           <li>2. Candidates shortlisted in more than one Department can write written test in any one of the Departments and have to attend interview in all the shortlisted Departments in which they would like to join.</li>
