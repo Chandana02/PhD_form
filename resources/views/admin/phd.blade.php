@@ -42,11 +42,9 @@
 </div>
 <div class="hide space-large  " hidden="true"></div>
     <h5 class="center heading" data-reg="{!! $data['dept'] !!}">{!! $data['dept'] !!}</h5><br>
-    @if($data['session_all'] == 'all')
     <div class="col l6 center">
     <a href="#" class="exportphd waves-effect waves-light btn" data-reg="{!! $data['session'] !!}">Export All Candidates</a>
     </div>
-    @endif
   <div class="space-small"></div>
   <div class="container main">
 
