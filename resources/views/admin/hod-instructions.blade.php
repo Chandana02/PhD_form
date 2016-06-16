@@ -27,7 +27,8 @@
 
         <h6 class="center"> <b>Before login</b> </h6>
         <ul class="pad">
-        
+          <li><b>Important</b><img src="{{URL::asset('assets/images/newgood.gif')}}"> Use Google Chrome for better experience.</li>
+          <br>
           <li><b>Step 1:</b> Click here to <a href="/adminlogin">login</a> into admin panel.</li>
           <li><b>Step 2:</b> Use <b>Username</b> & <b>Password</b> issued by Dean Academic and click on <b>Submit</b> button to login. </li>
           </ul>
