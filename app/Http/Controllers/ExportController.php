@@ -126,7 +126,8 @@ class ExportController extends Controller
 
     public function deptPhdUnSelCandidatesExport($dept)
     {
-        $phdCandidatesPersonal = Phd::where('selected_depts', 'NOT LIKE', '%'.$dept.'%')
+        $phdCandidatesPersonal = Phd::where('registrationNumber', 'LIKE', '%'.$dept.'%')
+                                        ->where('selected_depts', 'NOT LIKE', '%'.$dept.'%')
                                         ->orderBy('created_at', 'desc')
                                         ->get();
         if(sizeof($phdCandidatesPersonal) == 0)
@@ -196,7 +197,8 @@ class ExportController extends Controller
 
     public function deptMsUnSelCandidatesExport($dept)
     {
-        $msCandidatesPersonal = Ms::where('selected_depts', 'NOT LIKE', '%'.$dept.'%')
+        $msCandidatesPersonal = Ms::where('registrationNumber', 'LIKE', '%'.$dept.'%')
+                                        ->where('selected_depts', 'NOT LIKE', '%'.$dept.'%')
                                         ->orderBy('created_at', 'desc')
                                         ->get();
         if(sizeof($msCandidatesPersonal) == 0)
