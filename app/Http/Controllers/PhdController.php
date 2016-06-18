@@ -24,7 +24,7 @@ class PhdController extends Controller
     public function validated(Request $request)
     {
         //registration process stopped
-        // return redirect('instructions');
+        return redirect('instructions');
         //registration process stopped
 
     	$rules = array(                        
