@@ -22,7 +22,9 @@
 
       <div class="space-medium"></div>
       <div class="content">
-        <h5 class="center"><b>Step by Step instructions for HOD/Admission Coordinator to use Portal</b></h5>
+        <h5 class="center"><b>Step by Step instructions for HOD/Admission Coordinator to use Portal</b></h5> <br>
+        <h6 class="center"><img src="{{URL::asset('assets/images/newgood.gif')}}"><b>Please visit either <a href="http://admission.nitt.edu/adminlogin"> http://admission.nitt.edu/adminlogin</a> or <a href="http://nittadmission.org/adminlogin"> http://nittadmission.org/adminlogin</a> to use the portal.</b></h6><br>
+
 
 
         <h6 class="center"> <b>Before login</b> </h6>
