@@ -48,9 +48,9 @@
 
         <p><b>Registration Number: </b> {!! $regNo !!} </p>
         <p><b>Department:</b>  {!! $dept !!}</p>
-        <p><b>Venue:</b>   </p>
+       <!-- <p><b>Venue:</b>   </p>
         <p><b>Examination Date:</b>  </p>
-        <p><b>Examination Time:</b>  </p>
+        <p><b>Examination Time:</b>  </p> -->
         <div class="space-medium"></div>
         @if($hod_sign != null && $selected)
         <div>
@@ -59,7 +59,7 @@
         @endif
         
         <span class="left"><b>HoD/Admission Co-ordinator</b></span>
-        <span class="right"><b>Seal</b></span>
+       <!-- <span class="right"><b>Seal</b></span>-->
         <div class="space-large"></div>
       </div>
     </div>    
