@@ -42,24 +42,24 @@
     </div>
       <hr><hr>
       <div class="space-small"></div>
-      <p class="center head"><u>FOR OFFICE USE ONLY</u></p>
     <div class="row admit">
       <div class="col l12">
 
         <p><b>Registration Number: </b> {!! $regNo !!} </p>
         <p><b>Department:</b>  {!! $dept !!}</p>
-       <!-- <p><b>Venue:</b>   </p>
-        <p><b>Examination Date:</b>  </p>
-        <p><b>Examination Time:</b>  </p> -->
+        <p><b>Venue: </b> Deartment of {!! $dept !!}</p>
+        <p><b>Counselling/Interview Date: </b>  24/06/2016</p>
         <div class="space-medium"></div>
         @if($hod_sign != null && $selected)
+        <div style="float: right;">
         <div>
           <img src={{URL::asset('uploads/signatures/'.$hod_sign)}} width="230" height="100">
         </div>
         @endif
         
-        <span class="left"><b>HoD/Admission Co-ordinator</b></span>
+        <span class="right"><b>HoD/Admission Co-ordinator</b></span>
        <!-- <span class="right"><b>Seal</b></span>-->
+        </div>
         <div class="space-large"></div>
       </div>
     </div>    

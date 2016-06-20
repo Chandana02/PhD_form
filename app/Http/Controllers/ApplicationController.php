@@ -144,7 +144,12 @@ class ApplicationController extends Controller
             $message = 'Please fill in all the required details';
             return view('error')->with('message', $message);
         }
-        $candidate = Phd::where('registrationNumber', $request->input('regNo'))
+        if(explode('/', $request->input('regNo'))[0] == 'PHD')
+            $candidate = Phd::where('registrationNumber', $request->input('regNo'))
+                            ->where('dob', $request->input('year').'-'.$request->input('month').'-'.$request->input('day'))
+                            ->first();
+        else
+            $candidate = Ms::where('registrationNumber', $request->input('regNo'))
                             ->where('dob', $request->input('year').'-'.$request->input('month').'-'.$request->input('day'))
                             ->first();
 

@@ -846,6 +846,28 @@ class AdminController extends Controller
     {
         // $reg_number is the dashed version
         // $reg_number_original is the slashed version (original)
+        $dept_json = array(
+            'Architecture' => 'AR',
+            'Computer Science and Engineering' => 'CS',
+            'Chemical Engineering' => 'CL',
+            'Civil Engineering' => 'CV',
+            'Chemistry' => 'CY',
+            'Computer Applications' => 'CA',
+            'CECASE' => 'CC',
+            'Energy and Environment' => 'EN',
+            'Electrical and Electronics Engineering' => 'EE',
+            'Electronics and Communication Engineering' => 'EC',
+            'Mechanical Engineering' => 'ME',
+            'Production Engineering' => 'PR',
+            'Metallurgical and Materials Engineering' => 'MME',
+            'Mathematics' => 'MA',
+            'Instrumentation and Control Engineering' => 'IC',
+            'Physics' => 'PH',
+            'Humanities and Social Sciences' => 'HM',
+            'Management Studies' => 'MS'
+            );
+
+        Session::put('dept_folder', $dept_json[$dept]);
         
         $reg_number_original = str_replace("-", "/", $reg_number);
 
@@ -863,15 +885,15 @@ class AdminController extends Controller
         {
             $type = 'png';
         }
-        else if(file_exists($path.'JPG'))
+        else if(file_exists($path.'.JPG'))
         {
             $type = 'JPG';
         }
-        else if(file_exists($path.'JPEG'))
+        else if(file_exists($path.'.JPEG'))
         {
             $type = 'JPEG';
         }
-        else if(file_exists($path.'PNG'))
+        else if(file_exists($path.'.PNG'))
         {
             $type = 'PNG';
         }

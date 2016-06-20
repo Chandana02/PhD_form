@@ -59,7 +59,6 @@ Route::group(['middleware' => 'adminauth'], function () {
     Route::get('admin/hodsignatures', 'AdminController@signatures');
     Route::get('admin/hod-passwords', 'AdminController@passwords');
     Route::get('admin/{phdormsc}', 'AdminController@adminView');
-    Route::get('admit/{phdormsc}/{regNo}/{dept}', 'AdminController@admitCard');
     Route::get('admin/{phdormsc}/{dept}', 'AdminController@adminall');
     Route::post('delete', 'AdminController@deleted' );
     Route::post('accept', 'AdminController@accepted');
@@ -79,6 +78,7 @@ Route::group(['middleware' => 'adminauth'], function () {
     Route::get('exportmsSingle/{regNo}', 'ExportController@singleMsCandidatesExport' );
 });
 Route::get('print/{phdormsc}/{regNo}', 'AdminController@printer' );
+Route::get('admit/{phdormsc}/{regNo}/{dept}', 'AdminController@admitCard');
 Route::get('admit', function() {
     return view('admit');
 });
