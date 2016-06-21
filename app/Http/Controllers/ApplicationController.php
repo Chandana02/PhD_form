@@ -145,9 +145,10 @@ class ApplicationController extends Controller
             return view('error')->with('message', $message);
         }
         if(explode('/', $request->input('regNo'))[0] == 'PHD')
-            $candidate = Phd::where('registrationNumber', $request->input('regNo'))
-                            ->where('dob', $request->input('year').'-'.$request->input('month').'-'.$request->input('day'))
-                            ->first();
+            return view('error')->with('message', 'PHD candidates will soon be imformed about their admit cards.');
+            // $candidate = Phd::where('registrationNumber', $request->input('regNo'))
+            //                 ->where('dob', $request->input('year').'-'.$request->input('month').'-'.$request->input('day'))
+            //                 ->first();
         else
             $candidate = Ms::where('registrationNumber', $request->input('regNo'))
                             ->where('dob', $request->input('year').'-'.$request->input('month').'-'.$request->input('day'))

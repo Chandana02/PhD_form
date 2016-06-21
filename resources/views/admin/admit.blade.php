@@ -36,7 +36,7 @@
         <div class="space-large"></div>
       </div>
       <div class="col l4">
-        <img src={{URL::asset('uploads/'.$image)}}>
+        <img src={{URL::asset('uploads/'.$image)}} width="150" height="150" style="position:absolute;top:50%">
 
       </div>
     </div>
