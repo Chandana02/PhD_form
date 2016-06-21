@@ -867,7 +867,7 @@ class AdminController extends Controller
             'Management Studies' => 'MS'
             );
 
-        $dept_time_json = array(
+        $ms_dept_time_json = array(
             'Architecture' => '',
             'Computer Science and Engineering' => '10.30 A.M. to 12.30 P.M.',
             'Chemical Engineering' => '9.30 A.M. to 11.30 A.M.',
@@ -884,6 +884,27 @@ class AdminController extends Controller
             'Mathematics' => '',
             'Instrumentation and Control Engineering' => '11.30 A.M. to 01.30 P.M.',
             'Physics' => '03.30 P.M. to 05.30 P.M.',
+            'Humanities and Social Sciences' => '',
+            'Management Studies' => ''
+            );
+
+        $phd_dept_time_json = array(
+            'Architecture' => '',
+            'Computer Science and Engineering' => '',
+            'Chemical Engineering' => '',
+            'Civil Engineering' => '',
+            'Chemistry' => '',
+            'Computer Applications' => '',
+            'CECASE' => '',
+            'Energy and Environment' => '',
+            'Electrical and Electronics Engineering' => '',
+            'Electronics and Communication Engineering' => '',
+            'Mechanical Engineering' => '',
+            'Production Engineering' => '',
+            'Metallurgical and Materials Engineering' => '',
+            'Mathematics' => '',
+            'Instrumentation and Control Engineering' => '',
+            'Physics' => '',
             'Humanities and Social Sciences' => '',
             'Management Studies' => ''
             );
@@ -965,10 +986,13 @@ class AdminController extends Controller
             'hod_sign' => Session::get('dept_folder').'.'.$hod_sign_type,
             'name' => $candidate->name,
             'dept' => $dept,
-            'time' => $dept_time_json[$dept],
             'regNo' => $candidate->registrationNumber,
             'address'=> $candidate->addrforcomm,
         );
+        if(explode('-', $reg_number)[0] == 'PHD')
+            $data['time'] = $phd_dept_time_json[$dept];
+        else
+            $data['time'] = $ms_dept_time_json[$dept];
         if (strpos($candidate->selected_depts, Session::get('dept_folder')) !== false) 
         {
             $data['selected'] = true;
