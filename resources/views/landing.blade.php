@@ -79,7 +79,7 @@
 
         <ul class="pad">
           <li>1. <img src="{{URL::asset('assets/images/newgood.gif')}}"> List of Shortlisted candidates for M.S(by research) & PH.D. can be seen <a href="http://www.nitt.edu/home/admissions/phd/july2016/"> here</a></li>       
-          <li>2. <img src="{{URL::asset('assets/images/newgood.gif')}}"> M.S. candidates can download their admit card after 15:00 HRS IST today.</li> 
+          <li>2. <img src="{{URL::asset('assets/images/newgood.gif')}}"> M.S. candidates can download their admit card <a href="admit">here</a>.</li> 
           <li>3. Admit card (hard copy) will not be sent to the candidates.</li>
           <li>4. Candidates should bring original and photocopies of admit card, all the previous degree certificates, mark sheets, GATE score card, OBC/SC/ST/PwD certificate, proof for awards, publications & experience, etc. for counselling/interview.</li>
           <li>5. No TA/DA will be provided for counseling/interview. </li>
