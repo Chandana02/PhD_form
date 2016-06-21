@@ -49,6 +49,7 @@
         <p><b>Department:</b>  {!! $dept !!}</p>
         <p><b>Venue: </b> Deartment of {!! $dept !!}</p>
         <p><b>Counselling/Interview Date: </b>  24/06/2016</p>
+        <p><b>Time:</b> {!! $time !!}</p>
         <div class="space-medium"></div>
         @if($hod_sign != null && $selected)
         <div style="float: right;">

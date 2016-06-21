@@ -867,6 +867,27 @@ class AdminController extends Controller
             'Management Studies' => 'MS'
             );
 
+        $dept_time_json = array(
+            'Architecture' => '',
+            'Computer Science and Engineering' => '10.30 A.M. to 12.30 P.M.',
+            'Chemical Engineering' => '9.30 A.M. to 11.30 A.M.',
+            'Civil Engineering' => '9.30 A.M. to 11.30 A.M.',
+            'Chemistry' => '',
+            'Computer Applications' => '',
+            'CECASE' => '03.30 P.M. to 05.30 P.M.',
+            'Energy and Environment' => '11.30 A.M. to 01.30 P.M.',
+            'Electrical and Electronics Engineering' => '01.30 P.M. to 03.30 P.M.',
+            'Electronics and Communication Engineering' => '9.30 A.M. to 11.30 A.M.',
+            'Mechanical Engineering' => '11.30 A.M. to 01.30 P.M.',
+            'Production Engineering' => '03.30 P.M. to 05.30 P.M.',
+            'Metallurgical and Materials Engineering' => '01.30 P.M. to 03.30 P.M.',
+            'Mathematics' => '',
+            'Instrumentation and Control Engineering' => '11.30 A.M. to 01.30 P.M.',
+            'Physics' => '03.30 P.M. to 05.30 P.M.',
+            'Humanities and Social Sciences' => '',
+            'Management Studies' => ''
+            );
+
         Session::put('dept_folder', $dept_json[$dept]);
         
         $reg_number_original = str_replace("-", "/", $reg_number);
@@ -944,6 +965,7 @@ class AdminController extends Controller
             'hod_sign' => Session::get('dept_folder').'.'.$hod_sign_type,
             'name' => $candidate->name,
             'dept' => $dept,
+            'time' => $dept_time_json[$dept],
             'regNo' => $candidate->registrationNumber,
             'address'=> $candidate->addrforcomm,
         );
