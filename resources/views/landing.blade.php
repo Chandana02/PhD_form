@@ -78,13 +78,14 @@
         <h6 class="center"><b>Instructions for M.S. (by research) candidates:</b> </h6>
 
         <ul class="pad">
-         <!-- <li>1. M.S. candidates can download their admit card for counseling/interview from <a href="/admit"> here  </a> from 20.06.2016 AN.</li> -->
-          <li>1. Admit card (hard copy) will not be sent to the candidates.</li>
-          <li>2. Candidates should bring original and photocopies of admit card, all the previous degree certificates, mark sheets, GATE score card, OBC/SC/ST/PwD certificate, proof for awards, publications & experience, etc. for counselling/interview.</li>
-          <li>3. No TA/DA will be provided for counseling/interview. </li>
-          <li>4. For OBC certificate format and other details, see information brochure.</li>
-          <li>5. M.S. counselling will only ascertain the eligibility of the candidates to pursue M.S. program.</li>
-          <li>6. For M.S. counseling/interview schedule, click <a href="http://www.nitt.edu/home/admissions/phd/COUNSELING%20SCHEDULE%20(1).pdf" target="_blank"> here</a>. </li>
+          <li>1. <img src="{{URL::asset('assets/images/newgood.gif')}}"> List of Shortlisted candidates for M.S(by research) & PH.D. can be seen <a href="http://www.nitt.edu/home/admissions/phd/july2016/"> here</a></li>       
+          <li>2. <img src="{{URL::asset('assets/images/newgood.gif')}}"> M.S. candidates can download their admit card after 15:00 HRS IST today.</li> 
+          <li>3. Admit card (hard copy) will not be sent to the candidates.</li>
+          <li>4. Candidates should bring original and photocopies of admit card, all the previous degree certificates, mark sheets, GATE score card, OBC/SC/ST/PwD certificate, proof for awards, publications & experience, etc. for counselling/interview.</li>
+          <li>5. No TA/DA will be provided for counseling/interview. </li>
+          <li>6. For OBC certificate format and other details, see information brochure.</li>
+          <li>7. M.S. counselling will only ascertain the eligibility of the candidates to pursue M.S. program.</li>
+          <li>8. For M.S. counseling/interview schedule, click <a href="http://www.nitt.edu/home/admissions/phd/COUNSELING%20SCHEDULE%20(1).pdf" target="_blank"> here</a>. </li>
          </ul>
 
          
