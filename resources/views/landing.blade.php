@@ -91,7 +91,7 @@
          
           <h6 class="center"><b>Instructions for Ph.D. candidates:</b> </h6>
           <ul class="pad">
-          <li>1. Ph.D. candidates can download their admit card for written test from the portal from 22.06.2016 AN. You will not be permitted to write the written test without the admit card.</li>
+          <li>1. <img src="{{URL::asset('assets/images/newgood.gif')}}"> Ph.D. candidates can download their admit card for written test from the portal from 24.06.2016 AN. You will not be permitted to write the written test without the admit card.</li>
           <li>2. Candidates shortlisted in more than one Department can write written test in any one of the Departments and have to attend interview in all the shortlisted Departments in which they would like to join.</li>
           <li>3. Admit card (hard copy) will not be sent to the candidates. </li>
           <li>4. There is negative mark in the written test for each wrong answer. For each wrong answer, 1/4 of the marks of that question will be deducted.</li>
