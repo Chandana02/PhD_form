@@ -72,7 +72,7 @@
 
         </ul> -->
 
-       <h5 class="center"><img src="{{URL::asset('assets/images/newgood.gif')}}"><b><u>Shortlisting/Admit Card/Reporting</u></b></h5>
+       <h5 class="center"><b><u>Shortlisting/Admit Card/Reporting</u></b></h5>
         <br>
 
         <h6 class="center"><b>Instructions for M.S. (by research) candidates:</b> </h6>
