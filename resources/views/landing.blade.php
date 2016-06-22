@@ -99,7 +99,7 @@
           <li>6. Shortlisted candidates after the written test will be interviewed on 01.07.2016 (next day) by the expert committee. Therefore, you are requested to prepare to stay for one day if you are shortlisted for the interview.</li>
           <li>7. Candidates should bring original and photocopies of admit card, all the previous degree certificates, mark sheets, GATE/NET score card, OBC/SC/ST/PwD certificate, proof for awards, publications & experience, etc. for the interview.</li>
           <li>8. No TA/DA will be provided for written test/interview.</li>
-          <li>9. For OBC certificate format and other details, see <a href="http://www.nitt.edu/home/MS%20and%20Ph_D%20advt%20July%202016%20(1)%20(1).pdf"> information brochure.</a> </li>
+          <li>9. For OBC certificate format and other details, see <a href="http://www.nitt.edu/home/MS%20and%20Ph_D%20advt%20July%202016%20(1)-1%20-%20final.pdf"> information brochure.</a> </li>
 
           </ul>
 
