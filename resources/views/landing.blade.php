@@ -85,7 +85,7 @@
           <li>5. No TA/DA will be provided for counseling/interview. </li>
           <li>6. For OBC certificate format and other details, see information brochure.</li>
           <li>7. M.S. counselling will only ascertain the eligibility of the candidates to pursue M.S. program.</li>
-          <li>8. For M.S. counseling/interview schedule, click <a href="http://www.nitt.edu/home/admissions/phd/COUNSELING%20SCHEDULE%20(1).pdf" target="_blank"> here</a>. </li>
+          <li>8. For M.S. counseling/interview schedule, click <a href="http://www.nitt.edu/home/admissions/phd/july2016/schedule.pdf" target="_blank"> here</a>. </li>
          </ul>
 
          
