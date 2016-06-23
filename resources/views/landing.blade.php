@@ -92,7 +92,7 @@
           <h6 class="center"><b>Instructions for Ph.D. candidates:</b> </h6>
           <ul class="pad">
           <li>1. <img src="{{URL::asset('assets/images/newgood.gif')}}"> Ph.D. candidates can download their admit card for written test from the portal from 24.06.2016 AN. You will not be permitted to write the written test without the admit card.</li>
-          <li>2. Candidates shortlisted in more than one Department can write written test in any one of the Departments and have to attend interview in all the shortlisted Departments in which they would like to join.</li>
+          <li>2. Candidates shortlisted in more than one Department can write written test in any one of the Departments and have to attend interview in all the shortlisted Departments (except ICE) in which they would like to join. Those who would like to attend interview in the ICE Department have to write the written test conducted by ICE Department during 12-1 p.m.
           <li>3. Admit card (hard copy) will not be sent to the candidates. </li>
           <li>4. There is negative mark in the written test for each wrong answer. For each wrong answer, 1/4 of the marks of that question will be deducted.</li>
           <li>5. Candidates are requested to report 15 minutes before the commencement of the test at the venue.</li>
