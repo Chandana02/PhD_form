@@ -89,9 +89,11 @@ class ExportController extends Controller
 
     public function deptPhdSelCandidatesExport($dept)
     {
-        $phdCandidatesPersonal = Phd::where('selected_depts', 'LIKE', '%'.$dept.'%')
-                                        ->orderBy('created_at', 'desc')
-                                        ->get();
+        $phdCandidatesPersonal = Phd::whereRaw('FIND_IN_SET(?, selected_depts)', [$dept])->get();
+
+        // Phd::where('selected_depts', 'LIKE', '%'.$dept.'%')
+        //                                 ->orderBy('created_at', 'desc')
+        //                                 ->get();
         if(sizeof($phdCandidatesPersonal) == 0)
         {
             return redirect()->back();
@@ -126,8 +128,8 @@ class ExportController extends Controller
 
     public function deptPhdUnSelCandidatesExport($dept)
     {
-        $phdCandidatesPersonal = Phd::where('registrationNumber', 'LIKE', '%'.$dept.'%')
-                                        ->where('selected_depts', 'NOT LIKE', '%'.$dept.'%')
+        $phdCandidatesPersonal = Phd::whereRaw('FIND_IN_SET(?, replace(registrationNumber, "/", ","))', [$dept])
+                                        ->whereRaw('NOT FIND_IN_SET(?, selected_depts)', [$dept])
                                         ->orderBy('created_at', 'desc')
                                         ->get();
         if(sizeof($phdCandidatesPersonal) == 0)
@@ -164,9 +166,10 @@ class ExportController extends Controller
 
     public function deptMsSelCandidatesExport($dept)
     {
-        $msCandidatesPersonal = Ms::where('selected_depts', 'LIKE', '%'.$dept.'%')
-                                        ->orderBy('created_at', 'desc')
-                                        ->get();
+        $msCandidatesPersonal = Ms::whereRaw('FIND_IN_SET(?, selected_depts)', [$dept])->get();
+        // $msCandidatesPersonal = Ms::where('selected_depts', 'LIKE', '%'.$dept.'%')
+        //                                 ->orderBy('created_at', 'desc')
+        //                                 ->get();
         if(sizeof($msCandidatesPersonal) == 0)
         {
             return redirect()->back();
@@ -197,8 +200,8 @@ class ExportController extends Controller
 
     public function deptMsUnSelCandidatesExport($dept)
     {
-        $msCandidatesPersonal = Ms::where('registrationNumber', 'LIKE', '%'.$dept.'%')
-                                        ->where('selected_depts', 'NOT LIKE', '%'.$dept.'%')
+        $msCandidatesPersonal = Ms::whereRaw('FIND_IN_SET(?, replace(registrationNumber, "/", ","))', [$dept])
+                                        ->whereRaw('NOT FIND_IN_SET(?, selected_depts)', [$dept])
                                         ->orderBy('created_at', 'desc')
                                         ->get();
         if(sizeof($msCandidatesPersonal) == 0)
