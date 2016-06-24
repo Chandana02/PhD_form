@@ -47,8 +47,16 @@
 
         <p><b>Registration Number: </b> {!! $regNo !!} </p>
         <p><b>Department:</b>  {!! $dept !!}</p>
-        <p><b>Venue: </b> Department of {!! $dept !!}</p>
-        <p><b>Counselling/Interview Date: </b>  24/06/2016</p>
+        @if(explode('/', $regNo)[0] == 'PHD')
+          <p><b>Venue: </b> Department of {!! $dept !!}</p>
+        @else
+          <p><b>Venue: </b> Department of {!! $dept !!}</p>
+        @endif
+        @if(explode('/', $regNo)[0] == 'PHD')
+          <p><b>Entrance Examination Date: </b>  30/06/2016</p>
+        @else
+          <p><b>Counselling/Interview Date: </b>  24/06/2016</p>
+        @endif
         <p><b>Time:</b> {!! $time !!}</p>
         <div class="space-medium"></div>
         @if($hod_sign != null && $selected)
