@@ -889,24 +889,24 @@ class AdminController extends Controller
             );
 
         $phd_dept_time_json = array(
-            'Architecture' => '',
-            'Computer Science and Engineering' => '',
-            'Chemical Engineering' => '',
-            'Civil Engineering' => '',
-            'Chemistry' => '',
-            'Computer Applications' => '',
-            'CECASE' => '',
-            'Energy and Environment' => '',
-            'Electrical and Electronics Engineering' => '',
-            'Electronics and Communication Engineering' => '',
-            'Mechanical Engineering' => '',
-            'Production Engineering' => '',
-            'Metallurgical and Materials Engineering' => '',
-            'Mathematics' => '',
-            'Instrumentation and Control Engineering' => '',
-            'Physics' => '',
-            'Humanities and Social Sciences' => '',
-            'Management Studies' => ''
+            'Architecture' => '10.30 A.M - 11.30 A.M',
+            'Computer Science and Engineering' => '10.30 A.M - 11.30 A.M',
+            'Chemical Engineering' => '10.30 A.M - 11.30 A.M',
+            'Civil Engineering' => '10.30 A.M - 11.30 A.M',
+            'Chemistry' => '10.30 A.M - 11.30 A.M',
+            'Computer Applications' => '10.30 A.M - 11.30 A.M',
+            'CECASE' => '10.30 A.M - 11.30 A.M',
+            'Energy and Environment' => '10.30 A.M - 11.30 A.M',
+            'Electrical and Electronics Engineering' => '10.30 A.M - 11.30 A.M',
+            'Electronics and Communication Engineering' => '10.30 A.M - 11.30 A.M',
+            'Mechanical Engineering' => '10.30 A.M - 11.30 A.M',
+            'Production Engineering' => '10.30 A.M - 11.30 A.M',
+            'Metallurgical and Materials Engineering' => '10.30 A.M - 11.30 A.M',
+            'Mathematics' => '10.30 A.M - 11.30 A.M',
+            'Instrumentation and Control Engineering' => '12 P.M - 1 P.M',
+            'Physics' => '10.30 A.M - 11.30 A.M',
+            'Humanities and Social Sciences' => '10.30 A.M - 11.30 A.M',
+            'Management Studies' => '10.30 A.M - 11.30 A.M'
             );
 
         Session::put('dept_folder', $dept_json[$dept]);

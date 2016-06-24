@@ -89,7 +89,7 @@ class ExportController extends Controller
 
     public function deptPhdSelCandidatesExport($dept)
     {
-        $phdCandidatesPersonal = Phd::whereRaw('FIND_IN_SET(?, selected_depts)', [$dept])->get();
+        $phdCandidatesPersonal = Phd::whereRaw('FIND_IN_SET(?, selected_depts)', [$dept])->orderBy('created_at', 'desc')->get();
 
         // Phd::where('selected_depts', 'LIKE', '%'.$dept.'%')
         //                                 ->orderBy('created_at', 'desc')
@@ -166,7 +166,7 @@ class ExportController extends Controller
 
     public function deptMsSelCandidatesExport($dept)
     {
-        $msCandidatesPersonal = Ms::whereRaw('FIND_IN_SET(?, selected_depts)', [$dept])->get();
+        $msCandidatesPersonal = Ms::whereRaw('FIND_IN_SET(?, selected_depts)', [$dept])->orderBy('created_at', 'desc')->get();
         // $msCandidatesPersonal = Ms::where('selected_depts', 'LIKE', '%'.$dept.'%')
         //                                 ->orderBy('created_at', 'desc')
         //                                 ->get();

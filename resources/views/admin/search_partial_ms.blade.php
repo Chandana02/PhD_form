@@ -35,10 +35,10 @@
             @endif
                <div class="center">
                 @if($data['session_all'] != 'all')
-                <input type="radio" id="{!! $data['candidates'][$i]->registrationNumber!!}-yes" name="{!! $data['candidates'][$i]->registrationNumber!!}" data-reg={!! $data['candidates'][$i]->registrationNumber!!} categ='MS' class="verify" {!! strpos($data['candidates'][$i]->selected_depts, $data['session']) !== false ? 'checked' : '' !!} value="yes" />
+                <input type="radio" id="{!! $data['candidates'][$i]->registrationNumber!!}-yes" name="{!! $data['candidates'][$i]->registrationNumber!!}" data-reg={!! $data['candidates'][$i]->registrationNumber!!} categ='MS' class="verify" {!! in_array($data['session'], explode(',', $data['candidates'][$i]->selected_depts), TRUE) !== false ? 'checked' : '' !!} value="yes" />
                 <label for="{!! $data['candidates'][$i]->registrationNumber!!}-yes">Selected</label>
 
-                <input type="radio" id="{!! $data['candidates'][$i]->registrationNumber!!}-no" name="{!! $data['candidates'][$i]->registrationNumber!!}" data-reg={!! $data['candidates'][$i]->registrationNumber!!} categ='MS' class="verify" {!! strpos($data['candidates'][$i]->selected_depts, $data['session']) !== false ? '' : 'checked' !!} value="no"/>
+                <input type="radio" id="{!! $data['candidates'][$i]->registrationNumber!!}-no" name="{!! $data['candidates'][$i]->registrationNumber!!}" data-reg={!! $data['candidates'][$i]->registrationNumber!!} categ='MS' class="verify" {!! in_array($data['session'], explode(',', $data['candidates'][$i]->selected_depts), TRUE) !== false ? '' : 'checked' !!} value="no"/>
                 <label for="{!! $data['candidates'][$i]->registrationNumber!!}-no">Not Selected</label>
                 @endif
         @if($data['session_all'] == 'all')
@@ -81,7 +81,7 @@
           <div class="space-small"></div>
           <p>Created at:{!! $data['candidates'][$i]->created_at !!}</p>
           <?php
-            if (strpos($data['candidates'][$i]->selected_depts, $data['session']) !== false) {
+            if (in_array($data['session'], explode(',', $data['candidates'][$i]->selected_depts), TRUE) !== false) {
            ?>
           <p style="color:teal;">selected</p>
           <?php
