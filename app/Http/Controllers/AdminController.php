@@ -987,13 +987,13 @@ class AdminController extends Controller
             'name' => $candidate->name,
             'dept' => $dept,
             'regNo' => $candidate->registrationNumber,
-            'address'=> $candidate->addrforcomm,
+            'address'=> $candidate->addrforcomm
         );
         if(explode('-', $reg_number)[0] == 'PHD')
             $data['time'] = $phd_dept_time_json[$dept];
         else
             $data['time'] = $ms_dept_time_json[$dept];
-        if (strpos($candidate->selected_depts, Session::get('dept_folder')) !== false) 
+        if (in_array(Session::get('dept_folder'), explode(',', $candidate->selected_depts), TRUE) !== false) 
         {
             $data['selected'] = true;
         }
