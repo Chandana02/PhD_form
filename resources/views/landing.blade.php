@@ -79,19 +79,19 @@
 
         <ul class="pad">
           <li>1. <img src="{{URL::asset('assets/images/newgood.gif')}}"> List of Shortlisted candidates for M.S(by research) & PH.D. can be seen <a href="http://www.nitt.edu/home/admissions/phd/july2016/"> here</a></li>       
-          <li>2. <img src="{{URL::asset('assets/images/newgood.gif')}}"> M.S. candidates can download their admit card <a href="admit">here</a>.</li> 
-          <li>3. Admit card (hard copy) will not be sent to the candidates.</li>
-          <li>4. Candidates should bring original and photocopies of admit card, all the previous degree certificates, mark sheets, GATE score card, OBC/SC/ST/PwD certificate, proof for awards, publications & experience, etc. for counselling/interview.</li>
-          <li>5. No TA/DA will be provided for counseling/interview. </li>
-          <li>6. For OBC certificate format and other details, see information brochure.</li>
-          <li>7. M.S. counselling will only ascertain the eligibility of the candidates to pursue M.S. program.</li>
-          <li>8. For M.S. counseling/interview schedule, click <a href="http://www.nitt.edu/home/admissions/phd/july2016/schedule.pdf" target="_blank"> here</a>. </li>
+         <!-- <li>2. <img src="{{URL::asset('assets/images/newgood.gif')}}"> M.S. candidates can download their admit card <a href="admit">here</a>.</li> --> 
+          <li>2. Admit card (hard copy) will not be sent to the candidates.</li>
+          <li>3. Candidates should bring original and photocopies of admit card, all the previous degree certificates, mark sheets, GATE score card, OBC/SC/ST/PwD certificate, proof for awards, publications & experience, etc. for counselling/interview.</li>
+          <li>4. No TA/DA will be provided for counseling/interview. </li>
+          <li>5. For OBC certificate format and other details, see information brochure.</li>
+          <li>6. M.S. counselling will only ascertain the eligibility of the candidates to pursue M.S. program.</li>
+          <li>7. For M.S. counseling/interview schedule, click <a href="http://www.nitt.edu/home/admissions/phd/july2016/schedule.pdf" target="_blank"> here</a>. </li>
          </ul>
 
          
           <h6 class="center"><b>Instructions for Ph.D. candidates:</b> </h6>
           <ul class="pad">
-          <li>1. <img src="{{URL::asset('assets/images/newgood.gif')}}"> Ph.D. candidates can download their admit card for written test from the portal from 24.06.2016 AN. You will not be permitted to write the written test without the admit card.</li>
+          <li>1. <img src="{{URL::asset('assets/images/newgood.gif')}}"> Ph.D. candidates can download their admit card <a href="admit">here</a>. You will not be permitted to write the written test without the admit card.</li>
           <li>2. Candidates shortlisted in more than one Department can write written test in any one of the Departments and have to attend interview in all the shortlisted Departments (except ICE) in which they would like to join. Those who would like to attend interview in the ICE Department have to write the written test conducted by ICE Department during 12-1 p.m.
           <li>3. Admit card (hard copy) will not be sent to the candidates. </li>
           <li>4. There is negative mark in the written test for each wrong answer. For each wrong answer, 1/4 of the marks of that question will be deducted.</li>

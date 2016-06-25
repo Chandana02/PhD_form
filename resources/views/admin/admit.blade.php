@@ -48,7 +48,7 @@
         <p><b>Registration Number: </b> {!! $regNo !!} </p>
         <p><b>Department:</b>  {!! $dept !!}</p>
         @if(explode('/', $regNo)[0] == 'PHD')
-          <p><b>Venue: </b> Department of {!! $dept !!}</p>
+          <p><b>Venue: </b> ORION</p>
         @else
           <p><b>Venue: </b> Department of {!! $dept !!}</p>
         @endif
