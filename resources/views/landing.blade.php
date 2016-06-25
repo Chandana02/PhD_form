@@ -75,19 +75,19 @@
        <h5 class="center"><b><u>Shortlisting/Admit Card/Reporting</u></b></h5>
         <br>
 
-        <h6 class="center"><b>Instructions for M.S. (by research) candidates:</b> </h6>
+  <!--      <h6 class="center"><b>Instructions for M.S. (by research) candidates:</b> </h6>
 
         <ul class="pad">
           <li>1. <img src="{{URL::asset('assets/images/newgood.gif')}}"> List of Shortlisted candidates for M.S(by research) & PH.D. can be seen <a href="http://www.nitt.edu/home/admissions/phd/july2016/"> here</a></li>       
          <!-- <li>2. <img src="{{URL::asset('assets/images/newgood.gif')}}"> M.S. candidates can download their admit card <a href="admit">here</a>.</li> --> 
-          <li>2. Admit card (hard copy) will not be sent to the candidates.</li>
+   <!--       <li>2. Admit card (hard copy) will not be sent to the candidates.</li>
           <li>3. Candidates should bring original and photocopies of admit card, all the previous degree certificates, mark sheets, GATE score card, OBC/SC/ST/PwD certificate, proof for awards, publications & experience, etc. for counselling/interview.</li>
           <li>4. No TA/DA will be provided for counseling/interview. </li>
           <li>5. For OBC certificate format and other details, see information brochure.</li>
           <li>6. M.S. counselling will only ascertain the eligibility of the candidates to pursue M.S. program.</li>
           <li>7. For M.S. counseling/interview schedule, click <a href="http://www.nitt.edu/home/admissions/phd/july2016/schedule.pdf" target="_blank"> here</a>. </li>
          </ul>
-
+-->
          
           <h6 class="center"><b>Instructions for Ph.D. candidates:</b> </h6>
           <ul class="pad">
@@ -100,7 +100,10 @@
           <li>7. Candidates should bring original and photocopies of admit card, all the previous degree certificates, mark sheets, GATE/NET score card, OBC/SC/ST/PwD certificate, proof for awards, publications & experience, etc. for the interview.</li>
           <li>8. No TA/DA will be provided for written test/interview.</li>
           <li>9. For OBC certificate format and other details, see <a href="http://www.nitt.edu/home/MS%20and%20Ph_D%20advt%20July%202016%20(1)-1%20-%20final.pdf"> information brochure.</a> </li>
-
+          <li>10. <img src="{{URL::asset('assets/images/newgood.gif')}}"> List of candidates shortlisted for the interview will be displayed in the respective Departments on 30.06.2016 at 3.00 p.m.</li>
+          <li>11. <img src="{{URL::asset('assets/images/newgood.gif')}}"> <br>
+                  Venue for written test: <b>ORION, NIT, Trichy</b> <br>
+                  Venue for interview: <b>Respective Departments</b> </li>
           </ul>
 
 
@@ -110,7 +113,7 @@
         <ul class="pad">
            <li>1. <b>30/06/2016 -</b> Written test for Ph.D. (10.30 a.m.-11.30 a.m.) </li>
            <li>2. <b>01/07/2016 -</b> Interview for Ph.D. (only for shortlisted candidates) </li>
-           <li>3. <b>24/06/2016 -</b> M.S. (by research) counseling/interview</li>
+         <!--  <li>3. <b>24/06/2016 -</b> M.S. (by research) counseling/interview</li> -->
         </ul>
 
        
