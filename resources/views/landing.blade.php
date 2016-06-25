@@ -111,7 +111,7 @@
 
          <h5 class="center"><img src="{{URL::asset('assets/images/newgood.gif')}}"><b><u>Important Dates</u></b></h5>
         <ul class="pad">
-           <li>1. <b>30/06/2016 -</b> Written test for Ph.D. (10.30 a.m.-11.30 a.m.) </li>
+           <li>1. <b>30/06/2016 -</b> Written test for Ph.D. (For timings check admit card)</li>
            <li>2. <b>01/07/2016 -</b> Interview for Ph.D. (only for shortlisted candidates) </li>
          <!--  <li>3. <b>24/06/2016 -</b> M.S. (by research) counseling/interview</li> -->
         </ul>
