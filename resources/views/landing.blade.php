@@ -100,8 +100,8 @@
           <li>7. Candidates should bring original and photocopies of admit card, all the previous degree certificates, mark sheets, GATE/NET score card, OBC/SC/ST/PwD certificate, proof for awards, publications & experience, etc. for the interview.</li>
           <li>8. No TA/DA will be provided for written test/interview.</li>
           <li>9. For OBC certificate format and other details, see <a href="http://www.nitt.edu/home/MS%20and%20Ph_D%20advt%20July%202016%20(1)-1%20-%20final.pdf"> information brochure.</a> </li>
-          <li>10. <img src="{{URL::asset('assets/images/newgood.gif')}}"> List of candidates shortlisted for the interview will be displayed in the respective Departments on 30.06.2016 at 3.00 p.m.</li>
-          <li>11. <img src="{{URL::asset('assets/images/newgood.gif')}}"> <br>
+          <li>10. <img src="{{URL::asset('assets/images/newgood.gif')}}"> List of candidates shortlisted for the interview will be displayed in the respective Departments on 30.06.2016 at 3.00 p.m.</li><br>
+          <li>    <img src="{{URL::asset('assets/images/newgood.gif')}}"> <br>
                   Venue for written test: <b>ORION, NIT, Trichy</b> <br>
                   Venue for interview: <b>Respective Departments</b> </li>
           </ul>
