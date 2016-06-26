@@ -91,14 +91,14 @@
          
           <h6 class="center"><b>Instructions for Ph.D. candidates:</b> </h6>
           <ul class="pad">
-          <li>1. <img src="{{URL::asset('assets/images/newgood.gif')}}"> Ph.D. candidates can download their admit card <a href="admit">here</a>. You will not be permitted to write the written test without the admit card.</li>
+          <li>1. Ph.D. candidates can download their admit card <a href="admit">here</a>. You will not be permitted to write the written test without the admit card.</li>
           <li>2. Candidates shortlisted in more than one Department can write written test in any one of the Departments and have to attend interview in all the shortlisted Departments (except ICE) in which they would like to join. Those who would like to attend interview in the ICE Department have to write the written test conducted by ICE Department during 12-1 p.m.
           <li>3. Admit card (hard copy) will not be sent to the candidates. </li>
           <li>4. There is negative mark in the written test for each wrong answer. For each wrong answer, 1/4 of the marks of that question will be deducted.</li>
           <li>5. Candidates are requested to report 15 minutes before the commencement of the test at the venue.</li>
           <li>6. Shortlisted candidates after the written test will be interviewed on 01.07.2016 (next day) by the expert committee. Therefore, you are requested to prepare to stay for one day if you are shortlisted for the interview.</li>
           <li>7. Candidates should bring original and photocopies of admit card, all the previous degree certificates, mark sheets, GATE/NET score card, OBC/SC/ST/PwD certificate, proof for awards, publications & experience, etc. for the interview.</li>
-          <li>8. No TA/DA will be provided for written test/interview.</li>
+          <li>8. <img src="{{URL::asset('assets/images/newgood.gif')}}"> No TA/DA/accommodation will be provided for written test/interview.</li>
           <li>9. For OBC certificate format and other details, see <a href="http://www.nitt.edu/home/MS%20and%20Ph_D%20advt%20July%202016%20(1)-1%20-%20final.pdf"> information brochure.</a> </li>
           <li>10. <img src="{{URL::asset('assets/images/newgood.gif')}}"> List of candidates shortlisted for the interview will be displayed in the respective Departments on 30.06.2016 at 3.00 p.m.</li><br>
           <li>    <img src="{{URL::asset('assets/images/newgood.gif')}}"> <br>
@@ -109,12 +109,14 @@
 
 
 
-         <h5 class="center"><img src="{{URL::asset('assets/images/newgood.gif')}}"><b><u>Important Dates</u></b></h5>
+         <h5 class="center"><b><u>Important Dates</u></b></h5>
         <ul class="pad">
            <li>1. <b>30/06/2016 -</b> Written test for Ph.D. (For timings check admit card)</li>
            <li>2. <b>01/07/2016 -</b> Interview for Ph.D. (only for shortlisted candidates) </li>
          <!--  <li>3. <b>24/06/2016 -</b> M.S. (by research) counseling/interview</li> -->
         </ul>
+        <br>
+        <p class="center"><i><b>For any query, drop e-mail to phdsection@nitt.edu</b></i></p>
 
        
 
