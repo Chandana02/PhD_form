@@ -116,7 +116,7 @@
          <!--  <li>3. <b>24/06/2016 -</b> M.S. (by research) counseling/interview</li> -->
         </ul>
         <br>
-        <p class="center"><i><b>For any query, drop e-mail to phdsection@nitt.edu</b></i></p>
+        <p class="center"><i>For any query, drop e-mail to</i> phdsection@nitt.edu </p>
 
        
 
