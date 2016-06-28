@@ -104,7 +104,15 @@
           <li>    <img src="{{URL::asset('assets/images/newgood.gif')}}"> <br>
                   Venue for written test: <b>ORION, NIT, Trichy</b> <br>
                   Venue for interview: <b>Respective Departments</b> </li>
+                  <br><br>
+          <li><img src="{{URL::asset('assets/images/newgood.gif')}}"><b>Note:</b> Please note your serial number in the list of shortlisted candidates. This will be helpful for you to locate your seat for the written test. </li>
+          
+
+
           </ul>
+
+          <br>
+
 
 
 
