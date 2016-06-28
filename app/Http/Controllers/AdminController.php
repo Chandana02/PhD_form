@@ -894,7 +894,7 @@ class AdminController extends Controller
             'Chemical Engineering' => '10.30 A.M - 11.30 A.M',
             'Civil Engineering' => '10.30 A.M - 11.30 A.M',
             'Chemistry' => '10.30 A.M - 11.30 A.M',
-            'Computer Applications' => '10.30 A.M - 11.30 A.M',
+            'Computer Applications' => '12 P.M - 1 P.M',
             'CECASE' => '10.30 A.M - 11.30 A.M',
             'Energy and Environment' => '10.30 A.M - 11.30 A.M',
             'Electrical and Electronics Engineering' => '10.30 A.M - 11.30 A.M',
