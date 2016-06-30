@@ -79,9 +79,13 @@ Route::group(['middleware' => 'adminauth'], function () {
 });
 Route::get('print/{phdormsc}/{regNo}', 'AdminController@printer' );
 Route::get('admit/{phdormsc}/{regNo}/{dept}', 'AdminController@admitCard');
+
+/*
 Route::get('admit', function() {
    return view('admit');
 });
+*/
+
 Route::post('admitcard', 'ApplicationController@admit');
 Route::post('phdvalidate', 'PhdController@validated');
 Route::post('msvalidate', 'MsController@validated');
