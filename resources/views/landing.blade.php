@@ -71,7 +71,7 @@
           <li><b>Stage 3</b>: Proceed with the instructions sent through mail in stage 1. Bank reference number would be required in this stage.</li>
 
         </ul> -->
-
+<!--
        <h5 class="center"><b><u>Shortlisting/Admit Card/Reporting</u></b></h5>
         <br>
 
@@ -86,11 +86,11 @@
           <li>5. For OBC certificate format and other details, see information brochure.</li>
           <li>6. M.S. counselling will only ascertain the eligibility of the candidates to pursue M.S. program.</li>
           <li>7. For M.S. counseling/interview schedule, click <a href="http://www.nitt.edu/home/admissions/phd/july2016/schedule.pdf" target="_blank"> here</a>. </li>
-         </ul>
+         </ul>  
 -->
-         
-          <h6 class="center"><b>Instructions for Ph.D. candidates:</b> </h6>
-          <ul class="pad">
+         <h6 class="center"><img src="{{URL::asset('assets/images/newgood.gif')}}"> <b>Thank you for applying at NIT Trichy. Application process for July'16 is over. Keep visiting this site for any future update.</b> </h6>
+         <!-- <h6 class="center"><b>Instructions for Ph.D. candidates:</b> </h6> -->
+        <!--  <ul class="pad">
           <li>1. Ph.D. candidates can download their admit card <a href="admit">here</a>. You will not be permitted to write the written test without the admit card.</li>
           <li>2. <img src="{{URL::asset('assets/images/newgood.gif')}}"> Candidates shortlisted in more than one Department can write written test in any one of the Departments and have to attend interview in all the shortlisted Departments (except ICE & CA) in which they would like to join. Those who would like to attend interview in the ICE / CA Department have to write the written test conducted by ICE / CA Department during 12-1 P.M .
           <li>3. Admit card (hard copy) will not be sent to the candidates. </li>
@@ -122,10 +122,9 @@
            <li>1. <b>30/06/2016 -</b> Written test for Ph.D. (For timings check admit card)</li>
            <li>2. <b>01/07/2016 -</b> Interview for Ph.D. (only for shortlisted candidates) </li>
          <!--  <li>3. <b>24/06/2016 -</b> M.S. (by research) counseling/interview</li> -->
-        </ul>
+       <!-- </ul>
         <br>
         <p class="center"><i>For any query, drop e-mail to</i> phdsection@nitt.edu </p>
-
        
 
         <!-- <h5 class="center"><b><u>Application Resetting Process</u></b></h5>
